@@ -1,0 +1,46 @@
+{
+  "name": "ita-rp-game",
+  "version": "2.0.0",
+  "description": "ITA RP Game - Reimplementação moderna com Phaser 3 + React",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "cd apps/web-app && npm run dev",
+    "build": "npm run build --workspaces",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
+    "typecheck": "tsc --noEmit",
+    "clean": "npm run clean --workspaces && rm -rf node_modules",
+    "process-catalog": "tsx scripts/process-catalog.ts"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vitest/coverage-v8": "^1.0.4",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jsdom": "^23.0.1",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0",
+    "tsx": "^4.7.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "zustand": "^5.0.9",
+    "openai": "^4.20.0",
+    "pdf-parse": "^1.1.1"
+  }
+}

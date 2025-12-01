@@ -1,0 +1,9 @@
+export { GameEngine } from './GameEngine';
+export { BaseScene } from './GameEngine';
+export { SceneManager } from './SceneManager';
+export { InputManager } from './InputManager';
+export { AudioManager } from './AudioManager';
+export { StudyModeScene } from './scenes/StudyModeScene';
+export { MainMenuScene } from './scenes/MainMenuScene';
+export { ProgressViewScene } from './scenes/ProgressViewScene';
+export { DisciplineSelectionScene } from './scenes/DisciplineSelectionScene';

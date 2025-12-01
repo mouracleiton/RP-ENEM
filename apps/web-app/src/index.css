@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+  color: #00f3ff;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.cyberpunk-button {
+  background: linear-gradient(45deg, #00f3ff, #1a237e);
+  border: 2px solid #00f3ff;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.cyberpunk-button:hover {
+  background: linear-gradient(45deg, #1a237e, #00f3ff);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0a0a0a;
+}
+
+.loading-text {
+  font-size: 24px;
+  color: #00f3ff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
+}
+
+.progress-bar {
+  width: 300px;
+  height: 4px;
+  background: #1a1a2e;
+  border: 1px solid #00f3ff;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00f3ff, #1a237e);
+  animation: loading 2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 70%; }
+  100% { width: 100%; }
+}

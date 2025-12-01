@@ -1,0 +1,305 @@
+{
+  "formatVersion": "1.0",
+  "exportDate": "2025-11-29T10:30:00.000-0300",
+  "appVersion": "1.0",
+  "curriculumData": {
+    "metadata": {
+      "startDate": "2025-01-01",
+      "duration": "1 Semestre",
+      "dailyStudyHours": "6-8 hours",
+      "totalAtomicSkills": 52,
+      "version": "1.0 - ITA Catalog 2025 Based",
+      "lastUpdated": "2025-11-29",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - CC201"
+    },
+    "areas": [
+      {
+        "id": "22",
+        "name": "Programação Orientada a Objetos",
+        "description": "Paradigma de programação baseado em objetos, classes, encapsulamento, herança e polimorfismo",
+        "totalSkills": 52,
+        "percentage": 100,
+        "disciplines": [
+          {
+            "id": "22.1",
+            "name": "CSI-22: Programação Orientada a Objetos",
+            "description": "Conceitos fundamentais de POO com aplicações práticas em laboratório",
+            "totalSkills": 52,
+            "mainTopics": [
+              {
+                "id": "22.1.1",
+                "name": "Fundamentos de POO",
+                "description": "Conceitos básicos de objetos, classes e encapsulamento",
+                "totalSkills": 15,
+                "atomicTopics": [
+                  {
+                    "id": "22.1.1.1",
+                    "name": "Classes e Objetos",
+                    "description": "Definição e implementação de classes e instanciação de objetos",
+                    "individualConcepts": [
+                      {
+                        "id": "22.1.1.1.1",
+                        "name": "Implementar classe com construtores",
+                        "description": "Criar classe com múltiplos construtores e métodos de acesso",
+                        "specificSkills": [
+                          {
+                            "id": "22.1.1.1.1.1",
+                            "name": "Definir construtores padrão e parametrizados",
+                            "description": "Implementar diferentes tipos de construtores em uma classe",
+                            "atomicExpansion": {
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Compreender estrutura básica de classe",
+                                  "subSteps": [
+                                    "Identificar sintaxe para declaração de classe",
+                                    "Definir atributos com tipos de dados apropriados",
+                                    "Compreender modificadores de acesso (public, private)"
+                                  ],
+                                  "verification": "Cria classe básica com atributos privados corretamente",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": ["Material sobre sintaxe de classes", "IDE Java/Eclipse"],
+                                  "tips": "Use o padrão camelCase para nomes de métodos e atributos",
+                                  "learningObjective": "Dominar a estrutura fundamental de uma classe em Java",
+                                  "commonMistakes": ["Esquecer chaves de abertura/fechamento", "Confundir classe com objeto"]
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Implementar construtor padrão",
+                                  "subSteps": [
+                                    "Criar construtor sem parâmetros",
+                                    "Inicializar atributos com valores default",
+                                    "Entender chamada implícita do construtor padrão"
+                                  ],
+                                  "verification": "Construtor padrão inicializa todos atributos adequadamente",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": ["Exemplos de construtores", "Exercícios de inicialização"],
+                                  "tips": "Sempre inicialize atributos no construtor para evitar null pointers",
+                                  "learningObjective": "Implementar construtor padrão que garante estado consistente do objeto",
+                                  "commonMistakes": ["Não inicializar todos os atributos", "Confundir construtor com método comum"]
+                                }
+                              ],
+                              "practicalExample": "Classe Aluno com atributos: nome (String), matricula (int), notas (double[]). Implementar construtores padrão e parametrizado.",
+                              "finalVerifications": [
+                                "Objeto é instanciado corretamente com new Aluno()",
+                                "Atributos são inicializados com valores apropriados",
+                                "Múltiplos construtores funcionam sem conflitos"
+                              ],
+                              "assessmentCriteria": [
+                                "Construtores têm assinaturas únicas",
+                                "Atributos privados são acessíveis apenas via métodos públicos",
+                                "Objetos mantêm estado consistente após construção"
+                              ],
+                              "crossCurricularConnections": ["Engenharia de Software", "Estruturas de Dados", "Padrões de Projeto"],
+                              "realWorldApplication": "Usado em todo desenvolvimento de software moderno para criar entidades como Usuario, Produto, ContaBancaria, etc."
+                            },
+                            "estimatedTime": "3-4 horas",
+                            "difficulty": "beginner",
+                            "status": "not_started",
+                            "prerequisites": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "22.1.2",
+                "name": "Encapsulamento e Modificadores de Acesso",
+                "description": "Proteção de dados e controle de acesso aos membros da classe",
+                "totalSkills": 10,
+                "atomicTopics": [
+                  {
+                    "id": "22.1.2.1",
+                    "name": "Getters e Setters",
+                    "description": "Métodos de acesso e modificação para atributos privados",
+                    "individualConcepts": [
+                      {
+                        "id": "22.1.2.1.1",
+                        "name": "Implementar métodos accessors e mutators",
+                        "description": "Criar getters e setters com validação de dados",
+                        "specificSkills": [
+                          {
+                            "id": "22.1.2.1.1.1",
+                            "name": "Validar dados em setters",
+                            "description": "Implementar lógica de validação nos métodos setter",
+                            "atomicExpansion": {
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Compreender encapsulamento",
+                                  "subSteps": [
+                                    "Identificar benefícios do encapsulamento",
+                                    "Diferenciar entre interface pública e implementação interna",
+                                    "Reconhecer violações de encapsulamento"
+                                  ],
+                                  "verification": "Explica três benefícios do encapsulamento",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": ["Material sobre encapsulamento", "Exemplos de boas práticas"],
+                                  "tips": "Pense no encapsulamento como um contrato: a interface promete, a implementação cumpre",
+                                  "learningObjective": "Compreender os princípios fundamentais do encapsulamento",
+                                  "commonMistakes": ["Expor atributos como public", "Não validar dados de entrada"]
+                                }
+                              ],
+                              "practicalExample": "Classe ContaBancaria com saldo (double). Setter de saldo deve rejeitar valores negativos.",
+                              "finalVerifications": [
+                                "Setter lança exceção para valores inválidos",
+                                "Getter retorna cópia defensiva quando necessário",
+                                "Estado do objeto permanece consistente"
+                              ],
+                              "assessmentCriteria": [
+                                "Validações cobrem casos limite",
+                                "Mensagens de erro são informativas",
+                                "Performance não é comprometida desnecessariamente"
+                              ],
+                              "crossCurricularConnections": ["Engenharia de Software", "Teste de Software", "Segurança"],
+                              "realWorldApplication": "Fundamental em sistemas bancários, e-commerce e qualquer aplicação que manipule dados sensíveis"
+                            },
+                            "estimatedTime": "2-3 horas",
+                            "difficulty": "beginner",
+                            "status": "not_started",
+                            "prerequisites": ["22.1.1.1.1.1"]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "22.1.3",
+                "name": "Herança e Polimorfismo",
+                "description": "Relações de especialização entre classes e comportamentos polimórficos",
+                "totalSkills": 15,
+                "atomicTopics": [
+                  {
+                    "id": "22.1.3.1",
+                    "name": "Sobrescrita de Métodos",
+                    "description": "Redefinição de métodos em subclasses",
+                    "individualConcepts": [
+                      {
+                        "id": "22.1.3.1.1",
+                        "name": "Implementar override com @Override",
+                        "description": "Sobrescrever métodos da superclasse usando anotação",
+                        "specificSkills": [
+                          {
+                            "id": "22.1.3.1.1.1",
+                            "name": "Usar anotação @Override corretamente",
+                            "description": "Aplicar anotação @Override em métodos sobrescritos",
+                            "atomicExpansion": {
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Compreender hierarquia de classes",
+                                  "subSteps": [
+                                    "Identificar relação 'é-um' entre classes",
+                                    "Diferenciar herança de composição",
+                                    "Reconhecer quando usar herança"
+                                  ],
+                                  "verification": "Diferencia corretamente herança de composição em exemplos",
+                                  "estimatedTime": "40 minutos",
+                                  "materials": ["Diagramas de classe UML", "Exemplos de hierarquias"],
+                                  "tips": "Prefira composição sobre herança quando a relação não for estritamente 'é-um'",
+                                  "learningObjective": "Compreender os princípios de design de hierarquias de classe",
+                                  "commonMistakes": ["Usar herança para compartilhar código", "Criar hierarquias muito profundas"]
+                                }
+                              ],
+                              "practicalExample": "Classe Animal com método emitirSom(). Subclasses Cachorro e Gato sobrescrevem emitirSom() com @Override.",
+                              "finalVerifications": [
+                                "Compilador valida anotação @Override",
+                                "Método sobrescrito tem mesma assinatura",
+                                "Polimorfismo funciona em tempo de execução"
+                              ],
+                              "assessmentCriteria": [
+                                "Anotação @Override é usada consistentemente",
+                                "Assinatura do método é preservada",
+                                "Comportamento específico da subclasse é implementado"
+                              ],
+                              "crossCurricularConnections": ["Design Patterns", "Arquitetura de Software", "Teste Unitário"],
+                              "realWorldApplication": "Usado em frameworks como Spring, Hibernate e em sistemas de plugins onde comportamentos precisam ser especializados"
+                            },
+                            "estimatedTime": "3-5 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": ["22.1.1.1.1.1"]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "22.1.4",
+                "name": "Classes Abstratas e Interfaces",
+                "description": "Definição de contratos e implementações parciais",
+                "totalSkills": 12,
+                "atomicTopics": [
+                  {
+                    "id": "22.1.4.1",
+                    "name": "Implementação de Interfaces",
+                    "description": "Criação de classes que implementam interfaces",
+                    "individualConcepts": [
+                      {
+                        "id": "22.1.4.1.1",
+                        "name": "Implementar interface com múltiplos métodos",
+                        "description": "Criar classe que implementa todos os métodos de uma interface",
+                        "specificSkills": [
+                          {
+                            "id": "22.1.4.1.1.1",
+                            "name": "Respeitar contrato da interface",
+                            "description": "Implementar todos os métodos definidos na interface",
+                            "atomicExpansion": {
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Compreender conceito de interface",
+                                  "subSteps": [
+                                    "Diferenciar interface de classe abstrata",
+                                    "Identificar quando usar interface",
+                                    "Reconhecer benefícios do desacoplamento"
+                                  ],
+                                  "verification": "Lista três situações onde interface é preferível sobre herança",
+                                  "estimatedTime": "35 minutos",
+                                  "materials": ["Material sobre interfaces", "Exemplos de contratos"],
+                                  "tips": "Interfaces definem 'o que' fazer, classes definem 'como' fazer",
+                                  "learningObjective": "Compreender o papel das interfaces no design orientado a contratos",
+                                  "commonMistakes": ["Implementar interface parcialmente", "Confundir com herança múltipla"]
+                                }
+                              ],
+                              "practicalExample": "Interface Autenticavel com métodos autenticar(String) e getPermissoes(). Classe Usuario implementa Autenticavel.",
+                              "finalVerifications": [
+                                "Classe compila sem erros de implementação",
+                                "Todos métodos da interface são implementados",
+                                "Contrato semântico é respeitado"
+                              ],
+                              "assessmentCriteria": [
+                                "Implementação completa da interface",
+                                "Métodos seguem especificação semântica",
+                                "Classe pode ser usada polimorficamente via interface"
+                              ],
+                              "crossCurricularConnections": ["Arquitetura de Software", "Design por Contrato", "Teste de Integração"],
+                              "realWorldApplication": "Fundamental em arquiteturas baseadas em interfaces como Spring Framework, Java EE e desenvolvimento de APIs"
+                            },
+                            "estimatedTime": "4-6 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": ["22.1.3.1.1.1"]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "infographics": null,
+    "settings": null
+  }
+}

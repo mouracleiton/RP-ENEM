@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00d4ff" />
+    <meta name="description" content="Jogo educacional gamificado para preparação do ITA" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="ITA Game" />
+
+    <title>ITA RP Game - Reborn</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #0a0a0a;
+        color: #ffffff;
+        font-family: 'Courier New', monospace;
+        overflow: hidden;
+      }
+
+      #root {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      /* Offline indicator */
+      .offline-indicator {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(90deg, #ff6b6b, #ee5a5a);
+        color: white;
+        text-align: center;
+        padding: 8px;
+        font-size: 14px;
+        z-index: 10000;
+        display: none;
+      }
+
+      .offline-indicator.visible {
+        display: block;
+      }
+
+      /* PWA Install prompt */
+      .pwa-install-prompt {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #0a0a1a, #1a1a3a);
+        border: 1px solid #00d4ff;
+        border-radius: 12px;
+        padding: 16px;
+        display: none;
+        z-index: 9999;
+        box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+      }
+
+      .pwa-install-prompt.visible {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .pwa-install-prompt h3 {
+        margin: 0;
+        color: #00d4ff;
+        font-size: 16px;
+      }
+
+      .pwa-install-prompt p {
+        margin: 0;
+        color: #aaa;
+        font-size: 14px;
+      }
+
+      .pwa-install-prompt .buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-end;
+      }
+
+      .pwa-install-prompt button {
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .pwa-install-prompt .install-btn {
+        background: #00d4ff;
+        color: #0a0a1a;
+        font-weight: bold;
+      }
+
+      .pwa-install-prompt .dismiss-btn {
+        background: transparent;
+        color: #888;
+        border: 1px solid #444;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Offline indicator -->
+    <div id="offline-indicator" class="offline-indicator">
+      📡 Você está offline. Algumas funcionalidades podem estar limitadas.
+    </div>
+
+    <div id="root"></div>
+
+    <!-- PWA Install prompt (handled by JS) -->
+    <div id="pwa-install-prompt" class="pwa-install-prompt">
+      <h3>📱 Instalar ITA RP Game</h3>
+      <p>Adicione o app à sua tela inicial para acesso rápido e suporte offline!</p>
+      <div class="buttons">
+        <button class="dismiss-btn" onclick="dismissInstallPrompt()">Depois</button>
+        <button class="install-btn" onclick="installPWA()">Instalar</button>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      // Service Worker Registration
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('[PWA] Service Worker registered:', registration.scope);
+
+              // Check for updates
+              registration.addEventListener('updatefound', function() {
+                const newWorker = registration.installing;
+                if (newWorker) {
+                  newWorker.addEventListener('statechange', function() {
+                    if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                      // New version available
+                      if (confirm('Nova versão disponível! Atualizar agora?')) {
+                        newWorker.postMessage({ type: 'SKIP_WAITING' });
+                        window.location.reload();
+                      }
+                    }
+                  });
+                }
+              });
+            })
+            .catch(function(error) {
+              console.log('[PWA] Service Worker registration failed:', error);
+            });
+        });
+      }
+
+      // Offline/Online detection
+      function updateOnlineStatus() {
+        const indicator = document.getElementById('offline-indicator');
+        if (indicator) {
+          indicator.classList.toggle('visible', !navigator.onLine);
+        }
+      }
+
+      window.addEventListener('online', updateOnlineStatus);
+      window.addEventListener('offline', updateOnlineStatus);
+      updateOnlineStatus();
+
+      // PWA Install Prompt
+      let deferredPrompt;
+      const installPrompt = document.getElementById('pwa-install-prompt');
+
+      window.addEventListener('beforeinstallprompt', function(e) {
+        e.preventDefault();
+        deferredPrompt = e;
+
+        // Check if user dismissed before
+        const dismissed = localStorage.getItem('pwa-install-dismissed');
+        const dismissedTime = dismissed ? parseInt(dismissed) : 0;
+        const dayInMs = 24 * 60 * 60 * 1000;
+
+        // Show prompt if not dismissed in last 7 days
+        if (!dismissed || (Date.now() - dismissedTime > 7 * dayInMs)) {
+          setTimeout(function() {
+            if (installPrompt) {
+              installPrompt.classList.add('visible');
+            }
+          }, 3000); // Show after 3 seconds
+        }
+      });
+
+      window.addEventListener('appinstalled', function() {
+        console.log('[PWA] App installed');
+        if (installPrompt) {
+          installPrompt.classList.remove('visible');
+        }
+        deferredPrompt = null;
+      });
+
+      function installPWA() {
+        if (installPrompt) {
+          installPrompt.classList.remove('visible');
+        }
+
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(function(choiceResult) {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('[PWA] User accepted install');
+            } else {
+              console.log('[PWA] User dismissed install');
+            }
+            deferredPrompt = null;
+          });
+        }
+      }
+
+      function dismissInstallPrompt() {
+        if (installPrompt) {
+          installPrompt.classList.remove('visible');
+        }
+        localStorage.setItem('pwa-install-dismissed', Date.now().toString());
+      }
+    </script>
+  </body>
+</html>

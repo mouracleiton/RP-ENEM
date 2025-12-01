@@ -1,0 +1,181 @@
+{
+  "formatVersion": "1.0",
+  "exportDate": "2025-11-29T10:30:00.000-0300",
+  "appVersion": "1.0",
+  "curriculumData": {
+    "metadata": {
+      "startDate": "2025-01-01",
+      "duration": "1 Semestre",
+      "dailyStudyHours": "6-8 hours",
+      "totalAtomicSkills": 55,
+      "version": "1.0 - ITA Catalog 2025 Based",
+      "lastUpdated": "2025-11-29",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - CC201"
+    },
+    "areas": [
+      {
+        "id": "54",
+        "name": "Circuitos Eletrônicos",
+        "description": "Área dedicada ao estudo dos dispositivos e circuitos eletrônicos fundamentais, incluindo física dos semicondutores, dispositivos básicos, modelagem e análise de circuitos transistorizados e amplificadores.",
+        "totalSkills": 55,
+        "percentage": 100,
+        "disciplines": [
+          {
+            "id": "54.1",
+            "name": "ELE-54: Circuitos Eletrônicos",
+            "description": "Disciplina que introduz a física dos semicondutores, diodos, transistores bipolares (BJT) e de efeito de campo (FET, MOSFET), análise de polarização DC, modelos de pequenos sinais e amplificadores de um estágio. Carga horária: 3-0-2-4.",
+            "totalSkills": 55,
+            "mainTopics": [
+              {
+                "id": "54.1.1",
+                "name": "Física dos Semicondutores",
+                "description": "Fundamentos da física dos materiais semicondutores, propriedades elétricas e comportamento de portadores",
+                "totalSkills": 8,
+                "atomicTopics": []
+              },
+              {
+                "id": "54.1.2",
+                "name": "Diodos Semicondutores",
+                "description": "Características, modelagem, circuitos com diodos e métodos de análise",
+                "totalSkills": 10,
+                "atomicTopics": []
+              },
+              {
+                "id": "54.1.3",
+                "name": "Transistores Bipolares de Junção (BJT)",
+                "description": "Princípio de operação, características estáticas, configurações básicas e análise de circuitos com BJT",
+                "totalSkills": 15,
+                "atomicTopics": [
+                  {
+                    "id": "54.1.3.1",
+                    "name": "Polarização DC de BJT",
+                    "description": "Técnicas de polarização, estabilização do ponto de operação e análise de circuitos de polarização",
+                    "individualConcepts": [
+                      {
+                        "id": "54.1.3.1.1",
+                        "name": "Analisar circuitos de polarização de BJT",
+                        "description": "Calcular ponto de operação (Q-point) em diferentes configurações de polarização",
+                        "specificSkills": [
+                          {
+                            "id": "54.1.3.1.1.1",
+                            "name": "Determinar ponto de operação de um BJT em configuração emissor comum com polarização por divisor de tensão",
+                            "description": "Calcular IB, IC, VCE e verificar a região de operação (ativa, saturação, corte) para um amplificador emissor comum",
+                            "atomicExpansion": {
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Compreender a configuração de polarização por divisor de tensão",
+                                  "subSteps": [
+                                    "Identificar os componentes: BJT npn, resistores R1, R2, RC, RE, fontes VCC",
+                                    "Reconhecer o divisor de tensão na base formado por R1 e R2",
+                                    "Entender a função do resistor de emissor RE na estabilização térmica"
+                                  ],
+                                  "verification": "Desenha o circuito correto e identifica todos os componentes",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": ["Diagramas de circuito", "Material sobre polarização de BJT"],
+                                  "tips": "Simplifique o circuito da base usando o teorema de Thévenin para análise mais fácil",
+                                  "learningObjective": "Compreender a estrutura do circuito de polarização por divisor de tensão e seus componentes",
+                                  "commonMistakes": ["Esquecer o resistor de emissor", "Confundir polarização fixa com divisor de tensão"]
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Calcular tensão de Thévenin na base (VTH) e resistência equivalente (RTH)",
+                                  "subSteps": [
+                                    "Aplicar o teorema de Thévenin ao divisor de tensão da base",
+                                    "Calcular VTH = VCC * (R2 / (R1 + R2))",
+                                    "Calcular RTH = R1 || R2 = (R1 * R2) / (R1 + R2)"
+                                  ],
+                                  "verification": "Cálculos corretos de VTH e RTH para valores dados de R1, R2 e VCC",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": ["Calculadora científica", "Exercícios com valores numéricos"],
+                                  "tips": "Verifique sempre se RTH é significativamente menor que β*RE para boa estabilidade",
+                                  "learningObjective": "Dominar a aplicação do teorema de Thévenin para simplificação de circuitos de polarização",
+                                  "commonMistakes": ["Erro no cálculo do paralelo de resistores", "Esquecer de desconectar a base do transistor"]
+                                },
+                                {
+                                  "stepNumber": 3,
+                                  "title": "Aplicar lei das malhas e características do BJT",
+                                  "subSteps": [
+                                    "Escrever equação da malha base-emissor: VTH = IB*RTH + VBE + IE*RE",
+                                    "Substituir IE = (β+1)*IB ou IC = β*IB",
+                                    "Resolver para IB, então IC = β*IB e IE = (β+1)*IB"
+                                  ],
+                                  "verification": "Equação da malha corretamente escrita e resolvida para IB",
+                                  "estimatedTime": "40 minutos",
+                                  "materials": ["Tabelas de características do BJT", "Exemplos resolvidos passo a passo"],
+                                  "tips": "Use VBE ≈ 0.7V para silício em operação normal",
+                                  "learningObjective": "Aplicar as leis de Kirchhoff e as relações do BJT para determinar as correntes de polarização",
+                                  "commonMistakes": ["Usar IC = IB em vez de IC = β*IB", "Esquecer que IE = IB + IC"]
+                                },
+                                {
+                                  "stepNumber": 4,
+                                  "title": "Calcular VCE e verificar região de operação",
+                                  "subSteps": [
+                                    "Calcular VCE = VCC - IC*RC - IE*RE",
+                                    "Verificar se VCE > 0.2V para operação na região ativa",
+                                    "Confirmar que IB > 0 e IC > 0"
+                                  ],
+                                  "verification": "Cálculo correto de VCE e identificação precisa da região de operação",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": ["Gráficos de características de saída", "Regiões de operação do BJT"],
+                                  "tips": "Se VCE < 0.2V, o transistor pode estar em saturação; se IB ≈ 0, em corte",
+                                  "learningObjective": "Determinar a tensão coletor-emissor e verificar o modo de operação do transistor",
+                                  "commonMistakes": ["Não considerar a queda em RE no cálculo de VCE", "Confundir região ativa com saturação"]
+                                }
+                              ],
+                              "practicalExample": "Dados: VCC=12V, R1=100kΩ, R2=22kΩ, RC=2.2kΩ, RE=1kΩ, β=100, VBE=0.7V. Calcular VTH, RTH, IB, IC, IE, VCE e verificar região.",
+                              "finalVerifications": [
+                                "Q-point calculado: IC ≈ 1.8mA, VCE ≈ 4.2V - transistor na região ativa",
+                                "Análise mostra boa estabilidade térmica devido a RE",
+                                "Resultados consistentes com simulação SPICE"
+                              ],
+                              "assessmentCriteria": [
+                                "Corretude dos cálculos passo a passo",
+                                "Identificação precisa da região de operação",
+                                "Compreensão da influência de cada componente no ponto Q"
+                              ],
+                              "crossCurricularConnections": ["Física dos Semicondutores", "Análise de Circuitos", "Eletrônica Básica"],
+                              "realWorldApplication": "Fundamental para projeto de amplificadores de áudio, estágios de entrada de instrumentação, circuitos de condicionamento de sinais e sistemas de comunicação"
+                            },
+                            "estimatedTime": "4-6 hours",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": "54.1.4",
+                "name": "Transistores de Efeito de Campo (FET/MOSFET)",
+                "description": "Princípio de operação, características, polarização e análise de circuitos com FET e MOSFET",
+                "totalSkills": 12,
+                "atomicTopics": []
+              },
+              {
+                "id": "54.1.5",
+                "name": "Modelos de Pequenos Sinais",
+                "description": "Modelos AC para análise de circuitos transistorizados em baixos sinais",
+                "totalSkills": 10,
+                "atomicTopics": []
+              },
+              {
+                "id": "54.1.6",
+                "name": "Amplificadores de Um Estágio",
+                "description": "Análise e projeto de amplificadores básicos com BJT e FET em diferentes configurações",
+                "totalSkills": 10,
+                "atomicTopics": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "infographics": null,
+    "settings": null
+  }
+}

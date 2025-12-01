@@ -1,0 +1,390 @@
+{
+  "formatVersion": "1.0",
+  "exportDate": "2025-11-30T00:00:00.000-03:00",
+  "appVersion": "1.0",
+  "curriculumData": {
+    "metadata": {
+      "startDate": "2025-03-01",
+      "duration": "1 Semestre",
+      "dailyStudyHours": "6-10 horas",
+      "totalAtomicSkills": 428,
+      "version": "1.0 - ITA Catálogo 2025",
+      "lastUpdated": "2025-11-30",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - MAT-13"
+    },
+    "areas": [
+      {
+        "id": "10",
+        "name": "Matemática Básica e Cálculo",
+        "description": "Fundamentos de análise matemática para engenharia",
+        "totalSkills": 428,
+        "percentage": 100,
+        "disciplines": [
+          {
+            "id": "10.1",
+            "name": "Cálculo Diferencial e Integral I",
+            "description": "Limites, derivadas, integrais de Riemann e aplicações - MAT-13",
+            "totalSkills": 428,
+            "mainTopics": [
+              {
+                "id": "10.1.1",
+                "name": "Números Reais e Funções",
+                "description": "Conjunto dos reais, completude, funções reais de uma variável",
+                "totalSkills": 38,
+                "atomicTopics": [
+                  {
+                    "id": "10.1.1.1",
+                    "name": "Propriedades dos Números Reais",
+                    "description": "Corpo ordenado completo, axioma da completude, consequência do supremo",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.1.1.1",
+                        "name": "Axioma da Completude e Supremos",
+                        "description": "Todo conjunto não vazio de reais limitado superiormente tem supremo",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.1.1.1.1",
+                            "name": "Provar que √2 é irracional usando completude",
+                            "description": "Demonstração clássica por contradição com supremo do conjunto {q ∈ ℚ | q² < 2}",
+                            "atomicExpansion": {
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Definir o conjunto S = {q ∈ ℚ | q > 0 e q² < 2}",
+                                  "subSteps": [
+                                    "Mostrar que S ≠ ∅ (ex: 1 ∈ S)",
+                                    "Mostrar que S é limitado superiormente (ex: 2 é cota superior)"
+                                  ],
+                                  "verification": "Estudante reconhece que S tem supremo α ∈ ℝ",
+                                  "estimatedTime": "40 min",
+                                  "materials": [
+                                    "Apostila de números reais",
+                                    "Guidorizzi vol.1 cap.1"
+                                  ],
+                                  "tips": "Memorize os 11 axiomas do corpo ℝ antes",
+                                  "learningObjective": "Entender por que ℚ não é completo",
+                                  "commonMistakes": [
+                                    "Confundir supremo com máximo",
+                                    "Esquecer de provar que α² = 2 leva a contradição"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Supor α racional e chegar à contradição",
+                                  "subSteps": [
+                                    "Assumir α = p/q em fração irredutível",
+                                    "Construir r = (p + 2q)/(p + q) ou similar",
+                                    "Mostrar r ∈ S e r > α"
+                                  ],
+                                  "verification": "Consegue escrever a contradição formal",
+                                  "estimatedTime": "1h",
+                                  "materials": [
+                                    "Quadro para escrever a prova completa"
+                                  ],
+                                  "tips": "Use a forma clássica com n! no denominador também",
+                                  "learningObjective": "Dominar prova por contradição com supremo",
+                                  "commonMistakes": [
+                                    "Erro aritmético na construção do novo racional"
+                                  ]
+                                }
+                              ],
+                              "practicalExample": "S = {1, 1.4, 1.41, 1.414, ...} → sup S = √2 ∉ ℚ",
+                              "finalVerifications": [
+                                "Prova escrita completa sem consulta",
+                                "Explica oralmente cada passo"
+                              ],
+                              "assessmentCriteria": [
+                                "Rigor matemático",
+                                "Uso correto do axioma da completude"
+                              ],
+                              "crossCurricularConnections": [
+                                "MAT-01 Álgebra Linear",
+                                "Análise Real"
+                              ],
+                              "realWorldApplication": "Base para todos os teoremas de existência em cálculo"
+                            },
+                            "estimatedTime": "4-5 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+
+              {
+                "id": "10.1.2",
+                "name": "Limites e Continuidade",
+                "description": "Definição ε-δ, operações com limites, teoremas fundamentais",
+                "totalSkills": 72,
+                "atomicTopics": [
+                  {
+                    "id": "10.1.2.1",
+                    "name": "Definição Formal de Limite",
+                    "description": "Lim f(x) = L usando ε-δ",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.2.1.1",
+                        "name": "Provar limites usando definição ε-δ",
+                        "description": "Exemplos clássicos: lim (x→2) (3x-1) = 5, lim (x→0) x sen(1/x) = 0",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.2.1.1.1",
+                            "name": "Provar lim (x→a) (mx + b) = ma + b rigorosamente",
+                            "description": "Construir δ = ε / |m| (se m≠0)",
+                            "atomicExpansion": {},
+                            "estimatedTime": "3 horas",
+                            "difficulty": "beginner",
+                            "status": "not_started",
+                            "prerequisites": []
+                          },
+                          {
+                            "id": "10.1.2.1.1.2",
+                            "name": "Provar lim (x→0) x sen(1/x) = 0",
+                            "description": "Usar |x sen(1/x)| ≤ |x|",
+                            "atomicExpansion": {},
+                            "estimatedTime": "4 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": ["10.1.2.1.1.1"]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "10.1.2.2",
+                    "name": "Teorema do Valor Intermediário e Bolzano",
+                    "description": "Provas e aplicações",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.2.2.1",
+                        "name": "Provar e aplicar TVI",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.2.2.1.1",
+                            "name": "Provar existência de raiz de equação contínua",
+                            "description": "f(a)f(b)<0 ⇒ ∃c raiz",
+                            "estimatedTime": "5 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+
+              {
+                "id": "10.1.3",
+                "name": "Derivadas",
+                "description": "Definição, regras de derivação, teorema do valor médio, Taylor, L'Hôpital",
+                "totalSkills": 138,
+                "atomicTopics": [
+                  {
+                    "id": "10.1.3.1",
+                    "name": "Regra da Cadeia e Derivada da Inversa",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.3.1.1",
+                        "name": "Regra da Cadeia (prova e uso)",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.3.1.1.1",
+                            "name": "Derivar (sen(3x²+1))³",
+                            "description": "Aplicação tripla da regra da cadeia",
+                            "estimatedTime": "2 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": []
+                          },
+                          {
+                            "id": "10.1.3.1.1.2",
+                            "name": "Provar fórmula da derivada da função inversa",
+                            "description": "Se f invertível e f'(a)≠0 então (f⁻¹)'(b) = 1/f'(a)",
+                            "estimatedTime": "6 horas",
+                            "difficulty": "advanced",
+                            "status": "not_started",
+                            "prerequisites": ["10.1.2.1.1.1"]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "10.1.3.2",
+                    "name": "Teorema do Valor Médio e consequências",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.3.2.1",
+                        "name": "Provar e aplicar Rolle e TVM",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.3.2.1.1",
+                            "name": "Provar que |sen x| ≤ |x| para todo x",
+                            "description": "Usando TVM em [-x,x]",
+                            "estimatedTime": "4 horas",
+                            "difficulty": "advanced",
+                            "status": "not_started",
+                            "prerequisites": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "10.1.3.3",
+                    "name": "Fórmula de Taylor com resto de Lagrange",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.3.3.1",
+                        "name": "Expandir funções em série de Taylor",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.3.3.1.1",
+                            "name": "Taylor de eˣ, sen x, cos x até ordem 7",
+                            "estimatedTime": "8 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": []
+                          },
+                          {
+                            "id": "10.1.3.3.1.2",
+                            "name": "Estimar erro com resto de Lagrange",
+                            "description": "Ex: erro ao aproximar e por polinômio de grau 5 em [-1,1]",
+                            "estimatedTime": "6 horas",
+                            "difficulty": "advanced",
+                            "status": "not_started",
+                            "prerequisites": ["10.1.3.2.1.1"]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "10.1.3.4",
+                    "name": "Regras de L'Hôpital (todas as versões)",
+                    "specificSkills": [
+                      {
+                        "id": "10.1.3.4.1.1",
+                        "name": "Resolver 0/0 e ∞/∞ (até 4 aplicações seguidas)",
+                        "estimatedTime": "7 horas",
+                        "difficulty": "intermediate",
+                        "status": "not_started",
+                        "prerequisites": []
+                      },
+                      {
+                        "id": "10.1.3.4.1.2",
+                        "name": "Provar L'Hôpital usando TVM",
+                        "estimatedTime": "9 horas",
+                        "difficulty": "advanced",
+                        "status": "not_started",
+                        "prerequisites": ["10.1.3.2.1.1"]
+                      }
+                    ]
+                  }
+                ]
+              },
+
+              {
+                "id": "10.1.4",
+                "name": "Integral de Riemann",
+                "description": "Definição, propriedades, Teorema Fundamental do Cálculo, técnicas de integração",
+                "totalSkills": 180,
+                "atomicTopics": [
+                  {
+                    "id": "10.1.4.1",
+                    "name": "Teorema Fundamental do Cálculo (ambas as partes)",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.4.1.1",
+                        "name": "Provar TFC I e II",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.4.1.1.1",
+                            "name": "Provar que se f contínua então F(x)=∫_a^x f(t)dt é derivável e F'=f",
+                            "estimatedTime": "10 horas",
+                            "difficulty": "advanced",
+                            "status": "not_started",
+                            "prerequisites": ["10.1.3.2.1.1"]
+                          },
+                          {
+                            "id": "10.1.4.1.1.2",
+                            "name": "Provar fórmula de Newton-Leibniz",
+                            "estimatedTime": "8 horas",
+                            "difficulty": "advanced",
+                            "status": "not_started",
+                            "prerequisites": ["10.1.4.1.1.1"]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "10.1.4.2",
+                    "name": "Técnicas de Integração",
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.4.2.1",
+                        "name": "Substituição, partes, frações parciais, trigonométricas",
+                        "specificSkills": [
+                          {
+                            "id": "10.1.4.2.1.1",
+                            "name": "Integrar √(ax²+bx+c) completando quadrado + substituição trigonométrica/hiperbólica",
+                            "estimatedTime": "12 horas",
+                            "difficulty": "advanced",
+                            "status": "not_started",
+                            "prerequisites": []
+                          },
+                          {
+                            "id": "10.1.4.2.1.2",
+                            "name": "Tabela de 50 integrais padrão sem consulta",
+                            "estimatedTime": "20 horas",
+                            "difficulty": "intermediate",
+                            "status": "not_started",
+                            "prerequisites": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "id": "10.1.4.3",
+                    "name": "Integrais Impróprias",
+                    "specificSkills": [
+                      {
+                        "id": "10.1.4.3.1.1",
+                        "name": "Convergência de ∫₁^∞ dx/x^p , ∫₀^¹ dx/x^p",
+                        "description": "Casos p>1 e p≤1",
+                        "estimatedTime": "6 horas",
+                        "difficulty": "intermediate",
+                        "status": "not_started",
+                        "prerequisites": []
+                      },
+                      {
+                        "id": "10.1.4.3.1.2",
+                        "name": "Teste da comparação e limite para integrais impróprias",
+                        "estimatedTime": "8 horas",
+                        "difficulty": "advanced",
+                        "status": "not_started",
+                        "prerequisites": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "infographics": null,
+    "settings": null
+  }
+}
