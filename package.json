@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "ITA RP Game - Reimplementação moderna com Phaser 3 + React",
   "private": true,
+  "type": "module",
   "workspaces": [
     "packages/*",
     "apps/*"
