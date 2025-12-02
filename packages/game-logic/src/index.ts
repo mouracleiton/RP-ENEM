@@ -78,3 +78,35 @@ export {
   saveSoundSettings,
   useSoundEffects,
 } from './sound-effects';
+
+// Quiz generator
+export {
+  generateQuestionsFromSkill,
+  generateDisciplineQuiz,
+  calculateQuizResult,
+  getReviewQuestions,
+  type QuizQuestion,
+  type QuizConfig,
+  type QuizResult,
+} from './quiz-generator';
+
+// Spaced repetition system
+export {
+  initializeSkillReview,
+  calculateNextReview,
+  getStudySchedule,
+  getDailyStudyList,
+  estimateRetention,
+  getSkillMasteryLevel,
+  calculateOverallMastery,
+  getStudyStats,
+  quizScoreToPerformance,
+  exportReviewData,
+  importReviewData,
+  type SkillReviewData,
+  type ReviewSession,
+  type StudySchedule,
+} from './spaced-repetition';
+
+// Spaced repetition hook
+export { useSpacedRepetition } from './useSpacedRepetition';
