@@ -36,15 +36,26 @@ describe('CurriculumService', () => {
         },
       };
 
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: () => Promise.resolve(mockCurriculumData),
+      // Only return mock data for the first file (MAT-13), return 404 for all others
+      (global.fetch as any).mockImplementation((url: string) => {
+        if (url.includes('MAT-13')) {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockCurriculumData),
+          });
+        }
+        return Promise.resolve({
+          ok: false,
+          statusText: 'Not Found',
+        });
       });
 
       await service.loadCurriculum();
-      const result = await service.loadDiscipline('disc1');
+      // IDs are prefixed with the discipline code
+      const result = await service.loadDiscipline('MAT-13.disc1');
 
-      expect(result).toEqual(mockDiscipline);
+      expect(result.name).toEqual(mockDiscipline.name);
+      expect(result.id).toEqual('MAT-13.disc1');
     });
 
     it('should throw error for non-existent discipline', async () => {
@@ -113,15 +124,26 @@ describe('CurriculumService', () => {
         },
       };
 
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: () => Promise.resolve(mockCurriculumData),
+      // Only return mock data for the first file (MAT-13), return 404 for all others
+      (global.fetch as any).mockImplementation((url: string) => {
+        if (url.includes('MAT-13')) {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockCurriculumData),
+          });
+        }
+        return Promise.resolve({
+          ok: false,
+          statusText: 'Not Found',
+        });
       });
 
       await service.loadCurriculum();
-      const result = await service.loadSkill('skill1');
+      // IDs are prefixed with the discipline code
+      const result = await service.loadSkill('MAT-13.skill1');
 
-      expect(result).toEqual(mockSkill);
+      expect(result.name).toEqual(mockSkill.name);
+      expect(result.id).toEqual('MAT-13.skill1');
     });
 
     it('should throw error for non-existent skill', async () => {
@@ -418,9 +440,19 @@ describe('CurriculumService', () => {
         },
       };
 
-      (global.fetch as any).mockResolvedValue({
-        ok: true,
-        json: () => Promise.resolve(mockCurriculumData),
+      // Only return mock data for the first file (MAT-13), return 404 for all others
+      // This simulates having only one curriculum file loaded
+      (global.fetch as any).mockImplementation((url: string) => {
+        if (url.includes('MAT-13')) {
+          return Promise.resolve({
+            ok: true,
+            json: () => Promise.resolve(mockCurriculumData),
+          });
+        }
+        return Promise.resolve({
+          ok: false,
+          statusText: 'Not Found',
+        });
       });
 
       await service.loadCurriculum();
@@ -430,25 +462,25 @@ describe('CurriculumService', () => {
       const disciplines = service.getAllDisciplines();
 
       expect(disciplines).toHaveLength(1);
-      expect(disciplines[0].id).toBe('disc1');
+      expect(disciplines[0].id).toBe('MAT-13.disc1');
     });
 
     it('should get all skills', () => {
       const skills = service.getAllSkills();
 
       expect(skills).toHaveLength(2);
-      expect(skills.map(s => s.id)).toEqual(['skill1', 'skill2']);
+      expect(skills.map(s => s.id)).toEqual(['MAT-13.skill1', 'MAT-13.skill2']);
     });
 
     it('should search skills by query', () => {
       const skills = service.searchSkills('One');
 
       expect(skills).toHaveLength(1);
-      expect(skills[0].id).toBe('skill1');
+      expect(skills[0].id).toBe('MAT-13.skill1');
     });
 
     it('should get skills by discipline', () => {
-      const skills = service.getSkillsByDiscipline('disc1');
+      const skills = service.getSkillsByDiscipline('MAT-13.disc1');
 
       expect(skills).toHaveLength(2);
     });
@@ -459,25 +491,25 @@ describe('CurriculumService', () => {
       expect(skills).toHaveLength(0);
     });
 
-    it('should search skills by query', () => {
+    it('should search skills by query (duplicate)', () => {
       const skills = service.searchSkills('One');
 
       expect(skills).toHaveLength(1);
-      expect(skills[0].id).toBe('skill1');
+      expect(skills[0].id).toBe('MAT-13.skill1');
     });
 
     it('should search skills case insensitively', () => {
       const skills = service.searchSkills('ONE');
 
       expect(skills).toHaveLength(1);
-      expect(skills[0].id).toBe('skill1');
+      expect(skills[0].id).toBe('MAT-13.skill1');
     });
 
     it('should search skills by description', () => {
       const skills = service.searchSkills('First');
 
       expect(skills).toHaveLength(1);
-      expect(skills[0].id).toBe('skill1');
+      expect(skills[0].id).toBe('MAT-13.skill1');
     });
 
     it('should return empty array when no skills match query', () => {
@@ -507,16 +539,16 @@ describe('CurriculumService', () => {
       const formatted = service.getFormattedDisciplines();
 
       expect(formatted).toHaveLength(1);
-      expect(formatted[0]).toHaveProperty('id', 'disc1');
+      expect(formatted[0]).toHaveProperty('id', 'MAT-13.disc1');
       expect(formatted[0]).toHaveProperty('icon');
       expect(formatted[0]).toHaveProperty('color');
     });
 
     it('should get formatted skills for discipline', () => {
-      const formatted = service.getFormattedSkillsForDiscipline('disc1');
+      const formatted = service.getFormattedSkillsForDiscipline('MAT-13.disc1');
 
       expect(formatted).toHaveLength(2);
-      expect(formatted[0]).toHaveProperty('id', 'skill1');
+      expect(formatted[0]).toHaveProperty('id', 'MAT-13.skill1');
       expect(formatted[0]).toHaveProperty('difficulty');
     });
 
