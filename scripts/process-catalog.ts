@@ -28,9 +28,10 @@ const scriptDir = getScriptDir();
 
 // Configuração
 const PDF_PATH = path.join(scriptDir, '..', 'Catálogo dos Cursos de Graduação 2025 - digital Rev.25.07.18-páginas (1).pdf');
-const OUTPUT_DIR = path.join(scriptDir, '..');
+const OUTPUT_DIR = path.join(scriptDir, '..', 'packages', 'curriculum');
 const ATOMIC_EXPAND_PROMPT_PATH = path.join(scriptDir, '..', 'ATOMIC_EXPAND_PROMPT.md');
-const SCHEMA_EXAMPLE_PATH = path.join(scriptDir, '..', 'MAT-13 - Cálculo Diferencial e Integral I.json');
+const SCHEMA_EXAMPLE_PATH = path.join(scriptDir, '..', 'schema.json');
+const VALIDATION_SCHEMA_PATH = '/mnt/d/GITHUB/schema.json';
 const CHECKPOINT_FILE = path.join(OUTPUT_DIR, '.process-catalog-checkpoint.json');
 const MAX_CONCURRENT_REQUESTS = parseInt(process.env.MAX_CONCURRENT_REQUESTS || '10', 10);
 
@@ -133,10 +134,17 @@ interface Checkpoint {
   totalDisciplines: number;
 }
 
+interface ValidationResult {
+  valid: boolean;
+  errors: string[];
+  missingFields: string[];
+}
+
 class CatalogProcessor {
   private openai: OpenAI;
   private atomicExpandPrompt: string = '';
   private schemaExample: CurriculumJSON | null = null;
+  private validationSchema: any = null;
   private model: string;
   private supportsJsonMode: boolean;
   private maxRetries: number;
@@ -225,31 +233,44 @@ class CatalogProcessor {
     if (this.checkpoint?.processedDisciplines.includes(disciplineCode)) {
       return true;
     }
-    
+
     // Verifica se o arquivo existe
-    const filename = `${disciplineCode} - *.json`;
     try {
       const files = await fs.readdir(OUTPUT_DIR);
-      const matchingFile = files.find(f => f.startsWith(`${disciplineCode} - `) && f.endsWith('.json'));
+      const matchingFile = files.find((f: string) => f.startsWith(`${disciplineCode} - `) && f.endsWith('.json'));
       if (matchingFile) {
-        // Verifica se o arquivo tem conteúdo válido
-        try {
-          const filepath = path.join(OUTPUT_DIR, matchingFile);
-          const content = await fs.readFile(filepath, 'utf-8');
-          const json = JSON.parse(content);
-          // Verifica se tem estrutura básica válida
-          if (json.curriculumData && json.curriculumData.areas && json.curriculumData.areas.length > 0) {
+        const filepath = path.join(OUTPUT_DIR, matchingFile);
+
+        // Valida contra o schema
+        const { valid, curriculum, missingFields } = await this.validateExistingJSON(filepath);
+
+        if (valid && curriculum) {
+          return true;
+        }
+
+        // Se inválido mas tem curriculum, tenta preencher com IA
+        if (!valid && curriculum && missingFields.length > 0) {
+          console.log(`🔧 Tentando preencher campos faltantes em ${matchingFile}...`);
+          const filledCurriculum = await this.fillMissingFieldsWithAI(curriculum, missingFields);
+
+          // Salva o curriculum atualizado
+          await fs.writeFile(filepath, JSON.stringify(filledCurriculum, null, 2), 'utf-8');
+          console.log(`✅ Campos preenchidos e arquivo atualizado: ${matchingFile}`);
+
+          // Re-valida após preenchimento
+          const revalidation = await this.validateExistingJSON(filepath);
+          if (revalidation.valid) {
             return true;
           }
-        } catch (e) {
-          // Arquivo corrompido, não considerar como processado
-          return false;
         }
+
+        // Se ainda inválido após AI fill, considera não processado para reprocessamento
+        return false;
       }
     } catch (error) {
       // Erro ao ler diretório, assume que não está processado
     }
-    
+
     return false;
   }
 
@@ -290,6 +311,244 @@ class CatalogProcessor {
       console.warn('Não foi possível carregar o schema de exemplo.');
       throw error;
     }
+  }
+
+  async loadValidationSchema(): Promise<any> {
+    try {
+      const schemaContent = await fs.readFile(VALIDATION_SCHEMA_PATH, 'utf-8');
+      this.validationSchema = JSON.parse(schemaContent);
+      console.log('✅ Schema de validação carregado');
+      return this.validationSchema;
+    } catch (error) {
+      console.warn('⚠️ Não foi possível carregar o schema de validação:', VALIDATION_SCHEMA_PATH);
+      return null;
+    }
+  }
+
+  validateAgainstSchema(data: any, schema: any, path: string = ''): ValidationResult {
+    const errors: string[] = [];
+    const missingFields: string[] = [];
+
+    if (!schema || !data) {
+      return { valid: true, errors: [], missingFields: [] };
+    }
+
+    // Verifica campos obrigatórios do schema
+    if (schema.required && Array.isArray(schema.required)) {
+      for (const field of schema.required) {
+        if (data[field] === undefined || data[field] === null) {
+          missingFields.push(`${path}.${field}`.replace(/^\./, ''));
+          errors.push(`Campo obrigatório ausente: ${path}.${field}`.replace(/^\./, ''));
+        }
+      }
+    }
+
+    // Verifica propriedades definidas no schema
+    if (schema.properties) {
+      for (const [key, propSchema] of Object.entries(schema.properties)) {
+        const propPath = path ? `${path}.${key}` : key;
+
+        if (data[key] !== undefined) {
+          const propSchemaTyped = propSchema as any;
+
+          // Validação recursiva para objetos
+          if (propSchemaTyped.type === 'object' && typeof data[key] === 'object' && !Array.isArray(data[key])) {
+            const nestedResult = this.validateAgainstSchema(data[key], propSchemaTyped, propPath);
+            errors.push(...nestedResult.errors);
+            missingFields.push(...nestedResult.missingFields);
+          }
+
+          // Validação para arrays
+          if (propSchemaTyped.type === 'array' && Array.isArray(data[key])) {
+            if (propSchemaTyped.items) {
+              data[key].forEach((item: any, index: number) => {
+                if (typeof item === 'object') {
+                  const itemResult = this.validateAgainstSchema(item, propSchemaTyped.items, `${propPath}[${index}]`);
+                  errors.push(...itemResult.errors);
+                  missingFields.push(...itemResult.missingFields);
+                }
+              });
+            }
+          }
+        }
+      }
+    }
+
+    return {
+      valid: errors.length === 0,
+      errors,
+      missingFields
+    };
+  }
+
+  async validateExistingJSON(filepath: string): Promise<{ valid: boolean; curriculum: CurriculumJSON | null; missingFields: string[] }> {
+    try {
+      const content = await fs.readFile(filepath, 'utf-8');
+      const curriculum = JSON.parse(content) as CurriculumJSON;
+
+      if (!this.validationSchema) {
+        await this.loadValidationSchema();
+      }
+
+      if (!this.validationSchema) {
+        console.log(`⚠️ Schema de validação não disponível, considerando JSON válido`);
+        return { valid: true, curriculum, missingFields: [] };
+      }
+
+      const validationResult = this.validateAgainstSchema(curriculum, this.validationSchema);
+
+      if (validationResult.valid) {
+        console.log(`✅ JSON válido: ${path.basename(filepath)}`);
+        return { valid: true, curriculum, missingFields: [] };
+      } else {
+        console.log(`⚠️ JSON inválido: ${path.basename(filepath)}`);
+        console.log(`   Campos faltando: ${validationResult.missingFields.length}`);
+        if (this.debug) {
+          validationResult.missingFields.slice(0, 10).forEach(field => {
+            console.log(`   - ${field}`);
+          });
+          if (validationResult.missingFields.length > 10) {
+            console.log(`   ... e mais ${validationResult.missingFields.length - 10} campos`);
+          }
+        }
+        return { valid: false, curriculum, missingFields: validationResult.missingFields };
+      }
+    } catch (error: any) {
+      console.error(`❌ Erro ao validar JSON: ${error.message}`);
+      return { valid: false, curriculum: null, missingFields: [] };
+    }
+  }
+
+  async fillMissingFieldsWithAI(curriculum: CurriculumJSON, missingFields: string[]): Promise<CurriculumJSON> {
+    console.log(`🤖 Usando IA para preencher ${missingFields.length} campos faltantes...`);
+
+    // Agrupa campos por contexto para processamento mais eficiente
+    const fieldsByPath: Map<string, string[]> = new Map();
+
+    for (const field of missingFields) {
+      const parts = field.split('.');
+      const parentPath = parts.slice(0, -1).join('.');
+      const fieldName = parts[parts.length - 1];
+
+      if (!fieldsByPath.has(parentPath)) {
+        fieldsByPath.set(parentPath, []);
+      }
+      fieldsByPath.get(parentPath)!.push(fieldName);
+    }
+
+    // Processa cada grupo de campos faltantes
+    for (const [parentPath, fields] of fieldsByPath) {
+      try {
+        const parentObject = this.getNestedValue(curriculum, parentPath);
+        if (!parentObject) continue;
+
+        const filledFields = await this.generateMissingFields(parentObject, fields, parentPath, curriculum);
+
+        // Aplica os campos preenchidos
+        for (const [fieldName, value] of Object.entries(filledFields)) {
+          this.setNestedValue(curriculum, `${parentPath}.${fieldName}`, value);
+        }
+      } catch (error: any) {
+        console.warn(`⚠️ Erro ao preencher campos em ${parentPath}: ${error.message}`);
+      }
+    }
+
+    return curriculum;
+  }
+
+  getNestedValue(obj: any, path: string): any {
+    if (!path) return obj;
+
+    const parts = path.split(/\.|\[|\]/).filter(p => p !== '');
+    let current = obj;
+
+    for (const part of parts) {
+      if (current === undefined || current === null) return undefined;
+      current = current[part];
+    }
+
+    return current;
+  }
+
+  setNestedValue(obj: any, path: string, value: any): void {
+    const parts = path.split(/\.|\[|\]/).filter(p => p !== '');
+    let current = obj;
+
+    for (let i = 0; i < parts.length - 1; i++) {
+      const part = parts[i];
+      if (current[part] === undefined) {
+        current[part] = isNaN(Number(parts[i + 1])) ? {} : [];
+      }
+      current = current[part];
+    }
+
+    current[parts[parts.length - 1]] = value;
+  }
+
+  async generateMissingFields(
+    context: any,
+    missingFields: string[],
+    contextPath: string,
+    fullCurriculum: CurriculumJSON
+  ): Promise<Record<string, any>> {
+    const contextDescription = this.getContextDescription(contextPath, fullCurriculum);
+
+    const prompt = `Você é um especialista em currículos educacionais.
+
+Contexto: ${contextDescription}
+
+Objeto atual (parcial):
+${JSON.stringify(context, null, 2)}
+
+Campos que precisam ser preenchidos: ${missingFields.join(', ')}
+
+Com base no contexto e no objeto atual, gere valores apropriados para os campos faltantes.
+Use o schema de currículo educacional do ITA como referência.
+
+Retorne APENAS um JSON com os campos preenchidos, sem explicações:
+{
+  ${missingFields.map(f => `"${f}": <valor_apropriado>`).join(',\n  ')}
+}`;
+
+    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em estruturar conteúdo educacional.');
+
+    try {
+      return JSON.parse(response);
+    } catch (error) {
+      console.warn(`⚠️ Erro ao parsear resposta da IA`);
+      return {};
+    }
+  }
+
+  getContextDescription(path: string, curriculum: CurriculumJSON): string {
+    const parts = path.split('.');
+    let description = `Currículo: ${curriculum.curriculumData.metadata.basedOn || 'ITA'}`;
+
+    if (parts.includes('areas')) {
+      const areaIndex = parseInt(parts[parts.indexOf('areas') + 1]?.replace(/[\[\]]/g, '') || '0');
+      const area = curriculum.curriculumData.areas[areaIndex];
+      if (area) {
+        description += ` > Área: ${area.name}`;
+      }
+    }
+
+    if (parts.includes('disciplines')) {
+      description += ` > Disciplina`;
+    }
+
+    if (parts.includes('mainTopics')) {
+      description += ` > Tópico Principal`;
+    }
+
+    if (parts.includes('atomicTopics')) {
+      description += ` > Tópico Atômico`;
+    }
+
+    if (parts.includes('specificSkills')) {
+      description += ` > Habilidade Específica`;
+    }
+
+    return description;
   }
 
   getDefaultPrompt(): string {
@@ -1193,6 +1452,14 @@ Formato esperado:
 
     const overallStartTime = Date.now();
 
+    // Garante que o diretório de saída existe
+    try {
+      await fs.mkdir(OUTPUT_DIR, { recursive: true });
+      console.log(`📁 Diretório de saída: ${OUTPUT_DIR}`);
+    } catch (error) {
+      // Diretório já existe, ok
+    }
+
     // Carrega checkpoint
     await this.loadCheckpoint();
 
@@ -1202,10 +1469,12 @@ Formato esperado:
     
     await this.loadPrompt();
     await this.loadSchemaExample();
+    await this.loadValidationSchema();
 
     if (this.debug) {
       console.log(`🔍 [DEBUG] Prompt carregado: ${this.atomicExpandPrompt.length} caracteres`);
       console.log(`🔍 [DEBUG] Schema exemplo carregado`);
+      console.log(`🔍 [DEBUG] Schema de validação carregado: ${this.validationSchema ? 'sim' : 'não'}`);
     }
 
     const pdfText = await this.extractTextFromPDF(PDF_PATH);

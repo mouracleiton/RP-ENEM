@@ -23,25 +23,40 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       // Load all JSON files from the public/curriculum directory
       // Note: Filenames must match exactly what's in apps/web-app/public/curriculum/
       const curriculumFiles = [
-        // Matemática
-        'MAT-13 - Cálculo Diferencial e Integral I.json',
-        // Estatística (ED = Estatística e Decisão)
+        // Estatística e Decisão (ED)
         'ED-13 - 13 - Probabilidade e Estatística.json',
-        'ED-16 - 16 - Análise  de  Regressão  (Nota  6).json',  // double spaces in original
+        'ED-16 - 16 - Análise  de  Regressão  (Nota  6).json',
         'ED-17 - 17 - Análise de Séries Temporais (Nota 6).json',
         'ED-18 - 18 - Estatística Aplicada a Experimentos (Nota 6).json',
-        'ED-19 - 19 - Métodos  de Análise  em  Negócios  (Nota 6).json',  // double spaces in original
+        'ED-19 - 19 - Métodos  de Análise  em  Negócios  (Nota 6).json',
+        'ED-20 - 20 - Análise preditiva de dados em negócios.json',
+        'ED-25 - 25 - Tópicos  em  Marketing  Analítico  (Nota  6).json',
+        'ED-26 - 26 - Pesquisa  Operacional.json',
+        'ED-45 - 45 - Gestão de Operações.json',
+        'ED-51 - 51 - Fundamentos em Inovação, Empreendedorismo, Desenvolvimento de Produtos e Serviços.json',
+        'ED-53 - 53 - Gestão  Estratégica  da  Inovação  Tecnológica.json',
+        'ED-61 - 61 - Administração em  Engenharia.json',
+        'ED-62 - 62 - Pensamento  Estratégico.json',
+        'ED-63 - 63 - Pensamento Sistêmico.json',
+        'ED-64 - 64 - Criação de Negócios Tecnológicos.json',
+        'ED-74 - 74 - Desenvolvimento Econômico.json',
         // Física (IS = Instituto de Ciências)
-        'IS-15 - 15 - Mecânica  I.json',  // double spaces in original
+        'IS-15 - 15 - Mecânica  I.json',
         'IS-16 - 16 - Física Experimental I (Nota 4).json',
         'IS-27 - 27 - Mecânica II.json',
-        'IS-28 - 28 - Física  Experimental  II (Nota  4).json',  // double spaces in original
+        'IS-28 - 28 - Física  Experimental  II (Nota  4).json',
         'IS-32 - 32 - Eletricidade e Magnetismo.json',
-        'IS-46 - 46 - Ondas  e  Física  Moderna.json',  // double spaces in original
+        'IS-46 - 46 - Ondas  e  Física  Moderna.json',
         'IS-50 - 50 - Introdução à Física Moderna.json',
-        'IS-55 - 55 - Detecção  de  Ondas  Gravitacionais.json',  // double spaces in original
+        'IS-55 - 55 - Detecção  de  Ondas  Gravitacionais.json',
         'IS-71 - 71 - Fundamentos de Gases Ionizados.json',
         'IS-80 - 80 - Fundamentos de Anatomia e Fisiologia Humanas para Engenheiros.json',
+        // Humanidades (UM)
+        'UM-01 - 01 - Epistemologia  e  Filosofia  da  Ciência.json',
+        'UM-02 - 02 - Ética.json',
+        'UM-04 - 04 - Filosofia e Ficção Científica.json',
+        'UM-05 - 05 - Filosofia da história.json',
+        'UM-06 - 06 - Filosofia  política  clássica.json',
       ];
 
       const areas: any[] = [];
@@ -373,6 +388,7 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       'QUI': '🧪',
       'ED': '📊',
       'IS': '🔭',
+      'UM': '📖',
     };
 
     const colorMap: Record<string, string> = {
@@ -385,6 +401,7 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       'QUI': '#f472b6',
       'ED': '#06b6d4',
       'IS': '#8b5cf6',
+      'UM': '#ec4899',
     };
 
     return disciplines.map(disc => {
