@@ -8,8 +8,8 @@ import {
   Modal,
   Quiz,
 } from '@ita-rp/ui-components';
-import { XPSystem } from '@ita-rp/game-logic';
-import type { LearningStep } from '@ita-rp/shared-types';
+import { XPSystem, generateQuestionsFromSkill, useSpacedRepetition } from '@ita-rp/game-logic';
+import type { LearningStep, SpecificSkill } from '@ita-rp/shared-types';
 
 type StudyPhase = 'learning' | 'quiz' | 'complete';
 
@@ -48,6 +48,19 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
   const [studyPhase, setStudyPhase] = useState<StudyPhase>('learning');
   const [quizScore, setQuizScore] = useState(0);
   const [quizTotal, setQuizTotal] = useState(0);
+  const [showPracticalExample, setShowPracticalExample] = useState(false);
+
+  // Spaced repetition integration
+  const { recordQuizResult, startSkill, getRetention, getMasteryLevel } = useSpacedRepetition([skillId]);
+
+  // Start tracking this skill
+  useEffect(() => {
+    startSkill(skillId);
+  }, [skillId, startSkill]);
+
+  // Get current retention and mastery info
+  const retention = getRetention(skillId);
+  const masteryLevel = getMasteryLevel(skillId);
 
   // Timer effect
   useEffect(() => {
@@ -125,9 +138,32 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
   const totalSteps = studySteps.length;
   const progress = (completedSteps.length / totalSteps) * 100;
 
-  // Generate quiz questions from the learning steps
+  // Build skill object for quiz generation
+  const skillForQuiz: SpecificSkill = useMemo(() => ({
+    id: skillId,
+    name: skillName,
+    description: skillDescription,
+    difficulty,
+    estimatedTime,
+    status: 'in_progress' as const,
+    prerequisites: [],
+    atomicExpansion: {
+      steps: studySteps,
+      practicalExample,
+      finalVerifications: [],
+      assessmentCriteria: [],
+      crossCurricularConnections: [],
+      realWorldApplication: '',
+    },
+  }), [skillId, skillName, skillDescription, difficulty, estimatedTime, studySteps, practicalExample]);
+
+  // Generate quiz questions using the new generator + learning steps
   const quizQuestions = useMemo(() => {
-    const questions: Array<{
+    // Get dynamically generated questions from quiz-generator
+    const generatedQuestions = generateQuestionsFromSkill(skillForQuiz);
+
+    // Also create questions from the learning steps
+    const stepQuestions: Array<{
       id: string;
       question: string;
       options: string[];
@@ -138,7 +174,7 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
     studySteps.forEach((step, index) => {
       // Create a question from the verification
       if (step.verification) {
-        questions.push({
+        stepQuestions.push({
           id: `q-verify-${index}`,
           question: step.verification.endsWith('?') ? step.verification : `${step.verification}?`,
           options: [
@@ -154,7 +190,7 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
 
       // Create a question about common mistakes
       if (step.commonMistakes && step.commonMistakes.length > 0) {
-        questions.push({
+        stepQuestions.push({
           id: `q-mistake-${index}`,
           question: `Qual destes é um erro comum ao estudar "${step.title}"?`,
           options: [
@@ -169,9 +205,21 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
       }
     });
 
-    // Limit to 5 questions max
-    return questions.slice(0, 5);
-  }, [studySteps]);
+    // Combine generated and step questions, prioritize generated
+    const allQuestions = [
+      ...generatedQuestions.map(q => ({
+        id: q.id,
+        question: q.question,
+        options: q.options,
+        correctIndex: q.correctIndex,
+        explanation: q.explanation,
+      })),
+      ...stepQuestions,
+    ];
+
+    // Shuffle and limit to 5 questions max
+    return allQuestions.sort(() => Math.random() - 0.5).slice(0, 5);
+  }, [skillForQuiz, studySteps]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -216,6 +264,10 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
     setQuizTotal(total);
     setStudyPhase('complete');
     setShowCompleteModal(true);
+
+    // Record the quiz result in spaced repetition system
+    const quizPerformance = total > 0 ? (score / total) * 100 : 0;
+    recordQuizResult(skillId, quizPerformance);
   };
 
   const handleSkipQuiz = () => {
@@ -298,6 +350,43 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          {/* Mastery Level */}
+          {masteryLevel && (
+            <div style={{ textAlign: 'center' }}>
+              <Text variant="heading" size="xl" color={
+                masteryLevel === 'mastered' ? currentTheme.colors.success :
+                masteryLevel === 'reviewing' ? currentTheme.colors.primary :
+                masteryLevel === 'learning' ? currentTheme.colors.warning :
+                currentTheme.colors.textSecondary
+              }>
+                {masteryLevel === 'mastered' ? '🏆' :
+                 masteryLevel === 'reviewing' ? '⭐' :
+                 masteryLevel === 'learning' ? '📚' : '🆕'}
+              </Text>
+              <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                {masteryLevel === 'mastered' ? 'Dominado' :
+                 masteryLevel === 'reviewing' ? 'Revisando' :
+                 masteryLevel === 'learning' ? 'Aprendendo' : 'Novo'}
+              </Text>
+            </div>
+          )}
+
+          {/* Retention */}
+          {retention > 0 && (
+            <div style={{ textAlign: 'center' }}>
+              <Text variant="heading" size="xl" color={
+                retention >= 80 ? currentTheme.colors.success :
+                retention >= 50 ? currentTheme.colors.warning :
+                currentTheme.colors.error
+              }>
+                {Math.round(retention)}%
+              </Text>
+              <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                Retenção
+              </Text>
+            </div>
+          )}
+
           {/* Timer */}
           <div style={{ textAlign: 'center' }}>
             <Text variant="heading" size="xl" color={currentTheme.colors.primary}>
@@ -578,6 +667,34 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
               ))}
             </ul>
           </Card>
+
+          {/* Practical Example Toggle */}
+          {practicalExample && (
+            <Card title="🔬 Exemplo Prático">
+              <Button
+                variant={showPracticalExample ? 'secondary' : 'primary'}
+                size="small"
+                onClick={() => setShowPracticalExample(!showPracticalExample)}
+                style={{ width: '100%', marginBottom: showPracticalExample ? '12px' : 0 }}
+              >
+                {showPracticalExample ? 'Ocultar Exemplo' : 'Ver Exemplo Prático'}
+              </Button>
+              {showPracticalExample && (
+                <div
+                  style={{
+                    padding: '12px',
+                    backgroundColor: currentTheme.colors.background,
+                    borderRadius: '8px',
+                    marginTop: '8px',
+                  }}
+                >
+                  <Text variant="body" color={currentTheme.colors.text} style={{ whiteSpace: 'pre-wrap' }}>
+                    {practicalExample}
+                  </Text>
+                </div>
+              )}
+            </Card>
+          )}
         </div>
       </div>
       </>
