@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';
 
 // Temas cyberpunk para o ITA RP Game
 export interface Theme {
@@ -153,20 +153,22 @@ export interface ThemeProviderProps {
   defaultTheme?: string;
 }
 
+// Memoize available themes since they never change
+const availableThemesArray = Object.values(cyberpunkThemes);
+
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   defaultTheme = 'neonBlue',
 }) => {
   const [currentThemeId, setCurrentThemeId] = React.useState(defaultTheme);
-  const availableThemes = Object.values(cyberpunkThemes);
   const currentTheme = cyberpunkThemes[currentThemeId] || cyberpunkThemes[defaultTheme];
 
-  const setTheme = (themeId: string) => {
+  const setTheme = useCallback((themeId: string) => {
     if (cyberpunkThemes[themeId]) {
       setCurrentThemeId(themeId);
       localStorage.setItem('ita-rp-theme', themeId);
     }
-  };
+  }, []);
 
   // Load theme from localStorage on mount
   React.useEffect(() => {
@@ -188,11 +190,11 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     });
   }, [currentTheme]);
 
-  const value: ThemeContextType = {
+  const value = useMemo<ThemeContextType>(() => ({
     currentTheme,
     setTheme,
-    availableThemes,
-  };
+    availableThemes: availableThemesArray,
+  }), [currentTheme, setTheme]);
 
   return (
     <ThemeContext.Provider value={value}>

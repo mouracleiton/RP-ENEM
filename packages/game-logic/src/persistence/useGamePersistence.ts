@@ -3,7 +3,7 @@
  * Provides automatic sync, manual save/load, and P2P features
  */
 
-import { useEffect, useCallback, useRef, useState } from 'react';
+import { useEffect, useCallback, useRef, useState, useMemo } from 'react';
 import { useGameStore } from '../store';
 import { useDecentralizedStorage } from './useDecentralizedStorage';
 
@@ -41,19 +41,17 @@ export function useGamePersistence(options: UseGamePersistenceOptions = {}) {
   const player = useGameStore(state => state.player);
   const updatePlayer = useGameStore(state => state.updatePlayer);
 
-  const storage = useDecentralizedStorage({
+  // Memoize storage options to prevent re-renders
+  const storageOptions = useMemo(() => ({
     autoInitialize: true,
     enableP2P,
-    onDataReceived: (key, data) => {
-      // Handle incoming data from P2P peers
-      if (key === `player_${player.id}` && data) {
-        handleRemotePlayerData(data);
-      }
-    },
-  });
+  }), [enableP2P]);
+
+  const storage = useDecentralizedStorage(storageOptions);
 
   const lastSavedRef = useRef<string>('');
   const syncTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const initializedRef = useRef(false);
 
   // Handle remote player data from P2P sync
   const handleRemotePlayerData = useCallback((remoteData: unknown) => {
@@ -155,24 +153,38 @@ export function useGamePersistence(options: UseGamePersistenceOptions = {}) {
     }
   }, [storage, player.id, updatePlayer]);
 
-  // Auto-sync effect
+  // Store refs for callbacks to avoid dependency issues
+  const loadFromStorageRef = useRef(loadFromStorage);
+  const saveToStorageRef = useRef(saveToStorage);
+
+  useEffect(() => {
+    loadFromStorageRef.current = loadFromStorage;
+    saveToStorageRef.current = saveToStorage;
+  }, [loadFromStorage, saveToStorage]);
+
+  // Auto-sync effect - use refs to avoid infinite loop
   useEffect(() => {
     if (!autoSync || !storage.initialized) return;
 
+    // Prevent double initialization in StrictMode
+    if (initializedRef.current) return;
+    initializedRef.current = true;
+
     // Initial load
-    loadFromStorage();
+    loadFromStorageRef.current();
 
     // Set up periodic sync
     syncTimeoutRef.current = setInterval(() => {
-      saveToStorage();
+      saveToStorageRef.current();
     }, syncInterval);
 
     return () => {
       if (syncTimeoutRef.current) {
         clearInterval(syncTimeoutRef.current);
       }
+      initializedRef.current = false;
     };
-  }, [autoSync, storage.initialized, syncInterval, loadFromStorage, saveToStorage]);
+  }, [autoSync, storage.initialized, syncInterval]);
 
   // Mark pending changes when player state changes
   useEffect(() => {

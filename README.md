@@ -29,6 +29,17 @@ ita-rp-game/
 └── docs/                    # Documentação
 ```
 
+### 📚 Documentação
+
+| Documento | Descrição |
+|-----------|-----------|
+| [Architecture](./docs/ARCHITECTURE.md) | Arquitetura do sistema e estrutura de pacotes |
+| [Components](./docs/COMPONENTS.md) | Referência da API de componentes UI |
+| [Store](./docs/STORE.md) | Guia de gerenciamento de estado com Zustand |
+| [Types](./docs/TYPES.md) | Definições de tipos TypeScript |
+| [Testing](./docs/TESTING.md) | Estratégia e exemplos de testes |
+| [Contributing](./docs/CONTRIBUTING.md) | Fluxo de trabalho para contribuição |
+
 ### Stack Tecnológica
 
 - **Frontend**: React 18 + TypeScript + Vite

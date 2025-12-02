@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { curriculumService } from './CurriculumService';
 import type { CurriculumData, Discipline, SpecificSkill } from '@ita-rp/shared-types';
 
@@ -71,7 +71,7 @@ export function useCurriculum(): UseCurriculumReturn {
     }
   }, []);
 
-  return {
+  return useMemo(() => ({
     curriculum,
     disciplines,
     isLoading,
@@ -82,5 +82,16 @@ export function useCurriculum(): UseCurriculumReturn {
     getFormattedSkills,
     searchSkills,
     getSkill,
-  };
+  }), [
+    curriculum,
+    disciplines,
+    isLoading,
+    error,
+    loadCurriculum,
+    getSkillsForDiscipline,
+    getFormattedDisciplines,
+    getFormattedSkills,
+    searchSkills,
+    getSkill,
+  ]);
 }

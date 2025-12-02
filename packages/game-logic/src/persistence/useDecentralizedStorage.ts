@@ -2,7 +2,7 @@
  * React hook for decentralized storage
  */
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { decentralizedStorage, DecentralizedStorageService } from './DecentralizedStorageService';
 
 interface UseDecentralizedStorageOptions {
@@ -221,7 +221,7 @@ export function useDecentralizedStorage(options: UseDecentralizedStorageOptions 
     };
   }, []);
 
-  return {
+  return useMemo(() => ({
     // State
     ...state,
 
@@ -254,5 +254,23 @@ export function useDecentralizedStorage(options: UseDecentralizedStorageOptions 
 
     // Stats
     getStats,
-  };
+  }), [
+    state,
+    initialize,
+    savePlayerData,
+    loadPlayerData,
+    saveStudySession,
+    getStudySessions,
+    exportData,
+    importData,
+    generateShareCode,
+    connectWithCode,
+    completeConnection,
+    createBackup,
+    restoreFromBackup,
+    listBackups,
+    uploadToIPFS,
+    fetchFromIPFS,
+    getStats,
+  ]);
 }

@@ -22,18 +22,39 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     try {
       // Load all JSON files from the public/curriculum directory
       const curriculumFiles = [
-        'CSI-22 - Programação Orientada a Objetos.json',
+        // Matemática
         'MAT-13 - Cálculo Diferencial e Integral I.json',
-        'CMC-14 - Lógica Matemática e Estruturas Discreta.json',
-        'CTC-55: Algoritmos Avançados.json',
-        'CTC-12 - Projeto e Análise de Algoritmos.json',
+        // Estatística
+        'ED-13 - 13 - Probabilidade e Estatística.json',
+        'ED-16 - 16 - Análise  de  Regressão  (Nota  6).json',
+        'ED-17 - 17 - Análise de Séries Temporais (Nota 6).json',
+        'ED-18 - 18 - Estatística Aplicada a Experimentos (Nota 6).json',
+        'ED-19 - 19 - Métodos  de Análise  em  Negócios  (Nota 6).json',
+        // Física
+        'IS-15 - 15 - Mecânica  I.json',
+        'IS-16 - 16 - Física Experimental I (Nota 4).json',
+        'IS-27 - 27 - Mecânica II.json',
+        'IS-28 - 28 - Física  Experimental  II (Nota  4).json',
+        'IS-32 - 32 - Eletricidade e Magnetismo.json',
+        'IS-46 - 46 - Ondas  e  Física  Moderna.json',
+        'IS-50 - 50 - Introdução à Física Moderna.json',
+        'IS-55 - 55 - Detecção  de  Ondas  Gravitacionais.json',
+        'IS-71 - 71 - Fundamentos de Gases Ionizados.json',
+        'IS-80 - 80 - Fundamentos de Anatomia e Fisiologia Humanas para Engenheiros.json',
       ];
 
       const areas: any[] = [];
 
       for (const filename of curriculumFiles) {
         try {
-          const response = await fetch(`/curriculum/${filename}`);
+          // Extract discipline code from filename (e.g., 'MAT-13', 'ED-13', 'IS-15')
+          const disciplineCode = filename.split(' ')[0];
+
+          // Use import.meta.env.BASE_URL to handle GitHub Pages deployment
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const meta = import.meta as any;
+          const baseUrl = meta?.env?.BASE_URL || '/';
+          const response = await fetch(`${baseUrl}curriculum/${filename}`);
           if (!response.ok) {
             console.warn(`Failed to load ${filename}: ${response.statusText}`);
             continue;
@@ -41,7 +62,9 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
 
           const data = await response.json();
           if (data.curriculumData && data.curriculumData.areas) {
-            areas.push(...data.curriculumData.areas);
+            // Prefix all IDs with discipline code to ensure uniqueness across files
+            const prefixedAreas = this.prefixIdsInAreas(data.curriculumData.areas, disciplineCode);
+            areas.push(...prefixedAreas);
           }
         } catch (error) {
           console.error(`Error loading ${filename}:`, error);
@@ -186,6 +209,45 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     return skill.prerequisites.every(prereq => completedSkills.includes(prereq));
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  private prefixIdsInAreas(areas: any[], disciplineCode: string): any[] {
+    return areas.map(area => ({
+      ...area,
+      id: `${disciplineCode}.${area.id}`,
+      disciplines: area.disciplines?.map((discipline: any) => ({
+        ...discipline,
+        id: `${disciplineCode}.${discipline.id}`,
+        mainTopics: discipline.mainTopics?.map((topic: any) => ({
+          ...topic,
+          id: `${disciplineCode}.${topic.id}`,
+          atomicTopics: topic.atomicTopics?.map((atomicTopic: any) => ({
+            ...atomicTopic,
+            id: `${disciplineCode}.${atomicTopic.id}`,
+            individualConcepts: atomicTopic.individualConcepts?.map((concept: any) => ({
+              ...concept,
+              id: `${disciplineCode}.${concept.id}`,
+              specificSkills: concept.specificSkills?.map((skill: any) => ({
+                ...skill,
+                id: `${disciplineCode}.${skill.id}`,
+                prerequisites: skill.prerequisites?.map((prereq: string) =>
+                  prereq ? `${disciplineCode}.${prereq}` : prereq
+                ) || [],
+              })),
+            })),
+            // Handle specificSkills directly under atomicTopic (alternative structure)
+            specificSkills: atomicTopic.specificSkills?.map((skill: any) => ({
+              ...skill,
+              id: `${disciplineCode}.${skill.id}`,
+              prerequisites: skill.prerequisites?.map((prereq: string) =>
+                prereq ? `${disciplineCode}.${prereq}` : prereq
+              ) || [],
+            })),
+          })),
+        })),
+      })),
+    }));
+  }
+
   private populateCaches(curriculumData: CurriculumData): void {
     // Clear existing caches
     this.disciplineCache.clear();
@@ -199,10 +261,17 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
         // Populate skill cache
         discipline.mainTopics?.forEach(topic => {
           topic.atomicTopics?.forEach(atomicTopic => {
+            // Handle skills under individualConcepts (primary structure)
             atomicTopic.individualConcepts?.forEach(concept => {
               concept.specificSkills?.forEach(skill => {
                 this.skillCache.set(skill.id, skill);
               });
+            });
+            // Handle skills directly under atomicTopic (alternative structure)
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const atomicTopicAny = atomicTopic as any;
+            atomicTopicAny.specificSkills?.forEach((skill: SpecificSkill) => {
+              this.skillCache.set(skill.id, skill);
             });
           });
         });
@@ -226,11 +295,18 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     const skills: SpecificSkill[] = [];
     discipline.mainTopics?.forEach(topic => {
       topic.atomicTopics?.forEach(atomicTopic => {
+        // Handle skills under individualConcepts (primary structure)
         atomicTopic.individualConcepts?.forEach(concept => {
           if (concept.specificSkills) {
             skills.push(...concept.specificSkills);
           }
         });
+        // Handle skills directly under atomicTopic (alternative structure)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const atomicTopicAny = atomicTopic as any;
+        if (atomicTopicAny.specificSkills) {
+          skills.push(...atomicTopicAny.specificSkills);
+        }
       });
     });
 
@@ -277,6 +353,8 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       'ELE': '⚡',
       'FIS': '🔬',
       'QUI': '🧪',
+      'ED': '📊',
+      'IS': '🔭',
     };
 
     const colorMap: Record<string, string> = {
@@ -287,6 +365,8 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       'ELE': '#fbbf24',
       'FIS': '#22c55e',
       'QUI': '#f472b6',
+      'ED': '#06b6d4',
+      'IS': '#8b5cf6',
     };
 
     return disciplines.map(disc => {
