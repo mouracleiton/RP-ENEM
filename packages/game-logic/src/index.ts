@@ -49,3 +49,32 @@ export {
   initializeNotifications,
   type NotificationSettings,
 } from './streak-notifications';
+
+// Data export/import
+export {
+  exportPlayerData,
+  downloadExport,
+  importPlayerData,
+  importFromFile,
+  useDataExport,
+  type ExportData,
+  type ImportResult,
+  type StudyHistoryEntry,
+} from './data-export';
+
+// Weekly activity
+export {
+  getWeeklyActivity,
+  getMonthlyActivity,
+  useWeeklyActivity,
+  type DayActivity,
+  type WeeklyActivityData,
+} from './weekly-activity';
+
+// Sound effects
+export {
+  playSound,
+  getSoundSettings,
+  saveSoundSettings,
+  useSoundEffects,
+} from './sound-effects';

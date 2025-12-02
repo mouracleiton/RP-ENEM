@@ -7,7 +7,7 @@ import {
   ProgressBar,
   RankBadge,
 } from '@ita-rp/ui-components';
-import { RankSystem, XPSystem, useStreakNotifications } from '@ita-rp/game-logic';
+import { RankSystem, XPSystem, useStreakNotifications, useWeeklyActivity } from '@ita-rp/game-logic';
 import type { Rank } from '@ita-rp/shared-types';
 
 interface ProfilePageProps {
@@ -109,16 +109,17 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
     };
   }, [xp, level, totalStudyTime, completedSkills, daysSinceJoin]);
 
-  // Simulated weekly activity (would come from real data)
+  // Real weekly activity from study history
+  const { currentWeek: weeklyActivityData, hasActivity } = useWeeklyActivity();
+
+  // Format for display (keeping backward compatibility with existing UI)
   const weeklyActivity = useMemo(() => {
-    const days = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-    const today = new Date().getDay();
-    return days.map((day, index) => ({
-      day,
-      active: index <= today && Math.random() > 0.3,
-      minutes: Math.floor(Math.random() * 60) + 10,
+    return weeklyActivityData.days.map((day) => ({
+      day: day.day,
+      active: day.active,
+      minutes: day.minutes,
     }));
-  }, []);
+  }, [weeklyActivityData]);
 
   const stats = [
     { label: 'Nível Atual', value: level.toString(), icon: '📈', color: '#4caf50' },
@@ -213,51 +214,72 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
       >
         {/* Weekly Activity */}
         <Card title="Atividade Semanal">
-          <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px' }}>
-            {weeklyActivity.map((day, index) => (
-              <div key={index} style={{ textAlign: 'center', flex: 1 }}>
-                <div
-                  style={{
-                    width: '100%',
-                    height: '60px',
-                    background: day.active
-                      ? `linear-gradient(to top, ${currentTheme.colors.primary}40, ${currentTheme.colors.primary})`
-                      : 'rgba(255, 255, 255, 0.1)',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    alignItems: 'flex-end',
-                    justifyContent: 'center',
-                    paddingBottom: '4px',
-                    marginBottom: '8px',
-                    position: 'relative',
-                    overflow: 'hidden',
-                  }}
-                >
-                  {day.active && (
+          {hasActivity ? (
+            <>
+              <div style={{ display: 'flex', justifyContent: 'space-between', gap: '8px' }}>
+                {weeklyActivity.map((day, index) => (
+                  <div key={index} style={{ textAlign: 'center', flex: 1 }}>
                     <div
                       style={{
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        height: `${Math.min(day.minutes * 1.5, 100)}%`,
-                        background: currentTheme.colors.primary,
+                        width: '100%',
+                        height: '60px',
+                        background: day.active
+                          ? `linear-gradient(to top, ${currentTheme.colors.primary}40, ${currentTheme.colors.primary})`
+                          : 'rgba(255, 255, 255, 0.1)',
                         borderRadius: '8px',
+                        display: 'flex',
+                        alignItems: 'flex-end',
+                        justifyContent: 'center',
+                        paddingBottom: '4px',
+                        marginBottom: '8px',
+                        position: 'relative',
+                        overflow: 'hidden',
                       }}
-                    />
-                  )}
-                  {day.active && (
-                    <span style={{ position: 'relative', fontSize: '10px', color: 'white' }}>
-                      {day.minutes}m
-                    </span>
-                  )}
-                </div>
+                    >
+                      {day.active && (
+                        <div
+                          style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            height: `${Math.min(day.minutes * 1.5, 100)}%`,
+                            background: currentTheme.colors.primary,
+                            borderRadius: '8px',
+                          }}
+                        />
+                      )}
+                      {day.active && (
+                        <span style={{ position: 'relative', fontSize: '10px', color: 'white' }}>
+                          {day.minutes}m
+                        </span>
+                      )}
+                    </div>
+                    <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                      {day.day}
+                    </Text>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: '12px', display: 'flex', justifyContent: 'space-between' }}>
                 <Text variant="caption" color={currentTheme.colors.textSecondary}>
-                  {day.day}
+                  {weeklyActivityData.activeDays} dias ativos
+                </Text>
+                <Text variant="caption" color={currentTheme.colors.primary}>
+                  {weeklyActivityData.totalMinutes} min total
                 </Text>
               </div>
-            ))}
-          </div>
+            </>
+          ) : (
+            <div style={{ textAlign: 'center', padding: '20px' }}>
+              <Text variant="body" color={currentTheme.colors.textSecondary}>
+                Nenhuma atividade registrada esta semana
+              </Text>
+              <Text variant="caption" color={currentTheme.colors.textSecondary} style={{ marginTop: '8px' }}>
+                Complete sessões de estudo para ver sua atividade aqui
+              </Text>
+            </div>
+          )}
         </Card>
 
         {/* Advanced Statistics */}

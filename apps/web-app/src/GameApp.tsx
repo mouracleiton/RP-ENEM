@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import {
   ThemeProvider,
   useTheme,
@@ -11,7 +11,7 @@ import {
   type NavItem,
   type CelebrationType,
 } from '@ita-rp/ui-components';
-import { useGameStore, useGamePersistence, dailyChallengeSystem } from '@ita-rp/game-logic';
+import { useGameStore, useGamePersistence, dailyChallengeSystem, useSoundEffects } from '@ita-rp/game-logic';
 import { useCurriculum } from '@ita-rp/curriculum';
 import type { LearningStep } from '@ita-rp/shared-types';
 
@@ -51,19 +51,39 @@ const GameAppContent: React.FC = () => {
   const { currentTheme, setTheme } = useTheme();
   const store = useGameStore();
   const { getSkill, getFormattedSkills } = useCurriculum();
+  const { sounds } = useSoundEffects();
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Initialize decentralized persistence
-  const persistence = useGamePersistence({
+  // Detect mobile screen for padding
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Stable callbacks for persistence
+  const onSyncComplete = useCallback(() => {
+    console.log('Data synced to decentralized storage');
+  }, []);
+
+  const onSyncError = useCallback((error: string) => {
+    console.error('Sync error:', error);
+  }, []);
+
+  // Memoize persistence options to prevent re-renders
+  const persistenceOptions = useMemo(() => ({
     autoSync: true,
     syncInterval: 30000,
     enableP2P: true,
-    onSyncComplete: () => {
-      console.log('Data synced to decentralized storage');
-    },
-    onSyncError: (error) => {
-      console.error('Sync error:', error);
-    },
-  });
+    onSyncComplete,
+    onSyncError,
+  }), [onSyncComplete, onSyncError]);
+
+  // Initialize decentralized persistence
+  const persistence = useGamePersistence(persistenceOptions);
 
   const [currentPage, setCurrentPage] = useState<PageType>('dashboard');
   const [notifications, setNotifications] = useState<any[]>([]);
@@ -105,13 +125,15 @@ const GameAppContent: React.FC = () => {
   const completedSkillIds = store.player.completedSkills;
   const totalStudyTime = store.player.totalStudyTime;
 
-  // Track previous values for detecting changes
-  const [prevLevel, setPrevLevel] = useState(level);
-  const [prevStreak, setPrevStreak] = useState(streak);
+  // Track previous values for detecting changes using refs to avoid re-renders
+  const prevLevelRef = React.useRef(level);
+  const prevStreakRef = React.useRef(streak);
 
   // Show celebration for level up
   useEffect(() => {
+    const prevLevel = prevLevelRef.current;
     if (level > prevLevel && prevLevel > 0) {
+      sounds.levelUp();
       setCelebration({
         isOpen: true,
         type: 'level_up',
@@ -124,13 +146,15 @@ const GameAppContent: React.FC = () => {
         ],
       });
     }
-    setPrevLevel(level);
-  }, [level, prevLevel]);
+    prevLevelRef.current = level;
+  }, [level, sounds]);
 
   // Show celebration for streak milestones
   useEffect(() => {
+    const prevStreak = prevStreakRef.current;
     const streakMilestones = [7, 14, 30, 60, 100, 365];
     if (streak > prevStreak && streakMilestones.includes(streak)) {
+      sounds.streakBonus();
       setCelebration({
         isOpen: true,
         type: 'streak',
@@ -145,16 +169,18 @@ const GameAppContent: React.FC = () => {
       // Add bonus XP for streak milestone
       store.addXP(streak * 5);
     }
-    setPrevStreak(streak);
-  }, [streak, prevStreak, store]);
+    prevStreakRef.current = streak;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [streak]); // store.addXP is stable from zustand
 
   // Check streak on mount
   useEffect(() => {
     const streakStatus = store.checkAndUpdateStreak();
-    if (streakStatus.streakLost && store.player.currentStreak > 0) {
-      addNotification('warning', 'Streak Perdido!', `Sua sequência de ${store.player.currentStreak} dias foi reiniciada. Comece novamente!`);
+    if (streakStatus.streakLost && streak > 0) {
+      addNotification('warning', 'Streak Perdido!', `Sua sequência de ${streak} dias foi reiniciada. Comece novamente!`);
     }
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Only run on mount - store methods are stable
 
   const addNotification = (type: 'success' | 'info' | 'warning' | 'error', title: string, message: string) => {
     const id = Date.now().toString();
@@ -166,6 +192,7 @@ const GameAppContent: React.FC = () => {
   };
 
   const handleNavigate = (page: string) => {
+    sounds.click();
     setCurrentPage(page as PageType);
   };
 
@@ -243,7 +270,8 @@ const GameAppContent: React.FC = () => {
       dailyChallengeSystem.updateProgress('perfect_quiz', 1);
     }
 
-    // Show skill completion celebration
+    // Play sound and show skill completion celebration
+    sounds.complete();
     setCelebration({
       isOpen: true,
       type: 'achievement',
@@ -303,6 +331,7 @@ const GameAppContent: React.FC = () => {
         minHeight: '100vh',
         backgroundColor: currentTheme.colors.background,
         color: currentTheme.colors.text,
+        paddingBottom: isMobile ? '80px' : '0', // Space for bottom nav on mobile
       }}
     >
       {/* Navigation */}
