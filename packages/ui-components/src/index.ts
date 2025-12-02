@@ -23,3 +23,4 @@ export * from './PageTransition';
 export * from './StatsCard';
 export * from './ProgressChart';
 export * from './HeatmapCalendar';
+export * from './ScrollToTop';

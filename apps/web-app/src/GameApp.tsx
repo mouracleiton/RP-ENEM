@@ -8,6 +8,7 @@ import {
   Onboarding,
   ErrorBoundary,
   PageTransition,
+  ScrollToTop,
   type NavItem,
   type CelebrationType,
 } from '@ita-rp/ui-components';
@@ -471,6 +472,9 @@ const GameAppContent: React.FC = () => {
         onSkip={handleOnboardingSkip}
         playerName={store.player.name}
       />
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop showAfter={300} position="right" />
     </div>
   );
 };
