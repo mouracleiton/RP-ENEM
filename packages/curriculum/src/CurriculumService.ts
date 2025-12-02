@@ -50,7 +50,18 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       // Vite sets import.meta.env.BASE_URL based on vite.config.ts base option
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const meta = import.meta as any;
-      const baseUrl = meta?.env?.BASE_URL || '/';
+      let baseUrl = meta?.env?.BASE_URL || '/';
+
+      // Fallback: detect base URL from current page location for GitHub Pages
+      // This handles cases where BASE_URL isn't properly injected
+      if (typeof window !== 'undefined' && baseUrl === '/') {
+        const pathname = window.location.pathname;
+        // Check if we're on GitHub Pages (path starts with /repo-name/)
+        const match = pathname.match(/^(\/[^/]+\/)/);
+        if (match && window.location.hostname.includes('github.io')) {
+          baseUrl = match[1];
+        }
+      }
       console.log('[CurriculumService] Using base URL:', baseUrl);
 
       for (const filename of curriculumFiles) {
