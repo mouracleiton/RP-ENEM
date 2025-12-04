@@ -615,11 +615,13 @@ Please help me understand this topic better and answer any questions I might hav
                   </div>
 
                   {/* Sub-steps */}
-                  <Text variant="heading" size="md" color={currentTheme.colors.text} style={{ marginBottom: '12px' }}>
-                    Atividades:
-                  </Text>
-                  <ul style={{ margin: 0, paddingLeft: '24px' }}>
-                    {currentStep.subSteps.map((subStep, index) => (
+                  {currentStep.subSteps && currentStep.subSteps.length > 0 && (
+                    <>
+                      <Text variant="heading" size="md" color={currentTheme.colors.text} style={{ marginBottom: '12px' }}>
+                        Atividades:
+                      </Text>
+                      <ul style={{ margin: 0, paddingLeft: '24px' }}>
+                        {currentStep.subSteps.map((subStep, index) => (
                       <li
                         key={index}
                         style={{
@@ -633,6 +635,8 @@ Please help me understand this topic better and answer any questions I might hav
                       </li>
                     ))}
                   </ul>
+                    </>
+                  )}
                 </div>
 
                 {/* Verification Question */}

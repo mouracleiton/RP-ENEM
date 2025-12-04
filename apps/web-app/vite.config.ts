@@ -23,4 +23,7 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: true,
   },
+  optimizeDeps: {
+    include: ['@ita-rp/shared-types', '@ita-rp/core-engine', '@ita-rp/ui-components', '@ita-rp/game-logic', '@ita-rp/curriculum']
+  }
 });

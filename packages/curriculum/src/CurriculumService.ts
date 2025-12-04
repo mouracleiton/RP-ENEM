@@ -20,43 +20,9 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     }
 
     try {
-      // Load all JSON files from the packages/curriculum directory
-      // Note: These are the ENEM competency-based curriculum files
-      const curriculumFiles = [
-        // Competências Gerais (C1-C9)
-        'C1 - Competência C1 - Tema 1: Formação do Pensamento Científico.json',
-        'C2 - Competência C2 - Tema 2: Linguagens e Interações.json',
-        'C3 - Competência C3 - Tema 3: Conhecimento e Métodos Científicos.json',
-        'C4 - Competência C4 - Tema 4: Ciência e Transformação Social.json',
-        'C5 - Competência C5 - Tema 4: Ciência e Transformação Social.json',
-        'C6 - Competência C6 - Tema 4: Ciência e Transformação Social.json',
-        'C7 - Competência C7 - Tema 5: Educação CT&I e Nacionalidade.json',
-        'C8 - Competência C8 - Tema 6: Investigação Científica e Argumentação.json',
-        'C9 - Competência C9 - Tema 7: Análise e Resolução de Problemas.json',
-        // Competências Específicas de Linguagens (CL1-CL5)
-        'CL1 - Competência CL1 - Linguagens.json',
-        'CL2 - Competência CL2 - Linguagens.json',
-        'CL3 - Competência CL3 - Linguagens.json',
-        'CL4 - Competência CL4 - Linguagens.json',
-        'CL5 - Competência CL5 - Linguagens.json',
-        // Competências Específicas de Matemática (CM1-CM3)
-        'CM1 - Competência CM1 - Matemática.json',
-        'CM2 - Competência CM2 - Matemática.json',
-        'CM3 - Competência CM3 - Matemática.json',
-        // Competências Específicas de Ciências Humanas (CH1-CH3)
-        'CH1 - Competência CH1 - Ciências_Humanas.json',
-        'CH2 - Competência CH2 - Ciências_Humanas.json',
-        'CH3 - Competência CH3 - Ciências_Humanas.json',
-        // Competências Específicas de Ciências da Natureza - Física (CF1-CF2)
-        'CF1 - Competência CF1 - Ciências_da_Natureza_Física.json',
-        'CF2 - Competência CF2 - Ciências_da_Natureza_Física.json',
-        // Competências Específicas de Ciências da Natureza - Química (CQ1-CQ2)
-        'CQ1 - Competência CQ1 - Ciências_da_Natureza_Química.json',
-        'CQ2 - Competência CQ2 - Ciências_da_Natureza_Química.json',
-        // Competências Específicas de Ciências da Natureza - Biologia (CB1-CB2)
-        'CB1 - Competência CB1 - Ciências_da_Natureza_Biologia.json',
-        'CB2 - Competência CB2 - Ciências_da_Natureza_Biologia.json',
-      ];
+      // Dynamically load all JSON files from the packages/curriculum directory
+      // This ensures we include all available curriculum files without hardcoding
+      const curriculumFiles = await this.fetchAllCurriculumFiles();
 
       const areas: any[] = [];
 
@@ -127,6 +93,16 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
 
       this.curriculumCache = curriculumData;
       this.populateCaches(curriculumData);
+
+      // Reset the total skills cache in curriculum-constants
+      // This ensures the Dashboard shows the correct skill count
+      try {
+        const { resetTotalSkillsCache } = await import('@ita-rp/game-logic');
+        resetTotalSkillsCache();
+        console.log('[CurriculumService] Reset total skills cache after curriculum load');
+      } catch (error) {
+        console.warn('[CurriculumService] Could not reset total skills cache:', error);
+      }
 
       return curriculumData;
     } catch (error) {
@@ -283,6 +259,95 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     }));
   }
 
+  private transformSkillData(skill: any): SpecificSkill {
+    // Create a copy to avoid mutating the original
+    const transformedSkill = { ...skill };
+
+    // Transform atomicExpansion if it exists
+    if (transformedSkill.atomicExpansion) {
+      const expansion = { ...transformedSkill.atomicExpansion };
+
+      // Transform steps from Portuguese to English
+      if (expansion.steps) {
+        expansion.steps = expansion.steps.map((step: any) => {
+          const transformedStep = { ...step };
+
+          // Transform step number
+          if (transformedStep.numeroPasso !== undefined) {
+            transformedStep.stepNumber = transformedStep.numeroPasso;
+            delete transformedStep.numeroPasso;
+          }
+
+          // Transform substeps
+          if (transformedStep.subpassos) {
+            transformedStep.subSteps = transformedStep.subpassos;
+            delete transformedStep.subpassos;
+          }
+
+          // Ensure required fields exist
+          if (!transformedStep.subSteps) {
+            transformedStep.subSteps = [];
+          }
+          if (!transformedStep.verification) {
+            transformedStep.verification = transformedStep.verificacao || 'Verifique seu aprendizado';
+          }
+          if (!transformedStep.estimatedTime) {
+            transformedStep.estimatedTime = '15 min';
+          }
+          if (!transformedStep.materials) {
+            transformedStep.materials = [];
+          }
+          if (!transformedStep.tips) {
+            transformedStep.tips = '';
+          }
+          if (!transformedStep.learningObjective) {
+            transformedStep.learningObjective = transformedStep.objetivoAprendizagem || 'Aprender o conceito';
+          }
+          if (!transformedStep.commonMistakes) {
+            transformedStep.commonMistakes = [];
+          }
+
+          return transformedStep;
+        });
+      }
+
+      // Ensure other required fields
+      if (!expansion.practicalExample) {
+        expansion.practicalExample = '';
+      }
+      if (!expansion.finalVerifications) {
+        expansion.finalVerifications = [];
+      }
+      if (!expansion.assessmentCriteria) {
+        expansion.assessmentCriteria = [];
+      }
+      if (!expansion.crossCurricularConnections) {
+        expansion.crossCurricularConnections = [];
+      }
+      if (!expansion.realWorldApplication) {
+        expansion.realWorldApplication = '';
+      }
+
+      transformedSkill.atomicExpansion = expansion;
+    }
+
+    // Ensure skill level required fields
+    if (!transformedSkill.difficulty) {
+      transformedSkill.difficulty = 'beginner';
+    }
+    if (!transformedSkill.estimatedTime) {
+      transformedSkill.estimatedTime = '1h';
+    }
+    if (!transformedSkill.status) {
+      transformedSkill.status = 'not_started';
+    }
+    if (!transformedSkill.prerequisites) {
+      transformedSkill.prerequisites = [];
+    }
+
+    return transformedSkill;
+  }
+
   private populateCaches(curriculumData: CurriculumData): void {
     // Clear existing caches
     this.disciplineCache.clear();
@@ -299,14 +364,18 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
             // Handle skills under individualConcepts (primary structure)
             atomicTopic.individualConcepts?.forEach(concept => {
               concept.specificSkills?.forEach(skill => {
-                this.skillCache.set(skill.id, skill);
+                // Transform Portuguese field names to English
+                const transformedSkill = this.transformSkillData(skill);
+                this.skillCache.set(skill.id, transformedSkill);
               });
             });
             // Handle skills directly under atomicTopic (alternative structure)
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const atomicTopicAny = atomicTopic as any;
             atomicTopicAny.specificSkills?.forEach((skill: SpecificSkill) => {
-              this.skillCache.set(skill.id, skill);
+              // Transform Portuguese field names to English
+              const transformedSkill = this.transformSkillData(skill);
+              this.skillCache.set(skill.id, transformedSkill);
             });
           });
         });
@@ -484,6 +553,82 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
 
   isLoaded(): boolean {
     return this.curriculumCache !== null;
+  }
+
+  // Fetch all available curriculum files dynamically
+  private async fetchAllCurriculumFiles(): Promise<string[]> {
+    try {
+      // Get base URL for GitHub Pages or local deployment
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const meta = import.meta as any;
+      let baseUrl = meta?.env?.BASE_URL || '/';
+
+      // Fallback: detect base URL from current page location for GitHub Pages
+      if (typeof window !== 'undefined' && baseUrl === '/') {
+        const pathname = window.location.pathname;
+        // Check if we're on GitHub Pages (path starts with /repo-name/)
+        const match = pathname.match(/^(\/[^/]+\/)/);
+        if (match && window.location.hostname.includes('github.io')) {
+          baseUrl = match[1];
+        }
+      }
+
+      // Try to fetch the directory listing first
+      // Note: This is a fallback approach - in production, we might need to pre-generate a manifest
+      try {
+        const manifestUrl = `${baseUrl}curriculum/manifest.json`;
+        const response = await fetch(manifestUrl);
+        if (response.ok) {
+          const manifest = await response.json();
+          console.log('[CurriculumService] Using manifest file with', manifest.files.length, 'curriculum files');
+          return manifest.files;
+        }
+      } catch (manifestError) {
+        console.warn('[CurriculumService] Could not load manifest file, using fallback list');
+      }
+
+      // Fallback to known curriculum files
+      const fallbackFiles = [
+        // Competências Gerais (C1-C9)
+        'C1 - Competência C1 - Tema 1: Formação do Pensamento Científico.json',
+        'C2 - Competência C2 - Tema 2: Linguagens e Interações.json',
+        'C3 - Competência C3 - Tema 3: Conhecimento e Métodos Científicos.json',
+        'C4 - Competência C4 - Tema 4: Ciência e Transformação Social.json',
+        'C5 - Competência C5 - Tema 4: Ciência e Transformação Social.json',
+        'C6 - Competência C6 - Tema 4: Ciência e Transformação Social.json',
+        'C7 - Competência C7 - Tema 5: Educação CT&I e Nacionalidade.json',
+        'C8 - Competência C8 - Tema 6: Investigação Científica e Argumentação.json',
+        'C9 - Competência C9 - Tema 7: Análise e Resolução de Problemas.json',
+        // Competências Específicas de Linguagens (CL1-CL5)
+        'CL1 - Competência CL1 - Linguagens.json',
+        'CL2 - Competência CL2 - Linguagens.json',
+        'CL3 - Competência CL3 - Linguagens.json',
+        'CL4 - Competência CL4 - Linguagens.json',
+        'CL5 - Competência CL5 - Linguagens.json',
+        // Competências Específicas de Matemática (CM1-CM3)
+        'CM1 - Competência CM1 - Matemática.json',
+        'CM2 - Competência CM2 - Matemática.json',
+        'CM3 - Competência CM3 - Matemática.json',
+        // Competências Específicas de Ciências Humanas (CH1-CH3)
+        'CH1 - Competência CH1 - Ciências_Humanas.json',
+        'CH2 - Competência CH2 - Ciências_Humanas.json',
+        'CH3 - Competência CH3 - Ciências_Humanas.json',
+        // Competências Específicas de Ciências da Natureza - Física (CF1-CF2)
+        'CF1 - Competência CF1 - Ciências_da_Natureza_Física.json',
+        'CF2 - Competência CF2 - Ciências_da_Natureza_Física.json',
+        // Competências Específicas de Ciências da Natureza - Química (CQ1-CQ2)
+        'CQ1 - Competência CQ1 - Ciências_da_Natureza_Química.json',
+        'CQ2 - Competência CQ2 - Ciências_da_Natureza_Química.json',
+        // Competências Específicas de Ciências da Natureza - Biologia (CB1-CB2)
+        'CB1 - Competência CB1 - Ciências_da_Natureza_Biologia.json',
+        'CB2 - Competência CB2 - Ciências_da_Natureza_Biologia.json',
+      ];
+
+      return fallbackFiles;
+    } catch (error) {
+      console.error('Error fetching curriculum files:', error);
+      throw new Error('Could not fetch curriculum files');
+    }
   }
 }
 

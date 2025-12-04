@@ -129,4 +129,5 @@ export {
   getTotalSkills,
   getCompletionPercentage,
   getAchievementProgress,
+  resetTotalSkillsCache,
 } from './curriculum-constants';

@@ -66,7 +66,7 @@ const navItems: NavItem[] = [
 const GameAppContent: React.FC = () => {
   const { currentTheme, setTheme } = useTheme();
   const store = useGameStore();
-  const { getSkill, getFormattedSkills } = useCurriculum();
+  const { getSkill, getFormattedSkills, curriculum, isLoading } = useCurriculum();
   const { sounds } = useSoundEffects();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -140,6 +140,9 @@ const GameAppContent: React.FC = () => {
     setShowOnboarding(false);
   };
 
+  // Recalculate total skills when curriculum loads
+  const totalSkills = getTotalSkills();
+
   // Use store values directly - zustand persist handles localStorage
   const xp = store.player.xp;
   const level = store.player.level;
@@ -147,7 +150,6 @@ const GameAppContent: React.FC = () => {
   const longestStreak = store.player.longestStreak || streak;
   const completedSkillIds = store.player.completedSkills;
   const totalStudyTime = store.player.totalStudyTime;
-  const totalSkills = getTotalSkills();
 
   // Track previous values for detecting changes using refs to avoid re-renders
   const prevLevelRef = React.useRef(level);
