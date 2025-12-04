@@ -12,7 +12,7 @@
       {
         "id": "10",
         "name": "Física",
-        "description": "Área de Física no currículo de graduação do ITA, abrangendo fundamentos teóricos e aplicações.",
+        "description": "Área de Física no currículo de graduação do UFABC, abrangendo fundamentos teóricos e aplicações.",
         "disciplines": [
           {
             "id": "10.1",

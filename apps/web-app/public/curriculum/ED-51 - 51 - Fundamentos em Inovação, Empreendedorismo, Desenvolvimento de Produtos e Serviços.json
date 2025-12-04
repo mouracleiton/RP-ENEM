@@ -11,7 +11,7 @@
       "duration": "5 years",
       "dailyStudyHours": 8,
       "version": "ED-51",
-      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "institution": "Instituto Tecnológico de Aeronáutica (UFABC)",
       "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-51"
     },
     "areas": [
@@ -6429,7 +6429,7 @@
                                   "verification": "Apresentação resumindo as principais tendências tecnológicas identificadas",
                                   "estimatedTime": "3-5 horas",
                                   "materials": [
-                                    "Bancos de dados de patentes (como USPTO, Espacenet)",
+                                    "Bancos de dados de patentes (como UFABCTO, Espacenet)",
                                     "Revistas científicas e periódicos tecnológicos",
                                     "Plataformas de conferências online"
                                   ],

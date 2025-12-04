@@ -8,7 +8,12 @@ import {
   Button,
   DailyChallenges,
 } from '@ita-rp/ui-components';
-import { XPSystem, RankSystem, dailyChallengeSystem, type DailyChallenge } from '@ita-rp/game-logic';
+import {
+  XPSystem,
+  RankSystem,
+  dailyChallengeSystem,
+  type DailyChallenge,
+} from '@ita-rp/game-logic';
 import type { Rank } from '@ita-rp/shared-types';
 
 interface DashboardPageProps {
@@ -61,10 +66,30 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
   const xpForNextLevel = XPSystem.calculateXPForLevel(level + 1);
 
   const stats = [
-    { label: 'Streak Atual', value: `${streak} dias`, icon: '🔥', color: currentTheme.colors.warning },
-    { label: 'Habilidades', value: `${completedSkills}/${totalSkills}`, icon: '📚', color: currentTheme.colors.primary },
-    { label: 'Tempo Hoje', value: `${studyTimeToday}min`, icon: '⏱️', color: currentTheme.colors.accent },
-    { label: 'XP Total', value: xp.toLocaleString(), icon: '⚡', color: currentTheme.colors.success },
+    {
+      label: 'Streak Atual',
+      value: `${streak} dias`,
+      icon: '🔥',
+      color: currentTheme.colors.warning,
+    },
+    {
+      label: 'Habilidades',
+      value: `${completedSkills}/${totalSkills}`,
+      icon: '📚',
+      color: currentTheme.colors.primary,
+    },
+    {
+      label: 'Tempo Hoje',
+      value: `${studyTimeToday}min`,
+      icon: '⏱️',
+      color: currentTheme.colors.accent,
+    },
+    {
+      label: 'XP Total',
+      value: xp.toLocaleString(),
+      icon: '⚡',
+      color: currentTheme.colors.success,
+    },
   ];
 
   return (
@@ -72,7 +97,7 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
       {/* Welcome Header */}
       <div style={{ marginBottom: '32px', textAlign: 'center' }}>
         <Text variant="heading" size="2xl" color={currentTheme.colors.primary} glow>
-          Bem-vindo, Cadete!
+          Bem-vindo, Aluno!
         </Text>
         <Text variant="body" size="lg" color={currentTheme.colors.textSecondary}>
           Continue sua jornada rumo à excelência
@@ -111,9 +136,14 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
         }}
       >
         {/* Current Rank */}
-        <Card title="Patente Atual">
+        <Card title="Nível Acadêmico Atual">
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-            <RankBadge rank={currentRank} size="large" showProgress currentProgress={levelProgress * 100} />
+            <RankBadge
+              rank={currentRank}
+              size="large"
+              showProgress
+              currentProgress={levelProgress * 100}
+            />
             <div style={{ flex: 1 }}>
               <Text variant="heading" size="lg" color={currentTheme.colors.text}>
                 {currentRank.name}
@@ -149,9 +179,11 @@ export const DashboardPage: React.FC<DashboardPageProps> = ({
               </Text>
             </div>
             <Text variant="body" color={currentTheme.colors.text}>
-              Faltam <strong style={{ color: currentTheme.colors.primary }}>
+              Faltam{' '}
+              <strong style={{ color: currentTheme.colors.primary }}>
                 {(xpForNextLevel - xp).toLocaleString()}
-              </strong> XP para o próximo nível
+              </strong>{' '}
+              XP para o próximo nível
             </Text>
           </div>
         </Card>

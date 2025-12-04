@@ -1,7 +1,7 @@
 {
-  "name": "@ita-rp/game-logic",
+  "name": "@enem-rp/game-logic",
   "version": "1.0.0",
-  "description": "Lógica de negócio e state management para ITA RP Game",
+  "description": "Lógica de negócio e state management para ENEM RP Game",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
@@ -10,7 +10,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@ita-rp/shared-types": "*",
+    "@enem-rp/shared-types": "*",
     "zustand": "^4.4.7"
   },
   "devDependencies": {

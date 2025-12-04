@@ -11,7 +11,7 @@
       "duration": "5 years",
       "dailyStudyHours": 4,
       "version": "ED-74",
-      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "institution": "Instituto Tecnológico de Aeronáutica (UFABC)",
       "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-74"
     },
     "areas": [
@@ -17780,7 +17780,7 @@
                                   ],
                                   "verification": "Write a short report (1-2 pages) applying and comparing at least two methods to a real or hypothetical economic scenario.",
                                   "estimatedTime": "4 hours",
-                                  "materials": "Economic datasets (e.g., from World Bank or UNCTAD), patent databases (e.g., USPTO or WIPO), data analysis tools (e.g., Excel or Python).",
+                                  "materials": "Economic datasets (e.g., from World Bank or UNCTAD), patent databases (e.g., UFABCTO or WIPO), data analysis tools (e.g., Excel or Python).",
                                   "tips": "Use online tools like the Atlas of Economic Complexity for ECI data to facilitate hands-on practice.",
                                   "learningObjective": "To apply knowledge in comparing complexity measurement methods to practical situations and justify methodological choices.",
                                   "commonMistakes": "Overgeneralizing findings without considering sample size or data quality, neglecting external economic factors."

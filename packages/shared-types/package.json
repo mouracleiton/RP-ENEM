@@ -1,7 +1,7 @@
 {
-  "name": "@ita-rp/shared-types",
+  "name": "@enem-rp/shared-types",
   "version": "1.0.0",
-  "description": "Tipos TypeScript compartilhados para ITA RP Game",
+  "description": "Tipos TypeScript compartilhados para ENEM RP Game",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {

@@ -196,5 +196,5 @@ Para contribuir ou modificar o script:
 
 ## Licença
 
-Este script faz parte do projeto ITA RP Game.
+Este script faz parte do projeto ENEM RP Game.
 

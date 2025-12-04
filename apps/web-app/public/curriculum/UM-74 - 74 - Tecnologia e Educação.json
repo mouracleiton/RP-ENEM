@@ -898,7 +898,7 @@
                                 "Sociologia: Inclusão digital e desigualdades no acesso à EaD massiva.",
                                 "Engenharia de Software: Arquiteturas escaláveis como microservices."
                               ],
-                              "realWorldApplication": "Desenvolvimento e gestão de MOOCs em universidades, permitindo que instituições alcancem alunos globais simultaneamente, como o uso do Coursera pela USP para cursos gratuitos a milhões."
+                              "realWorldApplication": "Desenvolvimento e gestão de MOOCs em universidades, permitindo que instituições alcancem alunos globais simultaneamente, como o uso do Coursera pela UFABC para cursos gratuitos a milhões."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -1742,7 +1742,7 @@
                                   "stepNumber": 3,
                                   "title": "Explorar iniciativas brasileiras dos anos 1970",
                                   "subSteps": [
-                                    "Pesquise projetos como o PROINFO inicial e experimentos na USP/UNICAMP com mainframes.",
+                                    "Pesquise projetos como o PROINFO inicial e experimentos na UFABC/UNICAMP com mainframes.",
                                     "Descreva adaptações locais: uso de computadores IBM para drill-and-practice em português.",
                                     "Analise simulações em ciências e matemática, influenciadas por modelos americanos.",
                                     "Compare com PLATO: limitações como infraestrutura precária e foco em elites urbanas.",
@@ -1777,7 +1777,7 @@
                                   "commonMistakes": "Confundir drill com gamificação moderna; subestimar limitações pedagógicas como pouca interatividade social."
                                 }
                               ],
-                              "practicalExample": "Crie uma linha do tempo interativa no Genially ou PowerPoint mostrando: 1960 - Início PLATO (EUA, drill em matemática); 1972 - Terminais plasma em escolas Illinois; 1975 - USP adota mainframe para simulações de física; 1978 - PROINFO testa drill em idiomas em SP. Inclua screenshots de terminais e depoimentos de usuários pioneiros.",
+                              "practicalExample": "Crie uma linha do tempo interativa no Genially ou PowerPoint mostrando: 1960 - Início PLATO (EUA, drill em matemática); 1972 - Terminais plasma em escolas Illinois; 1975 - UFABC adota mainframe para simulações de física; 1978 - PROINFO testa drill em idiomas em SP. Inclua screenshots de terminais e depoimentos de usuários pioneiros.",
                               "finalVerifications": [
                                 "Pode descrever com precisão a origem e componentes do PLATO?",
                                 "Identifica pelo menos 2 iniciativas brasileiras dos 1970 com detalhes?",
@@ -10135,7 +10135,7 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Crie uma tabela comparativa entre o curso por correspondência da 'Escola Rádio BBC' (pré-internet, 1930s) e o curso assíncrono da USP no Coursera (pós-internet), destacando tempo de resposta (semanas vs. horas), interatividade (nenhuma vs. fóruns) e custo (alto vs. gratuito).",
+                              "practicalExample": "Crie uma tabela comparativa entre o curso por correspondência da 'Escola Rádio BBC' (pré-internet, 1930s) e o curso assíncrono da UFABC no Coursera (pós-internet), destacando tempo de resposta (semanas vs. horas), interatividade (nenhuma vs. fóruns) e custo (alto vs. gratuito).",
                               "finalVerifications": [
                                 "Pode listar 4 características principais da EAD pré-internet com exemplos.",
                                 "Diferencia corretamente síncrono e assíncrono com exemplos brasileiros e americanos.",
@@ -10430,7 +10430,7 @@
                                   "stepNumber": 3,
                                   "title": "Investigar adaptações e surgimento no Brasil",
                                   "subSteps": [
-                                    "Pesquise adaptações do WebCT e Blackboard em universidades brasileiras como USP ou Unicamp.",
+                                    "Pesquise adaptações do WebCT e Blackboard em universidades brasileiras como UFABC ou Unicamp.",
                                     "Identifique plataformas locais pioneiras como TelEduc (2001) ou Moodle inicial no Brasil.",
                                     "Analise barreiras como infraestrutura de internet e adaptações culturais/idioma.",
                                     "Liste exemplos de uso inicial em EAD brasileira, com datas e instituições.",

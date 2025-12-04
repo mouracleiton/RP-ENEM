@@ -1,4 +1,4 @@
-# 🎮 ITA RP Game Theme - Demo Instructions
+# 🎮 ENEM RP Game Theme - Demo Instructions
 
 ## Como Visualizar o Theme
 
@@ -33,7 +33,7 @@
 ## 🎯 O que Explorar
 
 ### 1. Cabeçalho e Menu Principal
-- Logo ITA com tema espacial
+- Logo ENEM com tema espacial
 - Menu de navegação responsivo
 - Barra de busca funcional
 
@@ -73,9 +73,9 @@
 
 ## 🎨 Elementos de Design para Observar
 
-### Cores ITA
+### Cores ENEM
 - Azul institucional (#133979) em headers e elementos principais
-- Vermelho ITA (#932D2D) em acentos e destaques
+- Vermelho ENEM (#932D2D) em acentos e destaques
 - Gradientes que simulam elementos espaciais
 
 ### Tipografia
@@ -193,14 +193,14 @@ gameTheme.addChatMessage('Amigo', 'Quer ir na missão juntos?', 'friend');
 - [ ] Minimapa é renderizado
 - [ ] Layout é responsivo
 - [ ] Animações são suaves
-- [ ] Cores institucionais ITA estão presentes
+- [ ] Cores institucionais ENEM estão presentes
 - [ ] Tipografia está consistente
 
 ## 🚀 Próximos Passos
 
 Após explorar o demo:
 
-1. **Integrar com seu Game Engine**: Use os métodos JavaScript da classe ITAGameTheme
+1. **Integrar com seu Game Engine**: Use os métodos JavaScript da classe ENEMGameTheme
 2. **Personalizar Cores**: Modifique as variáveis CSS no arquivo ita-game-theme.css
 3. **Adicionar Novos Componentes**: Estenda a interface com elementos específicos do seu jogo
 4. **Implementar Backend**: Conecte o sistema de chat e notificações com um servidor real

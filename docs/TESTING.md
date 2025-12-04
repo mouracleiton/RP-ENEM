@@ -1,6 +1,6 @@
 # Testing Guide
 
-This document covers testing strategy and examples for the ITA RP Game.
+This document covers testing strategy and examples for the ENEM RP Game.
 
 ## Overview
 

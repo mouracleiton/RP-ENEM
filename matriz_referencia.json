@@ -1,0 +1,395 @@
+{
+  "documento": "Matriz de Referência para o ENEM 2026",
+  "edicao": "9ª Edição",
+  "ano": 2026,
+  "descricao": "Documento orientador sobre as competências e habilidades que norteiam a elaboração das provas do Exame Nacional do Ensino Médio",
+  "estrutura": {
+    "eixo_conceptual": {
+      "titulo": "Eixo Conceptual Unificador: Ciência, Tecnologia, Inovação e Sociedade",
+      "descricao": "O Eixo Conceptual Unificador: Ciência, Tecnologia, Inovação e Sociedade adota um processo de complexificação crescente da realidade, tendo como referência a Abordagem Temática (AT)",
+      "dominios": [
+        {
+          "id": "DOMINIO_1",
+          "titulo": "Domínio I: Natureza e Consolidação da Ciência, Tecnologia e Inovação como Fenômeno Social",
+          "descricao": "Compreender as relações entre ciência, tecnologia, inovação e sociedade como fenômeno sociopolítico e cultural",
+          "temas": [
+            {
+              "id": "TEMA_1",
+              "titulo": "Tema 1: Formação do Pensamento Científico",
+              "descricao": "Compreender as origens e a consolidação do pensamento científico como processo sociocultural dinâmico e suas relações com a tecnologia e a inovação",
+              "competencias": [
+                {
+                  "id": "C1",
+                  "descricao": "Compreender os processos históricos de construção do conhecimento científico e tecnológico, reconhecendo os impactos socioculturais, políticos e econômicos desses processos na sociedade contemporânea",
+                  "habilidades": [
+                    "Identificar distintas explicações sobre fenômenos naturais, sociais, culturais e políticos em diferentes contextos históricos e culturais",
+                    "Analisar criticamente os processos de construção do conhecimento científico, tecnológico e de inovação em diferentes contextos históricos, reconhecendo as contribuições de diferentes povos, saberes e tradições",
+                    "Analisar criticamente a responsabilidade ética, política e social dos cientistas na produção e no uso do conhecimento científico e tecnológico",
+                    "Avaliar a influência das tecnologias na configuração das sociedades e das relações de poder em diferentes momentos históricos",
+                    "Analisar criticamente a dinâmica da ciência, tecnologia e inovação na configuração das assimetrias socioeconômicas e geopolíticas, articulando-a ao fenômeno da colonialidade"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TEMA_2",
+              "titulo": "Tema 2: Linguagens e Interações",
+              "descricao": "Analisar as múltiplas manifestações das linguagens e suas interações com a ciência, tecnologia e inovação no contexto sociocultural contemporâneo",
+              "competencias": [
+                {
+                  "id": "C2",
+                  "descricao": "Analisar o uso de diferentes linguagens, inclusive as digitais e as vinculadas à ciência, tecnologia e inovação, na constituição de significados socioculturais",
+                  "habilidades": [
+                    "Analisar criticamente o uso das linguagens (verbal, visual, sonora, corporal, digital, entre outras) na construção de significados socioculturais, políticos, científicos e tecnológicos",
+                    "Analisar criticamente o funcionamento das linguagens em interações sociais, midiáticas e digitais, considerando os processos comunicativos e os aspectos éticos e políticos envolvidos",
+                    "Comparar criticamente diferentes usos das linguagens, inclusive as de groups minorizados e as não hegemônicas, na produção e disseminação de conhecimentos científicos e tecnológicos",
+                    "Analisar criticamente o uso de diferentes linguagens na construção de discursos sobre ciência, tecnologia e inovação e seus impactos na configuração da opinião pública",
+                    "Analisar criticamente os processos comunicativos com base na interação entre diferentes linguagens e recursos expressivos na produção de conhecimento científico e tecnológico"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TEMA_3",
+              "titulo": "Tema 3: Conhecimento e Métodos Científicos",
+              "descricao": "Compreender os métodos de construção do conhecimento científico, suas implicações e suas interfaces com a tecnologia e a inovação",
+              "competencias": [
+                {
+                  "id": "C3",
+                  "descricao": "Compreender os métodos de construção do conhecimento científico, suas implicações e suas interfaces com a tecnologia e a inovação",
+                  "habilidades": [
+                    "Identificar os procedimentos que caracterizam a construção de conhecimentos científicos em diferentes áreas, incluindo as formas de registro e divulgação",
+                    "Diferenciar hipótese, teoria, lei, modelo científico, experimento, observação, variável e analogia como elementos do conhecimento científico",
+                    "Analisar criticamente os diferentes modos de construção e validação do conhecimento científico, incluindo os conceitos de verdade, objetividade e incerteza",
+                    "Avaliar a interdependência entre ciência, tecnologia e inovação, inclusive as relações entre CT&I e as demais áreas do conhecimento (humanas, sociais, linguagens, artísticas e filosóficas)",
+                    "Analisar criticamente os processos de pesquisa e de produção tecnológica e inovadora em diferentes contextos sociopolíticos, culturais e econômicos"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "DOMINIO_2",
+          "titulo": "Domínio II: Processos e Práticas de Ciência, Tecnologia e Inovação",
+          "descricao": "Compreender as interações entre ciência, tecnologia, inovação e os aspectos éticos, sociais e ambientais",
+          "temas": [
+            {
+              "id": "TEMA_4",
+              "titulo": "Tema 4: Ciência e Transformação Social",
+              "descricao": "Analisar as relações entre ciência, tecnologia, inovação e os processos de exclusão, inclusão, pertencimento e sustentabilidade ambiental",
+              "competencias": [
+                {
+                  "id": "C4",
+                  "descricao": "Analisar as relações entre ciência, tecnologia, inovação e os processos de exclusão, inclusão, pertencimento e sustentabilidade ambiental",
+                  "habilidades": [
+                    "Analisar criticamente as contribuições da ciência, tecnologia e inovação para a sustentabilidade ambiental, social e econômica, em escalas locais, regionais, nacionais e globais",
+                    "Analisar criticamente como as dinâmicas da ciência, tecnologia e inovação podem gerar ou reproduzir desigualdades e processos de exclusão social e territorial",
+                    "Analisar criticamente as contribuições da ciência, tecnologia e inovação para os processos de inclusão, pertencimento, pertencimento social, territorial e cultural",
+                    "Avaliar criticamente as relações entre ciência, tecnologia, inovação e os diferentes modos de vida e as diferentes cosmovisões",
+                    "Analisar criticamente as relações entre ciência, tecnologia, inovação e os modos de organização política e social e os movimentos sociais"
+                  ]
+                },
+                {
+                  "id": "C5",
+                  "descricao": "Compreender as relações entre ética, bioética, e pesquisa científica e tecnológica",
+                  "habilidades": [
+                    "Analisar criticamente questões éticas relacionadas à produção, ao uso e aos efeitos das inovações científicas e tecnológicas",
+                    "Avaliar criticamente as implicações éticas e bioéticas das práticas de pesquisa e dos avanços científicos e tecnológicos, considerando os direitos humanos, a biodiversidade e a sustentabilidade",
+                    "Reconhecer e analisar criticamente os marcos regulatórios e os comitês de ética relacionados à pesquisa científica e tecnológica",
+                    "Avaliar criticamente o impacto de pesquisas e tecnologias na dignidade humana, na autonomia dos indivíduos e dos povos e na segurança da sociedade",
+                    "Analisar criticamente o uso de tecnologias de vigilância, manipulação de informações e controle social, considerando os direitos humanos, a privacidade e a democracia"
+                  ]
+                },
+                {
+                  "id": "C6",
+                  "descricao": "Analisar criticamente as implicações da ciência, tecnologia e inovação na organização do trabalho, na cultura e na vida pessoal e coletiva",
+                  "habilidades": [
+                    "Analisar criticamente as transformações nas relações de trabalho e na economia a partir das inovações científicas e tecnológicas",
+                    "Avaliar criticamente os impactos da ciência, tecnologia e inovação na saúde, na educação, no lazer e nas interações sociais",
+                    "Analisar criticamente as implicações do uso de tecnologias digitais na subjetividade, na saúde mental e nos processos de subjetivação",
+                    "Avaliar criticamente as influências da ciência, tecnologia e inovação na organização familiar e comunitária e nas manifestações artístico-culturais",
+                    "Analisar criticamente as relações entre ciência, tecnologia, inovação e as dinâmicas demográficas, incluindo migrações e urbanização"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TEMA_5",
+              "titulo": "Tema 5: Educação CT&I e Nacionalidade",
+              "descricao": "Compreender a importância da educação em ciências e de processos que articulem educação científica e tecnológica a partir da realidade brasileira e das necessidades sociais",
+              "competencias": [
+                {
+                  "id": "C7",
+                  "descricao": "Compreender a importância da educação em ciências e de processos que articulem educação científica e tecnológica a partir da realidade brasileira e das necessidades sociais",
+                  "habilidades": [
+                    "Analisar criticamente as propostas curriculares e as práticas educativas relacionadas à ciência, tecnologia e inovação, considerando a realidade brasileira e as necessidades sociais",
+                    "Avaliar criticamente o papel da educação popular e da divulgação científica na democratização do conhecimento científico e tecnológico",
+                    "Analisar criticamente as diferentes estratégias de ensino e aprendizagem em ciências e tecnologias, inclusive as que envolvem as metodologias ativas e as tecnologias digitais de informação e comunicação",
+                    "Avaliar criticamente as possibilidades e os desafios da educação científica e tecnológica na promoção da cidadania crítica, da participação social e da soberania nacional",
+                    "Analisar criticamente as propostas de educação em ciências que considerem as questões étnico-raciais, de gênero, de classe e de pertencimento"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "DOMINIO_3",
+          "titulo": "Domínio III: Investigação e Resolução de Problemas",
+          "descricao": "Analisar situações-problema e propor soluções com base nos conhecimentos de ciências, tecnologia e inovação",
+          "temas": [
+            {
+              "id": "TEMA_6",
+              "titulo": "Tema 6: Investigação Científica e Argumentação",
+              "descricao": "Investigar e analisar argumentos sobre temas de ciência, tecnologia, inovação e suas interações com a sociedade",
+              "competencias": [
+                {
+                  "id": "C8",
+                  "descricao": "Investigar e analisar argumentos sobre temas de ciência, tecnologia, inovação e suas interações com a sociedade",
+                  "habilidades": [
+                    "Analisar criticamente a estrutura e a validade de argumentos sobre temas de ciência, tecnologia e inovação, considerando as evidências apresentadas e os contextos de produção",
+                    "Avaliar criticamente a qualidade e a confiabilidade das fontes de informação sobre ciência, tecnologia e inovação, incluindo as fontes digitais",
+                    "Analisar criticamente as relações entre ciência, tecnologia, inovação e as diferentes correntes filosóficas, epistemológicas e ideológicas",
+                    "Avaliar criticamente o impacto das tecnologias digitais na produção, na disseminação e no consumo de informação e conhecimento",
+                    "Analisar criticamente as estratégias argumentativas em debates sobre temas de ciência, tecnologia, inovação e sociedade"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "TEMA_7",
+              "titulo": "Tema 7: Análise e Resolução de Problemas",
+              "descricao": "Analisar situações-problema e propor soluções com base nos conhecimentos de ciências, tecnologia e inovação",
+              "competencias": [
+                {
+                  "id": "C9",
+                  "descricao": "Analisar situações-problema e propor soluções com base nos conhecimentos de ciências, tecnologia e inovação",
+                  "habilidades": [
+                    "Analisar criticamente situações-problema envolvendo ciência, tecnologia e inovação, identificando suas causas, consequências e possíveis soluções",
+                    "Avaliar criticamente diferentes propostas de solução para problemas socioambientais, técnicos, tecnológicos e científicos, considerando suas viabilidades técnica, econômica, política e ética",
+                    "Propor soluções criativas e sustentáveis para problemas relacionados com ciência, tecnologia e inovação, considerando as necessidades e os direitos das comunidades envolvidas",
+                    "Avaliar criticamente os riscos e benefícios associados ao uso de tecnologias e à implementação de soluções inovadoras",
+                    "Analisar criticamente as relações entre ciência, tecnologia, inovação e a formulação e implementação de políticas públicas"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "areas_conhecimento": {
+    "Linguagens": {
+      "descricao": "Análise de processos e práticas de linguagem, considerando as tecnologias de comunicação e informação",
+      "competencias_especificas": [
+        {
+          "id": "CL1",
+          "descricao": "Compreender os processos de identificação, configuração, negociação e disseminação de significados, com base nas experiências individuais e coletivas e nas tecnologias de comunicação e informação",
+          "habilidades": [
+            "Identificar diferentes funções e usos das linguagens (verbal, visual, sonora, corporal, digital, entre outras) em diversos contextos de comunicação",
+            "Analisar criticamente os processos de produção e circulação de significados nas interações sociais, midiáticas e digitais",
+            "Comparar criticamente diferentes estratégias discursivas na construção de argumentos e narrativas sobre ciência, tecnologia e inovação",
+            "Avaliar criticamente o papel das tecnologias digitais na reconfiguração dos processos comunicativos e na produção de subjetividades"
+          ]
+        },
+        {
+          "id": "CL2",
+          "descricao": "Compreender as relações entre o texto e seu contexto de produção, circulação e recepção",
+          "habilidades": [
+            "Analisar criticamente os elementos contextuais (históricos, sociais, culturais, políticos) na produção e recepção de textos sobre ciência, tecnologia e inovação",
+            "Avaliar criticamente os efeitos de sentido produzidos por diferentes recursos linguísticos e expressivos em textos de divulgação científica e tecnológica",
+            "Analisar criticamente as relações entre texto, contexto e interlocutores na construção de discursos sobre temas científicos e tecnológicos",
+            "Comparar criticamente diferentes abordagens e perspectivas na apresentação de temas de ciência, tecnologia e inovação"
+          ]
+        },
+        {
+          "id": "CL3",
+          "descricao": "Analisar os usos de recursos linguísticos e expressivos em textos",
+          "habilidades": [
+            "Identificar e analisar criticamente o uso de recursos linguísticos e expressivos na construção de significados em textos sobre ciência, tecnologia e inovação",
+            "Avaliar criticamente os efeitos de sentido produzidos por diferentes estratégias discursivas na comunicação científica e tecnológica",
+            "Analisar criticamente as relações entre forma e conteúdo na produção de textos de divulgação científica",
+            "Comparar criticamente diferentes estilos e gêneros textuais na apresentação de conhecimentos científicos e tecnológicos"
+          ]
+        },
+        {
+          "id": "CL4",
+          "descricao": "Compreender a intertextualidade e os diálogos entre textos e áreas de conhecimento",
+          "habilidades": [
+            "Analisar criticamente as relações intertextuais na produção e circulação de conhecimentos científicos e tecnológicos",
+            "Avaliar criticamente os diálogos entre diferentes áreas do conhecimento na abordagem de temas de ciência, tecnologia e inovação",
+            "Comparar criticamente diferentes perspectivas teóricas e metodológicas na análise de fenômenos científicos e tecnológicos",
+            "Analisar criticamente as influências recíprocas entre ciência, tecnologia, literatura, artes e outras manifestações culturais"
+          ]
+        },
+        {
+          "id": "CL5",
+          "descricao": "Analisar criticamente textos que apresentam diferentes posições sobre temas de ciência, tecnologia e inovação",
+          "habilidades": [
+            "Analisar criticamente diferentes pontos de vista e argumentos sobre temas controversos em ciência, tecnologia e inovação",
+            "Avaliar criticamente a força argumentativa e a evidência apresentada em diferentes posicionamentos sobre questões científicas e tecnológicas",
+            "Comparar criticamente diferentes abordagens teóricas e metodológicas na análise de problemas científicos e tecnológicos",
+            "Posicionar-se criticamente frente a diferentes perspectivas sobre temas de ciência, tecnologia e inovação"
+          ]
+        }
+      ]
+    },
+    "Matemática": {
+      "descricao": "Análise de elementos e processos matemáticos envolvidos em problemas da ciência, tecnologia e inovação",
+      "competencias_especificas": [
+        {
+          "id": "CM1",
+          "descricao": "Compreender elementos e processos matemáticos envolvidos em problemas da ciência, tecnologia e inovação",
+          "habilidades": [
+            "Identificar e aplicar conceitos matemáticos na análise de fenômenos naturais, sociais e tecnológicos",
+            "Analisar criticamente o uso de modelos matemáticos na descrição e previsão de fenômenos científicos e tecnológicos",
+            "Avaliar criticamente as limitações e possibilidades da matemática na representação da realidade",
+            "Comparar criticamente diferentes abordagens matemáticas na resolução de problemas científicos e tecnológicos"
+          ]
+        },
+        {
+          "id": "CM2",
+          "descricao": "Resolver problemas que envolvem o uso de diferentes estratégias matemáticas",
+          "habilidades": [
+            "Formular e resolver problemas matemáticos relacionados a situações da ciência, tecnologia e inovação",
+            "Analisar criticamente diferentes estratégias de resolução de problemas matemáticos em contextos científicos e tecnológicos",
+            "Avaliar criticamente a adequação e eficiência de métodos matemáticos na resolução de problemas",
+            "Generalizar soluções matemáticas para diferentes contextos e situações"
+          ]
+        },
+        {
+          "id": "CM3",
+          "descricao": "Analisar criticamente modelos matemáticos e suas aplicações",
+          "habilidades": [
+            "Analisar criticamente a construção e validação de modelos matemáticos em ciência e tecnologia",
+            "Avaliar criticamente as aplicações de modelos matemáticos na previsão e controle de fenômenos",
+            "Comparar criticamente diferentes modelos matemáticos na representação da mesma realidade",
+            "Identificar as limitações e os pressupostos de modelos matemáticos em contextos científicos e tecnológicos"
+          ]
+        }
+      ]
+    },
+    "Ciências_da_Natureza": {
+      "descricao": "Análise de processos e fenômenos naturais e suas relações com a tecnologia e a inovação",
+      "subareas": {
+        "Física": {
+          "competencias_especificas": [
+            {
+              "id": "CF1",
+              "descricao": "Compreender as leis e princípios fundamentais da física e suas aplicações tecnológicas",
+              "habilidades": [
+                "Analisar criticamente as leis da mecânica e suas aplicações em tecnologias contemporâneas",
+                "Avaliar criticamente os princípios da termodinâmica e suas implicações energéticas e ambientais",
+                "Compreender os fenômenos ondulatórios e suas aplicações em tecnologias de comunicação",
+                "Analisar criticamente os conceitos de eletricidade e magnetismo e suas aplicações tecnológicas"
+              ]
+            },
+            {
+              "id": "CF2",
+              "descricao": "Compreender os fundamentos da física moderna e contemporânea",
+              "habilidades": [
+                "Analisar criticamente os conceitos da relatividade e suas implicações tecnológicas",
+                "Avaliar criticamente os princípios da mecânica quântica e suas aplicações em tecnologias modernas",
+                "Compreender os fenômenos da física de partículas e suas implicações para o conhecimento científico",
+                "Analisar criticamente as teorias cosmológicas e suas relações com a origem e evolução do universo"
+              ]
+            }
+          ]
+        },
+        "Química": {
+          "competencias_especificas": [
+            {
+              "id": "CQ1",
+              "descricao": "Compreender as propriedades e transformações da matéria",
+              "habilidades": [
+                "Analisar criticamente a estrutura da matéria e suas propriedades físico-químicas",
+                "Avaliar criticamente as transformações químicas e suas implicações ambientais e tecnológicas",
+                "Compreender os princípios da termoquímica e suas aplicações em processos industriais",
+                "Analisar criticamente os equilíbrios químicos e suas aplicações em sistemas naturais e tecnológicos"
+              ]
+            },
+            {
+              "id": "CQ2",
+              "descricao": "Compreender os fundamentos da química orgânica e suas aplicações",
+              "habilidades": [
+                "Analisar criticamente a estrutura e propriedades de compostos orgânicos",
+                "Avaliar criticamente as reações orgânicas e suas aplicações na indústria e na tecnologia",
+                "Compreender os princípios da bioquímica e suas implicações para os seres vivos",
+                "Analisar criticamente as aplicações da química orgânica no desenvolvimento de novos materiais"
+              ]
+            }
+          ]
+        },
+        "Biologia": {
+          "competencias_especificas": [
+            {
+              "id": "CB1",
+              "descricao": "Compreender os processos biológicos fundamentais",
+              "habilidades": [
+                "Analisar criticamente a estrutura e funcionamento dos seres vivos em diferentes níveis de organização",
+                "Avaliar criticamente os processos fisiológicos e suas implicações para a saúde e tecnologia",
+                "Compreender os mecanismos de hereditariedade e variação biológica",
+                "Analisar criticamente as relações ecológicas e suas implicações ambientais"
+              ]
+            },
+            {
+              "id": "CB2",
+              "descricao": "Compreender os fundamentos da biologia moderna e suas aplicações",
+              "habilidades": [
+                "Analisar criticamente os avanços da genética e da biotecnologia",
+                "Avaliar criticamente as implicações éticas e sociais das biotecnologias",
+                "Compreender os princípios da biologia evolutiva e suas aplicações",
+                "Analisar criticamente as contribuições da biologia para a medicina e saúde pública"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "Ciências_Humanas": {
+      "descricao": "Análise dos processos sociais, históricos, geográficos, filosóficos e sociológicos relacionados à ciência, tecnologia e inovação",
+      "competencias_especificas": [
+        {
+          "id": "CH1",
+          "descricao": "Compreender os processos históricos e sociais relacionados à ciência, tecnologia e inovação",
+          "habilidades": [
+            "Analisar criticamente o desenvolvimento histórico da ciência e tecnologia em diferentes contextos culturais",
+            "Avaliar criticamente as relações entre ciência, tecnologia e os processos de transformação social",
+            "Compreender as implicações sociais e políticas das inovações científicas e tecnológicas",
+            "Analisar criticamente as relações entre ciência, tecnologia e os movimentos sociais"
+          ]
+        },
+        {
+          "id": "CH2",
+          "descricao": "Compreender as dimensões geográficas e ambientais da ciência, tecnologia e inovação",
+          "habilidades": [
+            "Analisar criticamente as implicações espaciais e ambientais das tecnologias",
+            "Avaliar criticamente as relações entre ciência, tecnologia e a organização do território",
+            "Compreender os impactos ambientais das inovações tecnológicas",
+            "Analisar criticamente as relações entre ciência, tecnologia e a sustentabilidade"
+          ]
+        },
+        {
+          "id": "CH3",
+          "descricao": "Compreender as dimensões filosóficas e sociológicas da ciência, tecnologia e inovação",
+          "habilidades": [
+            "Analisar criticamente os fundamentos epistemológicos da ciência",
+            "Avaliar criticamente as implicações éticas e filosóficas da tecnologia",
+            "Compreender as relações entre ciência, tecnologia e as estruturas sociais",
+            "Analisar criticamente as diferentes perspectivas teóricas sobre ciência e tecnologia"
+          ]
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "data_extracao": "2025-12-04",
+    "fonte": "matriz_referencia.pdf",
+    "total_competencias": 9,
+    "total_temas": 7,
+    "total_dominios": 3,
+    "total_habilidades": 45
+  }
+}

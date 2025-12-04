@@ -1,7 +1,7 @@
 {
-  "name": "ita-rp-game",
+  "name": "enem-rp-game",
   "version": "2.0.0",
-  "description": "ITA RP Game - Reimplementação moderna com Phaser 3 + React",
+  "description": "ENEM RP Game - Reimplementação moderna com Phaser 3 + React",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -18,7 +18,8 @@
     "typecheck": "tsc --noEmit",
     "clean": "npm run clean --workspaces && rm -rf node_modules",
     "process-catalog": "tsx scripts/process-catalog.ts",
-    "generate-icons": "tsx scripts/generate-icons.ts"
+    "generate-icons": "tsx scripts/generate-icons.ts",
+    "scrape-jupiterweb": "tsx scripts/scrape-jupiterweb.ts"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.6",
@@ -44,7 +45,7 @@
   },
   "dependencies": {
     "openai": "^4.20.0",
-    "pdf-parse": "^1.1.1",
+    "pdf-parse": "^1.1.4",
     "zustand": "^5.0.9"
   }
 }

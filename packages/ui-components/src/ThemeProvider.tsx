@@ -1,6 +1,6 @@
 import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';
 
-// Temas cyberpunk para o ITA RP Game
+// Temas cyberpunk para o ENEM RP Game
 export interface Theme {
   id: string;
   name: string;

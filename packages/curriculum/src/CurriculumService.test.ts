@@ -180,7 +180,7 @@ describe('CurriculumService', () => {
             totalAtomicSkills: 1,
             version: '2.0',
             lastUpdated: '2025-01-01',
-            institution: 'ITA',
+            institution: 'ENEM',
             basedOn: 'Catalog',
           },
           areas: [

@@ -12,7 +12,13 @@ import {
   type NavItem,
   type CelebrationType,
 } from '@ita-rp/ui-components';
-import { useGameStore, useGamePersistence, dailyChallengeSystem, useSoundEffects, getTotalSkills } from '@ita-rp/game-logic';
+import {
+  useGameStore,
+  useGamePersistence,
+  dailyChallengeSystem,
+  useSoundEffects,
+  getTotalSkills,
+} from '@ita-rp/game-logic';
 import { useCurriculum } from '@ita-rp/curriculum';
 import type { LearningStep } from '@ita-rp/shared-types';
 
@@ -26,7 +32,16 @@ import DailyChallengesPage from './pages/DailyChallengesPage';
 import SkillTreePage from './pages/SkillTreePage';
 import StatsPage from './pages/StatsPage';
 
-type PageType = 'dashboard' | 'disciplines' | 'achievements' | 'profile' | 'study' | 'sync' | 'challenges' | 'skilltree' | 'stats';
+type PageType =
+  | 'dashboard'
+  | 'disciplines'
+  | 'achievements'
+  | 'profile'
+  | 'study'
+  | 'sync'
+  | 'challenges'
+  | 'skilltree'
+  | 'stats';
 
 interface StudySession {
   skillId: string;
@@ -75,13 +90,16 @@ const GameAppContent: React.FC = () => {
   }, []);
 
   // Memoize persistence options to prevent re-renders
-  const persistenceOptions = useMemo(() => ({
-    autoSync: true,
-    syncInterval: 30000,
-    enableP2P: true,
-    onSyncComplete,
-    onSyncError,
-  }), [onSyncComplete, onSyncError]);
+  const persistenceOptions = useMemo(
+    () => ({
+      autoSync: true,
+      syncInterval: 30000,
+      enableP2P: true,
+      onSyncComplete,
+      onSyncError,
+    }),
+    [onSyncComplete, onSyncError]
+  );
 
   // Initialize decentralized persistence
   const persistence = useGamePersistence(persistenceOptions);
@@ -110,7 +128,11 @@ const GameAppContent: React.FC = () => {
   const handleOnboardingComplete = () => {
     localStorage.setItem('ita-rp-onboarding-completed', 'true');
     setShowOnboarding(false);
-    addNotification('success', 'Bem-vindo!', 'Sua jornada no ITA começa agora. Boa sorte, cadete!');
+    addNotification(
+      'success',
+      'Bem-vindo!',
+      'Sua jornada no ENEM começa agora. Bons estudos, aluno!'
+    );
   };
 
   const handleOnboardingSkip = () => {
@@ -141,11 +163,10 @@ const GameAppContent: React.FC = () => {
         type: 'level_up',
         title: 'Level Up!',
         subtitle: `Nível ${level}`,
-        description: 'Parabéns! Você alcançou um novo nível. Continue estudando para progredir ainda mais!',
+        description:
+          'Parabéns! Você alcançou um novo nível. Continue estudando para progredir ainda mais!',
         icon: '⬆️',
-        rewards: [
-          { type: 'Novo Nível', value: level, icon: '🎯' },
-        ],
+        rewards: [{ type: 'Novo Nível', value: level, icon: '🎯' }],
       });
     }
     prevLevelRef.current = level;
@@ -164,9 +185,7 @@ const GameAppContent: React.FC = () => {
         subtitle: `${streak} dias seguidos!`,
         description: `Você manteve sua sequência de estudos por ${streak} dias! Continue assim!`,
         icon: '🔥',
-        rewards: [
-          { type: 'Bônus de Streak', value: `+${Math.floor(streak * 5)} XP`, icon: '⚡' },
-        ],
+        rewards: [{ type: 'Bônus de Streak', value: `+${Math.floor(streak * 5)} XP`, icon: '⚡' }],
       });
       // Add bonus XP for streak milestone
       store.addXP(streak * 5);
@@ -179,12 +198,20 @@ const GameAppContent: React.FC = () => {
   useEffect(() => {
     const streakStatus = store.checkAndUpdateStreak();
     if (streakStatus.streakLost && streak > 0) {
-      addNotification('warning', 'Streak Perdido!', `Sua sequência de ${streak} dias foi reiniciada. Comece novamente!`);
+      addNotification(
+        'warning',
+        'Streak Perdido!',
+        `Sua sequência de ${streak} dias foi reiniciada. Comece novamente!`
+      );
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only run on mount - store methods are stable
 
-  const addNotification = (type: 'success' | 'info' | 'warning' | 'error', title: string, message: string) => {
+  const addNotification = (
+    type: 'success' | 'info' | 'warning' | 'error',
+    title: string,
+    message: string
+  ) => {
     const id = Date.now().toString();
     setNotifications(prev => [...prev, { id, type, title, message }]);
   };
@@ -352,7 +379,7 @@ const GameAppContent: React.FC = () => {
       <PageTransition pageKey={currentPage} type="fade" duration={200}>
         <ErrorBoundary
           showDetails={process.env.NODE_ENV === 'development'}
-          onError={(error) => {
+          onError={error => {
             console.error('Page error:', error);
             addNotification('error', 'Erro', 'Ocorreu um erro inesperado. Tente novamente.');
           }}
@@ -366,14 +393,14 @@ const GameAppContent: React.FC = () => {
               totalSkills={totalSkills}
               studyTimeToday={45}
               onNavigate={handleNavigate}
-              onAddXP={(amount) => store.addXP(amount)}
+              onAddXP={amount => store.addXP(amount)}
             />
           )}
 
           {currentPage === 'challenges' && (
             <DailyChallengesPage
               onNavigate={handleNavigate}
-              onXPEarned={(amount) => {
+              onXPEarned={amount => {
                 store.addXP(amount);
                 addNotification('success', 'XP Recebido!', `+${amount} XP das missões diárias`);
               }}
@@ -395,7 +422,6 @@ const GameAppContent: React.FC = () => {
             />
           )}
 
-          
           {currentPage === 'achievements' && (
             <AchievementsPage
               unlockedAchievementIds={[
@@ -424,13 +450,9 @@ const GameAppContent: React.FC = () => {
             />
           )}
 
-          {currentPage === 'sync' && (
-            <SyncSettingsPage onNavigate={handleNavigate} />
-          )}
+          {currentPage === 'sync' && <SyncSettingsPage onNavigate={handleNavigate} />}
 
-          {currentPage === 'stats' && (
-            <StatsPage theme={currentTheme} />
-          )}
+          {currentPage === 'stats' && <StatsPage theme={currentTheme} />}
         </ErrorBoundary>
       </PageTransition>
 

@@ -26079,7 +26079,7 @@
                                   "estimatedTime": "75 minutos",
                                   "materials": [
                                     "Ferramenta Lucidchart ou Draw.io",
-                                    "Guia USPTO sobre patent valuation"
+                                    "Guia UFABCTO sobre patent valuation"
                                   ],
                                   "tips": "Use DCF para valuation simples em planilhas.",
                                   "learningObjective": "Mapear processos operacionais e riscos outbound.",
@@ -26355,7 +26355,7 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Para uma startup de fintech como Nubank, mapeie clientes (usuários jovens), fornecedores (bancos parceiros), concorrentes (Itaú, Mercado Pago), universidades (USP para IA em finanças), fluxos como dados de uso para melhorias em app via feedback universitário.",
+                              "practicalExample": "Para uma startup de fintech como Nubank, mapeie clientes (usuários jovens), fornecedores (bancos parceiros), concorrentes (Itaú, Mercado Pago), universidades (UFABC para IA em finanças), fluxos como dados de uso para melhorias em app via feedback universitário.",
                               "finalVerifications": [
                                 "Lista completa de atores chave com pelo menos 12 itens categorizados.",
                                 "Diagrama visual com fluxos de conhecimento claros e direcionais.",
@@ -29222,7 +29222,7 @@
                                   "verification": "Crie uma tabela: Princípio | Vantagem | Risco, preenchendo para este.",
                                   "estimatedTime": "15 minutos",
                                   "materials": [
-                                    "Guia básico de patentes USPTO ou INPI",
+                                    "Guia básico de patentes UFABCTO ou INPI",
                                     "Exemplos de IP famoso"
                                   ],
                                   "tips": "Diferencie IP defensiva vs. ofensiva.",
@@ -33475,7 +33475,7 @@
                                   "title": "Identificar Fontes Externas Relevantes",
                                   "subSteps": [
                                     "Defina o escopo e necessidades específicas do projeto de desenvolvimento.",
-                                    "Pesquise patentes em bases como USPTO, Google Patents ou Espacenet usando palavras-chave do domínio.",
+                                    "Pesquise patentes em bases como UFABCTO, Google Patents ou Espacenet usando palavras-chave do domínio.",
                                     "Busque artigos científicos e papers em Google Scholar, ResearchGate ou arXiv.",
                                     "Identifique parceiros externos potenciais via LinkedIn, conferências ou redes de inovação aberta.",
                                     "Compile uma lista inicial de 10-15 recursos com resumos breves e links."
@@ -33484,7 +33484,7 @@
                                   "estimatedTime": "4 horas",
                                   "materials": [
                                     "Acesso à internet",
-                                    "Ferramentas de busca de patentes (Google Patents, USPTO)",
+                                    "Ferramentas de busca de patentes (Google Patents, UFABCTO)",
                                     "Google Scholar",
                                     "Planilha ou ferramenta de notas (Google Sheets/Notion)"
                                   ],
@@ -40858,7 +40858,7 @@
                                   "estimatedTime": "20 minutos",
                                   "materials": [
                                     "Livro 'Innovation and Entrepreneurship' de Drucker (capítulo introdutório)",
-                                    "Acesso a banco de patentes online (ex: USPTO)",
+                                    "Acesso a banco de patentes online (ex: UFABCTO)",
                                     "Papel e caneta para mapa mental"
                                   ],
                                   "tips": "Foquem em aspectos técnicos; evite confundir com melhorias comerciais.",

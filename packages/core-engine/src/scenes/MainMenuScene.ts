@@ -41,7 +41,7 @@ export class MainMenuScene extends BaseScene {
 
     // Grid pattern
     const gridSize = 50;
-    const gridColor = "#1a237e";
+    const gridColor = '#1a237e';
 
     for (let x = 0; x < this.phaserScene.cameras.main.width; x += gridSize) {
       this.phaserScene.add
@@ -64,7 +64,7 @@ export class MainMenuScene extends BaseScene {
 
     // Main title
     const title = this.phaserScene.add
-      .text(centerX, titleY, 'ITA RP GAME', {
+      .text(centerX, titleY, 'ENEM RP GAME', {
         fontSize: '48px',
         fontFamily: 'Courier New',
         color: '#00f3ff',
@@ -167,7 +167,7 @@ export class MainMenuScene extends BaseScene {
     });
 
     // Player rank
-    this.phaserScene.add.text(infoX + 200, infoY, `PATENTE: ${player.currentRank.name}`, {
+    this.phaserScene.add.text(infoX + 200, infoY, `NÍVEL: ${player.currentRank.name}`, {
       fontSize: '16px',
       fontFamily: 'Courier New',
       color: '#ffff00',

@@ -1,16 +1,15 @@
 #!/usr/bin/env node
 /**
- * Script para processar PDF do Catálogo de Cursos do ITA e gerar arquivos JSON
+ * Script para processar JSON do Projeto Pedagógico do Curso 2025 Psicologia e gerar arquivos JSON
  * estruturados com expansão atômica usando IA.
  */
 
 import * as fs from 'fs/promises';
 import * as path from 'path';
-// @ts-ignore - pdf-parse não tem tipos oficiais
-import pdf from 'pdf-parse';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore - tipos serão resolvidos após npm install
 import OpenAI from 'openai';
+import pdf from 'pdf-parse';
 
 // Resolve caminhos relativos ao diretório do script
 import { fileURLToPath } from 'url';
@@ -21,12 +20,12 @@ const __dirname = dirname(__filename);
 const scriptDir = __dirname;
 
 // Configuração
-const PDF_PATH = path.join(scriptDir, '..', 'Catálogo dos Cursos de Graduação 2025 - digital Rev.25.07.18-páginas (1).pdf');
+const MATRIZ_JSON_PATH = path.join(scriptDir, '..', 'matriz_referencia.json');
 const OUTPUT_DIR = path.join(scriptDir, '..', 'packages', 'curriculum');
 const ATOMIC_EXPAND_PROMPT_PATH = path.join(scriptDir, '..', 'ATOMIC_EXPAND_PROMPT.md');
 const SCHEMA_EXAMPLE_PATH = path.join(scriptDir, '..', 'schema.json');
 const VALIDATION_SCHEMA_PATH = path.join(scriptDir, '..', 'schema.json');
-const CHECKPOINT_FILE = path.join(OUTPUT_DIR, '.process-catalog-checkpoint.json');
+const CHECKPOINT_FILE = path.join(OUTPUT_DIR, '.process-catalog-checkpoint-enem.json');
 const MAX_CONCURRENT_REQUESTS = parseInt(process.env.MAX_CONCURRENT_REQUESTS || '10', 10);
 
 interface AtomicExpansion {
@@ -120,6 +119,116 @@ interface CurriculumJSON {
   exportDate: string;
   appVersion: string;
   curriculumData: CurriculumData;
+}
+
+// Interface para o JSON de Psicologia
+interface PsicologiaDisciplina {
+  codigo: string;
+  nome: string;
+  creditos: string;
+  horasAula: string;
+  teoria: string;
+  pratica: string;
+  extensao: string;
+  ementa: string;
+  objetivos: string;
+  programa: string;
+  metodo: string;
+  criterio: string;
+  bibliografia: string;
+}
+
+interface PsicologiaData {
+  nomeCurso: string;
+  codigoCurso: string;
+  codigoHabilitacao: string;
+  codigoCG: string;
+  disciplinas: PsicologiaDisciplina[];
+}
+
+// Interface para a Matriz de Referência ENEM
+interface Habilidade {
+  id: string;
+  descricao: string;
+}
+
+interface Competencia {
+  id: string;
+  descricao: string;
+  habilidades: Habilidade[];
+}
+
+interface Tema {
+  id: string;
+  titulo: string;
+  descricao: string;
+  competencias: Competencia[];
+}
+
+interface Dominio {
+  id: string;
+  titulo: string;
+  descricao: string;
+  temas: Tema[];
+}
+
+interface EixoConceptual {
+  titulo: string;
+  descricao: string;
+  dominios: Dominio[];
+}
+
+interface AreaConhecimento {
+  descricao: string;
+  competencias_especificas: Array<{
+    id: string;
+    descricao: string;
+    habilidades: string[];
+  }>;
+}
+
+interface MatrizReferencia {
+  documento: string;
+  edicao: string;
+  ano: number;
+  descricao: string;
+  estrutura: {
+    eixo_conceptual: EixoConceptual;
+  };
+  areas_conhecimento: {
+    Linguagens: AreaConhecimento;
+    Matemática: AreaConhecimento;
+    Ciências_da_Natureza: {
+      descricao: string;
+      subareas: {
+        Física: AreaConhecimento;
+        Química: AreaConhecimento;
+        Biologia: AreaConhecimento;
+      };
+    };
+    Ciências_Humanas: AreaConhecimento;
+  };
+  metadata: {
+    data_extracao: string;
+    fonte: string;
+    total_competencias: number;
+    total_temas: number;
+    total_dominios: number;
+    total_habilidades: number;
+  };
+}
+
+// Interface para competências processadas
+interface CompetenciaProcessada {
+  id: string;
+  codigo: string;
+  nome: string;
+  descricao: string;
+  area: string;
+  dominio?: string;
+  tema?: string;
+  habilidades: Habilidade[];
+  tipo: 'competencia_geral' | 'competencia_especifica';
 }
 
 interface Checkpoint {
@@ -487,7 +596,7 @@ class CatalogProcessor {
   ): Promise<Record<string, any>> {
     const contextDescription = this.getContextDescription(contextPath, fullCurriculum);
 
-    const prompt = `Você é um especialista em currículos educacionais.
+    const prompt = `Você é um especialista em currículos educacionais da ENEM, especificamente em Psicologia.
 
 Contexto: ${contextDescription}
 
@@ -497,7 +606,7 @@ ${JSON.stringify(context, null, 2)}
 Campos que precisam ser preenchidos: ${missingFields.join(', ')}
 
 Com base no contexto e no objeto atual, gere valores apropriados para os campos faltantes.
-Use o schema de currículo educacional do ITA como referência.
+Use o schema de currículo educacional do Projeto Pedagógico de Psicologia como referência.
 
 Retorne APENAS um JSON com os campos preenchidos, sem explicações:
 {
@@ -516,7 +625,7 @@ Retorne APENAS um JSON com os campos preenchidos, sem explicações:
 
   getContextDescription(path: string, curriculum: CurriculumJSON): string {
     const parts = path.split('.');
-    let description = `Currículo: ${curriculum.curriculumData.metadata.basedOn || 'ITA'}`;
+    let description = `Currículo: ${curriculum.curriculumData.metadata.basedOn || 'BCT ENEM'}`;
 
     if (parts.includes('areas')) {
       const areaIndex = parseInt(parts[parts.indexOf('areas') + 1]?.replace(/[\[\]]/g, '') || '0');
@@ -546,10 +655,10 @@ Retorne APENAS um JSON com os campos preenchidos, sem explicações:
   }
 
   getDefaultPrompt(): string {
-    return `# Prompt para Atomic Expand em Currículos JSON
+    return `# Prompt para Atomic Expand em Currículos JSON - BCT ENEM
 
 ## Objetivo
-Expandir elementos specificSkills em arquivos JSON de currículo educacional com expansões atômicas detalhadas (atomicExpansion), transformando habilidades descritivas em passos de aprendizado estruturados e acionáveis.
+Expandir elementos specificSkills em arquivos JSON de currículo educacional do Bacharelado em Ciência e Tecnologia com expansões atômicas detalhadas (atomicExpansion), transformando habilidades descritivas em passos de aprendizado estruturados e acionáveis.
 
 ## Quando Fazer Atomic Expand
 - Um specificSkill não possui atomicExpansion
@@ -559,11 +668,11 @@ Expandir elementos specificSkills em arquivos JSON de currículo educacional com
 ## Estrutura Esperada
 Cada atomicExpansion deve conter:
 - steps: Array com 2-8 steps (geralmente 3-5)
-- practicalExample: Exemplo concreto e prático
+- practicalExample: Exemplo concreto e prático em Ciência e Tecnologia
 - finalVerifications: Lista de verificações finais (3-7 itens)
 - assessmentCriteria: Critérios de avaliação (3-7 itens)
 - crossCurricularConnections: Conexões interdisciplinares (2-5 itens)
-- realWorldApplication: Aplicação prática no mundo real
+- realWorldApplication: Aplicação prática em engenharia, ciências exatas ou tecnologia
 
 ## Campos Obrigatórios para cada step:
 - stepNumber: Número sequencial (1, 2, 3...)
@@ -571,259 +680,457 @@ Cada atomicExpansion deve conter:
 - subSteps: Array com pelo menos 3-5 sub-passos detalhados
 - verification: Como verificar conclusão do passo
 - estimatedTime: Tempo estimado
-- materials: Recursos necessários
-- tips: Dica prática
-- learningObjective: Objetivo específico
-- commonMistakes: Erros comuns a evitar`;
+- materials: Recursos necessários (calculadoras, software, equipamentos de laboratório, etc.)
+- tips: Dica prática para estudantes de Ciência e Tecnologia
+- learningObjective: Objetivo específico de aprendizagem
+- commonMistakes: Erros comuns a evitar em cálculos, experimentos ou implementações`;
   }
 
-  async extractTextFromPDF(pdfPath: string): Promise<string> {
-    console.log(`📄 Extraindo texto de ${pdfPath}...`);
+  async loadMatrizReferencia(): Promise<MatrizReferencia> {
+    console.log(`📄 Carregando dados de ${MATRIZ_JSON_PATH}...`);
 
     if (this.debug) {
       console.log(`🔍 [DEBUG] Verificando se arquivo existe...`);
     }
 
     try {
-      const stats = await fs.stat(pdfPath);
+      const stats = await fs.stat(MATRIZ_JSON_PATH);
       if (this.debug) {
-        console.log(`🔍 [DEBUG] Arquivo encontrado: ${(stats.size / 1024 / 1024).toFixed(2)} MB`);
+        console.log(`🔍 [DEBUG] Arquivo encontrado: ${(stats.size / 1024).toFixed(2)} KB`);
       }
 
-      const dataBuffer = await fs.readFile(pdfPath);
+      const jsonContent = await fs.readFile(MATRIZ_JSON_PATH, 'utf-8');
+      const data = JSON.parse(jsonContent) as MatrizReferencia;
+
+      console.log(`✅ Dados carregados: ${data.documento} - ${data.edicao}`);
+
       if (this.debug) {
-        console.log(`🔍 [DEBUG] Buffer lido: ${(dataBuffer.length / 1024 / 1024).toFixed(2)} MB`);
-        console.log(`🔍 [DEBUG] Processando PDF...`);
+        console.log(`🔍 [DEBUG] Ano: ${data.ano}`);
+        console.log(`🔍 [DEBUG] Total competências: ${data.metadata.total_competencias}`);
+        console.log(`🔍 [DEBUG] Total habilidades: ${data.metadata.total_habilidades}`);
+        console.log(`🔍 [DEBUG] Domínios: ${data.estrutura.eixo_conceptual.dominios.length}`);
+        console.log(`🔍 [DEBUG] Áreas: ${Object.keys(data.areas_conhecimento).length}`);
       }
 
-      const data = await pdf(dataBuffer);
-      console.log(`✅ Texto extraído: ${data.text.length.toLocaleString()} caracteres`);
-      if (this.debug) {
-        console.log(`🔍 [DEBUG] Número de páginas: ${data.numpages}`);
-        console.log(`🔍 [DEBUG] Primeiros 200 caracteres: ${data.text.substring(0, 200)}...`);
-      }
-      return data.text;
+      return data;
     } catch (error: any) {
       if (this.debug) {
         console.error(`🔍 [DEBUG] Erro detalhado:`, error);
       }
-      throw new Error(`Erro ao extrair texto do PDF: ${error.message}`);
+      throw new Error(`Erro ao carregar JSON da Matriz de Referência: ${error.message}`);
     }
   }
 
-  async extractDisciplinesFromPDF(pdfText: string): Promise<Array<{ code: string, name: string, content: string }>> {
+  async extractBCTDisciplinesFromPDF(): Promise<BCTCurriculumData> {
+    console.log(`📄 Carregando dados do PDF: ${PDF_PATH}...`);
+
+    if (this.debug) {
+      console.log(`🔍 [DEBUG] Verificando se arquivo PDF existe...`);
+    }
+
+    try {
+      const stats = await fs.stat(PDF_PATH);
+      if (this.debug) {
+        console.log(`🔍 [DEBUG] Arquivo PDF encontrado: ${(stats.size / 1024 / 1024).toFixed(2)} MB`);
+      }
+
+      const pdfBuffer = await fs.readFile(PDF_PATH);
+      const pdfData = await pdf(pdfBuffer);
+
+      if (this.debug) {
+        console.log(`🔍 [DEBUG] PDF processado: ${pdfData.numpages} páginas`);
+        console.log(`🔍 [DEBUG] Tamanho do texto extraído: ${(pdfData.text.length / 1024).toFixed(2)} KB`);
+      }
+
+      // Extrair disciplinas usando processamento de texto e IA
+      const disciplines = await this.extractDisciplinesFromPDFText(pdfData.text);
+
+      const curriculumData: BCTCurriculumData = {
+        courseName: "Bacharelado em Ciência e Tecnologia",
+        courseCode: "BCT-ENEM",
+        totalCredits: disciplines.reduce((sum, d) => sum + d.credits, 0),
+        totalHours: disciplines.reduce((sum, d) => sum + d.hours, 0),
+        disciplines
+      };
+
+      console.log(`✅ Dados extraídos: ${curriculumData.courseName} (${curriculumData.disciplines.length} disciplinas)`);
+
+      if (this.debug) {
+        console.log(`🔍 [DEBUG] Créditos totais: ${curriculumData.totalCredits}`);
+        console.log(`🔍 [DEBUG] Horas totais: ${curriculumData.totalHours}`);
+        console.log(`🔍 [DEBUG] Primeiras 5 disciplinas:`, curriculumData.disciplines.slice(0, 5).map(d => `${d.code} - ${d.name}`));
+      }
+
+      return curriculumData;
+    } catch (error: any) {
+      if (this.debug) {
+        console.error(`🔍 [DEBUG] Erro detalhado:`, error);
+      }
+      throw new Error(`Erro ao processar PDF do BCT: ${error.message}`);
+    }
+  }
+
+  async extractDisciplinesFromPDFText(pdfText: string): Promise<BCTDiscipline[]> {
     console.log('🔍 Extraindo disciplinas do texto do PDF...');
 
+    // Primeiro, vamos identificar as seções relevantes no PDF
+    const sections = this.identifyRelevantSections(pdfText);
+
     if (this.debug) {
-      console.log(`🔍 [DEBUG] Tamanho do texto: ${pdfText.length.toLocaleString()} caracteres`);
+      console.log(`🔍 [DEBUG] Seções identificadas: ${sections.length}`);
+      sections.forEach((section, index) => {
+        console.log(`🔍 [DEBUG] Seção ${index + 1}: ${section.title.substring(0, 50)}... (${section.content.length} chars)`);
+      });
     }
 
-    const disciplinePattern = /([A-Z]{2,4}-\d{2,3})\s*-\s*([^\n]+)/g;
-    const disciplines: Array<{ code: string, name: string, content: string }> = [];
+    // Usar IA para extrair disciplinas das seções
+    const disciplines = await this.extractDisciplinesWithAI(sections);
 
-    const sections = pdfText.split(/(?=[A-Z]{2,4}-\d{2,3}\s*-)/);
     if (this.debug) {
-      console.log(`🔍 [DEBUG] Seções encontradas: ${sections.length}`);
+      console.log(`🔍 [DEBUG] Disciplinas extraídas: ${disciplines.length}`);
+      disciplines.slice(0, 3).forEach((discipline, index) => {
+        console.log(`🔍 [DEBUG] Disciplina ${index + 1}: ${discipline.code} - ${discipline.name}`);
+      });
     }
+
+    console.log(`✅ Extraídas ${disciplines.length} disciplinas do PDF`);
+    return disciplines;
+  }
+
+  identifyRelevantSections(pdfText: string): Array<{ title: string, content: string }> {
+    const sections: Array<{ title: string, content: string }> = [];
+
+    // Dividir o texto em linhas
+    const lines = pdfText.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+
+    let currentSection: { title: string, content: string } | null = null;
+    let inDisciplineSection = false;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+
+      // Identificar seções de disciplinas obrigatórias e optativas
+      if (line.includes('DISCIPLINAS OBRIGATÓRIAS') ||
+          line.includes('Disciplinas Obrigatórias') ||
+          line.includes('OB)') ||
+          line.includes('Obrigatórias')) {
+
+        if (currentSection && currentSection.content.length > 100) {
+          sections.push(currentSection);
+        }
+
+        currentSection = {
+          title: 'Disciplinas Obrigatórias',
+          content: ''
+        };
+        inDisciplineSection = true;
+        continue;
+      }
+
+      if (line.includes('DISCIPLINAS OPTATIVAS') ||
+          line.includes('Disciplinas Optativas') ||
+          line.includes('OP') ||
+          line.includes('Optativas')) {
+
+        if (currentSection && currentSection.content.length > 100) {
+          sections.push(currentSection);
+        }
+
+        currentSection = {
+          title: 'Disciplinas Optativas',
+          content: ''
+        };
+        inDisciplineSection = true;
+        continue;
+      }
+
+      // Adicionar conteúdo à seção atual
+      if (inDisciplineSection && currentSection) {
+        // Verificar se a linha parece ser uma disciplina
+        const disciplinePattern = /^[A-Z]{3}\s*\d{4}/; // Padrão como "BCJ 0001"
+
+        if (disciplinePattern.test(line) ||
+            line.includes('Créditos') ||
+            line.includes('Teórica') ||
+            line.includes('Prática') ||
+            line.includes('Requisitos') ||
+            line.includes('Ementa')) {
+          currentSection.content += line + '\n';
+        } else if (currentSection.content.length > 0) {
+          // Se já tem conteúdo e esta linha não parece ser disciplina, adiciona mesmo assim
+          currentSection.content += line + '\n';
+        }
+      }
+    }
+
+    // Adicionar a última seção
+    if (currentSection && currentSection.content.length > 100) {
+      sections.push(currentSection);
+    }
+
+    return sections;
+  }
+
+  async extractDisciplinesWithAI(sections: Array<{ title: string, content: string }>): Promise<BCTDiscipline[]> {
+    const allDisciplines: BCTDiscipline[] = [];
 
     for (const section of sections) {
-      const match = section.match(/^([A-Z]{2,4}-\d{2,3})\s*-\s*([^\n]+)/);
-      if (match) {
-        const code = match[1];
-        const restOfLine = match[2].trim();
+      try {
+        console.log(`  🤖 Processando seção: ${section.title}...`);
 
-        const lines = section.split('\n');
-        const firstLine = lines[0] || '';
-        const nameMatch = firstLine.match(/-\s*(.+?)(?:\.|$)/);
-        const name = nameMatch ? nameMatch[1].trim() : restOfLine.split('.')[0].trim();
+        const prompt = `Extraia informações detalhadas das disciplinas da seção abaixo.
 
-        const contentStart = section.indexOf('\n');
-        const content = contentStart > 0
-          ? section.substring(contentStart + 1).trim()
-          : '';
+Título da seção: ${section.title}
 
-        const cleanContent = content
-          .split('\n')
-          .filter(line => {
-            if (/^\d+\.\d+(\.\d+)*\s*$/.test(line.trim())) {
-              return false;
-            }
-            if (line.trim().length < 3) {
-              return false;
-            }
-            return true;
-          })
-          .join('\n')
-          .trim();
+Conteúdo da seção:
+${section.content.substring(0, 8000)}${section.content.length > 8000 ? '...' : ''}
 
-        if (name && cleanContent.length > 10) {
-          disciplines.push({
-            code,
-            name,
-            content: cleanContent
+Para cada disciplina encontrada, extraia:
+- Código (ex: "BCJ 0001", "BCM 0302")
+- Nome completo da disciplina
+- Número de créditos
+- Carga horária total (em horas)
+- Tipo ("mandatory" para obrigatórias, "optional" para optativas)
+- Requisitos/pré-requisitos (se houver)
+- Ementa/ementa (se disponível)
+- Distribuição de carga horária (teórica, prática, extensão se houver)
+- Semestre sugerido (se mencionado)
+
+Retorne um JSON com este formato:
+{
+  "disciplines": [
+    {
+      "code": "BCJ 0001",
+      "name": "Nome da Disciplina",
+      "credits": 4,
+      "hours": 60,
+      "type": "mandatory",
+      "prerequisites": "Requisitos se houver",
+      "syllabus": "Ementa resumida",
+      "semester": 1,
+      "workload": {
+        "theory": 30,
+        "practice": 30,
+        "extension": 0
+      }
+    }
+  ]
+}
+
+IMPORTANTE:
+- Use português
+- Retorne APENAS o JSON, sem markdown
+- Inclua todas as disciplinas encontradas na seção
+- Se não encontrar informações específicas (como semestre), pode omitir o campo
+- Para o tipo, use "mandatory" para disciplinas obrigatórias e "optional" para optativas`;
+
+        const response = await this.makeAPIRequest(prompt, 'Você é um especialista em extrair informações de grades curriculares universitárias.');
+
+        try {
+          const result = JSON.parse(response) as { disciplines: BCTDiscipline[] };
+
+          if (result.disciplines && Array.isArray(result.disciplines)) {
+            allDisciplines.push(...result.disciplines);
+            console.log(`  ✅ ${result.disciplines.length} disciplinas extraídas da seção ${section.title}`);
+          }
+        } catch (parseError) {
+          console.warn(`  ⚠️ Erro ao parsear resposta da IA para seção ${section.title}`);
+          if (this.debug) {
+            console.warn(`🔍 [DEBUG] Resposta da IA:`, response.substring(0, 500));
+          }
+        }
+      } catch (error: any) {
+        console.warn(`  ⚠️ Erro ao processar seção ${section.title}: ${error.message}`);
+      }
+    }
+
+    // Remover duplicatas baseadas no código
+    const uniqueDisciplines = this.removeDuplicateDisciplines(allDisciplines);
+
+    console.log(`✅ Total de disciplinas únicas extraídas: ${uniqueDisciplines.length}`);
+    return uniqueDisciplines;
+  }
+
+  removeDuplicateDisciplines(disciplines: BCTDiscipline[]): BCTDiscipline[] {
+    const seen = new Set<string>();
+    return disciplines.filter(discipline => {
+      const key = discipline.code.replace(/\s+/g, '').toUpperCase();
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    });
+  }
+
+  async extractDisciplinesFromPDF(): Promise<Array<{ code: string, name: string, content: string }>> {
+    console.log('🔍 Extraindo disciplinas do PDF do BCT...');
+
+    const bctData = await this.extractBCTDisciplinesFromPDF();
+    const disciplines: Array<{ code: string, name: string, content: string }> = [];
+
+    if (this.debug) {
+      console.log(`🔍 [DEBUG] Processando ${bctData.disciplines.length} disciplinas do BCT`);
+    }
+
+    for (const discipline of bctData.disciplines) {
+      // Pula disciplinas sem informações básicas
+      if (!discipline.name || discipline.name.trim() === '') {
+        if (this.debug) {
+          console.log(`🔍 [DEBUG] Pulando disciplina ${discipline.code} - sem nome`);
+        }
+        continue;
+      }
+
+      // Monta o conteúdo da disciplina
+      const contentParts: string[] = [];
+
+      if (discipline.name) contentParts.push(`Nome: ${discipline.name}`);
+      if (discipline.code) contentParts.push(`Código: ${discipline.code}`);
+      if (discipline.syllabus) contentParts.push(`Ementa: ${discipline.syllabus}`);
+      if (discipline.objectives) contentParts.push(`Objetivos: ${discipline.objectives}`);
+      if (discipline.prerequisites) contentParts.push(`Pré-requisitos: ${discipline.prerequisites}`);
+      if (discipline.credits) contentParts.push(`Créditos: ${discipline.credits}`);
+      if (discipline.hours) contentParts.push(`Carga horária: ${discipline.hours} horas`);
+      if (discipline.type) contentParts.push(`Tipo: ${discipline.type === 'mandatory' ? 'Obrigatória' : 'Optativa'}`);
+      if (discipline.semester) contentParts.push(`Semestre: ${discipline.semestre}`);
+
+      if (discipline.workload) {
+        if (discipline.workload.theory) contentParts.push(`Teórica: ${discipline.workload.theory} horas`);
+        if (discipline.workload.practice) contentParts.push(`Prática: ${discipline.workload.practice} horas`);
+        if (discipline.workload.extension) contentParts.push(`Extensão: ${discipline.workload.extension} horas`);
+      }
+
+      const content = contentParts.join('\n\n');
+
+      disciplines.push({
+        code: discipline.code,
+        name: discipline.name.trim(),
+        content: content.trim()
+      });
+    }
+
+    if (this.debug) {
+      console.log(`🔍 [DEBUG] Disciplinas processadas do PDF: ${disciplines.length}`);
+      if (disciplines.length > 0) {
+        console.log(`🔍 [DEBUG] Primeiras 3 disciplinas:`, disciplines.slice(0, 3).map(d => `${d.code} - ${d.name}`));
+      }
+    }
+
+    console.log(`✅ Processadas ${disciplines.length} disciplinas do PDF do BCT`);
+    return disciplines;
+  }
+
+  async extractCompetenciasFromMatriz(): Promise<Array<{ code: string, name: string, content: string }>> {
+    console.log('🔍 Extraindo competências da Matriz de Referência ENEM...');
+
+    const matrizData = await this.loadMatrizReferencia();
+    const competencias: Array<{ code: string, name: string, content: string }> = [];
+
+    if (this.debug) {
+      console.log(`🔍 [DEBUG] Processando competências da matriz`);
+    }
+
+    // Extrair competências gerais do eixo conceptual
+    for (const dominio of matrizData.estrutura.eixo_conceptual.dominios) {
+      for (const tema of dominio.temas) {
+        for (const competencia of tema.competencias) {
+          const contentParts: string[] = [];
+
+          contentParts.push(`Tipo: Competência Geral`);
+          contentParts.push(`Domínio: ${dominio.titulo}`);
+          contentParts.push(`Tema: ${tema.titulo}`);
+          contentParts.push(`Descrição: ${competencia.descricao}`);
+
+          if (competencia.habilidades && competencia.habilidades.length > 0) {
+            contentParts.push(`Habilidades (${competencia.habilidades.length}):`);
+            competencia.habilidades.forEach((habilidade, index) => {
+              contentParts.push(`  ${index + 1}. ${habilidade.descricao}`);
+            });
+          }
+
+          const content = contentParts.join('\n\n');
+
+          competencias.push({
+            code: competencia.id,
+            name: `Competência ${competencia.id} - ${tema.titulo}`,
+            content: content.trim()
+          });
+        }
+      }
+    }
+
+    // Extrair competências específicas das áreas de conhecimento
+    const areasConhecimento = [
+      { nome: 'Linguagens', dados: matrizData.areas_conhecimento.Linguagens },
+      { nome: 'Matemática', dados: matrizData.areas_conhecimento.Matemática },
+      { nome: 'Ciências_Humanas', dados: matrizData.areas_conhecimento.Ciências_Humanas }
+    ];
+
+    // Adicionar subáreas de Ciências da Natureza
+    const subareasNatureza = [
+      { nome: 'Física', dados: matrizData.areas_conhecimento.Ciências_da_Natureza.subareas.Física },
+      { nome: 'Química', dados: matrizData.areas_conhecimento.Ciências_da_Natureza.subareas.Química },
+      { nome: 'Biologia', dados: matrizData.areas_conhecimento.Ciências_da_Natureza.subareas.Biologia }
+    ];
+
+    areasConhecimento.push(...subareasNatureza.map(s => ({
+      nome: `Ciências_da_Natureza_${s.nome}`,
+      dados: s.dados
+    })));
+
+    for (const area of areasConhecimento) {
+      if (area.dados && area.dados.competencias_especificas) {
+        for (const competencia of area.dados.competencias_especificas) {
+          const contentParts: string[] = [];
+
+          contentParts.push(`Tipo: Competência Específica`);
+          contentParts.push(`Área: ${area.nome}`);
+          contentParts.push(`Descrição: ${competencia.descricao}`);
+
+          if (competencia.habilidades && competencia.habilidades.length > 0) {
+            contentParts.push(`Habilidades (${competencia.habilidades.length}):`);
+            competencia.habilidades.forEach((habilidade, index) => {
+              contentParts.push(`  ${index + 1}. ${habilidade}`);
+            });
+          }
+
+          const content = contentParts.join('\n\n');
+
+          competencias.push({
+            code: competencia.id,
+            name: `Competência ${competencia.id} - ${area.nome}`,
+            content: content.trim()
           });
         }
       }
     }
 
     if (this.debug) {
-      console.log(`🔍 [DEBUG] Disciplinas encontradas via regex: ${disciplines.length}`);
-      if (disciplines.length > 0) {
-        console.log(`🔍 [DEBUG] Primeiras 3 disciplinas:`, disciplines.slice(0, 3).map(d => d.code));
+      console.log(`🔍 [DEBUG] Competências processadas: ${competencias.length}`);
+      if (competencias.length > 0) {
+        console.log(`🔍 [DEBUG] Primeiras 3 competências:`, competencias.slice(0, 3).map(c => `${c.code} - ${c.name}`));
       }
     }
 
-    if (disciplines.length < 5) {
-      console.log('⚠️  Poucas disciplinas encontradas. Tentando abordagem alternativa com IA...');
-      return await this.extractDisciplinesWithAI(pdfText);
-    }
-
-    console.log(`✅ Encontradas ${disciplines.length} disciplinas`);
-    return disciplines;
+    console.log(`✅ Processadas ${competencias.length} competências da matriz`);
+    return competencias;
   }
 
-  async extractDisciplinesWithAI(pdfText: string): Promise<Array<{ code: string, name: string, content: string }>> {
-    console.log('🤖 Usando IA para extrair disciplinas...');
+  async generateCurriculumJSON(competencia: { code: string, name: string, content: string }): Promise<CurriculumJSON> {
+    console.log(`📝 Gerando JSON para ${competencia.code} - ${competencia.name}...`);
 
     if (this.debug) {
-      console.log(`🔍 [DEBUG] Tamanho do texto a processar: ${pdfText.length.toLocaleString()} caracteres`);
-      const truncatedText = pdfText.substring(0, 50000);
-      console.log(`🔍 [DEBUG] Usando primeiros ${truncatedText.length.toLocaleString()} caracteres para IA`);
-    }
-
-    const prompt = `Extraia todas as disciplinas do catálogo de cursos do ITA do texto abaixo.
-
-Para cada disciplina, identifique:
-- Código (ex: MAT-13, FIS-15, CMC-30)
-- Nome completo
-- Todo o conteúdo da disciplina (requisitos, horas semanais, descrição, bibliografia, etc.)
-
-Retorne um JSON com o seguinte formato:
-{
-  "disciplines": [
-    {
-      "code": "MAT-13",
-      "name": "Cálculo Diferencial e Integral I",
-      "content": "Requisito: Não há. Horas Semanais: 4-0-0-4. ..."
-    }
-  ]
-}
-
-IMPORTANTE: Retorne APENAS um JSON válido, sem markdown, sem explicações.
-
-Texto do catálogo:
-${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)' : ''}`;
-
-    let attempts = 0;
-    while (attempts < this.maxRetries) {
-      try {
-        if (this.debug) {
-          console.log(`🔍 [DEBUG] Tentativa ${attempts + 1}/${this.maxRetries} de extração com IA`);
-          console.log(`🔍 [DEBUG] Modelo: ${this.model}`);
-          console.log(`🔍 [DEBUG] JSON Mode: ${this.supportsJsonMode}`);
-        }
-
-        const requestConfig: any = {
-          model: this.model,
-          messages: [
-            {
-              role: 'system',
-              content: 'Você é um especialista em extrair informações estruturadas de documentos acadêmicos. Sempre retorne JSON válido.'
-            },
-            {
-              role: 'user',
-              content: prompt
-            }
-          ],
-          temperature: 0.1,
-        };
-
-        if (this.supportsJsonMode) {
-          requestConfig.response_format = { type: 'json_object' };
-        }
-
-        const startTime = Date.now();
-        const response = await this.openai.chat.completions.create(requestConfig);
-        const duration = Date.now() - startTime;
-
-        if (this.debug) {
-          console.log(`🔍 [DEBUG] Resposta recebida em ${duration}ms`);
-          console.log(`🔍 [DEBUG] Tokens usados: ${response.usage?.total_tokens || 'N/A'}`);
-        }
-
-        const content = response.choices[0]?.message?.content;
-        if (!content) {
-          throw new Error('Resposta vazia da API');
-        }
-
-        if (this.debug) {
-          console.log(`🔍 [DEBUG] Tamanho da resposta: ${content.length} caracteres`);
-          console.log(`🔍 [DEBUG] Primeiros 200 caracteres: ${content.substring(0, 200)}...`);
-        }
-
-        let jsonContent = content.trim();
-        if (jsonContent.startsWith('```json')) {
-          if (this.debug) console.log(`🔍 [DEBUG] Removendo markdown code block (json)`);
-          jsonContent = jsonContent.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-        } else if (jsonContent.startsWith('```')) {
-          if (this.debug) console.log(`🔍 [DEBUG] Removendo markdown code block`);
-          jsonContent = jsonContent.replace(/```\n?/g, '');
-        }
-
-        const jsonMatch = jsonContent.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-          if (this.debug) console.log(`🔍 [DEBUG] JSON extraído do conteúdo`);
-          jsonContent = jsonMatch[0];
-        }
-
-        if (this.debug) {
-          console.log(`🔍 [DEBUG] Tentando fazer parse do JSON...`);
-        }
-
-        const result = JSON.parse(jsonContent) as { disciplines: Array<{ code: string, name: string, content: string }> };
-        console.log(`✅ Encontradas ${result.disciplines.length} disciplinas via IA`);
-
-        if (this.debug) {
-          console.log(`🔍 [DEBUG] Primeiras 5 disciplinas:`, result.disciplines.slice(0, 5).map(d => `${d.code} - ${d.name}`));
-        }
-
-        return result.disciplines;
-      } catch (error: any) {
-        attempts++;
-        if (this.debug) {
-          console.error(`🔍 [DEBUG] Erro na tentativa ${attempts}:`, error.message);
-          if (error.response) {
-            console.error(`🔍 [DEBUG] Status: ${error.response.status}`);
-            console.error(`🔍 [DEBUG] Data:`, error.response.data);
-          }
-        }
-
-        if (attempts >= this.maxRetries) {
-          console.error(`❌ Erro ao extrair disciplinas com IA após ${this.maxRetries} tentativas:`, error.message);
-          throw error;
-        }
-        const delay = 2000 * attempts;
-        console.warn(`⚠️  Tentativa ${attempts}/${this.maxRetries} falhou, tentando novamente em ${delay}ms...`);
-        await new Promise(resolve => setTimeout(resolve, delay));
-      }
-    }
-    throw new Error('Número máximo de tentativas excedido');
-  }
-
-  async generateCurriculumJSON(discipline: { code: string, name: string, content: string }): Promise<CurriculumJSON> {
-    console.log(`📝 Gerando JSON para ${discipline.code} - ${discipline.name}...`);
-
-    if (this.debug) {
-      console.log(`🔍 [DEBUG] Tamanho do conteúdo da disciplina: ${discipline.content.length} caracteres`);
+      console.log(`🔍 [DEBUG] Tamanho do conteúdo da competência: ${competencia.content.length} caracteres`);
     }
 
     const schemaExample = await this.loadSchemaExample();
 
     // Passo 1: Criar estrutura básica (metadata, área, disciplina)
-    const basicStructure = await this.generateBasicStructure(discipline, schemaExample);
+    const basicStructure = await this.generateBasicStructure(competencia, schemaExample);
 
     // Passo 2: Identificar tópicos principais
-    const mainTopics = await this.identifyMainTopics(discipline, basicStructure);
+    const mainTopics = await this.identifyMainTopics(competencia, basicStructure);
 
     // Passo 3: Para cada tópico principal, gerar estrutura detalhada (em paralelo)
     const detailedTopics = await Promise.all(
@@ -831,7 +1138,7 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
         console.log(`  📑 [${i + 1}/${mainTopics.length}] Processando tópico: ${mainTopic.name}`);
 
         const detailedTopic = await this.generateDetailedMainTopic(
-          discipline,
+          competencia,
           mainTopic,
           basicStructure,
           i + 1
@@ -845,7 +1152,12 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
       })
     );
 
-    basicStructure.curriculumData.areas[0].disciplines[0].mainTopics.push(...detailedTopics);
+    if (basicStructure?.curriculumData?.areas?.[0]?.disciplines?.[0]?.mainTopics) {
+      basicStructure.curriculumData.areas[0].disciplines[0].mainTopics.push(...detailedTopics);
+    } else {
+      console.error('❌ Estrutura básica inválida: areas[0] ou disciplines[0] não encontrados');
+      throw new Error('Estrutura básica inválida retornada pela API');
+    }
 
     // Recalcula totalSkills
     this.recalculateTotalSkills(basicStructure);
@@ -854,25 +1166,25 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
   }
 
   async generateBasicStructure(
-    discipline: { code: string, name: string, content: string },
+    competencia: { code: string, name: string, content: string },
     schemaExample: CurriculumJSON
   ): Promise<CurriculumJSON> {
     console.log(`  🏗️  Criando estrutura básica...`);
 
-    const prompt = `Você é um especialista em currículos educacionais do ITA.
+    const prompt = `Você é um especialista em currículos educacionais da ENEM, especificamente em competências e habilidades do Exame Nacional do Ensino Médio.
 
-Tarefa: Criar APENAS a estrutura básica (metadata, área e disciplina) para a disciplina abaixo.
+Tarefa: Criar APENAS a estrutura básica (metadata, área e disciplina) para a competência abaixo.
 
-Disciplina: ${discipline.code} - ${discipline.name}
+Competência: ${competencia.code} - ${competencia.name}
 
-Conteúdo da disciplina:
-${discipline.content.substring(0, 2000)}${discipline.content.length > 2000 ? '...' : ''}
+Conteúdo da competência:
+${competencia.content.substring(0, 2000)}${competencia.content.length > 2000 ? '...' : ''}
 
 Baseado no schema de exemplo, retorne um JSON com:
 1. formatVersion, exportDate, appVersion
-2. curriculumData.metadata (com baseOn referenciando "${discipline.code}")
+2. curriculumData.metadata (com baseOn referenciando "${competencia.code}")
 3. curriculumData.areas[0] com:
-   - id, name, description apropriados
+   - id, name, description apropriados para ENEM - Matriz de Referência 2026
    - disciplines[0] com:
      - id (ex: "10.1"), name, description
      - mainTopics: [] (vazio por enquanto)
@@ -880,12 +1192,27 @@ Baseado no schema de exemplo, retorne um JSON com:
 IMPORTANTE:
 - Use português
 - IDs sequenciais (ex: área "10", disciplina "10.1")
-- baseOn: "Catálogo dos Cursos de Graduação 2025 - ${discipline.code}"
+- baseOn: "Matriz de Referência ENEM 2026 - ${competencia.code}"
+- institution: "INEP - Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira"
 - Retorne APENAS o JSON, sem markdown`;
 
     const response = await this.makeAPIRequest(prompt, 'Você é um especialista em criar estruturas de currículo educacional.');
 
     const structure = JSON.parse(response) as CurriculumJSON;
+
+    // Valida estrutura mínima
+    if (!structure?.curriculumData?.areas || !Array.isArray(structure.curriculumData.areas) || structure.curriculumData.areas.length === 0) {
+      throw new Error('Estrutura JSON inválida: áreas não encontradas ou vazias na resposta da API');
+    }
+
+    if (!structure.curriculumData.areas[0]?.disciplines || !Array.isArray(structure.curriculumData.areas[0].disciplines) || structure.curriculumData.areas[0].disciplines.length === 0) {
+      throw new Error('Estrutura JSON inválida: disciplinas não encontradas ou vazias na resposta da API');
+    }
+
+    if (!structure.curriculumData.areas[0].disciplines[0]?.mainTopics) {
+      structure.curriculumData.areas[0].disciplines[0].mainTopics = [];
+    }
+
     structure.exportDate = new Date().toISOString();
     structure.curriculumData.metadata.lastUpdated = new Date().toISOString().split('T')[0];
 
@@ -893,20 +1220,20 @@ IMPORTANTE:
   }
 
   async identifyMainTopics(
-    discipline: { code: string, name: string, content: string },
+    competencia: { code: string, name: string, content: string },
     structure: CurriculumJSON
   ): Promise<Array<{ name: string, description: string }>> {
     console.log(`  🔍 Identificando tópicos principais...`);
 
-    const prompt = `Analise o conteúdo da disciplina abaixo e identifique os TÓPICOS PRINCIPAIS (MainTopics).
+    const prompt = `Analise o conteúdo da competência ENEM abaixo e identifique os TÓPICOS PRINCIPAIS (MainTopics).
 
-Disciplina: ${discipline.code} - ${discipline.name}
+Competência: ${competencia.code} - ${competencia.name}
 
 Conteúdo completo:
-${discipline.content}
+${competencia.content}
 
 Para cada tópico principal, identifique:
-- Nome do tópico (ex: "Números Reais e Funções", "Limites e Continuidade", "Derivadas")
+- Nome do tópico (ex: "Análise Crítica", "Compreensão de Processos", "Aplicação de Conhecimentos", "Resolução de Problemas")
 - Descrição breve (1-2 frases)
 
 Retorne um JSON com este formato:
@@ -917,20 +1244,32 @@ Retorne um JSON com este formato:
       "description": "Descrição do tópico 1"
     },
     {
-      "name": "Nome do Tópico 2", 
+      "name": "Nome do Tópico 2",
       "description": "Descrição do tópico 2"
     }
   ]
 }
 
 IMPORTANTE:
-- Identifique 3-8 tópicos principais
-- Cada tópico deve ser um tema significativo da disciplina
+- Identifique 2-6 tópicos principais relevantes para a competência ENEM
+- Cada tópico deve ser um aspecto significativo da competência
 - Use português
 - Retorne APENAS o JSON, sem markdown`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em análise de currículos educacionais.');
-    const result = JSON.parse(response) as { mainTopics: Array<{ name: string, description: string }> };
+    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em análise de competências ENEM.');
+
+    let result;
+    try {
+      result = JSON.parse(response) as { mainTopics: Array<{ name: string, description: string }> };
+    } catch (error) {
+      console.error('❌ Erro ao processar resposta da API para identificar tópicos principais:', error);
+      throw new Error(`Resposta da API inválida ao identificar tópicos principais: ${error}`);
+    }
+
+    if (!result?.mainTopics || !Array.isArray(result.mainTopics)) {
+      console.error('❌ Estrutura de tópicos principais inválida:', result);
+      throw new Error('Estrutura de tópicos principais inválida na resposta da API');
+    }
 
     console.log(`  ✅ Identificados ${result.mainTopics.length} tópicos principais`);
 
@@ -938,15 +1277,18 @@ IMPORTANTE:
   }
 
   async generateDetailedMainTopic(
-    discipline: { code: string, name: string, content: string },
+    competencia: { code: string, name: string, content: string },
     mainTopic: { name: string, description: string },
     structure: CurriculumJSON,
     topicIndex: number
   ): Promise<MainTopic> {
+    if (!structure?.curriculumData?.areas?.[0]?.disciplines?.[0]?.id) {
+      throw new Error('Estrutura inválida: não foi possível encontrar ID da competência');
+    }
     const topicId = `${structure.curriculumData.areas[0].disciplines[0].id}.${topicIndex}`;
 
     // Primeiro, identifica tópicos atômicos
-    const atomicTopics = await this.identifyAtomicTopics(discipline, mainTopic, topicId);
+    const atomicTopics = await this.identifyAtomicTopics(competencia, mainTopic, topicId);
 
     // Para cada tópico atômico, gera estrutura detalhada (em paralelo)
     const detailedAtomicTopics = await Promise.all(
@@ -958,7 +1300,7 @@ IMPORTANTE:
         }
 
         return await this.generateDetailedAtomicTopic(
-          discipline,
+          competencia,
           mainTopic,
           atomicTopic,
           atomicId
@@ -983,21 +1325,21 @@ IMPORTANTE:
   }
 
   async identifyAtomicTopics(
-    discipline: { code: string, name: string, content: string },
+    competencia: { code: string, name: string, content: string },
     mainTopic: { name: string, description: string },
     topicId: string
   ): Promise<Array<{ name: string, description: string }>> {
     const prompt = `Analise o tópico principal abaixo e identifique os TÓPICOS ATÔMICOS (subtópicos específicos).
 
-Disciplina: ${discipline.code} - ${discipline.name}
+Competência: ${competencia.code} - ${competencia.name}
 Tópico Principal: ${mainTopic.name}
 Descrição: ${mainTopic.description}
 
-Conteúdo relevante da disciplina:
-${discipline.content.substring(0, 3000)}${discipline.content.length > 3000 ? '...' : ''}
+Conteúdo relevante da competência:
+${competencia.content.substring(0, 3000)}${competencia.content.length > 3000 ? '...' : ''}
 
 Para cada tópico atômico, identifique:
-- Nome específico (ex: "Propriedades dos Números Reais", "Definição Formal de Limite")
+- Nome específico (ex: "Análise Crítica de Fontes", "Compreensão de Conceitos", "Aplicação Prática", "Avaliação de Argumentos")
 - Descrição breve
 
 Retorne JSON:
@@ -1011,39 +1353,51 @@ Retorne JSON:
 }
 
 IMPORTANTE:
-- Identifique 2-6 tópicos atômicos por tópico principal
-- Cada tópico atômico deve ser um conceito específico e ensinável
+- Identifique 2-5 tópicos atômicos por tópico principal
+- Cada tópico atômico deve ser uma habilidade específica e desenvolvível da competência ENEM
 - Use português
 - Retorne APENAS JSON, sem markdown`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em decomposição de tópicos educacionais.');
-    const result = JSON.parse(response) as { atomicTopics: Array<{ name: string, description: string }> };
+    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em decomposição de competências ENEM.');
+
+    let result;
+    try {
+      result = JSON.parse(response) as { atomicTopics: Array<{ name: string, description: string }> };
+    } catch (error) {
+      console.error('❌ Erro ao processar resposta da API para identificar tópicos atômicos:', error);
+      throw new Error(`Resposta da API inválida ao identificar tópicos atômicos: ${error}`);
+    }
+
+    if (!result?.atomicTopics || !Array.isArray(result.atomicTopics)) {
+      console.error('❌ Estrutura de tópicos atômicos inválida:', result);
+      throw new Error('Estrutura de tópicos atômicos inválida na resposta da API');
+    }
 
     return result.atomicTopics;
   }
 
   async generateDetailedAtomicTopic(
-    discipline: { code: string, name: string, content: string },
+    competencia: { code: string, name: string, content: string },
     mainTopic: { name: string, description: string },
     atomicTopic: { name: string, description: string },
     atomicId: string
   ): Promise<AtomicTopic> {
-    const prompt = `Crie a estrutura detalhada para um tópico atômico específico.
+    const prompt = `Crie a estrutura detalhada para um tópico atômico específico de competência ENEM.
 
-Disciplina: ${discipline.code} - ${discipline.name}
+Competência: ${competencia.code} - ${competencia.name}
 Tópico Principal: ${mainTopic.name}
 Tópico Atômico: ${atomicTopic.name}
 Descrição: ${atomicTopic.description}
 
 Conteúdo relevante:
-${discipline.content.substring(0, 4000)}${discipline.content.length > 4000 ? '...' : ''}
+${competencia.content.substring(0, 4000)}${competencia.content.length > 4000 ? '...' : ''}
 
 Crie:
 1. individualConcepts (2-4 conceitos individuais)
    - Cada conceito com name, description
    - Cada conceito com specificSkills (2-5 habilidades)
      - Cada skill com: id, name, description, atomicExpansion: {}
-     
+
 2. OU specificSkills diretas (se não houver conceitos intermediários)
    - 3-8 habilidades com: id, name, description, atomicExpansion: {}
 
@@ -1088,12 +1442,25 @@ OU se não houver conceitos intermediários:
 
 IMPORTANTE:
 - IDs sequenciais (${atomicId}.1, ${atomicId}.1.1, etc.)
-- Descrições detalhadas e específicas
+- Descrições detalhadas e específicas para competências ENEM
+- Habilidades práticas e aplicáveis (ex: "Analisar criticamente textos", "Interpretar dados", "Resolver problemas matemáticos", "Compreender fenômenos naturais")
 - Use português
 - Retorne APENAS JSON, sem markdown`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em estruturar conteúdo educacional em níveis atômicos.');
-    const result = JSON.parse(response) as { individualConcepts?: IndividualConcept[], specificSkills?: SpecificSkill[] };
+    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em estruturar competências ENEM em níveis atômicos.');
+
+    let result;
+    try {
+      result = JSON.parse(response) as { individualConcepts?: IndividualConcept[], specificSkills?: SpecificSkill[] };
+    } catch (error) {
+      console.error('❌ Erro ao processar resposta da API para gerar tópico atômico detalhado:', error);
+      throw new Error(`Resposta da API inválida ao gerar tópico atômico detalhado: ${error}`);
+    }
+
+    if (!result || (!result.individualConcepts && !result.specificSkills)) {
+      console.error('❌ Estrutura de tópico atômico inválida:', result);
+      throw new Error('Estrutura de tópico atômico inválida na resposta da API');
+    }
 
     return {
       id: atomicId,
@@ -1169,14 +1536,34 @@ IMPORTANTE:
   }
 
   recalculateTotalSkills(curriculum: CurriculumJSON): void {
+    if (!curriculum?.curriculumData?.areas || !Array.isArray(curriculum.curriculumData.areas)) {
+      console.warn('⚠️ Estrutura inválida: areas não encontrado ou não é um array');
+      return;
+    }
+
     curriculum.curriculumData.areas.forEach(area => {
       let areaTotal = 0;
+
+      if (!area.disciplines || !Array.isArray(area.disciplines)) {
+        console.warn('⚠️ Área sem disciplinas válidas, pulando...');
+        return;
+      }
 
       area.disciplines.forEach(discipline => {
         let disciplineTotal = 0;
 
+        if (!discipline.mainTopics || !Array.isArray(discipline.mainTopics)) {
+          console.warn('⚠️ Disciplina sem mainTopics válidos, pulando...');
+          return;
+        }
+
         discipline.mainTopics.forEach(topic => {
           let topicTotal = 0;
+
+          if (!topic.atomicTopics || !Array.isArray(topic.atomicTopics)) {
+            console.warn('⚠️ Tópico sem atomicTopics válidos, pulando...');
+            return;
+          }
 
           topic.atomicTopics.forEach(atomicTopic => {
             const conceptSkills = atomicTopic.individualConcepts?.reduce(
@@ -1441,8 +1828,8 @@ Formato esperado:
     return filepath;
   }
 
-  async processAllDisciplines(): Promise<string[]> {
-    console.log('🚀 === Iniciando processamento do catálogo ===\n');
+  async processAllCompetencias(): Promise<string[]> {
+    console.log('🚀 === Iniciando processamento da Matriz de Referência ENEM 2026 ===\n');
 
     const overallStartTime = Date.now();
 
@@ -1471,64 +1858,63 @@ Formato esperado:
       console.log(`🔍 [DEBUG] Schema de validação carregado: ${this.validationSchema ? 'sim' : 'não'}`);
     }
 
-    const pdfText = await this.extractTextFromPDF(PDF_PATH);
-    const disciplines = await this.extractDisciplinesFromPDF(pdfText);
+    const competencias = await this.extractCompetenciasFromMatriz();
 
-    if (disciplines.length === 0) {
-      throw new Error('Nenhuma disciplina encontrada no PDF');
+    if (competencias.length === 0) {
+      throw new Error('Nenhuma competência encontrada na matriz');
     }
 
-    // Filtra disciplinas já processadas
-    const disciplinesToProcess: Array<{ code: string, name: string, content: string, index: number }> = [];
-    for (let i = 0; i < disciplines.length; i++) {
-      const discipline = disciplines[i];
-      const isProcessed = await this.isDisciplineProcessed(discipline.code);
+    // Filtra competências já processadas
+    const competenciasToProcess: Array<{ code: string, name: string, content: string, index: number }> = [];
+    for (let i = 0; i < competencias.length; i++) {
+      const competencia = competencias[i];
+      const isProcessed = await this.isDisciplineProcessed(competencia.code);
       if (!isProcessed) {
-        disciplinesToProcess.push({ ...discipline, index: i });
+        competenciasToProcess.push({ ...competencia, index: i });
       } else {
-        console.log(`⏭️  [${i + 1}/${disciplines.length}] ${discipline.code} já processado, pulando...`);
+        console.log(`⏭️  [${i + 1}/${competencias.length}] ${competencia.code} já processado, pulando...`);
       }
     }
 
-    if (disciplinesToProcess.length === 0) {
-      console.log(`\n✅ Todas as disciplinas já foram processadas!`);
+    if (competenciasToProcess.length === 0) {
+      console.log(`\n✅ Todas as competências já foram processadas!`);
       return [];
     }
 
-    console.log(`\n📊 ${disciplinesToProcess.length} disciplina(s) para processar (${disciplines.length - disciplinesToProcess.length} já processada(s))`);
+    console.log(`\n📊 ${competenciasToProcess.length} competência(s) para processar (${competencias.length - competenciasToProcess.length} já processada(s))`);
 
     // Atualiza checkpoint com total
     if (!this.checkpoint) {
       this.checkpoint = {
         processedDisciplines: [],
         lastUpdate: new Date().toISOString(),
-        totalDisciplines: disciplines.length
+        totalDisciplines: competencias.length
       };
     } else {
-      this.checkpoint.totalDisciplines = disciplines.length;
+      this.checkpoint.totalDisciplines = competencias.length;
     }
     await this.saveCheckpoint(this.checkpoint);
 
     const outputFiles: string[] = [];
     const errors: Array<{ code: string, error: string }> = [];
 
-    // Processa disciplinas em paralelo com controle de concorrência
+    // Processa competências em paralelo com controle de concorrência
     await this.processInParallel(
-      disciplinesToProcess,
-      async (discipline, localIndex, total) => {
-        const globalIndex = discipline.index + 1;
-        const disciplineStartTime = Date.now();
-        console.log(`\n📚 [${localIndex}/${total}] (${globalIndex}/${disciplines.length}) Processando ${discipline.code}...`);
+      competenciasToProcess,
+      async (competencia, localIndex, total) => {
+        const globalIndex = competencia.index + 1;
+        const competenciaStartTime = Date.now();
+        console.log(`\n📚 [${localIndex}/${total}] (${globalIndex}/${competencias.length}) Processando ${competencia.code}...`);
 
         try {
-          let curriculum = await this.generateCurriculumJSON(discipline);
+          let curriculum = await this.generateCurriculumJSON(competencia);
           curriculum = await this.expandAtomicSkills(curriculum);
-          const filepath = await this.saveCurriculumJSON(curriculum, discipline.code, discipline.name);
+          const filepath = await this.saveCurriculumJSON(curriculum, competencia.code, competencia.name);
           outputFiles.push(filepath);
-          await this.markDisciplineAsProcessed(discipline.code);
+          await this.markDisciplineAsProcessed(competencia.code);
 
-          const disciplineDuration = Date.now() - disciplineStartTime;
-          console.log(`✅ ${discipline.code} concluído em ${(disciplineDuration / 1000).toFixed(1)}s`);
+          const competenciaDuration = Date.now() - competenciaStartTime;
+          console.log(`✅ ${competencia.code} concluído em ${(competenciaDuration / 1000).toFixed(1)}s`);
 
           if (this.debug) {
             const totalSkills = curriculum.curriculumData.metadata.totalAtomicSkills;
@@ -1536,15 +1922,15 @@ Formato esperado:
           }
         } catch (error: any) {
           const errorMsg = error.message || String(error);
-          console.error(`❌ Erro ao processar ${discipline.code}:`, errorMsg);
-          errors.push({ code: discipline.code, error: errorMsg });
+          console.error(`❌ Erro ao processar ${competencia.code}:`, errorMsg);
+          errors.push({ code: competencia.code, error: errorMsg });
 
           if (this.debug) {
             console.error(`🔍 [DEBUG] Stack trace:`, error.stack);
           }
         }
       },
-      Math.max(1, Math.floor(MAX_CONCURRENT_REQUESTS / 3)) // Menos concorrência para disciplinas completas
+      Math.max(1, Math.floor(MAX_CONCURRENT_REQUESTS / 3)) // Menos concorrência para competências completas
     );
 
     const overallDuration = Date.now() - overallStartTime;
@@ -1560,11 +1946,11 @@ Formato esperado:
 
     if (this.debug) {
       console.log(`\n🔍 [DEBUG] Estatísticas finais:`);
-      console.log(`  - Disciplinas processadas: ${outputFiles.length}`);
-      console.log(`  - Disciplinas com erro: ${errors.length}`);
-      console.log(`  - Taxa de sucesso: ${((outputFiles.length / disciplinesToProcess.length) * 100).toFixed(1)}%`);
-      if (disciplinesToProcess.length > 0) {
-        console.log(`  - Tempo médio por disciplina: ${(overallDuration / disciplinesToProcess.length / 1000).toFixed(1)}s`);
+      console.log(`  - Competências processadas: ${outputFiles.length}`);
+      console.log(`  - Competências com erro: ${errors.length}`);
+      console.log(`  - Taxa de sucesso: ${((outputFiles.length / competenciasToProcess.length) * 100).toFixed(1)}%`);
+      if (competenciasToProcess.length > 0) {
+        console.log(`  - Tempo médio por competência: ${(overallDuration / competenciasToProcess.length / 1000).toFixed(1)}s`);
       }
     }
 
@@ -1575,7 +1961,7 @@ Formato esperado:
 async function main() {
   try {
     const processor = new CatalogProcessor();
-    const files = await processor.processAllDisciplines();
+    const files = await processor.processAllCompetencias();
     console.log('\nArquivos gerados:');
     files.forEach(file => console.log(`  - ${file}`));
   } catch (error) {

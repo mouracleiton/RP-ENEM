@@ -18,10 +18,7 @@ interface HomePageProps {
   onStartJourney: () => void;
 }
 
-export const HomePage: React.FC<HomePageProps> = ({
-  onNavigate,
-  onStartJourney,
-}) => {
+export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onStartJourney }) => {
   const { currentTheme } = useTheme();
   const { sounds } = useSoundEffects();
   const store = useGameStore();
@@ -49,16 +46,16 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   // Rotating text animation
   const rotatingTexts = [
-    "Transforme seu conhecimento",
-    "Supere desafios complexos",
-    "Desenvolva habilidades técnicas",
-    "Alcance a excelência acadêmica",
-    "Junte-se à elite do ITA"
+    'Transforme seu conhecimento',
+    'Supere desafios complexos',
+    'Desenvolva habilidades técnicas',
+    'Alcance a excelência acadêmica',
+    'Junte-se à elite do ENEM',
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTextIndex((prev) => (prev + 1) % rotatingTexts.length);
+      setCurrentTextIndex(prev => (prev + 1) % rotatingTexts.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -77,23 +74,27 @@ export const HomePage: React.FC<HomePageProps> = ({
 
   if (!isLoaded) {
     return (
-      <div style={{
-        minHeight: '100vh',
-        background: `linear-gradient(135deg, ${currentTheme.colors.background} 0%, ${currentTheme.colors.surface} 100%)`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-        <div style={{
-          width: '80px',
-          height: '80px',
-          border: `4px solid ${currentTheme.colors.border}`,
-          borderTop: `4px solid ${currentTheme.colors.primary}`,
-          borderRadius: '50%',
-          animation: 'spin 1s linear infinite',
-        }} />
+      <div
+        style={{
+          minHeight: '100vh',
+          background: `linear-gradient(135deg, ${currentTheme.colors.background} 0%, ${currentTheme.colors.surface} 100%)`,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            width: '80px',
+            height: '80px',
+            border: `4px solid ${currentTheme.colors.border}`,
+            borderTop: `4px solid ${currentTheme.colors.primary}`,
+            borderRadius: '50%',
+            animation: 'spin 1s linear infinite',
+          }}
+        />
         <style>{`
           @keyframes spin {
             0% { transform: rotate(0deg); }
@@ -105,52 +106,59 @@ export const HomePage: React.FC<HomePageProps> = ({
   }
 
   return (
-    <div style={{
-      minHeight: '100vh',
-      background: `linear-gradient(135deg, ${currentTheme.colors.background} 0%, ${currentTheme.colors.surface} 50%, ${currentTheme.colors.primary}20 100%)`,
-      position: 'relative',
-      overflow: 'hidden',
-    }}>
+    <div
+      style={{
+        minHeight: '100vh',
+        background: `linear-gradient(135deg, ${currentTheme.colors.background} 0%, ${currentTheme.colors.surface} 50%, ${currentTheme.colors.primary}20 100%)`,
+        position: 'relative',
+        overflow: 'hidden',
+      }}
+    >
       {/* Animated Background */}
       <AnimatedBackground variant="particles" />
 
       {/* Main Content */}
-      <div style={{
-        position: 'relative',
-        zIndex: 2,
-        padding: '20px',
-        maxWidth: '1400px',
-        margin: '0 auto',
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-      }}>
-
-        {/* Hero Section */}
-        <div style={{
-          flex: 1,
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 2,
+          padding: '20px',
+          maxWidth: '1400px',
+          margin: '0 auto',
+          minHeight: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          padding: '40px 20px',
-          animation: showContent ? 'fadeInUp 1s ease-out' : 'none',
-        }}>
-          {/* ITA Emblem */}
-          <div style={{
-            width: '120px',
-            height: '120px',
-            marginBottom: '30px',
-            borderRadius: '50%',
-            background: `linear-gradient(135deg, ${currentTheme.colors.primary}, ${currentTheme.colors.accent})`,
+        }}
+      >
+        {/* Hero Section */}
+        <div
+          style={{
+            flex: 1,
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            fontSize: '3rem',
-            boxShadow: `0 10px 30px ${currentTheme.colors.primary}40`,
-            animation: 'pulse 2s infinite',
-          }}>
+            textAlign: 'center',
+            padding: '40px 20px',
+            animation: showContent ? 'fadeInUp 1s ease-out' : 'none',
+          }}
+        >
+          {/* ENEM Emblem */}
+          <div
+            style={{
+              width: '120px',
+              height: '120px',
+              marginBottom: '30px',
+              borderRadius: '50%',
+              background: `linear-gradient(135deg, ${currentTheme.colors.primary}, ${currentTheme.colors.accent})`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: '3rem',
+              boxShadow: `0 10px 30px ${currentTheme.colors.primary}40`,
+              animation: 'pulse 2s infinite',
+            }}
+          >
             🎯
           </div>
 
@@ -189,10 +197,12 @@ export const HomePage: React.FC<HomePageProps> = ({
           </Text>
 
           {/* Rotating Text */}
-          <div style={{
-            height: '30px',
-            marginBottom: '40px',
-          }}>
+          <div
+            style={{
+              height: '30px',
+              marginBottom: '40px',
+            }}
+          >
             <Text
               variant="body"
               size="lg"
@@ -209,22 +219,26 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           {/* Player Welcome */}
           {playerName && (
-            <Card style={{
-              marginBottom: '40px',
-              background: `${currentTheme.colors.surface}90`,
-              backdropFilter: 'blur(10px)',
-              border: `1px solid ${currentTheme.colors.primary}30`,
-            }}>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '20px',
-                justifyContent: 'center',
-              }}>
+            <Card
+              style={{
+                marginBottom: '40px',
+                background: `${currentTheme.colors.surface}90`,
+                backdropFilter: 'blur(10px)',
+                border: `1px solid ${currentTheme.colors.primary}30`,
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '20px',
+                  justifyContent: 'center',
+                }}
+              >
                 <RankBadge rank={currentRank} size="medium" />
                 <div>
                   <Text variant="body" color={currentTheme.colors.textSecondary}>
-                    Bem-vindo(a), Cadete
+                    Bem-vindo(a), Aluno
                   </Text>
                   <Text variant="heading" size="lg" color={currentTheme.colors.text}>
                     {playerName}
@@ -259,22 +273,26 @@ export const HomePage: React.FC<HomePageProps> = ({
           </Button>
 
           {/* Quick Stats */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-            gap: '20px',
-            width: '100%',
-            maxWidth: '600px',
-            marginBottom: '40px',
-          }}>
-            <div style={{
-              textAlign: 'center',
-              padding: '20px',
-              backgroundColor: `${currentTheme.colors.surface}80`,
-              backdropFilter: 'blur(10px)',
-              borderRadius: '12px',
-              border: `1px solid ${currentTheme.colors.border}50`,
-            }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
+              gap: '20px',
+              width: '100%',
+              maxWidth: '600px',
+              marginBottom: '40px',
+            }}
+          >
+            <div
+              style={{
+                textAlign: 'center',
+                padding: '20px',
+                backgroundColor: `${currentTheme.colors.surface}80`,
+                backdropFilter: 'blur(10px)',
+                borderRadius: '12px',
+                border: `1px solid ${currentTheme.colors.border}50`,
+              }}
+            >
               <div style={{ fontSize: '2rem', marginBottom: '8px' }}>🔥</div>
               <Text variant="heading" size="lg" color={currentTheme.colors.warning}>
                 {streak}
@@ -284,14 +302,16 @@ export const HomePage: React.FC<HomePageProps> = ({
               </Text>
             </div>
 
-            <div style={{
-              textAlign: 'center',
-              padding: '20px',
-              backgroundColor: `${currentTheme.colors.surface}80`,
-              backdropFilter: 'blur(10px)',
-              borderRadius: '12px',
-              border: `1px solid ${currentTheme.colors.border}50`,
-            }}>
+            <div
+              style={{
+                textAlign: 'center',
+                padding: '20px',
+                backgroundColor: `${currentTheme.colors.surface}80`,
+                backdropFilter: 'blur(10px)',
+                borderRadius: '12px',
+                border: `1px solid ${currentTheme.colors.border}50`,
+              }}
+            >
               <div style={{ fontSize: '2rem', marginBottom: '8px' }}>📚</div>
               <Text variant="heading" size="lg" color={currentTheme.colors.primary}>
                 {completedSkills}
@@ -301,14 +321,16 @@ export const HomePage: React.FC<HomePageProps> = ({
               </Text>
             </div>
 
-            <div style={{
-              textAlign: 'center',
-              padding: '20px',
-              backgroundColor: `${currentTheme.colors.surface}80`,
-              backdropFilter: 'blur(10px)',
-              borderRadius: '12px',
-              border: `1px solid ${currentTheme.colors.border}50`,
-            }}>
+            <div
+              style={{
+                textAlign: 'center',
+                padding: '20px',
+                backgroundColor: `${currentTheme.colors.surface}80`,
+                backdropFilter: 'blur(10px)',
+                borderRadius: '12px',
+                border: `1px solid ${currentTheme.colors.border}50`,
+              }}
+            >
               <div style={{ fontSize: '2rem', marginBottom: '8px' }}>⚡</div>
               <Text variant="heading" size="lg" color={currentTheme.colors.accent}>
                 {xp.toLocaleString()}
@@ -321,11 +343,13 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         {/* Quick Actions Bar */}
-        <Card style={{
-          background: `${currentTheme.colors.surface}95`,
-          backdropFilter: 'blur(15px)',
-          border: `1px solid ${currentTheme.colors.primary}30`,
-        }}>
+        <Card
+          style={{
+            background: `${currentTheme.colors.surface}95`,
+            backdropFilter: 'blur(15px)',
+            border: `1px solid ${currentTheme.colors.primary}30`,
+          }}
+        >
           <Text
             variant="heading"
             size="lg"
@@ -335,11 +359,13 @@ export const HomePage: React.FC<HomePageProps> = ({
             Acesso Rápido
           </Text>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '16px',
-          }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '16px',
+            }}
+          >
             <Button
               onClick={() => handleQuickAction('disciplines')}
               variant="secondary"
@@ -363,18 +389,19 @@ export const HomePage: React.FC<HomePageProps> = ({
             >
               🎯 Missões Diárias
             </Button>
-
-                      </div>
+          </div>
         </Card>
 
         {/* Footer */}
-        <div style={{
-          textAlign: 'center',
-          padding: '20px',
-          opacity: 0.7,
-        }}>
+        <div
+          style={{
+            textAlign: 'center',
+            padding: '20px',
+            opacity: 0.7,
+          }}
+        >
           <Text variant="caption" color={currentTheme.colors.textSecondary}>
-            © 2025 ITA Role Play - Desenvolvido com ❤️ para a comunidade ITA
+            © 2025 ENEM Role Play - Desenvolvido com ❤️ para a comunidade ENEM
           </Text>
         </div>
       </div>

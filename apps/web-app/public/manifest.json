@@ -1,7 +1,7 @@
 {
-  "name": "ITA RP Game",
-  "short_name": "ITA Game",
-  "description": "Jogo educacional gamificado para preparação do ITA",
+  "name": "ENEM RP Game",
+  "short_name": "ENEM Game",
+  "description": "Jogo educacional gamificado para preparação do ENEM",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",

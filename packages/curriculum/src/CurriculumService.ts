@@ -20,69 +20,25 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     }
 
     try {
-      // Load all JSON files from the public/curriculum directory
-      // Note: Filenames must match exactly what's in apps/web-app/public/curriculum/
+      // Load all JSON files from the packages/curriculum directory
+      // Note: These are the ENEM competency-based curriculum files
       const curriculumFiles = [
-        // Estatística e Decisão (ED)
-        'ED-13 - 13 - Probabilidade e Estatística.json',
-        'ED-16 - 16 - Análise  de  Regressão  (Nota  6).json',
-        'ED-17 - 17 - Análise de Séries Temporais (Nota 6).json',
-        'ED-18 - 18 - Estatística Aplicada a Experimentos (Nota 6).json',
-        'ED-19 - 19 - Métodos  de Análise  em  Negócios  (Nota 6).json',
-        'ED-20 - 20 - Análise preditiva de dados em negócios.json',
-        'ED-25 - 25 - Tópicos  em  Marketing  Analítico  (Nota  6).json',
-        'ED-26 - 26 - Pesquisa  Operacional.json',
-        'ED-45 - 45 - Gestão de Operações.json',
-        'ED-51 - 51 - Fundamentos em Inovação, Empreendedorismo, Desenvolvimento de Produtos e Serviços.json',
-        'ED-53 - 53 - Gestão  Estratégica  da  Inovação  Tecnológica.json',
-        'ED-61 - 61 - Administração em  Engenharia.json',
-        'ED-62 - 62 - Pensamento  Estratégico.json',
-        'ED-63 - 63 - Pensamento Sistêmico.json',
-        'ED-64 - 64 - Criação de Negócios Tecnológicos.json',
-        'ED-74 - 74 - Desenvolvimento Econômico.json',
-        // Física (IS = Instituto de Ciências)
-        'IS-15 - 15 - Mecânica  I.json',
-        'IS-16 - 16 - Física Experimental I (Nota 4).json',
-        'IS-27 - 27 - Mecânica II.json',
-        'IS-28 - 28 - Física  Experimental  II (Nota  4).json',
-        'IS-32 - 32 - Eletricidade e Magnetismo.json',
-        'IS-46 - 46 - Ondas  e  Física  Moderna.json',
-        'IS-50 - 50 - Introdução à Física Moderna.json',
-        'IS-55 - 55 - Detecção  de  Ondas  Gravitacionais.json',
-        'IS-71 - 71 - Fundamentos de Gases Ionizados.json',
-        'IS-80 - 80 - Fundamentos de Anatomia e Fisiologia Humanas para Engenheiros.json',
-        // Humanidades (UM)
-        'UM-01 - 01 - Epistemologia  e  Filosofia  da  Ciência.json',
-        'UM-02 - 02 - Ética.json',
-        'UM-04 - 04 - Filosofia e Ficção Científica.json',
-        'UM-05 - 05 - Filosofia da história.json',
-        'UM-06 - 06 - Filosofia  política  clássica.json',
-        'UM-07 - 07 - Filosofia política moderna.json',
-        'UM-08 - 08 - Bioética   Ambiental.json',
-        'UM-09 - 09 - Ética na inteligência artificial.json',
-        'UM-20 - 20 - Noções de Direito.json',
-        'UM-22 - 22 - Aspectos  Técnicos-Jurídicos  de  Propriedade  Intelectual.json',
-        'UM-23 - 23 - Inovação e Novos Marcos Regulatórios.json',
-        'UM-24 - 24 - Direito  e  Economia.json',
-        'UM-26 - 26 - Direito  Ambiental  para  a  Engenharia.json',
-        'UM-32 - 32 - Redação Acadêmica.json',
-        'UM-55 - 55 - Questões  do  Cotidiano  do Adulto  Jovem.json',
-        'UM-61 - 61 - Construção de Projetos de Tecnologia Engajada.json',
-        'UM-62 - 62 - Execução de Projeto de Tecnologia Engajada.json',
-        'UM-63 - 63 - Manufatura Avançada e Transformações no Mundo do Trabalho.json',
-        'UM-64 - 64 - História  do  Poder  Aeroespacial  brasileiro.json',
-        'UM-70 - 70 - Tecnologia e Sociedade.json',
-        'UM-74 - 74 - Tecnologia e Educação.json',
-        'UM-77 - 77 - História da Ciência e Tecnologia no Brasil.json',
-        'UM-78 - 78 - Cultura Brasileira.json',
-        'UM-79 - 79 - Teoria  Política.json',
-        'UM-83 - 83 - Análise e Opiniões da Imprensa Internacional (Nota 6).json',
-        'UM-84 - 84 - Política  Internacional  (Nota  6).json',
-        'UM-86 - 86 - Gestão de Processos de Inovação (Nota 6).json',
-        'UM-87 - 87 - Práticas   de   Empreendedorismo   (Nota   6).json',
-        'UM-88 - 88 - Modelos de Negócio (Nota 6).json',
-        'UM-89 - 89 - Formação de Equipes (Nota 6).json',
-        'UM-90 - 90 - História e Filosofia da Lógica (Nota 6).json',
+        // Competências Gerais (C1-C9)
+        'C1 - Competência C1 - Tema 1: Formação do Pensamento Científico.json',
+        'C2 - Competência C2 - Tema 2: Linguagens e Interações.json',
+        'C3 - Competência C3 - Tema 3: Conhecimento e Métodos Científicos.json',
+        'C4 - Competência C4 - Tema 4: Ciência e Transformação Social.json',
+        'C5 - Competência C5 - Tema 4: Ciência e Transformação Social.json',
+        'C6 - Competência C6 - Tema 4: Ciência e Transformação Social.json',
+        'C7 - Competência C7 - Tema 5: Educação CT&I e Nacionalidade.json',
+        'C8 - Competência C8 - Tema 6: Investigação Científica e Argumentação.json',
+        'C9 - Competência C9 - Tema 7: Análise e Resolução de Problemas.json',
+        // Competências Específicas de Linguagens (CL1-CL5)
+        'CL1 - Competência CL1 - Linguagens.json',
+        'CL2 - Competência CL2 - Linguagens.json',
+        'CL3 - Competência CL3 - Linguagens.json',
+        'CL4 - Competência CL4 - Linguagens.json',
+        'CL5 - Competência CL5 - Linguagens.json',
       ];
 
       const areas: any[] = [];
@@ -107,10 +63,11 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
 
       for (const filename of curriculumFiles) {
         try {
-          // Extract discipline code from filename (e.g., 'MAT-13', 'ED-13', 'IS-15')
-          const disciplineCode = filename.split(' ')[0];
+          // Extract competency code from filename (e.g., 'C1', 'C2', 'CL1')
+          const competencyCode = filename.split(' ')[0];
 
           // Construct the full URL for the curriculum file
+          // Load from public/curriculum directory (web runtime)
           const fileUrl = `${baseUrl}curriculum/${encodeURIComponent(filename)}`;
           console.log('[CurriculumService] Fetching:', fileUrl);
           const response = await fetch(fileUrl);
@@ -121,8 +78,8 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
 
           const data = await response.json();
           if (data.curriculumData && data.curriculumData.areas) {
-            // Prefix all IDs with discipline code to ensure uniqueness across files
-            const prefixedAreas = this.prefixIdsInAreas(data.curriculumData.areas, disciplineCode);
+            // Prefix all IDs with competency code to ensure uniqueness across files
+            const prefixedAreas = this.prefixIdsInAreas(data.curriculumData.areas, competencyCode);
             areas.push(...prefixedAreas);
           }
         } catch (error) {
@@ -140,10 +97,10 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
             duration: '1 Semestre',
             dailyStudyHours: '6-8 hours',
             totalAtomicSkills: areas.reduce((sum, area) => sum + area.totalSkills, 0),
-            version: '2.0 - ITA RP Reborn',
+            version: '2.0 - ENEM RP Reborn',
             lastUpdated: new Date().toISOString().split('T')[0],
-            institution: 'Instituto Tecnológico de Aeronáutica (ITA)',
-            basedOn: 'Catálogo dos Cursos de Graduação 2025 - CC201',
+            institution: 'INEP - Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira',
+            basedOn: 'Matriz de Referência ENEM 2026',
           },
           areas,
           infographics: null,
@@ -407,42 +364,54 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     const disciplines = this.getAllDisciplines();
 
     const iconMap: Record<string, string> = {
-      CSI: '💻',
-      MAT: '📐',
-      CMC: '🧮',
-      CTC: '⚙️',
-      ELE: '⚡',
-      FIS: '🔬',
-      QUI: '🧪',
-      ED: '📊',
-      IS: '🔭',
-      UM: '📖',
+      C1: '🧠',    // Formação do Pensamento Científico
+      C2: '💬',    // Linguagens e Interações
+      C3: '🔬',    // Conhecimento e Métodos Científicos
+      C4: '🌍',    // Ciência e Transformação Social
+      C5: '🌍',    // Ciência e Transformação Social (continuação)
+      C6: '🌍',    // Ciência e Transformação Social (continuação)
+      C7: '🇧🇷',   // Educação CT&I e Nacionalidade
+      C8: '🔍',    // Investigação Científica e Argumentação
+      C9: '⚡',    // Análise e Resolução de Problemas
+      CL1: '📝',   // Competências Específicas de Linguagens
+      CL2: '📝',   // Competências Específicas de Linguagens
+      CL3: '📝',   // Competências Específicas de Linguagens
+      CL4: '📝',   // Competências Específicas de Linguagens
+      CL5: '📝',   // Competências Específicas de Linguagens
+      default: '📚',
     };
 
     const colorMap: Record<string, string> = {
-      CSI: '#00d4ff',
-      MAT: '#ff6b6b',
-      CMC: '#4ecdc4',
-      CTC: '#a855f7',
-      ELE: '#fbbf24',
-      FIS: '#22c55e',
-      QUI: '#f472b6',
-      ED: '#06b6d4',
-      IS: '#8b5cf6',
-      UM: '#ec4899',
+      C1: '#3b82f6',   // Azul para pensamento científico
+      C2: '#10b981',   // Verde para linguagens
+      C3: '#8b5cf6',   // Roxo para métodos científicos
+      C4: '#f59e0b',   // Laranja para transformação social
+      C5: '#f59e0b',   // Laranja para transformação social
+      C6: '#f59e0b',   // Laranja para transformação social
+      C7: '#06b6d4',   // Ciano para nacionalidade
+      C8: '#84cc16',   // Verde lima para investigação
+      C9: '#ef4444',   // Vermelho para resolução de problemas
+      CL1: '#ec4899',  // Rosa para linguagens específicas
+      CL2: '#ec4899',  // Rosa para linguagens específicas
+      CL3: '#ec4899',  // Rosa para linguagens específicas
+      CL4: '#ec4899',  // Rosa para linguagens específicas
+      CL5: '#ec4899',  // Rosa para linguagens específicas
+      default: '#6366f1',
     };
 
     return disciplines.map(disc => {
-      const prefix = disc.id.split('-')[0]?.split('.').pop() || 'default';
+      // Extract prefix from ENEM competency codes (e.g., "C1", "CL2" from "C1.1" or "CL2.1")
+      const idParts = disc.id.split('.');
+      const prefix = idParts[0] || 'default';
       const skills = this.getSkillsByDiscipline(disc.id);
 
       return {
         id: disc.id,
-        name: disc.name.replace(/^[\d.]+:\s*/, '').replace(/^CSI-\d+:\s*/, ''),
+        name: disc.name.replace(/^[\d.]+:\s*/, '').replace(/^(C\d|CL\d)-\d+:\s*/, ''),
         description: disc.description,
         totalSkills: skills.length || disc.totalSkills || 0,
-        icon: iconMap[prefix] || '📚',
-        color: colorMap[prefix] || '#6366f1',
+        icon: iconMap[prefix] || iconMap['default'],
+        color: colorMap[prefix] || colorMap['default'],
       };
     });
   }

@@ -96,7 +96,7 @@ const DemoAppContent: React.FC = () => {
         textAlign: 'center',
       }}>
         <Text variant="heading" size="3xl" color={currentTheme.colors.primary} glow>
-          ITA RP Game - Demonstração
+          ENEM RP Game - Demonstração
         </Text>
         <Text variant="body" size="lg" color={currentTheme.colors.textSecondary}>
           Sistema Educacional com Gamificação Cyberpunk
@@ -212,7 +212,7 @@ const DemoAppContent: React.FC = () => {
         size="medium"
       >
         <Text variant="body">
-          Este é um modal demonstrando os componentes UI do ITA RP Game.
+          Este é um modal demonstrando os componentes UI do ENEM RP Game.
           Todos os componentes seguem o design system cyberpunk com temas
           personalizáveis e animações suaves.
         </Text>

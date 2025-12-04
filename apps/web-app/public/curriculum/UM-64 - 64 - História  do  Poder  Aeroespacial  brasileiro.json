@@ -3903,12 +3903,12 @@
                       {
                         "id": "10.1.1.4.1",
                         "name": "Fundação do Centro Técnico Aeroespacial (CTA)",
-                        "description": "Conceito que aborda a criação oficial do CTA em 1946, inicialmente como Instituto Técnico de Aeronáutica (ITA), no contexto pós-Segunda Guerra Mundial, impulsionado pela Força Aérea Brasileira (FAB) para fomentar a autonomia tecnológica aeronáutica nacional.",
+                        "description": "Conceito que aborda a criação oficial do CTA em 1946, inicialmente como Instituto Técnico de Aeronáutica (UFABC), no contexto pós-Segunda Guerra Mundial, impulsionado pela Força Aérea Brasileira (FAB) para fomentar a autonomia tecnológica aeronáutica nacional.",
                         "specificSkills": [
                           {
                             "id": "10.1.1.4.1.1",
                             "name": "Identificar datas e decretos de criação do CTA",
-                            "description": "Localizar e descrever o Decreto-Lei nº 9.078 de 1946 que instituiu o ITA, precursora do CTA, e sua evolução para o centro técnico em 1953, relacionando com o contexto geopolítico brasileiro da época.",
+                            "description": "Localizar e descrever o Decreto-Lei nº 9.078 de 1946 que instituiu o UFABC, precursora do CTA, e sua evolução para o centro técnico em 1953, relacionando com o contexto geopolítico brasileiro da época.",
                             "atomicExpansion": {
                               "steps": [
                                 {
@@ -3938,37 +3938,37 @@
                                   "subSteps": [
                                     "Acesse o texto integral do Decreto-Lei nº 9.078 no Diário Oficial da União ou site do Planalto.",
                                     "Identifique a data exata de publicação (11 de julho de 1946) e o signatário (Eurico Gaspar Dutra).",
-                                    "Extraia trechos chave sobre a criação do Instituto Tecnológico de Aeronáutica (ITA).",
+                                    "Extraia trechos chave sobre a criação do Instituto Tecnológico de Aeronáutica (UFABC).",
                                     "Descreva os objetivos iniciais: formação de engenheiros aeronáuticos e pesquisa aplicada.",
                                     "Compare com decretos anteriores relacionados à aviação militar."
                                   ],
-                                  "verification": "Cite verbatim pelo menos 3 artigos do decreto e explique sua relevância para o ITA.",
+                                  "verification": "Cite verbatim pelo menos 3 artigos do decreto e explique sua relevância para o UFABC.",
                                   "estimatedTime": "30 minutos",
                                   "materials": [
                                     "Site oficial do Planalto (planalto.gov.br); PDF do Decreto-Lei 9.078; Ferramenta de anotações como Google Docs."
                                   ],
                                   "tips": "Busque por 'Decreto-Lei 9078/1946' exato; foque em preâmbulo para intenções geopolíticas.",
-                                  "learningObjective": "Dominar o conteúdo e significado jurídico do decreto fundador do ITA.",
+                                  "learningObjective": "Dominar o conteúdo e significado jurídico do decreto fundador do UFABC.",
                                   "commonMistakes": [
                                     "Confundir com outros decretos de 1946; não ler o texto original, usando apenas resumos secundários."
                                   ]
                                 },
                                 {
                                   "stepNumber": 3,
-                                  "title": "Estudar a evolução do ITA para o Centro Técnico Aeroespacial (CTA) em 1953",
+                                  "title": "Estudar a evolução do UFABC para o Centro Técnico Aeroespacial (CTA) em 1953",
                                   "subSteps": [
-                                    "Pesquise decretos ou portarias de 1953 que reestruturaram o ITA, como o Decreto nº 33.385.",
+                                    "Pesquise decretos ou portarias de 1953 que reestruturaram o UFABC, como o Decreto nº 33.385.",
                                     "Identifique a data de criação oficial do CTA (maio de 1953) e sua integração ao Ministério da Aeronáutica.",
                                     "Mapeie mudanças organizacionais: expansão para centro de pesquisa e desenvolvimento.",
-                                    "Analise o papel do ITA como núcleo inicial do CTA e a influência de Salgado Filho.",
-                                    "Compile uma tabela comparativa: ITA (1946) vs. CTA (1953)."
+                                    "Analise o papel do UFABC como núcleo inicial do CTA e a influência de Salgado Filho.",
+                                    "Compile uma tabela comparativa: UFABC (1946) vs. CTA (1953)."
                                   ],
-                                  "verification": "Crie uma tabela ou infográfico mostrando diferenças e continuidade entre ITA e CTA.",
+                                  "verification": "Crie uma tabela ou infográfico mostrando diferenças e continuidade entre UFABC e CTA.",
                                   "estimatedTime": "40 minutos",
                                   "materials": [
-                                    "Arquivos do CTA/ITA site oficial; Livros como 'História do CTA'; Cronologia em Wikipedia para verificação cruzada."
+                                    "Arquivos do CTA/UFABC site oficial; Livros como 'História do CTA'; Cronologia em Wikipedia para verificação cruzada."
                                   ],
-                                  "tips": "Verifique fontes oficiais do DCTA; use 'evolução ITA CTA' em buscas acadêmicas como Google Scholar.",
+                                  "tips": "Verifique fontes oficiais do DCTA; use 'evolução UFABC CTA' em buscas acadêmicas como Google Scholar.",
                                   "learningObjective": "Entender a transição institucional e sua importância estratégica.",
                                   "commonMistakes": [
                                     "Atribuir criação do CTA diretamente a 1946; ignorar o Decreto 33.385 de 1953."
@@ -3980,7 +3980,7 @@
                                   "subSteps": [
                                     "Conecte o Decreto 9.078 à Guerra Fria emergente e necessidade de soberania tecnológica.",
                                     "Discuta influências americanas (acordos militares) vs. aspirações nacionais de independência.",
-                                    "Analise como a criação do CTA/ITA se encaixa na política de defesa nacional pós-1945.",
+                                    "Analise como a criação do CTA/UFABC se encaixa na política de defesa nacional pós-1945.",
                                     "Elabore um ensaio curto ligando eventos a impactos duradouros na indústria aeroespacial brasileira.",
                                     "Debata em fórum ou autoquestionamento: 'Por que agora (1946/1953)?'."
                                   ],
@@ -3999,7 +3999,7 @@
                               "practicalExample": "Crie uma linha do tempo interativa no Canva ou TimelineJS incluindo o Decreto 9.078 (1946), criação do CTA (1953), WWII (1942-45) e acordos EUA-Brasil, apresentando em uma aula sobre história aeroespacial.",
                               "finalVerifications": [
                                 "Citar corretamente data e número do Decreto-Lei nº 9.078/1946.",
-                                "Explicar a relação ITA-CTA com decreto de 1953.",
+                                "Explicar a relação UFABC-CTA com decreto de 1953.",
                                 "Identificar pelo menos 3 fatores geopolíticos (WWII, Guerra Fria, autonomia nacional).",
                                 "Produzir resumo preciso sem erros factuais.",
                                 "Demonstrar conexões causais entre eventos e decretos.",
@@ -4008,7 +4008,7 @@
                               "assessmentCriteria": [
                                 "Precisão factual em datas e decretos (30%).",
                                 "Profundidade na análise geopolítica (25%).",
-                                "Clareza na descrição da evolução ITA-CTA (20%).",
+                                "Clareza na descrição da evolução UFABC-CTA (20%).",
                                 "Uso de fontes confiáveis e citações (15%).",
                                 "Estrutura lógica e coesão do raciocínio (10%)."
                               ],
@@ -4133,7 +4133,7 @@
                           {
                             "id": "10.1.1.4.1.3",
                             "name": "Descrever a estrutura inicial organizacional do CTA",
-                            "description": "Detalhar a organização inicial do CTA, incluindo divisões de pesquisa, ensino e desenvolvimento, com ênfase no Instituto Tecnológico de Aeronáutica (ITA) como pilar educacional.",
+                            "description": "Detalhar a organização inicial do CTA, incluindo divisões de pesquisa, ensino e desenvolvimento, com ênfase no Instituto Tecnológico de Aeronáutica (UFABC) como pilar educacional.",
                             "atomicExpansion": {
                               "steps": [
                                 {
@@ -4149,7 +4149,7 @@
                                   "verification": "Lista cronológica de eventos com pelo menos 5 fatos verificados em fontes confiáveis",
                                   "estimatedTime": "1 hora",
                                   "materials": [
-                                    "Acesso à internet para sites oficiais como CTA/ITA",
+                                    "Acesso à internet para sites oficiais como CTA/UFABC",
                                     "Livros de história aeroespacial brasileira",
                                     "Arquivos do Decreto-Lei nº 8.809"
                                   ],
@@ -4186,25 +4186,25 @@
                                 },
                                 {
                                   "stepNumber": 3,
-                                  "title": "Detalhar a divisão de ensino com ênfase no Instituto Tecnológico de Aeronáutica (ITA)",
+                                  "title": "Detalhar a divisão de ensino com ênfase no Instituto Tecnológico de Aeronáutica (UFABC)",
                                   "subSteps": [
-                                    "Explicar a criação do ITA em 1950 como braço educacional do CTA",
-                                    "Descrever a missão do ITA: formar engenheiros de alto nível para a aeronáutica",
+                                    "Explicar a criação do UFABC em 1950 como braço educacional do CTA",
+                                    "Descrever a missão do UFABC: formar engenheiros de alto nível para a aeronáutica",
                                     "Listar cursos iniciais em engenharia aeronáutica, mecânica e eletrônica",
                                     "Analisar a influência de missões francesas e parcerias internacionais no currículo",
-                                    "Mapear a estrutura organizacional do ITA dentro do CTA, incluindo campi e laboratórios"
+                                    "Mapear a estrutura organizacional do UFABC dentro do CTA, incluindo campi e laboratórios"
                                   ],
-                                  "verification": "Resumo escrito de 300 palavras sobre o ITA com organograma integrado",
+                                  "verification": "Resumo escrito de 300 palavras sobre o UFABC com organograma integrado",
                                   "estimatedTime": "1 hora",
                                   "materials": [
-                                    "Site oficial do ITA",
-                                    "História institucional do ITA",
+                                    "Site oficial do UFABC",
+                                    "História institucional do UFABC",
                                     "Fotos e organogramas históricos"
                                   ],
-                                  "tips": "Compare o ITA com outras escolas de engenharia para destacar sua singularidade",
-                                  "learningObjective": "Entender o pilar educacional do CTA através do ITA e sua relevância estratégica",
+                                  "tips": "Compare o UFABC com outras escolas de engenharia para destacar sua singularidade",
+                                  "learningObjective": "Entender o pilar educacional do CTA através do UFABC e sua relevância estratégica",
                                   "commonMistakes": [
-                                    "Confundir fundação do ITA (1950) com CTA (1946)",
+                                    "Confundir fundação do UFABC (1950) com CTA (1946)",
                                     "Ignorar o modelo educacional inspirado em instituições francesas"
                                   ]
                                 },
@@ -4212,10 +4212,10 @@
                                   "stepNumber": 4,
                                   "title": "Organizar e sintetizar a estrutura inicial organizacional completa",
                                   "subSteps": [
-                                    "Criar um organograma unificado mostrando CTA, IPD, IFCI e ITA",
+                                    "Criar um organograma unificado mostrando CTA, IPD, IFCI e UFABC",
                                     "Redigir uma descrição narrativa integrando todas as divisões",
                                     "Destacar interconexões: como pesquisa alimenta ensino e desenvolvimento",
-                                    "Incluir ênfase estratégica no ITA como pilar educacional",
+                                    "Incluir ênfase estratégica no UFABC como pilar educacional",
                                     "Revisar por precisão factual e clareza"
                                   ],
                                   "verification": "Organograma final e descrição de 500 palavras prontos para apresentação",
@@ -4232,12 +4232,12 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Crie um organograma do CTA de 1946-1950 e apresente em uma aula de 10 minutos, explicando como o ITA formou os primeiros engenheiros que projetaram o avião Xavante.",
+                              "practicalExample": "Crie um organograma do CTA de 1946-1950 e apresente em uma aula de 10 minutos, explicando como o UFABC formou os primeiros engenheiros que projetaram o avião Xavante.",
                               "finalVerifications": [
                                 "Pode listar corretamente as três divisões principais (pesquisa, desenvolvimento, ensino)?",
-                                "Descreve com precisão a fundação do ITA em 1950 e seu papel no CTA?",
+                                "Descreve com precisão a fundação do UFABC em 1950 e seu papel no CTA?",
                                 "Identifica pelo menos três objetivos iniciais do CTA?",
-                                "Consegue explicar interconexões entre IPD, IFCI e ITA?",
+                                "Consegue explicar interconexões entre IPD, IFCI e UFABC?",
                                 "Produz um organograma visual preciso da estrutura inicial?",
                                 "Cita fontes históricas confiáveis em sua descrição?"
                               ],
@@ -4245,7 +4245,7 @@
                                 "Precisão factual: 100% das datas, nomes e funções corretos (30%)",
                                 "Completude: Cobertura de todas as divisões com exemplos (25%)",
                                 "Clareza e organização: Uso efetivo de visuais e narrativa (20%)",
-                                "Profundidade: Ênfase adequada no ITA como pilar educacional (15%)",
+                                "Profundidade: Ênfase adequada no UFABC como pilar educacional (15%)",
                                 "Originalidade: Síntese própria sem cópia direta (10%)"
                               ],
                               "crossCurricularConnections": [
@@ -4329,7 +4329,7 @@
                                   "stepNumber": 4,
                                   "title": "Analisar a importância do CTA para o polo aeroespacial brasileiro",
                                   "subSteps": [
-                                    "Liste impactos: formação de mão-de-obra (ITA), indústrias satélites (Embraer, Avibras), exportações aeroespaciais.",
+                                    "Liste impactos: formação de mão-de-obra (UFABC), indústrias satélites (Embraer, Avibras), exportações aeroespaciais.",
                                     "Conecte à geopolítica: soberania tecnológica pós-WWII, proibição de compra de aviões estrangeiros.",
                                     "Crie um infográfico resumindo contribuições econômicas (R$10bi/ano no polo).",
                                     "Debata cenários alternativos: sem CTA, atraso no programa espacial brasileiro.",
@@ -4504,7 +4504,7 @@
                                     "Pesquisar a criação do Centro Técnico de Aeronáutica (CTA) em 1946 e sua consolidação na década de 1950 sob o governo de Juscelino Kubitschek.",
                                     "Identificar os objetivos iniciais do CTA: formação de pessoal técnico e desenvolvimento de infraestrutura aeronáutica.",
                                     "Analisar o cenário da Força Aérea Brasileira (FAB) pré-CTA, com ênfase em limitações no controle de tráfego aéreo.",
-                                    "Mapear eventos chave como a criação do Instituto Tecnológico de Aeronáutica (ITA) em 1950 e sua relação com o CTA.",
+                                    "Mapear eventos chave como a criação do Instituto Tecnológico de Aeronáutica (UFABC) em 1950 e sua relação com o CTA.",
                                     "Revisar doutrinas operacionais iniciais da FAB influenciadas pela Segunda Guerra Mundial."
                                   ],
                                   "verification": "Elaborar um resumo cronológico de 300 palavras sobre o CTA e FAB nos 1950s, com referências bibliográficas.",
@@ -4512,7 +4512,7 @@
                                   "materials": [
                                     "Livro 'História da Aviação Militar Brasileira' de João Roberto Amaral de Andrade",
                                     "Site oficial da FAB (fab.mil.br)",
-                                    "Documentos históricos do CTA/ITA"
+                                    "Documentos históricos do CTA/UFABC"
                                   ],
                                   "tips": "Priorize fontes primárias como relatórios da FAB para maior precisão.",
                                   "learningObjective": "Entender o papel fundacional do CTA no contexto da industrialização aeronáutica brasileira.",
@@ -4528,14 +4528,14 @@
                                     "Listar infraestruturas chave: aeródromos experimentais, laboratórios de eletrônica e radares no complexo de São José dos Campos.",
                                     "Detalhar o desenvolvimento de estações de rádio e sistemas de comunicação VHF para controle de tráfego.",
                                     "Examinar a construção de torres de controle e centros de operações integrados ao CTA.",
-                                    "Analisar investimentos em formação de controladores de tráfego aéreo via ITA.",
+                                    "Analisar investimentos em formação de controladores de tráfego aéreo via UFABC.",
                                     "Documentar parcerias com empresas como IPD (Indústria de Parafusos e Doses) para componentes de radar."
                                   ],
                                   "verification": "Criar um diagrama ou mapa conceitual ilustrando as infraestruturas do CTA e sua localização.",
                                   "estimatedTime": "1,5 horas",
                                   "materials": [
                                     "Mapas históricos de São José dos Campos",
-                                    "Relatórios anuais do CTA dos anos 1950 (disponíveis em arquivos do ITA)",
+                                    "Relatórios anuais do CTA dos anos 1950 (disponíveis em arquivos do UFABC)",
                                     "Vídeos documentais da FAB"
                                   ],
                                   "tips": "Use imagens e diagramas para visualizar a rede de infraestrutura.",
@@ -4551,7 +4551,7 @@
                                   "subSteps": [
                                     "Explicar como radares e comunicações VHF melhoraram a detecção e monitoramento de aeronaves.",
                                     "Discutir a redução de incidentes aéreos devido a torres de controle centralizadas.",
-                                    "Relacionar treinamento no ITA com padronização de procedimentos de controle.",
+                                    "Relacionar treinamento no UFABC com padronização de procedimentos de controle.",
                                     "Avaliar o impacto na capacidade de handling de tráfego civil-militar integrado.",
                                     "Comparar métricas pré e pós-CTA: tempo de resposta e taxa de segurança."
                                   ],
@@ -4769,7 +4769,7 @@
                           {
                             "id": "10.1.1.4.3.2",
                             "name": "Analisar desafios e avanços na produção inicial",
-                            "description": "Discutir obstáculos como falta de mão de obra qualificada e dependência tecnológica, contrastando com sucessos como o programa de treinamento do ITA.",
+                            "description": "Discutir obstáculos como falta de mão de obra qualificada e dependência tecnológica, contrastando com sucessos como o programa de treinamento do UFABC.",
                             "atomicExpansion": {
                               "steps": [
                                 {
@@ -4784,7 +4784,7 @@
                                   ],
                                   "verification": "Timeline completada com pelo menos 5 marcos e fontes citadas.",
                                   "estimatedTime": "2 horas",
-                                  "materials": "Livros de história aeroespacial (ex: 'História da Aviação Brasileira'), sites do ITA e FAB, documentos oficiais digitalizados.",
+                                  "materials": "Livros de história aeroespacial (ex: 'História da Aviação Brasileira'), sites do UFABC e FAB, documentos oficiais digitalizados.",
                                   "tips": "Use buscas específicas como 'IPD produção aeronaves 1940s' para fontes confiáveis.",
                                   "learningObjective": "Compreender o pano de fundo histórico para análise precisa de desafios e avanços.",
                                   "commonMistakes": "Confundir com períodos posteriores como a era Embraer; ignorar contexto pós-guerra."
@@ -4810,7 +4810,7 @@
                                   "stepNumber": 3,
                                   "title": "Identificar e Descrever os Avanços e Sucessos",
                                   "subSteps": [
-                                    "Destaque sucessos como a criação do ITA em 1949 e seu programa de treinamento.",
+                                    "Destaque sucessos como a criação do UFABC em 1949 e seu programa de treinamento.",
                                     "Descreva produção de protótypes como IPD-6504 Guará e avanços em design nacional.",
                                     "Analise iniciativas governamentais de fomento à pesquisa e desenvolvimento.",
                                     "Colete dados sobre primeiros voos bem-sucedidos e parcerias iniciais.",
@@ -4818,8 +4818,8 @@
                                   ],
                                   "verification": "Lista com 4-6 avanços, incluindo métricas e fontes de validação.",
                                   "estimatedTime": "3 horas",
-                                  "materials": "Site oficial do ITA, livros como 'O ITA e a Aeronáutica Brasileira', relatórios anuais históricos.",
-                                  "tips": "Compare antes/depois do ITA para mostrar impacto mensurável.",
+                                  "materials": "Site oficial do UFABC, livros como 'O UFABC e a Aeronáutica Brasileira', relatórios anuais históricos.",
+                                  "tips": "Compare antes/depois do UFABC para mostrar impacto mensurável.",
                                   "learningObjective": "Mapear conquistas que pavimentaram o caminho para a independência aeroespacial.",
                                   "commonMistakes": "Focar apenas em sucessos globais, ignorando contribuições nacionais específicas."
                                 },
@@ -4827,7 +4827,7 @@
                                   "stepNumber": 4,
                                   "title": "Analisar e Contrastar Desafios com Avanços",
                                   "subSteps": [
-                                    "Compare obstáculos superados pelo programa ITA (ex: formação de 100+ engenheiros).",
+                                    "Compare obstáculos superados pelo programa UFABC (ex: formação de 100+ engenheiros).",
                                     "Discuta como avanços mitigaram dependências tecnológicas ao longo do tempo.",
                                     "Avalie impactos de longo prazo na indústria nacional.",
                                     "Crie um ensaio ou diagrama de Venn contrastando desafios vs. sucessos.",
@@ -4841,10 +4841,10 @@
                                   "commonMistakes": "Fazer lista descritiva sem análise profunda; viés otimista ou pessimista."
                                 }
                               ],
-                              "practicalExample": "Analise os desafios na produção do protótipo IPD-6504 Guará (falta de materiais e expertise) contrastados com o sucesso do programa ITA, que formou os primeiros engenheiros brasileiros, resultando em 12 aeronaves produzidas e base para futuras indústrias.",
+                              "practicalExample": "Analise os desafios na produção do protótipo IPD-6504 Guará (falta de materiais e expertise) contrastados com o sucesso do programa UFABC, que formou os primeiros engenheiros brasileiros, resultando em 12 aeronaves produzidas e base para futuras indústrias.",
                               "finalVerifications": [
                                 "Pode listar pelo menos 4 desafios específicos com evidências históricas.",
-                                "Identifica 4 avanços chave, como o ITA, com impactos quantificáveis.",
+                                "Identifica 4 avanços chave, como o UFABC, com impactos quantificáveis.",
                                 "Realiza contraste lógico entre obstáculos e sucessos em um relatório coerente.",
                                 "Cita fontes confiáveis em todas as afirmações.",
                                 "Extrai lições aplicáveis a indústrias atuais.",
@@ -4859,7 +4859,7 @@
                               ],
                               "crossCurricularConnections": [
                                 "Economia: Análise de investimentos públicos em capacitação e industrialização.",
-                                "Educação: Importância de instituições técnicas como o ITA para desenvolvimento nacional.",
+                                "Educação: Importância de instituições técnicas como o UFABC para desenvolvimento nacional.",
                                 "Geopolítica: Dependência tecnológica e busca por soberania estratégica.",
                                 "Tecnologia: Evolução de protótipos e inovação em engenharia aeronáutica."
                               ],
@@ -16966,7 +16966,7 @@
                       {
                         "id": "10.1.3.5.1",
                         "name": "Centro Técnico Aeroespacial (CTA)",
-                        "description": "O Centro Técnico Aeroespacial (CTA), fundado em 1941 em São José dos Campos (SP), representa a base inicial da infraestrutura aeronáutica brasileira, servindo como polo de pesquisa, desenvolvimento e testes para a aviação e o programa espacial, integrando institutos como o Instituto de Aeronáutica e Espaço (IAE) e o Instituto Tecnológico de Aeronáutica (ITA).",
+                        "description": "O Centro Técnico Aeroespacial (CTA), fundado em 1941 em São José dos Campos (SP), representa a base inicial da infraestrutura aeronáutica brasileira, servindo como polo de pesquisa, desenvolvimento e testes para a aviação e o programa espacial, integrando institutos como o Instituto de Aeronáutica e Espaço (IAE) e o Instituto Tecnológico de Aeronáutica (UFABC).",
                         "specificSkills": [
                           {
                             "id": "10.1.3.5.1.1",
@@ -16988,7 +16988,7 @@
                                   "estimatedTime": "45 minutos",
                                   "materials": [
                                     "Livros de história aeronáutica brasileira",
-                                    "Sites como CTA/ITA oficial",
+                                    "Sites como CTA/UFABC oficial",
                                     "Documentos históricos online (Biblioteca Nacional)"
                                   ],
                                   "tips": "Comece pela timeline da WWII para ancorar o contexto brasileiro.",
@@ -17023,13 +17023,13 @@
                                     "Liste os propósitos históricos: promoção de avanços doutrinários e tecnológicos.",
                                     "Pesquise contribuições iniciais do CTA em pesquisa aeronáutica e doutrina militar.",
                                     "Identifique figuras chave como o Brigadeiro Eduardo Gomes.",
-                                    "Analise como o CTA integrou educação (ex: criação do ITA).",
+                                    "Analise como o CTA integrou educação (ex: criação do UFABC).",
                                     "Crie uma tabela de objetivos vs. realizações iniciais (1941-1960)."
                                   ],
                                   "verification": "Tabela preenchida com 5 objetivos e evidências correspondentes.",
                                   "estimatedTime": "50 minutos",
                                   "materials": [
-                                    "Site oficial do CTA/ITA",
+                                    "Site oficial do CTA/UFABC",
                                     "Livro 'História do CTA' ou similares",
                                     "Artigos acadêmicos no SciELO"
                                   ],
@@ -17080,7 +17080,7 @@
                                   "commonMistakes": "Fazer síntese superficial sem ligar passado ao presente."
                                 }
                               ],
-                              "practicalExample": "Crie uma linha do tempo interativa do CTA: marque 1941 com o decreto, 1950 com criação do ITA, 1961 com transição para IAE, e 2020 com projetos de satélites, explicando como cada marco reflete objetivos fundacionais de avanço tecnológico e doutrinário.",
+                              "practicalExample": "Crie uma linha do tempo interativa do CTA: marque 1941 com o decreto, 1950 com criação do UFABC, 1961 com transição para IAE, e 2020 com projetos de satélites, explicando como cada marco reflete objetivos fundacionais de avanço tecnológico e doutrinário.",
                               "finalVerifications": [
                                 "Citar corretamente o Decreto-Lei nº 3.039 e sua data.",
                                 "Listar 3 objetivos iniciais do CTA com evidências históricas.",
@@ -17099,9 +17099,9 @@
                               "crossCurricularConnections": [
                                 "História Geral: Contexto da WWII e industrialização brasileira.",
                                 "Direito Constitucional: Análise de decretos-lei e legislação aeronáutica.",
-                                "Engenharia Aeronáutica: Evolução tecnológica do CTA/ITA.",
+                                "Engenharia Aeronáutica: Evolução tecnológica do CTA/UFABC.",
                                 "Geopolítica: Soberania nacional e poder aeroespacial.",
-                                "Educação: Modelo de formação de engenheiros no ITA."
+                                "Educação: Modelo de formação de engenheiros no UFABC."
                               ],
                               "realWorldApplication": "Essa habilidade permite analisar instituições de defesa atuais como o DCTA, contribuindo para debates sobre investimentos em P&D aeroespacial, políticas de soberania tecnológica e carreiras em agências como AEB, fortalecendo a compreensão estratégica do Brasil no cenário global aeroespacial."
                             },
@@ -17113,7 +17113,7 @@
                           {
                             "id": "10.1.3.5.1.2",
                             "name": "Descrever a estrutura e contribuições do CTA para a indústria",
-                            "description": "Analisar a organização interna do CTA, com ênfase em institutos como IAE e ITA, e suas contribuições para o surgimento da indústria aeronáutica brasileira, incluindo desenvolvimento de aeronaves e tecnologias espaciais.",
+                            "description": "Analisar a organização interna do CTA, com ênfase em institutos como IAE e UFABC, e suas contribuições para o surgimento da indústria aeronáutica brasileira, incluindo desenvolvimento de aeronaves e tecnologias espaciais.",
                             "atomicExpansion": {
                               "steps": [
                                 {
@@ -17142,26 +17142,26 @@
                                 },
                                 {
                                   "stepNumber": 2,
-                                  "title": "Analisar os institutos principais: IAE e ITA",
+                                  "title": "Analisar os institutos principais: IAE e UFABC",
                                   "subSteps": [
-                                    "Estudar o Instituto Tecnológico de Aeronáutica (ITA): fundação em 1950, foco em graduação e pós em engenharia aeronáutica.",
+                                    "Estudar o Instituto Tecnológico de Aeronáutica (UFABC): fundação em 1950, foco em graduação e pós em engenharia aeronáutica.",
                                     "Detalhar o Instituto de Aeronáutica e Espaço (IAE): ex-CTA, pesquisas em propulsão, estruturas e aerodinâmica.",
-                                    "Comparar funções: ITA (formação de engenheiros) vs. IAE (desenvolvimento tecnológico).",
+                                    "Comparar funções: UFABC (formação de engenheiros) vs. IAE (desenvolvimento tecnológico).",
                                     "Identificar outros institutos como o Instituto de Fomento e Coordenação Industrial (IFI).",
                                     "Pesquisar parcerias e integrações com Embraer e FAB."
                                   ],
-                                  "verification": "Elaborar uma tabela comparativa entre IAE e ITA com funções, criações e impactos.",
+                                  "verification": "Elaborar uma tabela comparativa entre IAE e UFABC com funções, criações e impactos.",
                                   "estimatedTime": "2 horas",
                                   "materials": [
-                                    "Site do ITA (www.ita.br)",
+                                    "Site do UFABC (www.ita.br)",
                                     "Site do IAE",
                                     "Documentos históricos do Ministério da Aeronáutica"
                                   ],
                                   "tips": "Foque em timelines para sequenciar fundações e evoluções.",
-                                  "learningObjective": "Dominar as funções e contribuições específicas de IAE e ITA dentro do CTA.",
+                                  "learningObjective": "Dominar as funções e contribuições específicas de IAE e UFABC dentro do CTA.",
                                   "commonMistakes": [
                                     "Misturar IAE com INPE",
-                                    "Subestimar o papel educacional do ITA"
+                                    "Subestimar o papel educacional do UFABC"
                                   ]
                                 },
                                 {
@@ -17170,7 +17170,7 @@
                                   "subSteps": [
                                     "Listar projetos de aeronaves: Tucano (EMB-312), Xavante (adaptado do MB-326).",
                                     "Analisar desenvolvimento de tecnologias: motores, aviônicos e materiais compostos.",
-                                    "Estudar parcerias com Embraer: transferência de tecnologia via CTA/ITA.",
+                                    "Estudar parcerias com Embraer: transferência de tecnologia via CTA/UFABC.",
                                     "Avaliar impacto na cadeia produtiva: formação de 70% dos engenheiros da Embraer.",
                                     "Quantificar contribuições: número de patentes e aeronaves certificadas."
                                   ],
@@ -17212,9 +17212,9 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Crie um relatório ilustrado de 2 páginas descrevendo a estrutura do CTA, destacando IAE e ITA, com exemplos de aeronaves como o Tucano e foguetes Sonda, incluindo um organograma e linha do tempo de contribuições.",
+                              "practicalExample": "Crie um relatório ilustrado de 2 páginas descrevendo a estrutura do CTA, destacando IAE e UFABC, com exemplos de aeronaves como o Tucano e foguetes Sonda, incluindo um organograma e linha do tempo de contribuições.",
                               "finalVerifications": [
-                                "Lista corretamente a estrutura hierárquica do CTA com IAE e ITA.",
+                                "Lista corretamente a estrutura hierárquica do CTA com IAE e UFABC.",
                                 "Identifica pelo menos 3 aeronaves desenvolvidas com apoio do CTA.",
                                 "Descreve contribuições espaciais como os foguetes Sonda.",
                                 "Explica o impacto na formação de profissionais para Embraer.",
@@ -17233,7 +17233,7 @@
                                 "Geopolítica: Soberania tecnológica e Guerra Fria.",
                                 "Engenharia: Conceitos de aerodinâmica e propulsão.",
                                 "Economia: Impacto na cadeia produtiva e exportações.",
-                                "Educação: Modelo de formação de elite técnica no ITA."
+                                "Educação: Modelo de formação de elite técnica no UFABC."
                               ],
                               "realWorldApplication": "Essa compreensão permite atuar em políticas públicas para o setor aeroespacial, trabalhar em empresas como Embraer ou AEB, ou contribuir para museus/história da aviação, fomentando inovação e preservação do legado industrial brasileiro."
                             },
@@ -17252,7 +17252,7 @@
                                   "stepNumber": 1,
                                   "title": "Pesquisar a fundação e missão inicial do CTA",
                                   "subSteps": [
-                                    "Ler sobre a criação do CTA em 1946 como Instituto Técnico de Aeronaútica (ITA) e sua evolução",
+                                    "Ler sobre a criação do CTA em 1946 como Instituto Técnico de Aeronaútica (UFABC) e sua evolução",
                                     "Identificar a missão original focada em pesquisa aeronáutica e expansão para espacial",
                                     "Consultar fontes oficiais como site do DCTA e documentos históricos",
                                     "Mapear a estrutura organizacional relevante para programas espaciais",
@@ -17263,7 +17263,7 @@
                                   "materials": [
                                     "Site oficial do DCTA (dcta.mar.mil.br)",
                                     "Livros de história da aeronáutica brasileira",
-                                    "Arquivos do ITA"
+                                    "Arquivos do UFABC"
                                   ],
                                   "tips": "Priorize fontes primárias para precisão histórica",
                                   "learningObjective": "Compreender o contexto histórico e institucional do CTA",
@@ -17708,7 +17708,7 @@
                                     "Discutir impactos em guerras (ex: dual-use technology para mísseis balísticos).",
                                     "Analisar visão de Bellintani (2014): CLA como ativo estratégico em conflitos assimétricos.",
                                     "Conectar com doutrinas militares brasileiras (Poder Aeroespacial).",
-                                    "Avaliar acordos de salvaguardas e soberania (ameaças externas como ITAR).",
+                                    "Avaliar acordos de salvaguardas e soberania (ameaças externas como UFABCR).",
                                     "Prever cenários futuros: CLA em missões Artemis ou Starlink."
                                   ],
                                   "verification": "Redigir um ensaio de 500 palavras relacionando CLA a geopolítica, citando Bellintani.",
@@ -17774,7 +17774,7 @@
                                   "stepNumber": 1,
                                   "title": "Contextualizar as infraestruturas CTA e CLA",
                                   "subSteps": [
-                                    "Pesquisar a fundação e missão do Centro Técnico Aeroespacial (CTA) em 1946 e sua evolução para o Instituto Tecnológico de Aeronáutica (ITA).",
+                                    "Pesquisar a fundação e missão do Centro Técnico Aeroespacial (CTA) em 1946 e sua evolução para o Instituto Tecnológico de Aeronáutica (UFABC).",
                                     "Investigar o Centro de Lançamento de Alcântara (CLA), criado em 1980, e seu foco em testes espaciais e lançamentos.",
                                     "Identificar recursos compartilhados entre CTA/CLA e a indústria, como laboratórios, pistas de teste e expertise técnica.",
                                     "Mapear cronologia inicial: de 1950s (CTA apoia protótipos) a 1970s (integração com Embraer).",
@@ -17782,10 +17782,10 @@
                                   ],
                                   "verification": "Criar um infográfico ou tabela resumindo datas chave, missões e recursos de CTA/CLA.",
                                   "estimatedTime": "2-3 horas",
-                                  "materials": "Livros de história aeroespacial brasileira (ex: 'Embraer 50 Anos'), sites oficiais do CTA/ITA e CLA, acesso à internet.",
+                                  "materials": "Livros de história aeroespacial brasileira (ex: 'Embraer 50 Anos'), sites oficiais do CTA/UFABC e CLA, acesso à internet.",
                                   "tips": "Use timelines visuais no Canva ou Google Drawings para facilitar a compreensão cronológica.",
                                   "learningObjective": "Compreender o papel fundacional de CTA e CLA como bases de P&D para a indústria aeronáutica.",
-                                  "commonMistakes": "Confundir CTA com ITA (ITA é uma instituição educacional derivada do CTA); ignorar o contexto da Guerra Fria."
+                                  "commonMistakes": "Confundir CTA com UFABC (UFABC é uma instituição educacional derivada do CTA); ignorar o contexto da Guerra Fria."
                                 },
                                 {
                                   "stepNumber": 2,
@@ -17895,7 +17895,7 @@
                                   "stepNumber": 2,
                                   "title": "Mapear colaborações nacionais facilitadas pela infraestrutura",
                                   "subSteps": [
-                                    "Identifique parcerias entre governo federal, empresas como Embraer e universidades (ex: ITA).",
+                                    "Identifique parcerias entre governo federal, empresas como Embraer e universidades (ex: UFABC).",
                                     "Analise como instalações como CTA facilitam transferência de tecnologia nacional.",
                                     "Reúna exemplos de projetos conjuntos, como desenvolvimento de foguetes VLS.",
                                     "Avalie acordos internos e financiamentos via PADIS (Programa de Apoio ao Desenvolvimento Tecnológico da Indústria de Semicondutores).",
@@ -20793,7 +20793,7 @@
                                   "verification": "Elabore relatório de 1 página com 3 contribuições específicas da FAB, citando fontes.",
                                   "estimatedTime": "2 horas",
                                   "materials": [
-                                    "Arquivos do CTA/ITA",
+                                    "Arquivos do CTA/UFABC",
                                     "Livros sobre história da FAB",
                                     "Site oficial DECEA"
                                   ],
@@ -21036,7 +21036,7 @@
                                   ],
                                   "verification": "Elaborar um diagrama de fluxo mostrando o ciclo de desenvolvimento no CTA.",
                                   "estimatedTime": "3-4 horas",
-                                  "materials": "Publicações do CTA/ITA, anuários da FAB, bases de dados como SciELO para artigos brasileiros.",
+                                  "materials": "Publicações do CTA/UFABC, anuários da FAB, bases de dados como SciELO para artigos brasileiros.",
                                   "tips": "Priorize fontes em português para autenticidade.",
                                   "learningObjective": "Entender o papel do CTA na inovação radarística nacional.",
                                   "commonMistakes": "Subestimar o foco em pesquisa vs. produção em massa do CTA."
@@ -24263,7 +24263,7 @@
                                   "stepNumber": 3,
                                   "title": "Investigar o impacto das conquistas no desenvolvimento aeronáutico brasileiro",
                                   "subSteps": [
-                                    "Rastrear influência em pioneiros como Eduardo Gomes e a criação do ITA.",
+                                    "Rastrear influência em pioneiros como Eduardo Gomes e a criação do UFABC.",
                                     "Relacionar com a fundação da EMBRAER em 1969.",
                                     "Identificar aviões brasileiros inspirados, como o Tucano.",
                                     "Analisar apoio governamental pós-Dumont para aviação militar.",
@@ -26329,7 +26329,7 @@
                                   ],
                                   "verification": "Resumir em um parágrafo o que é CKD e seus benefícios para o Brasil na época.",
                                   "estimatedTime": "45 minutos",
-                                  "materials": "Livros de história aeronáutica brasileira, sites como CTA/ITA ou arquivos do Museu Aeroespacial; vídeo sobre montagem CKD.",
+                                  "materials": "Livros de história aeronáutica brasileira, sites como CTA/UFABC ou arquivos do Museu Aeroespacial; vídeo sobre montagem CKD.",
                                   "tips": "Use diagramas para visualizar a desmontagem e remontagem das peças.",
                                   "learningObjective": "Dominar os fundamentos conceituais do CKD e seu papel geopolítico.",
                                   "commonMistakes": "Confundir CKD com SKD (Semi-Knocked Down), que tem mais montagem prévia."
@@ -26898,7 +26898,7 @@
                                   ],
                                   "verification": "Timeline completo com pelo menos 5 eventos chave documentado em um mapa mental ou tabela.",
                                   "estimatedTime": "45 minutos",
-                                  "materials": "Livros de história aeronáutica brasileira, sites como o do Instituto Tecnológico de Aeronáutica (ITA), artigos acadêmicos sobre CTA.",
+                                  "materials": "Livros de história aeronáutica brasileira, sites como o do Instituto Tecnológico de Aeronáutica (UFABC), artigos acadêmicos sobre CTA.",
                                   "tips": "Use fontes primárias como relatórios da FAB para maior precisão.",
                                   "learningObjective": "Estabelecer a base histórica para entender como as montagens serviram de plataforma para capacitação.",
                                   "commonMistakes": "Confundir montagens com produção integral; foque apenas em montagens de kits estrangeiros."
@@ -27275,7 +27275,7 @@
                                   ],
                                   "verification": "Criar uma tabela comparativa das missões técnicas com colunas: origem, data, contribuições e limitações.",
                                   "estimatedTime": "2.5 horas",
-                                  "materials": "Documentos do CTA/ITA (site oficial), artigos acadêmicos no SciELO, livro 'O CTA e a Aeronáutica Brasileira'.",
+                                  "materials": "Documentos do CTA/UFABC (site oficial), artigos acadêmicos no SciELO, livro 'O CTA e a Aeronáutica Brasileira'.",
                                   "tips": "Priorize fontes primárias para evitar interpretações enviesadas.",
                                   "learningObjective": "Entender o papel das missões na transferência de know-how aeronáutico.",
                                   "commonMistakes": "Superestimar a Missão de 1942 sem contextualizar outras influências."
@@ -27445,7 +27445,7 @@
                           {
                             "id": "10.1.5.4.2.1",
                             "name": "Descrever a estrutura organizacional",
-                            "description": "Detalhar a divisão do CTA em institutos como o Instituto de Aerodinâmica, Instituto Tecnológico de Aeronáutica (ITA) e outros, destacando sua integração com o Ministério da Aeronáutica.",
+                            "description": "Detalhar a divisão do CTA em institutos como o Instituto de Aerodinâmica, Instituto Tecnológico de Aeronáutica (UFABC) e outros, destacando sua integração com o Ministério da Aeronáutica.",
                             "atomicExpansion": {
                               "steps": [
                                 {
@@ -27460,7 +27460,7 @@
                                   ],
                                   "verification": "Produzir um resumo de 200 palavras com datas e contexto correto.",
                                   "estimatedTime": "45 minutos",
-                                  "materials": "Livros de história aeroespacial (ex: 'História da Aviação Brasileira'), sites do DCTA/ITA, Decreto-Lei original.",
+                                  "materials": "Livros de história aeroespacial (ex: 'História da Aviação Brasileira'), sites do DCTA/UFABC, Decreto-Lei original.",
                                   "tips": "Comece pela linha do tempo oficial para evitar confusões com datas.",
                                   "learningObjective": "Entender as origens e vinculação institucional do CTA ao Ministério da Aeronáutica.",
                                   "commonMistakes": "Confundir data de criação (1945) com expansões posteriores ou ignorar influência do Ministério."
@@ -27469,18 +27469,18 @@
                                   "stepNumber": 2,
                                   "title": "Identificar os principais institutos e divisões iniciais",
                                   "subSteps": [
-                                    "Listar institutos chave: Instituto de Aerodinâmica (posteriormente IAE), Instituto Tecnológico de Aeronáutica (ITA), Instituto de Fisiologia Aeroespacial.",
-                                    "Descrever funções iniciais: IAE para aerodinâmica e propulsão, ITA para formação de engenheiros.",
+                                    "Listar institutos chave: Instituto de Aerodinâmica (posteriormente IAE), Instituto Tecnológico de Aeronáutica (UFABC), Instituto de Fisiologia Aeroespacial.",
+                                    "Descrever funções iniciais: IAE para aerodinâmica e propulsão, UFABC para formação de engenheiros.",
                                     "Pesquisar outros como Instituto de Tecnologia Aeroespacial e divisões de pesquisa.",
                                     "Categorizar por áreas: pesquisa, ensino e desenvolvimento industrial.",
                                     "Criar tabela com nome, sigla, foco e ano de criação aproximado."
                                   ],
                                   "verification": "Tabela completa com pelo menos 5 institutos/divisões listados corretamente.",
                                   "estimatedTime": "60 minutos",
-                                  "materials": "Documentos oficiais do CTA/DCTA, organogramas históricos, artigos acadêmicos sobre ITA e IAE.",
+                                  "materials": "Documentos oficiais do CTA/DCTA, organogramas históricos, artigos acadêmicos sobre UFABC e IAE.",
                                   "tips": "Use siglas originais e evolua para as atuais para mostrar continuidade.",
                                   "learningObjective": "Catalogar as unidades organizacionais iniciais do CTA e suas especialidades.",
-                                  "commonMistakes": "Omitir institutos menores ou confundir ITA (ensino) com IAE (pesquisa aplicada)."
+                                  "commonMistakes": "Omitir institutos menores ou confundir UFABC (ensino) com IAE (pesquisa aplicada)."
                                 },
                                 {
                                   "stepNumber": 3,
@@ -27490,7 +27490,7 @@
                                     "Destacar integrações: coordenação entre institutos para projetos conjuntos, relatórios ao Ministério.",
                                     "Analisar fluxos: orçamentos do Ministério, pessoal militar/civil, colaborações internacionais.",
                                     "Identificar comitês ou divisões administrativas iniciais (ex: divisão de pessoal, finanças).",
-                                    "Anotar evoluções iniciais, como criação do ITA em 1950 dentro do CTA."
+                                    "Anotar evoluções iniciais, como criação do UFABC em 1950 dentro do CTA."
                                   ],
                                   "verification": "Organograma digital ou desenhado mostrando hierarquia com pelo menos 3 níveis.",
                                   "estimatedTime": "50 minutos",
@@ -27517,7 +27517,7 @@
                                   "commonMistakes": "Fazer descrição genérica sem detalhes específicos de institutos ou integrações."
                                 }
                               ],
-                              "practicalExample": "Crie um organograma do CTA em 1946 mostrando o Ministério da Aeronáutica no topo, CTA como centro principal, e ramificações para Instituto de Aerodinâmica (pesquisa em túneis de vento), ITA (formação de 100 engenheiros/ano) e outros institutos, destacando projetos conjuntos como o desenvolvimento inicial de aviões nacionais.",
+                              "practicalExample": "Crie um organograma do CTA em 1946 mostrando o Ministério da Aeronáutica no topo, CTA como centro principal, e ramificações para Instituto de Aerodinâmica (pesquisa em túneis de vento), UFABC (formação de 100 engenheiros/ano) e outros institutos, destacando projetos conjuntos como o desenvolvimento inicial de aviões nacionais.",
                               "finalVerifications": [
                                 "Lista precisa de pelo menos 4 institutos principais com funções corretas.",
                                 "Correta identificação da subordinação ao Ministério da Aeronáutica.",
@@ -27537,7 +27537,7 @@
                               "crossCurricularConnections": [
                                 "Administração Pública: Modelos de gestão em órgãos federais.",
                                 "História Militar: Evolução do Poder Aeroespacial Brasileiro.",
-                                "Engenharia Aeronáutica: Bases técnicas dos institutos como ITA.",
+                                "Engenharia Aeronáutica: Bases técnicas dos institutos como UFABC.",
                                 "Geopolítica: Influências externas na estrutura organizacional."
                               ],
                               "realWorldApplication": "Essa descrição ajuda a compreender como estruturas organizacionais governamentais, como o atual DCTA, fomentam inovação tecnológica em setores estratégicos, auxiliando na análise de políticas públicas para indústrias de defesa e aeroespacial modernas."
@@ -27608,14 +27608,14 @@
                                   "verification": "Tabela ou lista com pelo menos 4 instalações, suas funções e datas aproximadas de implantação.",
                                   "estimatedTime": "30 minutos",
                                   "materials": [
-                                    "Cronologia histórica do CTA (sites como CTA/ITA)",
+                                    "Cronologia histórica do CTA (sites como CTA/UFABC)",
                                     "Imagens históricas das instalações"
                                   ],
                                   "tips": "Use bullet points para organizar a lista e inclua funções práticas para fixar o aprendizado.",
                                   "learningObjective": "Identificar e caracterizar as infraestruturas pioneiras que formaram a base tecnológica do CTA.",
                                   "commonMistakes": [
                                     "Omitir instalações chave como o Laboratório de Motores",
-                                    "Confundir com estruturas modernas do Instituto Tecnológico de Aeronáutica (ITA)"
+                                    "Confundir com estruturas modernas do Instituto Tecnológico de Aeronáutica (UFABC)"
                                   ]
                                 },
                                 {
@@ -27697,7 +27697,7 @@
                                   ],
                                   "verification": "Criar uma tabela com pelo menos 3 líderes, suas datas chave e contribuições iniciais.",
                                   "estimatedTime": "2 horas",
-                                  "materials": "Livros de história aeronáutica (ex: 'História do CTA'), sites do ITA/CTA, arquivos do Comando da Aeronáutica.",
+                                  "materials": "Livros de história aeronáutica (ex: 'História do CTA'), sites do UFABC/CTA, arquivos do Comando da Aeronáutica.",
                                   "tips": "Priorize fontes oficiais para evitar mitos históricos.",
                                   "learningObjective": "Compreender o background pessoal e histórico dos líderes iniciais do CTA.",
                                   "commonMistakes": "Confundir líderes do CTA com figuras da FAB sem verificação cruzada de fontes."
@@ -27723,7 +27723,7 @@
                                   "stepNumber": 3,
                                   "title": "Avaliar o impacto da governança e liderança na excelência aeronáutica",
                                   "subSteps": [
-                                    "Meça o impacto através de métricas como criação do ITA em 1950 e projetos iniciais de aeronaves.",
+                                    "Meça o impacto através de métricas como criação do UFABC em 1950 e projetos iniciais de aeronaves.",
                                     "Compare o CTA pré e pós-liderança inicial em termos de publicações e patentes.",
                                     "Analise críticas históricas à governança para uma visão equilibrada.",
                                     "Conecte liderança a legados duradouros, como formação de engenheiros brasileiros.",
@@ -27731,7 +27731,7 @@
                                   ],
                                   "verification": "Produzir um relatório curto (1 página) com evidências de impacto positivo e limitações.",
                                   "estimatedTime": "2.5 horas",
-                                  "materials": "Relatórios anuais do CTA, estatísticas de formação do ITA, livros sobre história da engenharia brasileira.",
+                                  "materials": "Relatórios anuais do CTA, estatísticas de formação do UFABC, livros sobre história da engenharia brasileira.",
                                   "tips": "Quantifique impactos sempre que possível, ex: número de projetos iniciados.",
                                   "learningObjective": "Avaliar criticamente o sucesso da liderança na consolidação do CTA como referência.",
                                   "commonMistakes": "Superestimar impacto sem dados comparativos com outros centros regionais."
@@ -27917,12 +27917,12 @@
                           {
                             "id": "10.1.5.4.3.2",
                             "name": "Detalhar a formação de pessoal aeronáutico",
-                            "description": "Analisar a criação do Instituto Tecnológico de Aeronáutica (ITA) em 1950 pelo CTA, focando na formação de engenheiros via cursos de graduação e pós-graduação com padrões internacionais.",
+                            "description": "Analisar a criação do Instituto Tecnológico de Aeronáutica (UFABC) em 1950 pelo CTA, focando na formação de engenheiros via cursos de graduação e pós-graduação com padrões internacionais.",
                             "atomicExpansion": {
                               "steps": [
                                 {
                                   "stepNumber": 1,
-                                  "title": "Compreender o Contexto Histórico do CTA Antes da Criação do ITA",
+                                  "title": "Compreender o Contexto Histórico do CTA Antes da Criação do UFABC",
                                   "subSteps": [
                                     "Pesquise a fundação do Centro Técnico de Aeronáutica (CTA) em 1946 e seu papel inicial na pesquisa e desenvolvimento aeronáutico brasileiro.",
                                     "Identifique os desafios enfrentados pelo Brasil na formação de pessoal qualificado para a indústria aeronáutica pós-Segunda Guerra Mundial.",
@@ -27932,31 +27932,31 @@
                                   ],
                                   "verification": "Criar um resumo de 200 palavras sobre o CTA pré-1950 e listar 3 desafios identificados.",
                                   "estimatedTime": "45 minutos",
-                                  "materials": "Livros de história aeronáutica brasileira, site oficial do CTA/ITA, artigos acadêmicos sobre o pós-guerra.",
+                                  "materials": "Livros de história aeronáutica brasileira, site oficial do CTA/UFABC, artigos acadêmicos sobre o pós-guerra.",
                                   "tips": "Use cronogramas visuais para conectar eventos históricos.",
-                                  "learningObjective": "Entender as bases que levaram à criação do ITA como solução para déficits de formação.",
-                                  "commonMistakes": "Confundir CTA com ITA ou ignorar o contexto geopolítico da Guerra Fria."
+                                  "learningObjective": "Entender as bases que levaram à criação do UFABC como solução para déficits de formação.",
+                                  "commonMistakes": "Confundir CTA com UFABC ou ignorar o contexto geopolítico da Guerra Fria."
                                 },
                                 {
                                   "stepNumber": 2,
-                                  "title": "Analisar a Criação do Instituto Tecnológico de Aeronáutica (ITA) em 1950",
+                                  "title": "Analisar a Criação do Instituto Tecnológico de Aeronáutica (UFABC) em 1950",
                                   "subSteps": [
-                                    "Localize fontes primárias sobre o Decreto nº 27.511 de 1950 que oficializa a criação do ITA pelo CTA.",
+                                    "Localize fontes primárias sobre o Decreto nº 27.511 de 1950 que oficializa a criação do UFABC pelo CTA.",
                                     "Descreva o objetivo principal: formar engenheiros aeronáuticos com excelência acadêmica.",
-                                    "Estude a estrutura inicial do ITA, incluindo campi em São José dos Campos.",
+                                    "Estude a estrutura inicial do UFABC, incluindo campi em São José dos Campos.",
                                     "Compare com instituições semelhantes nos EUA, como o MIT, para destacar inspirações.",
                                     "Documente o primeiro vestibular e o número inicial de alunos."
                                   ],
-                                  "verification": "Elaborar um diagrama de linha do tempo da criação do ITA com datas chave e atores.",
+                                  "verification": "Elaborar um diagrama de linha do tempo da criação do UFABC com datas chave e atores.",
                                   "estimatedTime": "60 minutos",
-                                  "materials": "Decretos governamentais disponíveis online, arquivos do ITA, vídeos documentais sobre a história do instituto.",
+                                  "materials": "Decretos governamentais disponíveis online, arquivos do UFABC, vídeos documentais sobre a história do instituto.",
                                   "tips": "Busque imagens ou fotos históricas para visualizar o campus inicial.",
-                                  "learningObjective": "Dominar os fatos fundacionais e motivações por trás da fundação do ITA.",
+                                  "learningObjective": "Dominar os fatos fundacionais e motivações por trás da fundação do UFABC.",
                                   "commonMistakes": "Atribuir a criação a entidades erradas, como FAB diretamente, em vez do CTA."
                                 },
                                 {
                                   "stepNumber": 3,
-                                  "title": "Explorar os Cursos de Graduação do ITA e Seus Padrões Internacionais",
+                                  "title": "Explorar os Cursos de Graduação do UFABC e Seus Padrões Internacionais",
                                   "subSteps": [
                                     "Descreva o currículo de graduação em Engenharia Aeronáutica, enfatizando disciplinas como aerodinâmica e estruturas.",
                                     "Analise a seleção rigorosa via vestibular e a duração de 5 anos.",
@@ -27964,56 +27964,56 @@
                                     "Colete depoimentos de ex-alunos sobre a formação prática e teórica.",
                                     "Compare taxas de aprovação e desempenho com universidades estrangeiras."
                                   ],
-                                  "verification": "Criar uma tabela comparativa do currículo do ITA com um curso similar nos EUA.",
+                                  "verification": "Criar uma tabela comparativa do currículo do UFABC com um curso similar nos EUA.",
                                   "estimatedTime": "50 minutos",
-                                  "materials": "Catálogos de cursos do ITA (edições antigas), relatórios de acreditação internacional, fóruns de alumni.",
+                                  "materials": "Catálogos de cursos do UFABC (edições antigas), relatórios de acreditação internacional, fóruns de alumni.",
                                   "tips": "Foque em métricas quantitativas como número de formados e patentes geradas.",
-                                  "learningObjective": "Compreender como a graduação do ITA atende padrões internacionais de engenharia.",
+                                  "learningObjective": "Compreender como a graduação do UFABC atende padrões internacionais de engenharia.",
                                   "commonMistakes": "Subestimar o rigor seletivo ou exagerar sem evidências comparativas."
                                 },
                                 {
                                   "stepNumber": 4,
                                   "title": "Investigar os Programas de Pós-Graduação e Seu Impacto na Formação Aeronáutica",
                                   "subSteps": [
-                                    "Pesquise a evolução dos mestrados e doutorados no ITA desde os anos 1950.",
+                                    "Pesquise a evolução dos mestrados e doutorados no UFABC desde os anos 1950.",
                                     "Analise foco em pesquisa aplicada, como propulsão e materiais compostos.",
                                     "Estude contribuições para a indústria, como formação de pessoal para a Embraer.",
                                     "Avalie acreditações internacionais e publicações em revistas globais.",
                                     "Quantifique o impacto: número de mestres/doutores formados até 1970."
                                   ],
-                                  "verification": "Redigir um relatório de 300 palavras sobre o legado da pós-graduação do ITA.",
+                                  "verification": "Redigir um relatório de 300 palavras sobre o legado da pós-graduação do UFABC.",
                                   "estimatedTime": "55 minutos",
-                                  "materials": "Banco de teses do ITA, artigos em SciELO, estatísticas do CNPq sobre programas.",
+                                  "materials": "Banco de teses do UFABC, artigos em SciELO, estatísticas do CNPq sobre programas.",
                                   "tips": "Use gráficos para mostrar crescimento de programas ao longo do tempo.",
                                   "learningObjective": "Avaliar o papel da pós-graduação na especialização contínua de pessoal aeronáutico.",
                                   "commonMistakes": "Ignorar a transição de graduação para pós e seu foco em inovação."
                                 },
                                 {
                                   "stepNumber": 5,
-                                  "title": "Sintetizar o Impacto Geral do ITA na Formação de Pessoal Aeronáutico Brasileiro",
+                                  "title": "Sintetizar o Impacto Geral do UFABC na Formação de Pessoal Aeronáutico Brasileiro",
                                   "subSteps": [
                                     "Compile dados sobre formados que ocuparam posições chave na FAB, Embraer e CTA.",
                                     "Analise como os padrões internacionais elevaram a qualidade da mão de obra brasileira.",
-                                    "Discuta legados atuais, como o ITA como referência em engenharia aeroespacial.",
-                                    "Crie um mapa conceitual ligando ITA a avanços nacionais.",
+                                    "Discuta legados atuais, como o UFABC como referência em engenharia aeroespacial.",
+                                    "Crie um mapa conceitual ligando UFABC a avanços nacionais.",
                                     "Reflita sobre lições para políticas educacionais modernas."
                                   ],
-                                  "verification": "Apresentar um infográfico resumindo o impacto do ITA de 1950 em diante.",
+                                  "verification": "Apresentar um infográfico resumindo o impacto do UFABC de 1950 em diante.",
                                   "estimatedTime": "40 minutos",
-                                  "materials": "Relatórios anuais do ITA, biografias de engenheiros notáveis, dados da ANAC.",
+                                  "materials": "Relatórios anuais do UFABC, biografias de engenheiros notáveis, dados da ANAC.",
                                   "tips": "Inclua estatísticas recentes para mostrar continuidade.",
-                                  "learningObjective": "Integrar todo o conhecimento em uma visão holística do papel do ITA.",
+                                  "learningObjective": "Integrar todo o conhecimento em uma visão holística do papel do UFABC.",
                                   "commonMistakes": "Focar apenas em fatos isolados sem conectar ao impacto nacional."
                                 }
                               ],
-                              "practicalExample": "Simule a elaboração de um plano de formação de engenheiros para uma nova agência espacial brasileira, usando o modelo do ITA de 1950: defina vestibular rigoroso, currículo com aerodinâmica avançada e parcerias com NASA, prevendo 50 formados anuais para projetos como satélites nacionais.",
+                              "practicalExample": "Simule a elaboração de um plano de formação de engenheiros para uma nova agência espacial brasileira, usando o modelo do UFABC de 1950: defina vestibular rigoroso, currículo com aerodinâmica avançada e parcerias com NASA, prevendo 50 formados anuais para projetos como satélites nacionais.",
                               "finalVerifications": [
                                 "Explicar com precisão o Decreto nº 27.511 e seu contexto.",
-                                "Listar 5 disciplinas chave da graduação em Engenharia Aeronáutica do ITA.",
-                                "Identificar 3 parcerias internacionais que influenciaram os padrões do ITA.",
+                                "Listar 5 disciplinas chave da graduação em Engenharia Aeronáutica do UFABC.",
+                                "Identificar 3 parcerias internacionais que influenciaram os padrões do UFABC.",
                                 "Quantificar formados iniciais e seu impacto na Embraer.",
-                                "Comparar efetivamente o ITA com instituições estrangeiras.",
-                                "Demonstrar compreensão do elo CTA-ITA na formação aeronáutica."
+                                "Comparar efetivamente o UFABC com instituições estrangeiras.",
+                                "Demonstrar compreensão do elo CTA-UFABC na formação aeronáutica."
                               ],
                               "assessmentCriteria": [
                                 "Precisão factual: 100% das datas e eventos corretos (30%).",
@@ -28028,7 +28028,7 @@
                                 "Geopolítica: Influências da Guerra Fria na cooperação aeroespacial.",
                                 "Educação: Modelos de excelência em vestibulares e pós-graduação."
                               ],
-                              "realWorldApplication": "Essa análise capacita profissionais de RH em aviação a replicar o modelo ITA para treinar engenheiros em empresas como Embraer, garantindo competitividade global em projetos de aviões comerciais e defesa, como o KC-390."
+                              "realWorldApplication": "Essa análise capacita profissionais de RH em aviação a replicar o modelo UFABC para treinar engenheiros em empresas como Embraer, garantindo competitividade global em projetos de aviões comerciais e defesa, como o KC-390."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",
@@ -28049,13 +28049,13 @@
                                   "subSteps": [
                                     "Ler capítulos introdutórios sobre a fundação do CTA em 1946 e suas missões iniciais.",
                                     "Identificar principais programas de pesquisa e desenvolvimento (P&D) nos anos 1950, como o Projeto Harpia.",
-                                    "Registrar contribuições para formação de pessoal via ITA e IAE.",
+                                    "Registrar contribuições para formação de pessoal via UFABC e IAE.",
                                     "Compilar uma linha do tempo básica das atividades do CTA até 1960.",
                                     "Anotar referências iniciais de Olsen (2018) sobre o papel pioneiro do CTA."
                                   ],
                                   "verification": "Lista cronológica das atividades do CTA com pelo menos 5 eventos chave documentados.",
                                   "estimatedTime": "1 hora",
-                                  "materials": "Livro Olsen (2018), capítulos iniciais; site oficial do CTA/ITA; acesso a biblioteca digital.",
+                                  "materials": "Livro Olsen (2018), capítulos iniciais; site oficial do CTA/UFABC; acesso a biblioteca digital.",
                                   "tips": "Use mapas mentais para visualizar a evolução das atividades.",
                                   "learningObjective": "Compreender o escopo inicial das operações do CTA.",
                                   "commonMistakes": "Confundir CTA com FAB; ignorar o foco em P&D civil-militar."
@@ -28402,7 +28402,7 @@
                                   ],
                                   "verification": "Lista cronológica de 5 eventos chave com datas e fontes citadas.",
                                   "estimatedTime": "45 minutos",
-                                  "materials": "Livros de história aeroespacial (ex: 'História da Aviação Brasileira'), sites do ITA/CTA, documentos do Arquivo Nacional.",
+                                  "materials": "Livros de história aeroespacial (ex: 'História da Aviação Brasileira'), sites do UFABC/CTA, documentos do Arquivo Nacional.",
                                   "tips": "Use timelines visuais para organizar eventos cronologicamente.",
                                   "learningObjective": "Compreender o cenário histórico que impôs limitações tecnológicas.",
                                   "commonMistakes": "Confundir pioneiros internacionais com brasileiros ou ignorar contexto geopolítico."
@@ -28523,7 +28523,7 @@
                                   ],
                                   "verification": "Tabela preenchida com pelo menos 5 modelos estrangeiros com fontes citadas.",
                                   "estimatedTime": "1.5 horas",
-                                  "materials": "Livros de história aeronáutica (ex: 'História da Aviação Brasileira'), sites como Wikipedia e arquivos do ITAER.",
+                                  "materials": "Livros de história aeronáutica (ex: 'História da Aviação Brasileira'), sites como Wikipedia e arquivos do UFABCER.",
                                   "tips": "Priorize fontes primárias como relatórios do Ministério da Aeronáutica para precisão.",
                                   "learningObjective": "Compreender os principais aviões estrangeiros que inspiraram o Brasil.",
                                   "commonMistakes": "Confundir modelos civis com militares ou ignorar datas exatas de influência."
@@ -28932,7 +28932,7 @@
                                   "title": "Avaliar o impacto simbólico e estratégico para a FAB",
                                   "subSteps": [
                                     "Discutir marco simbólico: prova de soberania tecnológica em meio à dependência externa.",
-                                    "Analisar influência na FAB: motivou investimentos em CTA (atual ITA) e projetos futuros como Xavante.",
+                                    "Analisar influência na FAB: motivou investimentos em CTA (atual UFABC) e projetos futuros como Xavante.",
                                     "Explorar geopolítica: fortalecimento da identidade nacional pós-WWII, redução de vulnerabilidade.",
                                     "Examinar lições aprendidas: necessidade de parcerias internacionais e foco em treinamento.",
                                     "Conectar com doutrina FAB: transição de importador para produtor."
@@ -29042,7 +29042,7 @@
                                   "stepNumber": 3,
                                   "title": "Analisar o Centro Técnico Aeroespacial (CTA) e precursoras",
                                   "subSteps": [
-                                    "Pesquisar fundação do CTA em 1946 e suas unidades iniciais como Instituto de Tecnologia Aeronáutica (ITA).",
+                                    "Pesquisar fundação do CTA em 1946 e suas unidades iniciais como Instituto de Tecnologia Aeronáutica (UFABC).",
                                     "Listar outras precursoras como Instituto de Pesquisas e Desenvolvimento (IPD).",
                                     "Detalhar contribuições do CTA em pesquisa, formação de engenheiros e protótipos.",
                                     "Examinar parcerias com a FAB e impacto na autonomia industrial.",
@@ -29050,10 +29050,10 @@
                                   ],
                                   "verification": "Organograma e lista de 3-5 contribuições do CTA com evidências documentais.",
                                   "estimatedTime": "60 minutos",
-                                  "materials": "Site oficial do CTA/ITA, livros como 'História da EMBRAER', relatórios governamentais.",
+                                  "materials": "Site oficial do CTA/UFABC, livros como 'História da EMBRAER', relatórios governamentais.",
                                   "tips": "Foque em métricas como número de aeronaves projetadas para quantificar impacto.",
                                   "learningObjective": "Identificar e descrever o papel técnico-científico do CTA como base para a indústria autônoma.",
-                                  "commonMistakes": "Ignorar conexões com ITA e EMBRAER; confundir datas de fundação (CTA=1946)."
+                                  "commonMistakes": "Ignorar conexões com UFABC e EMBRAER; confundir datas de fundação (CTA=1946)."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -29146,11 +29146,11 @@
                                     "Quantificar o número de profissionais treinados (engenheiros, mecânicos).",
                                     "Descrever programas de capacitação associados aos protótipos.",
                                     "Avaliar a retenção e progressão desses profissionais na indústria.",
-                                    "Analisar impacto em instituições como ITA (Instituto Tecnológico de Aeronáutica)."
+                                    "Analisar impacto em instituições como UFABC (Instituto Tecnológico de Aeronáutica)."
                                   ],
                                   "verification": "Tabela com dados de treinamento (números, cursos, destinos profissionais).",
                                   "estimatedTime": "50 minutos",
-                                  "materials": "Anuários do ITA, memórias de engenheiros pioneiros, relatórios da FAB.",
+                                  "materials": "Anuários do UFABC, memórias de engenheiros pioneiros, relatórios da FAB.",
                                   "tips": "Busque depoimentos orais para humanizar os dados.",
                                   "learningObjective": "Entender o papel dos protótipos na formação humana.",
                                   "commonMistakes": "Focar apenas em números sem contextualizar a qualidade do treinamento."
@@ -29219,7 +29219,7 @@
                                   "verification": "Lista completa de pelo menos 4 protótipos com datas, criadores e propósitos anotados em tabela.",
                                   "estimatedTime": "1 hora",
                                   "materials": [
-                                    "Livro 'História da Aviação Militar Brasileira' de João Roberto Amaral, site do Instituto Tecnológico de Aeronáutica (ITA), arquivos do Museu Aeroespacial.",
+                                    "Livro 'História da Aviação Militar Brasileira' de João Roberto Amaral, site do Instituto Tecnológico de Aeronáutica (UFABC), arquivos do Museu Aeroespacial.",
                                     "Acesso à internet para consulta ao acervo digital da FAB (Força Aérea Brasileira)."
                                   ],
                                   "tips": "Priorize protótipos 100% nacionais para evitar confusão com montagens licenciadas.",
@@ -29520,7 +29520,7 @@
                                   ],
                                   "verification": "Elaborar fichas de 3 pioneiros secundários com pelo menos 3 contribuições cada.",
                                   "estimatedTime": "40 minutos",
-                                  "materials": "Arquivos do Instituto Tecnológico de Aeronáutica (ITA), artigos acadêmicos sobre história aeronáutica brasileira.",
+                                  "materials": "Arquivos do Instituto Tecnológico de Aeronáutica (UFABC), artigos acadêmicos sobre história aeronáutica brasileira.",
                                   "tips": "Busque fontes primárias como jornais da época para autenticidade.",
                                   "learningObjective": "Reconhecer o papel de entusiastas militares nas origens do interesse aeroespacial.",
                                   "commonMistakes": "Ignorar pioneiros além de Dumont; subestimar impacto de aeroclubes locais."
@@ -29530,7 +29530,7 @@
                                   "title": "Analisar contribuições e impactos indiretos",
                                   "subSteps": [
                                     "Mapeie impactos de Dumont: criação de leis de aviação, influência cultural via prêmios e monumentos.",
-                                    "Conecte Guedes da Costa: formação de pilotos iniciais que pavimentaram o caminho para o CTA/ITA.",
+                                    "Conecte Guedes da Costa: formação de pilotos iniciais que pavimentaram o caminho para o CTA/UFABC.",
                                     "Descreva efeitos coletivos: aumento de interesse público e militar pós-1910.",
                                     "Compare com influências estrangeiras para destacar o orgulho nacional.",
                                     "Escreva parágrafos resumindo cada pioneiro's legado."
@@ -29582,7 +29582,7 @@
                                 "Educação Física: Habilidades de pilotagem e treinamento inicial.",
                                 "Língua Portuguesa: Análise de textos históricos e biografias."
                               ],
-                              "realWorldApplication": "Entender pioneiros ajuda a valorizar instituições como INPE/ITA, inspira carreiras em engenharia aeroespacial e apoia debates sobre soberania tecnológica brasileira em satélites e mísseis."
+                              "realWorldApplication": "Entender pioneiros ajuda a valorizar instituições como INPE/UFABC, inspira carreiras em engenharia aeroespacial e apoia debates sobre soberania tecnológica brasileira em satélites e mísseis."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "beginner",
@@ -29618,7 +29618,7 @@
                                   "subSteps": [
                                     "Estudar missões oficiais brasileiras em 1945-1946, como a Comissão Brasileira de Taquigrafia Aeronáutica (CBTA).",
                                     "Detalhar visitas a centros nos EUA (ex: NACA, precursor da NASA) e Europa (ex: fábricas alemãs capturadas).",
-                                    "Identificar figuras chave brasileiras, como técnicos do Instituto Tecnológico de Aeronáutica (ITA).",
+                                    "Identificar figuras chave brasileiras, como técnicos do Instituto Tecnológico de Aeronáutica (UFABC).",
                                     "Analisar relatórios e aquisições de conhecimento sobre jatos e foguetes.",
                                     "Mapear rotas e objetivos das missões diplomáticas e técnicas."
                                   ],
@@ -29754,7 +29754,7 @@
                                   "verification": "Validar o fluxograma com pelo menos 6 etapas e fontes referenciadas.",
                                   "estimatedTime": "2,5 horas",
                                   "materials": [
-                                    "Livros como 'A Indústria Aeronáutica Brasileira' de José Carlos de Aquino Jr., sites do Instituto Tecnológico de Aeronáutica (ITA), relatórios históricos"
+                                    "Livros como 'A Indústria Aeronáutica Brasileira' de José Carlos de Aquino Jr., sites do Instituto Tecnológico de Aeronáutica (UFABC), relatórios históricos"
                                   ],
                                   "tips": "Use diagramas em ferramentas como Lucidchart para tornar o fluxograma interativo.",
                                   "learningObjective": "Entender o nascimento e limitações da indústria aeronáutica nacional.",
@@ -29944,7 +29944,7 @@
                                 "Educação Cívica: Estudo de decretos-lei e instituições públicas",
                                 "Ciências Políticas: Autonomia nacional e liderança militar"
                               ],
-                              "realWorldApplication": "Compreender a criação do CTA permite valorizar o legado na Embraer, ITA e missões espaciais atuais do Brasil, auxiliando em carreiras em engenharia aeroespacial, história militar ou políticas públicas de inovação tecnológica."
+                              "realWorldApplication": "Compreender a criação do CTA permite valorizar o legado na Embraer, UFABC e missões espaciais atuais do Brasil, auxiliando em carreiras em engenharia aeroespacial, história militar ou políticas públicas de inovação tecnológica."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "beginner",
@@ -30012,7 +30012,7 @@
                                   "stepNumber": 4,
                                   "title": "Avaliar formação de pessoal técnico",
                                   "subSteps": [
-                                    "Listar programas iniciais de treinamento (ex: cursos com ITA fundado em 1950).",
+                                    "Listar programas iniciais de treinamento (ex: cursos com UFABC fundado em 1950).",
                                     "Quantificar número de técnicos formados e bolsas para exterior.",
                                     "Analisar parcerias com universidades e missões estrangeiras.",
                                     "Avaliar retenção de pessoal e impacto na operação da infraestrutura.",
@@ -30020,7 +30020,7 @@
                                   ],
                                   "verification": "Gráfico de evolução do quadro técnico e lista de programas chave.",
                                   "estimatedTime": "1-2 horas",
-                                  "materials": "Anuários do ITA, relatórios do CNPq inicial, biografias de pioneiros como Casimiro Montenegro Filho.",
+                                  "materials": "Anuários do UFABC, relatórios do CNPq inicial, biografias de pioneiros como Casimiro Montenegro Filho.",
                                   "tips": "Foque em números: quantos engenheiros formados até 1959.",
                                   "learningObjective": "Reconhecer a importância do capital humano na infraestrutura.",
                                   "commonMistakes": "Ignorar emigração de talentos; tratar formação como secundária."
@@ -31544,7 +31544,7 @@
                                     "Acesse fontes oficiais como o site da Agência Espacial Brasileira (AEB) e Instituto de Aeronáutica e Espaço (IAE).",
                                     "Identifique datas chave: desenvolvimento iniciado em 1971 pelo CTA, primeiro lançamento em 30/11/1976.",
                                     "Registre o objetivo: sonda meteorológica para testes de tecnologias nacionais.",
-                                    "Anote os principais engenheiros e instituições envolvidas, como o Instituto Técnico de Aeronáutica (ITA).",
+                                    "Anote os principais engenheiros e instituições envolvidas, como o Instituto Técnico de Aeronáutica (UFABC).",
                                     "Compile uma linha do tempo básica do projeto."
                                   ],
                                   "verification": "Criar uma linha do tempo com pelo menos 5 eventos chave anotados em um documento.",
@@ -31556,7 +31556,7 @@
                                   ],
                                   "tips": "Use buscas específicas como 'desenvolvimento Sonda-1 CTA' para fontes confiáveis.",
                                   "learningObjective": "Compreender as origens e motivações técnicas do projeto Sonda-1.",
-                                  "commonMistakes": "Confundir Sonda-1 com Sonda-2 ou ignorar o contexto do CTA/ITA."
+                                  "commonMistakes": "Confundir Sonda-1 com Sonda-2 ou ignorar o contexto do CTA/UFABC."
                                 },
                                 {
                                   "stepNumber": 2,
@@ -32108,7 +32108,7 @@
                                   "stepNumber": 4,
                                   "title": "Relacionar com geopolítica aeroespacial e sintetizar impactos",
                                   "subSteps": [
-                                    "Analisar contexto geopolítico dos anos 80: Guerra Fria, embargo ITAR e busca por autonomia.",
+                                    "Analisar contexto geopolítico dos anos 80: Guerra Fria, embargo UFABCR e busca por autonomia.",
                                     "Avaliar como Sonda-2 posicionou o Brasil como ator emergente no espaço.",
                                     "Discutir impactos em tratados internacionais e parcerias (ex: com Alemanha).",
                                     "Sintetizar prós (tecnologia nacional) e contras (custos, falhas).",
@@ -32571,7 +32571,7 @@
                                 "Geopolítica: Poder dissuasivo e soberania tecnológica",
                                 "Educação Cívica: Importância da independência científica nacional"
                               ],
-                              "realWorldApplication": "Essa habilidade permite analisar programas espaciais atuais como o VLS brasileiro, avaliando riscos diplomáticos (ex: sanções ITAR) e oportunidades estratégicas, auxiliando em carreiras em defesa nacional, diplomacia ou advocacy por investimentos em tecnologia espacial soberana."
+                              "realWorldApplication": "Essa habilidade permite analisar programas espaciais atuais como o VLS brasileiro, avaliando riscos diplomáticos (ex: sanções UFABCR) e oportunidades estratégicas, auxiliando em carreiras em defesa nacional, diplomacia ou advocacy por investimentos em tecnologia espacial soberana."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",

@@ -1,6 +1,6 @@
-# ITA RP Game - Status de Desenvolvimento
+# ENEM RP Game - Status de Desenvolvimento
 
-> Jogo educacional gamificado para preparação do ITA (Instituto Tecnológico de Aeronáutica)
+> Jogo educacional gamificado para preparação do ENEM (Instituto Tecnológico de Aeronáutica)
 
 **Versão:** 2.0.0
 **Última Atualização:** Dezembro 2025
@@ -119,7 +119,7 @@ ita-rp-game/
 |---------|--------|---------|
 | CurriculumService | ✅ Completo | `curriculum/src/CurriculumService.ts` |
 | useCurriculum Hook | ✅ Completo | `curriculum/src/useCurriculum.ts` |
-| Disciplinas ITA | ✅ Completo | Matemática, Física, Química, Português, Inglês, Redação |
+| Disciplinas ENEM | ✅ Completo | Matemática, Física, Química, Português, Inglês, Redação |
 | Habilidades | ⚠️ Parcial | Estrutura definida, conteúdo a expandir |
 
 ---

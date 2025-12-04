@@ -188,7 +188,7 @@ export const ReportExport: React.FC<ReportExportProps> = ({ data, theme }) => {
   ` : ''}
 
   <div class="footer">
-    Relatório gerado pelo ITA Role Play - Sistema de Aprendizagem
+    Relatório gerado pelo ENEM Role Play - Sistema de Aprendizagem
   </div>
 </body>
 </html>

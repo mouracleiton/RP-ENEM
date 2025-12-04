@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Guidelines for contributing to ITA RP Game.
+Guidelines for contributing to ENEM RP Game.
 
 ## Getting Started
 

@@ -1,207 +1,197 @@
 import { Rank, PlayerState } from '@ita-rp/shared-types';
 
 /**
- * Sistema de patentes da Aeronáutica Brasileira
- * Inspirado na hierarquia militar brasileira adaptada para o contexto educacional
+ * Sistema de progressão acadêmica da ENEM
+ * Inspirado na trajetória estudantil desde o ingresso até a pós-graduação
  */
-export const AERONAUTICS_RANKS: Rank[] = [
-  // POSTOS (OFICIAIS)
+export const ACADEMIC_RANKS: Rank[] = [
+  // PÓS-GRADUAÇÃO (DOUTORADO E PÓS-DOUTORADO)
   {
-    id: 'marechal_do_ar',
-    name: 'Marechal do Ar',
+    id: 'pos_doutorando_senior',
+    name: 'Pós-Doutorando Sênior',
     level: 100,
-    icon: '🌟',
+    icon: '🏆',
     requirements: { level: 100, xp: 100000, completedDisciplines: 20 },
   },
   {
-    id: 'tenente_brigadeiro',
-    name: 'Tenente-Brigadeiro',
+    id: 'pos_doutorando',
+    name: 'Pós-Doutorando',
     level: 90,
-    icon: '⭐',
+    icon: '🎓',
     requirements: { level: 90, xp: 81000, completedDisciplines: 18 },
   },
   {
-    id: 'major_brigadeiro',
-    name: 'Major-Brigadeiro',
+    id: 'doutorando_final',
+    name: 'Doutorando (Tese Concluída)',
     level: 80,
-    icon: '✨',
+    icon: '📜',
     requirements: { level: 80, xp: 64000, completedDisciplines: 16 },
   },
   {
-    id: 'coronel_aviador',
-    name: 'Coronel Aviador',
+    id: 'doutorando_qualificado',
+    name: 'Doutorando (Qualificado)',
     level: 70,
-    icon: '💫',
+    icon: '📚',
     requirements: { level: 70, xp: 49000, completedDisciplines: 14 },
   },
   {
-    id: 'tenente_coronel_aviador',
-    name: 'Tenente-Coronel Aviador',
+    id: 'doutorando',
+    name: 'Doutorando',
     level: 60,
-    icon: '🔶',
+    icon: '📖',
     requirements: { level: 60, xp: 36000, completedDisciplines: 12 },
   },
+
+  // MESTRADO
   {
-    id: 'major_aviador',
-    name: 'Major Aviador',
+    id: 'mestre_defendido',
+    name: 'Mestre (Dissertação Defendida)',
     level: 50,
-    icon: '🔷',
+    icon: '🎯',
     requirements: { level: 50, xp: 25000, completedDisciplines: 10 },
   },
   {
-    id: 'capitao_aviador',
-    name: 'Capitão Aviador',
-    level: 40,
-    icon: '🔵',
-    requirements: { level: 40, xp: 16000, completedDisciplines: 8 },
+    id: 'mestre_qualificado',
+    name: 'Mestre (Qualificado)',
+    level: 45,
+    icon: '📝',
+    requirements: { level: 45, xp: 20250, completedDisciplines: 9 },
   },
   {
-    id: 'primeiro_tenente',
-    name: '1º Tenente',
+    id: 'mestrando',
+    name: 'Mestrando',
+    level: 40,
+    icon: '📄',
+    requirements: { level: 40, xp: 16000, completedDisciplines: 8 },
+  },
+
+  // GRADUAÇÃO AVANÇADA
+  {
+    id: 'formando',
+    name: 'Formando',
     level: 35,
-    icon: '🟦',
+    icon: '🎓',
     requirements: { level: 35, xp: 12250, completedDisciplines: 7 },
   },
   {
-    id: 'segundo_tenente',
-    name: '2º Tenente',
+    id: 'estudante_5_ano',
+    name: 'Estudante 5º Ano',
     level: 30,
-    icon: '🟪',
+    icon: '📚',
     requirements: { level: 30, xp: 9000, completedDisciplines: 6 },
   },
   {
-    id: 'aspirante',
-    name: 'Aspirante a Oficial',
+    id: 'estudante_4_ano',
+    name: 'Estudante 4º Ano',
     level: 25,
-    icon: '🟨',
+    icon: '📓',
     requirements: { level: 25, xp: 6250, completedDisciplines: 5 },
   },
 
-  // GRADUAÇÕES (SARGENTOS)
+  // GRADUAÇÃO INTERMEDIÁRIA
   {
-    id: 'suboficial',
-    name: 'Suboficial',
-    level: 22,
-    icon: '🟧',
-    requirements: { level: 22, xp: 4840, completedDisciplines: 4 },
-  },
-  {
-    id: 'primeiro_sargento',
-    name: '1º Sargento',
+    id: 'estudante_3_ano',
+    name: 'Estudante 3º Ano',
     level: 20,
-    icon: '🟥',
+    icon: '📘',
     requirements: { level: 20, xp: 4000, completedDisciplines: 4 },
   },
   {
-    id: 'segundo_sargento',
-    name: '2º Sargento',
-    level: 18,
-    icon: '🟤',
-    requirements: { level: 18, xp: 3240, completedDisciplines: 3 },
+    id: 'estudante_2_ano',
+    name: 'Estudante 2º Ano',
+    level: 15,
+    icon: '📗',
+    requirements: { level: 15, xp: 2250, completedDisciplines: 3 },
   },
   {
-    id: 'terceiro_sargento',
-    name: '3º Sargento',
-    level: 16,
-    icon: '⚫',
-    requirements: { level: 16, xp: 2560, completedDisciplines: 3 },
-  },
-
-  // GRADUAÇÕES (CABOS E SOLDADOS)
-  {
-    id: 'cabo',
-    name: 'Cabo',
-    level: 14,
-    icon: '⚪',
-    requirements: { level: 14, xp: 1960, completedDisciplines: 2 },
-  },
-  {
-    id: 'soldado_primeira_classe',
-    name: 'Soldado 1ª Classe',
+    id: 'estudante_1_ano',
+    name: 'Estudante 1º Ano',
     level: 10,
-    icon: '💠',
+    icon: '📕',
     requirements: { level: 10, xp: 1000, completedDisciplines: 2 },
   },
+
+  // VESTIBULAR E INGRESSO
   {
-    id: 'soldado_segunda_classe',
-    name: 'Soldado 2ª Classe',
+    id: 'aprovado_vestibular',
+    name: 'Aprovado no Vestibular',
     level: 7,
-    icon: '🔹',
+    icon: '✅',
     requirements: { level: 7, xp: 490, completedDisciplines: 1 },
   },
   {
-    id: 'soldado_terceira_classe',
-    name: 'Soldado 3ª Classe',
+    id: 'cursinho_pre_vestibular',
+    name: 'Cursinho Pré-Vestibular',
     level: 5,
-    icon: '🔸',
+    icon: '🏫',
     requirements: { level: 5, xp: 250, completedDisciplines: 1 },
   },
 
-  // INICIAÇÃO
+  // INICIAÇÃO ACADÊMICA
   {
-    id: 'recruta',
-    name: 'Recruta',
+    id: 'calouro',
+    name: 'Calouro Ingressante',
     level: 1,
-    icon: '🎖️',
+    icon: '🎒',
     requirements: { level: 1, xp: 0, completedDisciplines: 0 },
   },
 ];
 
 /**
- * Sistema de gerenciamento de patentes
+ * Sistema de gerenciamento de progressão acadêmica
  */
 export class RankSystem {
   /**
-   * Obtém a patente atual do jogador baseado no nível
+   * Obtém o nível acadêmico atual do estudante baseado no nível
    */
   static getCurrentRank(level: number): Rank {
-    // Procura a patente mais alta que o jogador qualifica
-    // AERONAUTICS_RANKS está ordenado do maior (Marechal) ao menor (Recruta)
-    for (const rank of AERONAUTICS_RANKS) {
+    // Procura o nível mais alto que o estudante qualifica
+    // ACADEMIC_RANKS está ordenado do maior (Pós-Doutorando) ao menor (Calouro)
+    for (const rank of ACADEMIC_RANKS) {
       if (level >= rank.requirements.level) {
         return rank;
       }
     }
 
-    // Se não encontrar nenhuma (não deveria acontecer), retorna Recruta
-    return AERONAUTICS_RANKS[AERONAUTICS_RANKS.length - 1];
+    // Se não encontrar nenhuma (não deveria acontecer), retorna Calouro
+    return ACADEMIC_RANKS[ACADEMIC_RANKS.length - 1];
   }
 
   /**
-   * Obtém a próxima patente
+   * Obtém o próximo nível acadêmico
    */
   static getNextRank(currentRank: Rank): Rank | null {
-    const currentIndex = AERONAUTICS_RANKS.findIndex(rank => rank.id === currentRank.id);
+    const currentIndex = ACADEMIC_RANKS.findIndex(rank => rank.id === currentRank.id);
 
     if (currentIndex <= 0) {
-      return null; // Já está na patente mais alta
+      return null; // Já está no nível mais alto
     }
 
-    return AERONAUTICS_RANKS[currentIndex - 1];
+    return ACADEMIC_RANKS[currentIndex - 1];
   }
 
   /**
-   * Obtém a patente anterior
+   * Obtém o nível acadêmico anterior
    */
   static getPreviousRank(currentRank: Rank): Rank | null {
-    const currentIndex = AERONAUTICS_RANKS.findIndex(rank => rank.id === currentRank.id);
+    const currentIndex = ACADEMIC_RANKS.findIndex(rank => rank.id === currentRank.id);
 
-    if (currentIndex >= AERONAUTICS_RANKS.length - 1) {
-      return null; // Já está na patente mais baixa
+    if (currentIndex >= ACADEMIC_RANKS.length - 1) {
+      return null; // Já está no nível mais baixo
     }
 
-    return AERONAUTICS_RANKS[currentIndex + 1];
+    return ACADEMIC_RANKS[currentIndex + 1];
   }
 
   /**
-   * Verifica se o jogador está qualificado para uma promoção
+   * Verifica se o estudante está qualificado para uma progressão
    */
   static checkRankUp(player: PlayerState): Rank | null {
     const currentRank = this.getCurrentRank(player.level);
     const nextRank = this.getNextRank(currentRank);
 
     if (!nextRank) {
-      return null; // Já está na patente mais alta
+      return null; // Já está no nível mais alto
     }
 
     const completedDisciplines = player.completedSkills.length; // Simplificado
@@ -216,14 +206,14 @@ export class RankSystem {
   }
 
   /**
-   * Calcula progresso para a próxima patente (0.0 a 1.0)
+   * Calcula progresso para o próximo nível acadêmico (0.0 a 1.0)
    */
   static calculateRankProgress(player: PlayerState): number {
     const currentRank = this.getCurrentRank(player.level);
     const nextRank = this.getNextRank(currentRank);
 
     if (!nextRank) {
-      return 1.0; // Já está na patente máxima
+      return 1.0; // Já está no nível máximo
     }
 
     const completedDisciplines = player.completedSkills.length; // Simplificado
@@ -238,57 +228,61 @@ export class RankSystem {
   }
 
   /**
-   * Obtém todas as patentes em ordem decrescente (mais alta primeiro)
+   * Obtém todos os níveis acadêmicos em ordem decrescente (mais alto primeiro)
    */
   static getAllRanks(): Rank[] {
-    return [...AERONAUTICS_RANKS];
+    return [...ACADEMIC_RANKS];
   }
 
   /**
-   * Obtém patentes por categoria
+   * Obtém níveis acadêmicos por categoria
    */
   static getRanksByCategory(): {
-    officers: Rank[];
-    sergeants: Rank[];
-    soldiers: Rank[];
-    recruits: Rank[];
+    posGraduacao: Rank[];
+    mestrado: Rank[];
+    graduacao: Rank[];
+    vestibular: Rank[];
+    inicio: Rank[];
   } {
-    const officers = AERONAUTICS_RANKS.filter(rank =>
-      rank.id.includes('marechal') ||
-      rank.id.includes('brigadeiro') ||
-      rank.id.includes('coronel') ||
-      rank.id.includes('tenente') ||
-      rank.id.includes('major') ||
-      rank.id.includes('capitao') ||
-      rank.id.includes('aspirante')
+    const posGraduacao = ACADEMIC_RANKS.filter(rank =>
+      rank.id.includes('pos_doutorando') ||
+      rank.id.includes('doutorando')
     );
 
-    const sergeants = AERONAUTICS_RANKS.filter(rank =>
-      rank.id.includes('sargento') || rank.id.includes('suboficial')
+    const mestrado = ACADEMIC_RANKS.filter(rank =>
+      rank.id.includes('mestre') ||
+      rank.id.includes('mestrando')
     );
 
-    const soldiers = AERONAUTICS_RANKS.filter(rank =>
-      rank.id.includes('soldado') || rank.id.includes('cabo')
+    const graduacao = ACADEMIC_RANKS.filter(rank =>
+      rank.id.includes('estudante_') ||
+      rank.id.includes('formando')
     );
 
-    const recruits = AERONAUTICS_RANKS.filter(rank =>
-      rank.id.includes('recruta')
+    const vestibular = ACADEMIC_RANKS.filter(rank =>
+      rank.id.includes('vestibular') ||
+      rank.id.includes('cursinho')
     );
 
-    return { officers, sergeants, soldiers, recruits };
+    const inicio = ACADEMIC_RANKS.filter(rank =>
+      rank.id.includes('calouro')
+    );
+
+    return { posGraduacao, mestrado, graduacao, vestibular, inicio };
   }
 
   /**
-   * Verifica se duas patentes são da mesma categoria
+   * Verifica se dois níveis acadêmicos são da mesma categoria
    */
   static areSameCategory(rank1: Rank, rank2: Rank): boolean {
     const categories = this.getRanksByCategory();
 
     const getCategory = (rank: Rank): string => {
-      if (categories.officers.includes(rank)) return 'officer';
-      if (categories.sergeants.includes(rank)) return 'sergeant';
-      if (categories.soldiers.includes(rank)) return 'soldier';
-      if (categories.recruits.includes(rank)) return 'recruit';
+      if (categories.posGraduacao.includes(rank)) return 'posGraduacao';
+      if (categories.mestrado.includes(rank)) return 'mestrado';
+      if (categories.graduacao.includes(rank)) return 'graduacao';
+      if (categories.vestibular.includes(rank)) return 'vestibular';
+      if (categories.inicio.includes(rank)) return 'inicio';
       return 'unknown';
     };
 
@@ -296,60 +290,56 @@ export class RankSystem {
   }
 
   /**
-   * Obtém descrição da patente para UI
+   * Obtém descrição do nível acadêmico para UI
    */
   static getRankDescription(rank: Rank): string {
     const descriptions: Record<string, string> = {
-      'marechal_do_ar': 'A mais alta patente da Força Aérea Brasileira',
-      'tenente_brigadeiro': 'Oficial-general, comando de grandes formações',
-      'major_brigadeiro': 'Oficial-general, comando de brigadas',
-      'coronel_aviador': 'Oficial superior, comando de grupamentos',
-      'tenente_coronel_aviador': 'Oficial superior, subcomando de unidades',
-      'major_aviador': 'Oficial intermediário, chefia de seções',
-      'capitao_aviador': 'Oficial subalterno, comando de pelotões',
-      'primeiro_tenente': 'Oficial subalterno, liderança de equipes',
-      'segundo_tenente': 'Oficial subalterno, início da carreira',
-      'aspirante': 'Oficial em formação, transição para a carreira',
-      'suboficial': 'Graduação mais alta da praça especializada',
-      'primeiro_sargento': 'Liderança de esquadrilhas e subunidades',
-      'segundo_sargento': 'Assistente de liderança e instrução',
-      'terceiro_sargento': 'Início da carreira de sargento',
-      'cabo': 'Liderança de pequenas equipes',
-      'soldado_primeira_classe': 'Soldado experiente e qualificado',
-      'soldado_segunda_classe': 'Soldado com experiência básica',
-      'soldado_terceira_classe': 'Soldado em treinamento inicial',
-      'recruta': 'Início da jornada na carreira militar',
+      'pos_doutorando_senior': 'Pesquisador sênior com pós-doutorado concluído',
+      'pos_doutorando': 'Pesquisador pós-doutorando em instituição de renome',
+      'doutorando_final': 'Doutorando com tese concluída e defendida',
+      'doutorando_qualificado': 'Doutorando qualificado, pesquisando e escrevendo tese',
+      'doutorando': 'Estudante de doutorado, iniciando pesquisa avançada',
+      'mestre_defendido': 'Mestre com dissertação defendida e aprovada',
+      'mestre_qualificado': 'Mestrando qualificado, pesquisando e escrevendo dissertação',
+      'mestrando': 'Estudante de mestrado, aprofundando conhecimentos',
+      'formando': 'Estudante em fase de conclusão de curso',
+      'estudante_5_ano': 'Estudante de quinto ano, próximo da formatura',
+      'estudante_4_ano': 'Estudante de quarto ano, avançado no curso',
+      'estudante_3_ano': 'Estudante de terceiro ano, consolidando conhecimentos',
+      'estudante_2_ano': 'Estudante de segundo ano, adaptado à vida acadêmica',
+      'estudante_1_ano': 'Estudante de primeiro ano, começando a jornada',
+      'aprovado_vestibular': 'Aprovado no vestibular, pronto para ingressar na universidade',
+      'cursinho_pre_vestibular': 'Estudante preparando-se para o vestibular',
+      'calouro': 'Calouro ingressante, dando os primeiros passos na vida acadêmica',
     };
 
-    return descriptions[rank.id] || 'Patente da Aeronáutica Brasileira';
+    return descriptions[rank.id] || 'Nível acadêmico da ENEM';
   }
 
   /**
-   * Obtém cor temática da patente para UI
+   * Obtém cor temática do nível acadêmico para UI
    */
   static getRankColor(rank: Rank): string {
     const colors: Record<string, string> = {
-      'marechal_do_ar': '#FFD700', // Dourado
-      'tenente_brigadeiro': '#FFA500', // Laranja
-      'major_brigadeiro': '#FF8C00', // Laranja escuro
-      'coronel_aviador': '#DC143C', // Vermelho escuro
-      'tenente_coronel_aviador': '#B22222', // Vermelho
-      'major_aviador': '#8B0000', // Vermelho escuro
-      'capitao_aviador': '#4169E1', // Azul royal
-      'primeiro_tenente': '#1E90FF', // Azul dodger
-      'segundo_tenente': '#00BFFF', // Azul cielo
-      'aspirante': '#87CEEB', // Azul claro
-      'suboficial': '#32CD32', // Verde lima
-      'primeiro_sargento': '#228B22', // Verde floresta
-      'segundo_sargento': '#008000', // Verde
-      'terceiro_sargento': '#006400', // verde escuro
-      'cabo': '#FFD700', // Dourado
-      'soldado_primeira_classe': '#C0C0C0', // Prata
-      'soldado_segunda_classe': '#CD7F32', // Bronze
-      'soldado_terceira_classe': '#8B4513', // Marrom
-      'recruta': '#696969', // Cinza escuro
+      'pos_doutorando_senior': '#FFD700', // Dourado
+      'pos_doutorando': '#FFA500', // Laranja
+      'doutorando_final': '#FF8C00', // Laranja escuro
+      'doutorando_qualificado': '#DC143C', // Vermelho escuro
+      'doutorando': '#B22222', // Vermelho
+      'mestre_defendido': '#8B0000', // Vermelho escuro
+      'mestre_qualificado': '#4169E1', // Azul royal
+      'mestrando': '#1E90FF', // Azul dodger
+      'formando': '#00BFFF', // Azul cielo
+      'estudante_5_ano': '#87CEEB', // Azul claro
+      'estudante_4_ano': '#32CD32', // Verde lima
+      'estudante_3_ano': '#228B22', // Verde floresta
+      'estudante_2_ano': '#008000', // Verde
+      'estudante_1_ano': '#006400', // Verde escuro
+      'aprovado_vestibular': '#FFD700', // Dourado
+      'cursinho_pre_vestibular': '#C0C0C0', // Prata
+      'calouro': '#696969', // Cinza escuro
     };
 
-    return colors[rank.id] || '#FFFFFF'; // Branco padrão
+    return colors[rank.id] || '#038C44'; // Verde ENEM padrão
   }
 }

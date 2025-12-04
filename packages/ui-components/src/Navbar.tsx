@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ items, activeItem, onNavigate, p
                 textShadow: currentTheme.effects.glow,
               }}
             >
-              ITA RP
+              ENEM RP
             </span>
           </div>
 
@@ -243,7 +243,7 @@ export const Navbar: React.FC<NavbarProps> = ({ items, activeItem, onNavigate, p
                 textShadow: currentTheme.effects.glow,
               }}
             >
-              ITA RP
+              ENEM RP
             </span>
           </div>
 

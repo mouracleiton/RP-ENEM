@@ -32,15 +32,17 @@ interface OnboardingProps {
 const defaultSteps: OnboardingStep[] = [
   {
     id: 'welcome',
-    title: 'Bem-vindo ao ITA RP Game!',
-    description: 'Prepare-se para uma jornada épica de aprendizado. Você está prestes a se tornar um cadete do ITA, dominando todas as disciplinas necessárias para a aprovação.',
+    title: 'Bem-vindo ao ENEM RP Game!',
+    description:
+      'Prepare-se para uma jornada épica de aprendizado. Você está prestes a se tornar um aluno exemplar do ENEM, dominando todas as disciplinas necessárias para a aprovação.',
     icon: '🚀',
     position: 'center',
   },
   {
     id: 'dashboard',
     title: 'Seu Dashboard',
-    description: 'Aqui você verá seu progresso geral: XP, nível, streak de estudos e estatísticas. Acompanhe sua evolução diariamente!',
+    description:
+      'Aqui você verá seu progresso geral: XP, nível, streak de estudos e estatísticas. Acompanhe sua evolução diariamente!',
     icon: '🏠',
     highlight: 'dashboard',
     position: 'bottom',
@@ -48,7 +50,8 @@ const defaultSteps: OnboardingStep[] = [
   {
     id: 'disciplines',
     title: 'Disciplinas',
-    description: 'Explore as 12 disciplinas do ITA: Cálculo, Física, Química, Álgebra Linear, Programação e muito mais. Cada uma tem dezenas de habilidades para dominar.',
+    description:
+      'Explore as 12 disciplinas do ENEM: Cálculo, Física, Química, Álgebra Linear, Programação e muito mais. Cada uma tem dezenas de habilidades para dominar.',
     icon: '📚',
     highlight: 'disciplines',
     position: 'bottom',
@@ -56,7 +59,8 @@ const defaultSteps: OnboardingStep[] = [
   {
     id: 'skills',
     title: 'Habilidades e Skills',
-    description: 'Cada disciplina possui habilidades organizadas em árvore. Complete as básicas para desbloquear as avançadas. Quanto mais difícil, mais XP você ganha!',
+    description:
+      'Cada disciplina possui habilidades organizadas em árvore. Complete as básicas para desbloquear as avançadas. Quanto mais difícil, mais XP você ganha!',
     icon: '🌳',
     highlight: 'skilltree',
     position: 'bottom',
@@ -64,50 +68,57 @@ const defaultSteps: OnboardingStep[] = [
   {
     id: 'study',
     title: 'Modo de Estudo',
-    description: 'Ao iniciar uma habilidade, você entrará no modo de estudo com lições, exemplos práticos e quizzes para testar seu conhecimento.',
+    description:
+      'Ao iniciar uma habilidade, você entrará no modo de estudo com lições, exemplos práticos e quizzes para testar seu conhecimento.',
     icon: '📖',
     position: 'center',
   },
   {
     id: 'xp',
     title: 'Sistema de XP e Níveis',
-    description: 'Ganhe XP completando habilidades, acertando quizzes e mantendo seu streak. Suba de nível para desbloquear novas patentes e recompensas!',
+    description:
+      'Ganhe XP completando habilidades, acertando quizzes e mantendo seu streak. Suba de nível para desbloquear novos níveis acadêmicos e recompensas!',
     icon: '⚡',
     position: 'center',
   },
   {
     id: 'streak',
     title: 'Streak de Estudos',
-    description: 'Estude todos os dias para manter seu streak! Quanto maior seu streak, mais bônus de XP você ganha. Não quebre a sequência!',
+    description:
+      'Estude todos os dias para manter seu streak! Quanto maior seu streak, mais bônus de XP você ganha. Não quebre a sequência!',
     icon: '🔥',
     position: 'center',
   },
   {
     id: 'challenges',
     title: 'Desafios Diários',
-    description: 'Complete missões diárias para ganhar XP extra. As missões renovam todos os dias às 00:00 - não perca!',
+    description:
+      'Complete missões diárias para ganhar XP extra. As missões renovam todos os dias às 00:00 - não perca!',
     icon: '🎯',
     position: 'center',
   },
   {
     id: 'achievements',
     title: 'Conquistas',
-    description: 'Desbloqueie conquistas especiais por marcos importantes: primeiro nível, primeira semana de streak, 100 habilidades completadas e muito mais.',
+    description:
+      'Desbloqueie conquistas especiais por marcos importantes: primeiro nível, primeira semana de streak, 100 habilidades completadas e muito mais.',
     icon: '🏆',
     highlight: 'achievements',
     position: 'bottom',
   },
   {
     id: 'ranks',
-    title: 'Sistema de Patentes',
-    description: 'Comece como Aspirante e evolua até Marechal! Cada patente requer um nível mínimo e mostra seu progresso na jornada ITA.',
+    title: 'Sistema de Níveis Acadêmicos',
+    description:
+      'Comece como Iniciante e evolua até Doutor! Cada nível acadêmico requer um progresso mínimo e mostra sua evolução nos estudos do ENEM.',
     icon: '🎖️',
     position: 'center',
   },
   {
     id: 'ready',
     title: 'Você está pronto!',
-    description: 'Sua missão: dominar todas as disciplinas do ITA. Comece explorando o dashboard e escolha sua primeira habilidade. Boa sorte, cadete!',
+    description:
+      'Sua jornada: dominar todas as disciplinas do ENEM. Comece explorando o dashboard e escolha sua primeira habilidade. Bons estudos, aluno!',
     icon: '🎓',
     position: 'center',
   },
@@ -117,7 +128,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({
   isOpen,
   onComplete,
   onSkip,
-  playerName = 'Cadete',
+  playerName = 'Aluno',
   steps = defaultSteps,
   currentStep: controlledStep,
   onStepChange,
@@ -212,7 +223,17 @@ export const Onboarding: React.FC<OnboardingProps> = ({
       />
 
       {/* Animated background particles */}
-      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, overflow: 'hidden', pointerEvents: 'none' }}>
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          overflow: 'hidden',
+          pointerEvents: 'none',
+        }}
+      >
         {Array.from({ length: 20 }).map((_, i) => (
           <div
             key={i}
@@ -356,11 +377,12 @@ export const Onboarding: React.FC<OnboardingProps> = ({
                   width: index === currentStep ? '24px' : '8px',
                   height: '8px',
                   borderRadius: '4px',
-                  background: index === currentStep
-                    ? 'linear-gradient(90deg, #4caf50, #81c784)'
-                    : index < currentStep
-                    ? '#4caf50'
-                    : 'rgba(255, 255, 255, 0.2)',
+                  background:
+                    index === currentStep
+                      ? 'linear-gradient(90deg, #4caf50, #81c784)'
+                      : index < currentStep
+                        ? '#4caf50'
+                        : 'rgba(255, 255, 255, 0.2)',
                   transition: 'all 0.3s ease',
                 }}
               />
@@ -388,11 +410,11 @@ export const Onboarding: React.FC<OnboardingProps> = ({
                   cursor: 'pointer',
                   transition: 'all 0.3s ease',
                 }}
-                onMouseEnter={(e) => {
+                onMouseEnter={e => {
                   e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)';
                   e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
                 }}
-                onMouseLeave={(e) => {
+                onMouseLeave={e => {
                   e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
                   e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
                 }}
@@ -419,13 +441,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({
                   ? '0 0 30px rgba(76, 175, 80, 0.4)'
                   : '0 0 30px rgba(33, 150, 243, 0.4)',
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={e => {
                 e.currentTarget.style.transform = 'scale(1.05)';
                 e.currentTarget.style.boxShadow = isLastStep
                   ? '0 0 40px rgba(76, 175, 80, 0.6)'
                   : '0 0 40px rgba(33, 150, 243, 0.6)';
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={e => {
                 e.currentTarget.style.transform = 'scale(1)';
                 e.currentTarget.style.boxShadow = isLastStep
                   ? '0 0 30px rgba(76, 175, 80, 0.4)'
@@ -451,10 +473,10 @@ export const Onboarding: React.FC<OnboardingProps> = ({
                 cursor: 'pointer',
                 transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={e => {
                 e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)';
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={e => {
                 e.currentTarget.style.color = 'rgba(255, 255, 255, 0.4)';
               }}
             >

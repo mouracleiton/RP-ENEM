@@ -1,5 +1,5 @@
 /**
- * Service Worker for ITA RP Game
+ * Service Worker for ENEM RP Game
  * Enables offline functionality and caching
  */
 
@@ -271,7 +271,7 @@ self.addEventListener('push', (event) => {
 
   const base = getBasePath();
   let data = {
-    title: 'ITA RP Game',
+    title: 'ENEM RP Game',
     body: 'Você tem uma notificação!',
     icon: base + 'icons/icon-192x192.png',
     badge: base + 'icons/icon-72x72.png',

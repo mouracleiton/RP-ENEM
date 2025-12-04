@@ -1,10 +1,10 @@
 # Architecture
 
-This document provides a deep-dive into the ITA RP Game system architecture.
+This document provides a deep-dive into the ENEM RP Game system architecture.
 
 ## Overview
 
-ITA RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.
+ENEM RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.
 
 ```
 ita-rp-game/

@@ -1,8 +1,8 @@
-# 🚀 ITA RP Game - Demo de Funcionalidades
+# 🚀 ENEM RP Game - Demo de Funcionalidades
 
 ## 📋 Visão Geral
 
-Esta demonstração展示 a reimplementação completa do ITA RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.
+Esta demonstração展示 a reimplementação completa do ENEM RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.
 
 ## 🎮 Funcionalidades Implementadas
 

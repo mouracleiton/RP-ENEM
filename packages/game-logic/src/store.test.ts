@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { act } from '@testing-library/react';
-import { useGameStore, AERONAUTICS_RANKS } from './store';
+import { useGameStore, ACADEMIC_RANKS } from './store';
 import { Achievement, Discipline, SpecificSkill } from '@ita-rp/shared-types';
 
 // Mock localStorage
@@ -41,20 +41,20 @@ describe('GameStore', () => {
     vi.restoreAllMocks();
   });
 
-  describe('AERONAUTICS_RANKS', () => {
-    it('should have 10 ranks defined', () => {
-      expect(AERONAUTICS_RANKS).toHaveLength(10);
+  describe('ACADEMIC_RANKS', () => {
+    it('should have 10 academic ranks defined', () => {
+      expect(ACADEMIC_RANKS).toHaveLength(10);
     });
 
-    it('should have Recruta as lowest rank', () => {
-      expect(AERONAUTICS_RANKS[0].id).toBe('recruit');
-      expect(AERONAUTICS_RANKS[0].name).toBe('Recruta');
+    it('should have Iniciante as lowest academic rank', () => {
+      expect(ACADEMIC_RANKS[0].id).toBe('beginner');
+      expect(ACADEMIC_RANKS[0].name).toBe('Iniciante');
     });
 
-    it('should have Marechal do Ar as highest rank', () => {
-      const lastRank = AERONAUTICS_RANKS[AERONAUTICS_RANKS.length - 1];
-      expect(lastRank.id).toBe('marshal');
-      expect(lastRank.name).toBe('Marechal do Ar');
+    it('should have Doutor as highest academic rank', () => {
+      const lastRank = ACADEMIC_RANKS[ACADEMIC_RANKS.length - 1];
+      expect(lastRank.id).toBe('phd');
+      expect(lastRank.name).toBe('Doutor');
     });
   });
 
@@ -171,9 +171,7 @@ describe('GameStore', () => {
       const store = useGameStore.getState();
       store.completeSkill('skill_1');
 
-      expect(useGameStore.getState().player.completedSkills).toContain(
-        'skill_1'
-      );
+      expect(useGameStore.getState().player.completedSkills).toContain('skill_1');
     });
 
     it('should accumulate completed skills', () => {
@@ -201,9 +199,7 @@ describe('GameStore', () => {
       store.unlockAchievement(achievement);
 
       expect(
-        useGameStore.getState().player.achievements.some(
-          a => a.id === 'test_achievement'
-        )
+        useGameStore.getState().player.achievements.some(a => a.id === 'test_achievement')
       ).toBe(true);
     });
   });
@@ -237,9 +233,7 @@ describe('GameStore', () => {
       store.updateStreak();
 
       const state = useGameStore.getState();
-      expect(state.player.longestStreak).toBeGreaterThanOrEqual(
-        state.player.currentStreak
-      );
+      expect(state.player.longestStreak).toBeGreaterThanOrEqual(state.player.currentStreak);
     });
   });
 
@@ -362,12 +356,8 @@ describe('GameStore', () => {
       const after = new Date();
 
       const session = useGameStore.getState().studySession;
-      expect(session?.startTime.getTime()).toBeGreaterThanOrEqual(
-        before.getTime()
-      );
-      expect(session?.startTime.getTime()).toBeLessThanOrEqual(
-        after.getTime()
-      );
+      expect(session?.startTime.getTime()).toBeGreaterThanOrEqual(before.getTime());
+      expect(session?.startTime.getTime()).toBeLessThanOrEqual(after.getTime());
     });
 
     it('should initialize session state', () => {

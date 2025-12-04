@@ -1342,7 +1342,7 @@
                                   "stepNumber": 4,
                                   "title": "Relacionar normas a casos reais de inovação social e documentar",
                                   "subSteps": [
-                                    "Pesquise cases: projetos de extensão da USP (ex.: energia solar comunitária com normas de segurança).",
+                                    "Pesquise cases: projetos de extensão da UFABC (ex.: energia solar comunitária com normas de segurança).",
                                     "Mapeie como normas foram aplicadas e lições aprendidas.",
                                     "Integre ao plano do projeto: checklist de conformidade.",
                                     "Valide com mentor ou especialista em normas técnicas.",
@@ -2017,7 +2017,7 @@
                                 "Ética em Tecnologia e Impacto Social",
                                 "Administração Pública e Compliance Institucional"
                               ],
-                              "realWorldApplication": "Em ONGs como Instituto Criatec ou projetos universitários de extensão (ex: UnB ou USP), garante legalidade para parcerias público-privadas em tech social, evitando multas da ANPD (até 2% do faturamento) e habilitando captação de recursos via Lei Rouanet ou editais de fomento."
+                              "realWorldApplication": "Em ONGs como Instituto Criatec ou projetos universitários de extensão (ex: UnB ou UFABC), garante legalidade para parcerias público-privadas em tech social, evitando multas da ANPD (até 2% do faturamento) e habilitando captação de recursos via Lei Rouanet ou editais de fomento."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -9960,7 +9960,7 @@
                                     "Resoluções CNE/MEC",
                                     "Planilha Excel ou Google Sheets"
                                   ],
-                                  "tips": "Acesse repositórios de universidades como USP ou UFRJ para exemplos reais de políticas internas.",
+                                  "tips": "Acesse repositórios de universidades como UFABC ou UFRJ para exemplos reais de políticas internas.",
                                   "learningObjective": "Compreender o arcabouço normativo específico para extensão e sua sinergia com inovação.",
                                   "commonMistakes": [
                                     "Tratar extensão como atividade assistencialista, não transformadora",
@@ -24385,7 +24385,7 @@
                                 "Tecnologia e Inovação Social (ferramentas digitais para M&A)",
                                 "Economia Solidária (orçamentos sustentáveis)"
                               ],
-                              "realWorldApplication": "Esse plano é essencial para ONGs como Viva Rio, fundações como Lemann, ou programas universitários de extensão como os da USP/PUC, permitindo captação de recursos via editais (ex: FAPESP) e execução de projetos que geram impacto mensurável em comunidades vulneráveis, como redução de desigualdades via tecnologia acessível."
+                              "realWorldApplication": "Esse plano é essencial para ONGs como Viva Rio, fundações como Lemann, ou programas universitários de extensão como os da UFABC/PUC, permitindo captação de recursos via editais (ex: FAPESP) e execução de projetos que geram impacto mensurável em comunidades vulneráveis, como redução de desigualdades via tecnologia acessível."
                             },
                             "estimatedTime": "4 horas",
                             "difficulty": "advanced",

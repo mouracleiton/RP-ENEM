@@ -1,10 +1,10 @@
-# 🎮 ITA RP Game - Status do Projeto
+# 🎮 ENEM RP Game - Status do Projeto
 
 ## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**
 
 ### 🚀 **Status Atual: MVP Funcional Completo**
 
-O ITA RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.
+O ENEM RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.
 
 ---
 
@@ -202,7 +202,7 @@ ita-rp-game/
 
 ## 🎉 **Conclusão**
 
-**O ITA RP Game foi completamente reimplementado com sucesso!**
+**O ENEM RP Game foi completamente reimplementado com sucesso!**
 
 - ✅ **100% dos sistemas fundamentais funcionais**
 - ✅ **Demonstração interativa completa**

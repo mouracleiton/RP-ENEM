@@ -12495,7 +12495,7 @@
                                   "title": "Implementar construção em software como Excel ou Minitab",
                                   "subSteps": [
                                     "No Excel: use funções BIN2DEC e combinações com REPT ou fórmulas de bits para gerar sinais.",
-                                    "Crie coluna de run numbers (1 a 2^k), então fórmulas para cada fator: =IF(BITAND(ROW()-1, 2^(coluna_fator-1))>0, +1, -1).",
+                                    "Crie coluna de run numbers (1 a 2^k), então fórmulas para cada fator: =IF(BUFABCND(ROW()-1, 2^(coluna_fator-1))>0, +1, -1).",
                                     "Gere interações multiplicando colunas adjacentes (ex: AB = A*B).",
                                     "No Minitab: use Stat > DOE > Create Factorial Design para 2^k full factorial.",
                                     "Exporte e valide contra manual para k=2."

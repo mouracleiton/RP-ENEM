@@ -11,74 +11,74 @@ import type {
   Achievement,
 } from '@ita-rp/shared-types';
 
-// Define available ranks
-const AERONAUTICS_RANKS: Rank[] = [
+// Define available academic ranks
+const ACADEMIC_RANKS: Rank[] = [
   {
-    id: 'recruit',
-    name: 'Recruta',
+    id: 'beginner',
+    name: 'Iniciante',
     level: 1,
-    icon: '🎖️',
+    icon: '📚',
     requirements: { level: 1, xp: 0, completedDisciplines: 0 },
   },
   {
-    id: 'soldier',
-    name: 'Soldado',
+    id: 'student',
+    name: 'Estudante',
     level: 5,
-    icon: '⭐',
+    icon: '📖',
     requirements: { level: 5, xp: 500, completedDisciplines: 1 },
   },
   {
-    id: 'corporal',
-    name: 'Cabo',
+    id: 'apprentice',
+    name: 'Aprendiz',
     level: 10,
-    icon: '🌟',
+    icon: '📝',
     requirements: { level: 10, xp: 1500, completedDisciplines: 2 },
   },
   {
-    id: 'sergeant',
-    name: 'Sargento',
+    id: 'scholar',
+    name: 'Bolsista',
     level: 15,
-    icon: '💫',
+    icon: '🎓',
     requirements: { level: 15, xp: 3000, completedDisciplines: 3 },
   },
   {
-    id: 'lieutenant',
-    name: 'Tenente',
+    id: 'researcher',
+    name: 'Pesquisador',
     level: 20,
-    icon: '✨',
+    icon: '🔬',
     requirements: { level: 20, xp: 5000, completedDisciplines: 4 },
   },
   {
-    id: 'captain',
-    name: 'Capitão',
+    id: 'specialist',
+    name: 'Especialista',
     level: 30,
-    icon: '🌠',
+    icon: '🎯',
     requirements: { level: 30, xp: 10000, completedDisciplines: 6 },
   },
   {
-    id: 'major',
-    name: 'Major',
+    id: 'master',
+    name: 'Mestre',
     level: 40,
-    icon: '🌌',
+    icon: '🌟',
     requirements: { level: 40, xp: 20000, completedDisciplines: 8 },
   },
   {
-    id: 'colonel',
-    name: 'Coronel',
+    id: 'expert',
+    name: 'Especialista Sênior',
     level: 50,
-    icon: '🌃',
+    icon: '💡',
     requirements: { level: 50, xp: 35000, completedDisciplines: 10 },
   },
   {
-    id: 'brigadier',
-    name: 'Brigadeiro',
+    id: 'scholarship',
+    name: 'Doutorando',
     level: 60,
-    icon: '🌆',
+    icon: '🏅',
     requirements: { level: 60, xp: 50000, completedDisciplines: 12 },
   },
   {
-    id: 'marshal',
-    name: 'Marechal do Ar',
+    id: 'phd',
+    name: 'Doutor',
     level: 100,
     icon: '🏆',
     requirements: { level: 100, xp: 100000, completedDisciplines: 20 },
@@ -117,10 +117,10 @@ interface GameStore extends GameState {
 
 const createDefaultPlayer = (): PlayerState => ({
   id: `player_${Date.now()}`,
-  name: 'Cadete',
+  name: 'Aluno',
   level: 1,
   xp: 0,
-  currentRank: AERONAUTICS_RANKS[0],
+  currentRank: ACADEMIC_RANKS[0],
   completedSkills: [],
   currentStreak: 0,
   longestStreak: 0,
@@ -308,10 +308,10 @@ export const useGameStore = create<GameStore>()(
 
       getNextRank: () => {
         const state = get();
-        const currentRankIndex = AERONAUTICS_RANKS.findIndex(
+        const currentRankIndex = ACADEMIC_RANKS.findIndex(
           rank => rank.id === state.player.currentRank.id
         );
-        return AERONAUTICS_RANKS[currentRankIndex + 1] || null;
+        return ACADEMIC_RANKS[currentRankIndex + 1] || null;
       },
 
       calculateLevelProgress: () => {
@@ -400,7 +400,7 @@ function calculateXPForLevel(level: number): number {
 }
 
 function getCurrentRankForLevel(level: number): Rank {
-  return AERONAUTICS_RANKS.filter(rank => rank.level <= level).pop() || AERONAUTICS_RANKS[0];
+  return ACADEMIC_RANKS.filter(rank => rank.level <= level).pop() || ACADEMIC_RANKS[0];
 }
 
-export { AERONAUTICS_RANKS };
+export { ACADEMIC_RANKS as AERONAUTICS_RANKS };

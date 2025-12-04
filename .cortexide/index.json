@@ -26,12 +26,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/DEMO_FEATURES.md",
     "symbols": [],
-    "snippet": "# 🚀 ITA RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do ITA RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**: ",
+    "snippet": "# 🚀 UFABC RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do UFABC RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**: ",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "# 🚀 ITA RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do ITA RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**:",
+        "text": "# 🚀 UFABC RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do UFABC RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**:",
         "startLine": 1,
         "endLine": 12
       },
@@ -60,12 +60,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/DEMO_INSTRUCTIONS.md",
     "symbols": [],
-    "snippet": "# 🎮 ITA RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n  ",
+    "snippet": "# 🎮 UFABC RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n  ",
     "snippetStartLine": 1,
     "snippetEndLine": 15,
     "chunks": [
       {
-        "text": "# 🎮 ITA RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public",
+        "text": "# 🎮 UFABC RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public",
         "startLine": 1,
         "endLine": 15
       },
@@ -75,7 +75,7 @@
         "endLine": 26
       },
       {
-        "text": "`\r\n   Acesse: `http://localhost:3000/ita-game-theme.html`\r\n\r\n3. **Usando PHP (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n   php -S localhost:8000\r\n   ```\r\n   Acesse: `http://localhost:8000/ita-game-theme.html`\r\n\r\n## 🎯 O que Explorar\r\n\r\n### 1. Cabeçalho e Menu Principal\r\n- Logo ITA com tema espacial\r\n- Menu de navegação responsivo\r\n- Barra de busca funcional\r\n\r\n### 2. Game Canv",
+        "text": "`\r\n   Acesse: `http://localhost:3000/ita-game-theme.html`\r\n\r\n3. **Usando PHP (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n   php -S localhost:8000\r\n   ```\r\n   Acesse: `http://localhost:8000/ita-game-theme.html`\r\n\r\n## 🎯 O que Explorar\r\n\r\n### 1. Cabeçalho e Menu Principal\r\n- Logo UFABC com tema espacial\r\n- Menu de navegação responsivo\r\n- Barra de busca funcional\r\n\r\n### 2. Game Canv",
         "startLine": 23,
         "endLine": 40
       },
@@ -94,12 +94,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/DEVELOPMENT_STATUS.md",
     "symbols": [],
-    "snippet": "# ITA RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do ITA (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
+    "snippet": "# UFABC RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do UFABC (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
     "snippetStartLine": 1,
     "snippetEndLine": 18,
     "chunks": [
       {
-        "text": "# ITA RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do ITA (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
+        "text": "# UFABC RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do UFABC (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
         "startLine": 1,
         "endLine": 18
       },
@@ -160,19 +160,19 @@
     ]
   },
   {
-    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/ITA_GAME_DOCUMENTATION.md",
+    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/UFABC_GAME_DOCUMENTATION.md",
     "symbols": [],
-    "snippet": "# ITA RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do ITA (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
+    "snippet": "# UFABC RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do UFABC (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
     "snippetStartLine": 1,
     "snippetEndLine": 7,
     "chunks": [
       {
-        "text": "# ITA RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do ITA (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
+        "text": "# UFABC RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do UFABC (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
         "startLine": 1,
         "endLine": 7
       },
       {
-        "text": "todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais\r\n\r\n- **Tema Visual ITA**: Interface personalizada baseada no design institucional\r\n- **Sistema de API**: Conectividade completa com backend RESTful\r\n- **Localização**: Suporte multi-idioma com 7 idiomas\r\n- **Save System**: Sistema completo de save/load com armazenamento na nuvem\r\n- **Admin Panel**:",
+        "text": "todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais\r\n\r\n- **Tema Visual UFABC**: Interface personalizada baseada no design institucional\r\n- **Sistema de API**: Conectividade completa com backend RESTful\r\n- **Localização**: Suporte multi-idioma com 7 idiomas\r\n- **Save System**: Sistema completo de save/load com armazenamento na nuvem\r\n- **Admin Panel**:",
         "startLine": 5,
         "endLine": 13
       },
@@ -194,19 +194,19 @@
     ]
   },
   {
-    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/ITA_GAME_THEME_DOCUMENTATION.md",
+    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/UFABC_GAME_THEME_DOCUMENTATION.md",
     "symbols": [],
-    "snippet": "# ITA RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (ITA). Este tema combina a identidade visual tradicional do ITA com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do ITA com o universo de RPG.\r\n\r\n#",
+    "snippet": "# UFABC RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (UFABC). Este tema combina a identidade visual tradicional do UFABC com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do UFABC com o universo de RPG.\r\n\r\n#",
     "snippetStartLine": 1,
     "snippetEndLine": 7,
     "chunks": [
       {
-        "text": "# ITA RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (ITA). Este tema combina a identidade visual tradicional do ITA com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do ITA com o universo de RPG.\r\n\r\n#",
+        "text": "# UFABC RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (UFABC). Este tema combina a identidade visual tradicional do UFABC com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do UFABC com o universo de RPG.\r\n\r\n#",
         "startLine": 1,
         "endLine": 7
       },
       {
-        "text": "s, criando uma experiência imersiva que conecta o mundo acadêmico do ITA com o universo de RPG.\r\n\r\n## 🎨 Características de Design\r\n\r\n### Cores Principais\r\n- **Azul ITA Escuro**: `#133979` - Used for headers, primary elements\r\n- **Vermelho ITA**: `#932D2D` - Used for accents, highlights, notifications\r\n- **Cinza Claro**: `#E8ECEE` - Background for content areas\r\n- **Branco**: `#FFFFFF` - Text and",
+        "text": "s, criando uma experiência imersiva que conecta o mundo acadêmico do UFABC com o universo de RPG.\r\n\r\n## 🎨 Características de Design\r\n\r\n### Cores Principais\r\n- **Azul UFABC Escuro**: `#133979` - Used for headers, primary elements\r\n- **Vermelho UFABC**: `#932D2D` - Used for accents, highlights, notifications\r\n- **Cinza Claro**: `#E8ECEE` - Background for content areas\r\n- **Branco**: `#FFFFFF` - Text and",
         "startLine": 5,
         "endLine": 13
       },
@@ -230,12 +230,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/PROJECT_STATUS.md",
     "symbols": [],
-    "snippet": "# 🎮 ITA RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO ITA RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
+    "snippet": "# 🎮 UFABC RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO UFABC RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
     "snippetStartLine": 1,
     "snippetEndLine": 13,
     "chunks": [
       {
-        "text": "# 🎮 ITA RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO ITA RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
+        "text": "# 🎮 UFABC RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO UFABC RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
         "startLine": 1,
         "endLine": 13
       },
@@ -264,12 +264,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/README.md",
     "symbols": [],
-    "snippet": "# 🚀 ITA RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do ITA a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanhamento Detalhado**: Tracking granular de habilidades e competências\r\n- **Motivação Contínua**: Sistema de conquistas e streaks de estudo\r\n\r\n## 🏗️ Arquitetura\r\n\r\n### Estrutura do Monorepo\r\n\r\n```\r\nita-",
+    "snippet": "# 🚀 UFABC RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do UFABC a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanhamento Detalhado**: Tracking granular de habilidades e competências\r\n- **Motivação Contínua**: Sistema de conquistas e streaks de estudo\r\n\r\n## 🏗️ Arquitetura\r\n\r\n### Estrutura do Monorepo\r\n\r\n```\r\nita-",
     "snippetStartLine": 1,
     "snippetEndLine": 19,
     "chunks": [
       {
-        "text": "# 🚀 ITA RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do ITA a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanh",
+        "text": "# 🚀 UFABC RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do UFABC a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanh",
         "startLine": 1,
         "endLine": 11
       },
@@ -322,12 +322,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do ITA RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"@types/react-dom\": \"^18.2.0\",\n    \"@vitejs/plugin-react\": \"^4.2.0\",\n    \"jsdom\":",
+    "snippet": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do UFABC RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"@types/react-dom\": \"^18.2.0\",\n    \"@vitejs/plugin-react\": \"^4.2.0\",\n    \"jsdom\":",
     "snippetStartLine": 1,
     "snippetEndLine": 30,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do ITA RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {",
+        "text": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do UFABC RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {",
         "startLine": 1,
         "endLine": 25
       },
@@ -341,12 +341,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/curriculum/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@typescript-eslint/eslint-plugin\": \"^6.13.0\",\n    \"@typescript-eslint/parser\": \"^6.13.0\",\n    \"eslint\": \"^8.54.0\",\n    \"eslint-config-prettier\": \"^9.0.0\",\n    \"eslint-plugin-prettier\": \"^5.0.0\",\n    \"prett",
+    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@typescript-eslint/eslint-plugin\": \"^6.13.0\",\n    \"@typescript-eslint/parser\": \"^6.13.0\",\n    \"eslint\": \"^8.54.0\",\n    \"eslint-config-prettier\": \"^9.0.0\",\n    \"eslint-plugin-prettier\": \"^5.0.0\",\n    \"prett",
     "snippetStartLine": 1,
     "snippetEndLine": 26,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@type",
+        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@type",
         "startLine": 1,
         "endLine": 21
       },
@@ -360,12 +360,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-admin-panel.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass ITAAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
+    "snippet": "// UFABC RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass UFABCAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
     "snippetStartLine": 1,
     "snippetEndLine": 10,
     "chunks": [
       {
-        "text": "// ITA RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass ITAAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
+        "text": "// UFABC RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass UFABCAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
         "startLine": 1,
         "endLine": 10
       },
@@ -385,7 +385,7 @@
         "endLine": 38
       },
       {
-        "text": "<div class=\"admin-logo\">\r\n                            <span class=\"logo-icon\">⚙️</span>\r\n                            <span class=\"logo-text\">ITA RP Admin</span>\r\n                        </div>\r\n                        <div class=\"admin-user\">\r\n                            <span class=\"user-name\" id=\"admin-username\">Admin</span>\r\n                            <button class=\"logout-btn\"",
+        "text": "<div class=\"admin-logo\">\r\n                            <span class=\"logo-icon\">⚙️</span>\r\n                            <span class=\"logo-text\">UFABC RP Admin</span>\r\n                        </div>\r\n                        <div class=\"admin-user\">\r\n                            <span class=\"user-name\" id=\"admin-username\">Admin</span>\r\n                            <button class=\"logout-btn\"",
         "startLine": 37,
         "endLine": 43
       }
@@ -394,12 +394,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-analytics-system.js",
     "symbols": [],
-    "snippet": "/**\r\n * ITA RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass ITAAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,\r\n     ",
+    "snippet": "/**\r\n * UFABC RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass UFABCAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,\r\n     ",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "/**\r\n * ITA RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass ITAAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,",
+        "text": "/**\r\n * UFABC RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass UFABCAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,",
         "startLine": 1,
         "endLine": 12
       },
@@ -428,12 +428,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-api.js",
     "symbols": [],
-    "snippet": "// ITA RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass ITAGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,\r\n ",
+    "snippet": "// UFABC RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass UFABCGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,\r\n ",
     "snippetStartLine": 1,
     "snippetEndLine": 11,
     "chunks": [
       {
-        "text": "// ITA RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass ITAGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,",
+        "text": "// UFABC RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass UFABCGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,",
         "startLine": 1,
         "endLine": 11
       },
@@ -462,12 +462,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-components.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass ITAGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,\r\n ",
+    "snippet": "// UFABC RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass UFABCGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,\r\n ",
     "snippetStartLine": 1,
     "snippetEndLine": 15,
     "chunks": [
       {
-        "text": "// ITA RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass ITAGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,",
+        "text": "// UFABC RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass UFABCGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,",
         "startLine": 1,
         "endLine": 15
       },
@@ -496,12 +496,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-integration.js",
     "symbols": [],
-    "snippet": "/**\r\n * ITA RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass ITAGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
+    "snippet": "/**\r\n * UFABC RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass UFABCGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
     "snippetStartLine": 1,
     "snippetEndLine": 16,
     "chunks": [
       {
-        "text": "/**\r\n * ITA RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass ITAGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
+        "text": "/**\r\n * UFABC RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass UFABCGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
         "startLine": 1,
         "endLine": 16
       },
@@ -530,12 +530,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-theme.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Theme - Interactive Elements and Animations\r\n\r\nclass ITAGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
+    "snippet": "// UFABC RP Game Theme - Interactive Elements and Animations\r\n\r\nclass UFABCGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
     "snippetStartLine": 1,
     "snippetEndLine": 14,
     "chunks": [
       {
-        "text": "// ITA RP Game Theme - Interactive Elements and Animations\r\n\r\nclass ITAGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
+        "text": "// UFABC RP Game Theme - Interactive Elements and Animations\r\n\r\nclass UFABCGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
         "startLine": 1,
         "endLine": 14
       },
@@ -564,12 +564,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-localization.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass ITALocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
+    "snippet": "// UFABC RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass UFABCLocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
     "snippetStartLine": 1,
     "snippetEndLine": 10,
     "chunks": [
       {
-        "text": "// ITA RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass ITALocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
+        "text": "// UFABC RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass UFABCLocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
         "startLine": 1,
         "endLine": 10
       },
@@ -598,12 +598,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-plugin-system.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass ITAPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,\r\n    ",
+    "snippet": "// UFABC RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass UFABCPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,\r\n    ",
     "snippetStartLine": 1,
     "snippetEndLine": 11,
     "chunks": [
       {
-        "text": "// ITA RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass ITAPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,",
+        "text": "// UFABC RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass UFABCPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,",
         "startLine": 1,
         "endLine": 11
       },
@@ -656,12 +656,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/DEMO_FEATURES.md",
     "symbols": [],
-    "snippet": "# 🚀 ITA RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do ITA RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**: ",
+    "snippet": "# 🚀 UFABC RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do UFABC RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**: ",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "# 🚀 ITA RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do ITA RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**:",
+        "text": "# 🚀 UFABC RP Game - Demo de Funcionalidades\r\n\r\n## 📋 Visão Geral\r\n\r\nEsta demonstração展示 a reimplementação completa do UFABC RP Game com arquitetura moderna, sistemas de gamificação avançados e interface cyberpunk personalizável.\r\n\r\n## 🎮 Funcionalidades Implementadas\r\n\r\n### 🏗️ Arquitetura e Estrutura\r\n\r\n- **Monorepo com Workspaces**: Estrutura organizada com pacotes independentes\r\n- **TypeScript**:",
         "startLine": 1,
         "endLine": 12
       },
@@ -690,12 +690,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/DEMO_INSTRUCTIONS.md",
     "symbols": [],
-    "snippet": "# 🎮 ITA RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n  ",
+    "snippet": "# 🎮 UFABC RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n  ",
     "snippetStartLine": 1,
     "snippetEndLine": 15,
     "chunks": [
       {
-        "text": "# 🎮 ITA RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public",
+        "text": "# 🎮 UFABC RP Game Theme - Demo Instructions\r\n\r\n## Como Visualizar o Theme\r\n\r\n### Método 1: Abrir Diretamente no Navegador\r\n\r\n1. Abra o arquivo `apps/web-app/public/ita-game-theme.html` no seu navegador favorito\r\n2. O tema carregará com todos os elementos interativos\r\n\r\n### Método 2: Servidor Local (Recomendado)\r\n\r\n1. **Usando Python (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public",
         "startLine": 1,
         "endLine": 15
       },
@@ -705,7 +705,7 @@
         "endLine": 26
       },
       {
-        "text": "`\r\n   Acesse: `http://localhost:3000/ita-game-theme.html`\r\n\r\n3. **Usando PHP (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n   php -S localhost:8000\r\n   ```\r\n   Acesse: `http://localhost:8000/ita-game-theme.html`\r\n\r\n## 🎯 O que Explorar\r\n\r\n### 1. Cabeçalho e Menu Principal\r\n- Logo ITA com tema espacial\r\n- Menu de navegação responsivo\r\n- Barra de busca funcional\r\n\r\n### 2. Game Canv",
+        "text": "`\r\n   Acesse: `http://localhost:3000/ita-game-theme.html`\r\n\r\n3. **Usando PHP (se tiver instalado):**\r\n   ```bash\r\n   cd apps/web-app/public\r\n   php -S localhost:8000\r\n   ```\r\n   Acesse: `http://localhost:8000/ita-game-theme.html`\r\n\r\n## 🎯 O que Explorar\r\n\r\n### 1. Cabeçalho e Menu Principal\r\n- Logo UFABC com tema espacial\r\n- Menu de navegação responsivo\r\n- Barra de busca funcional\r\n\r\n### 2. Game Canv",
         "startLine": 23,
         "endLine": 40
       },
@@ -724,12 +724,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/DEVELOPMENT_STATUS.md",
     "symbols": [],
-    "snippet": "# ITA RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do ITA (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
+    "snippet": "# UFABC RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do UFABC (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
     "snippetStartLine": 1,
     "snippetEndLine": 18,
     "chunks": [
       {
-        "text": "# ITA RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do ITA (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
+        "text": "# UFABC RP Game - Status de Desenvolvimento\r\n\r\n> Jogo educacional gamificado para preparação do UFABC (Instituto Tecnológico de Aeronáutica)\r\n\r\n**Versão:** 2.0.0\r\n**Última Atualização:** Dezembro 2025\r\n**Stack:** React + TypeScript + Vite + Zustand\r\n\r\n---\r\n\r\n## Arquitetura do Projeto\r\n\r\n```\r\nita-rp-game/\r\n├── apps/\r\n│   └── web-app/              # Aplicação React principal\r\n│       ├── src/\r\n│       │",
         "startLine": 1,
         "endLine": 18
       },
@@ -790,19 +790,19 @@
     ]
   },
   {
-    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/ITA_GAME_DOCUMENTATION.md",
+    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/UFABC_GAME_DOCUMENTATION.md",
     "symbols": [],
-    "snippet": "# ITA RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do ITA (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
+    "snippet": "# UFABC RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do UFABC (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
     "snippetStartLine": 1,
     "snippetEndLine": 7,
     "chunks": [
       {
-        "text": "# ITA RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do ITA (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
+        "text": "# UFABC RP Game - Sistema Completo de Jogo\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é um sistema completo de jogo de role-playing desenvolvido com base no design institucional do UFABC (Instituto Tecnológico de Aeronáutica). Este projeto implementa uma infraestrutura robusta e escalável para jogos web com todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais",
         "startLine": 1,
         "endLine": 7
       },
       {
-        "text": "todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais\r\n\r\n- **Tema Visual ITA**: Interface personalizada baseada no design institucional\r\n- **Sistema de API**: Conectividade completa com backend RESTful\r\n- **Localização**: Suporte multi-idioma com 7 idiomas\r\n- **Save System**: Sistema completo de save/load com armazenamento na nuvem\r\n- **Admin Panel**:",
+        "text": "todos os componentes necessários para uma experiência completa.\r\n\r\n### 🎯 Características Principais\r\n\r\n- **Tema Visual UFABC**: Interface personalizada baseada no design institucional\r\n- **Sistema de API**: Conectividade completa com backend RESTful\r\n- **Localização**: Suporte multi-idioma com 7 idiomas\r\n- **Save System**: Sistema completo de save/load com armazenamento na nuvem\r\n- **Admin Panel**:",
         "startLine": 5,
         "endLine": 13
       },
@@ -824,19 +824,19 @@
     ]
   },
   {
-    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/ITA_GAME_THEME_DOCUMENTATION.md",
+    "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/UFABC_GAME_THEME_DOCUMENTATION.md",
     "symbols": [],
-    "snippet": "# ITA RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (ITA). Este tema combina a identidade visual tradicional do ITA com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do ITA com o universo de RPG.\r\n\r\n#",
+    "snippet": "# UFABC RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (UFABC). Este tema combina a identidade visual tradicional do UFABC com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do UFABC com o universo de RPG.\r\n\r\n#",
     "snippetStartLine": 1,
     "snippetEndLine": 7,
     "chunks": [
       {
-        "text": "# ITA RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (ITA). Este tema combina a identidade visual tradicional do ITA com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do ITA com o universo de RPG.\r\n\r\n#",
+        "text": "# UFABC RP Game Theme - Documentação Completa\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game Theme é uma interface de jogo completa baseada no design institucional do Instituto Tecnológico de Aeronáutica (UFABC). Este tema combina a identidade visual tradicional do UFABC com elementos modernos de interface de jogos, criando uma experiência imersiva que conecta o mundo acadêmico do UFABC com o universo de RPG.\r\n\r\n#",
         "startLine": 1,
         "endLine": 7
       },
       {
-        "text": "s, criando uma experiência imersiva que conecta o mundo acadêmico do ITA com o universo de RPG.\r\n\r\n## 🎨 Características de Design\r\n\r\n### Cores Principais\r\n- **Azul ITA Escuro**: `#133979` - Used for headers, primary elements\r\n- **Vermelho ITA**: `#932D2D` - Used for accents, highlights, notifications\r\n- **Cinza Claro**: `#E8ECEE` - Background for content areas\r\n- **Branco**: `#FFFFFF` - Text and",
+        "text": "s, criando uma experiência imersiva que conecta o mundo acadêmico do UFABC com o universo de RPG.\r\n\r\n## 🎨 Características de Design\r\n\r\n### Cores Principais\r\n- **Azul UFABC Escuro**: `#133979` - Used for headers, primary elements\r\n- **Vermelho UFABC**: `#932D2D` - Used for accents, highlights, notifications\r\n- **Cinza Claro**: `#E8ECEE` - Background for content areas\r\n- **Branco**: `#FFFFFF` - Text and",
         "startLine": 5,
         "endLine": 13
       },
@@ -860,12 +860,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/PROJECT_STATUS.md",
     "symbols": [],
-    "snippet": "# 🎮 ITA RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO ITA RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
+    "snippet": "# 🎮 UFABC RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO UFABC RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
     "snippetStartLine": 1,
     "snippetEndLine": 13,
     "chunks": [
       {
-        "text": "# 🎮 ITA RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO ITA RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
+        "text": "# 🎮 UFABC RP Game - Status do Projeto\r\n\r\n## ✅ **IMPLEMENTAÇÃO CONCLUÍDA COM SUCESSO!**\r\n\r\n### 🚀 **Status Atual: MVP Funcional Completo**\r\n\r\nO UFABC RP Game foi completamente reimplementado com arquitetura moderna e está **100% funcional**. O servidor de desenvolvimento está rodando em `http://localhost:3000` com todos os sistemas integrados.\r\n\r\n---\r\n\r\n## 📋 **Funcionalidades Implementadas**\r\n\r\n### \ud83c",
         "startLine": 1,
         "endLine": 13
       },
@@ -894,12 +894,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/README.md",
     "symbols": [],
-    "snippet": "# 🚀 ITA RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do ITA a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanhamento Detalhado**: Tracking granular de habilidades e competências\r\n- **Motivação Contínua**: Sistema de conquistas e streaks de estudo\r\n\r\n## 🏗️ Arquitetura\r\n\r\n### Estrutura do Monorepo\r\n\r\n```\r\nita-",
+    "snippet": "# 🚀 UFABC RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do UFABC a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanhamento Detalhado**: Tracking granular de habilidades e competências\r\n- **Motivação Contínua**: Sistema de conquistas e streaks de estudo\r\n\r\n## 🏗️ Arquitetura\r\n\r\n### Estrutura do Monorepo\r\n\r\n```\r\nita-",
     "snippetStartLine": 1,
     "snippetEndLine": 19,
     "chunks": [
       {
-        "text": "# 🚀 ITA RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO ITA RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do ITA a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanh",
+        "text": "# 🚀 UFABC RP Game - Reimplementação Moderna\r\n\r\n## 📋 Visão Geral\r\n\r\nO UFABC RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do UFABC a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.\r\n\r\n### 🎯 Objetivos Principais\r\n\r\n- **Gamificação Educacional**: Transformar o estudo em uma jornada envolvente\r\n- **Progressão Visual**: Sistema de patentes e níveis inspirado na hierarquia militar\r\n- **Acompanh",
         "startLine": 1,
         "endLine": 11
       },
@@ -952,12 +952,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do ITA RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"@types/react-dom\": \"^18.2.0\",\n    \"@vitejs/plugin-react\": \"^4.2.0\",\n    \"jsdom\":",
+    "snippet": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do UFABC RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"@types/react-dom\": \"^18.2.0\",\n    \"@vitejs/plugin-react\": \"^4.2.0\",\n    \"jsdom\":",
     "snippetStartLine": 1,
     "snippetEndLine": 30,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do ITA RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {",
+        "text": "{\n  \"name\": \"@ita-rp/web-app\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Aplicação web principal do UFABC RP Game\",\n  \"type\": \"module\",\n  \"scripts\": {\n    \"dev\": \"vite\",\n    \"build\": \"tsc && vite build\",\n    \"preview\": \"vite preview\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/core-engine\": \"*\",\n    \"@ita-rp/curriculum\": \"*\",\n    \"@ita-rp/game-logic\": \"*\",\n    \"@ita-rp/shared-types\": \"*\",\n    \"@ita-rp/ui-components\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"react-dom\": \"^18.2.0\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {",
         "startLine": 1,
         "endLine": 25
       },
@@ -971,12 +971,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/curriculum/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@typescript-eslint/eslint-plugin\": \"^6.13.0\",\n    \"@typescript-eslint/parser\": \"^6.13.0\",\n    \"eslint\": \"^8.54.0\",\n    \"eslint-config-prettier\": \"^9.0.0\",\n    \"eslint-plugin-prettier\": \"^5.0.0\",\n    \"prett",
+    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@typescript-eslint/eslint-plugin\": \"^6.13.0\",\n    \"@typescript-eslint/parser\": \"^6.13.0\",\n    \"eslint\": \"^8.54.0\",\n    \"eslint-config-prettier\": \"^9.0.0\",\n    \"eslint-plugin-prettier\": \"^5.0.0\",\n    \"prett",
     "snippetStartLine": 1,
     "snippetEndLine": 26,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@type",
+        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"npm run test --workspaces\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^20.10.0\",\n    \"@type",
         "startLine": 1,
         "endLine": 21
       },
@@ -990,12 +990,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-admin-panel.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass ITAAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
+    "snippet": "// UFABC RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass UFABCAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
     "snippetStartLine": 1,
     "snippetEndLine": 10,
     "chunks": [
       {
-        "text": "// ITA RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass ITAAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
+        "text": "// UFABC RP Game Admin Panel\r\n// Comprehensive admin interface for game configuration and management\r\n\r\nclass UFABCAdminPanel {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            requiredRole: config.requiredRole || 'admin',\r\n            enableDebugMode: config.enableDebugMode !== false,\r\n            enableAnalytics: config.enableAnalytics !== false,\r\n            apiEndpoint: config",
         "startLine": 1,
         "endLine": 10
       },
@@ -1015,7 +1015,7 @@
         "endLine": 38
       },
       {
-        "text": "<div class=\"admin-logo\">\r\n                            <span class=\"logo-icon\">⚙️</span>\r\n                            <span class=\"logo-text\">ITA RP Admin</span>\r\n                        </div>\r\n                        <div class=\"admin-user\">\r\n                            <span class=\"user-name\" id=\"admin-username\">Admin</span>\r\n                            <button class=\"logout-btn\"",
+        "text": "<div class=\"admin-logo\">\r\n                            <span class=\"logo-icon\">⚙️</span>\r\n                            <span class=\"logo-text\">UFABC RP Admin</span>\r\n                        </div>\r\n                        <div class=\"admin-user\">\r\n                            <span class=\"user-name\" id=\"admin-username\">Admin</span>\r\n                            <button class=\"logout-btn\"",
         "startLine": 37,
         "endLine": 43
       }
@@ -1024,12 +1024,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-analytics-system.js",
     "symbols": [],
-    "snippet": "/**\r\n * ITA RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass ITAAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,\r\n     ",
+    "snippet": "/**\r\n * UFABC RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass UFABCAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,\r\n     ",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "/**\r\n * ITA RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass ITAAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,",
+        "text": "/**\r\n * UFABC RP Game - Performance Monitoring and Analytics System\r\n *\r\n * Sistema completo de monitoramento de desempenho e análise de dados\r\n * para otimização de performance e análise de comportamento do usuário\r\n */\r\n\r\nclass UFABCAnalyticsSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enablePerformanceMonitoring: config.enablePerformanceMonitoring !== false,",
         "startLine": 1,
         "endLine": 12
       },
@@ -1058,12 +1058,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-api.js",
     "symbols": [],
-    "snippet": "// ITA RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass ITAGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,\r\n ",
+    "snippet": "// UFABC RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass UFABCGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,\r\n ",
     "snippetStartLine": 1,
     "snippetEndLine": 11,
     "chunks": [
       {
-        "text": "// ITA RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass ITAGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,",
+        "text": "// UFABC RP Game API Integration Layer\r\n// Handles all backend communication and data synchronization\r\n\r\nclass UFABCGameAPI {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            baseURL: config.baseURL || 'https://api.ita-rp-game.com',\r\n            version: config.version || 'v1',\r\n            timeout: config.timeout || 10000,\r\n            retryAttempts: config.retryAttempts || 3,",
         "startLine": 1,
         "endLine": 11
       },
@@ -1092,12 +1092,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-components.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass ITAGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,\r\n ",
+    "snippet": "// UFABC RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass UFABCGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,\r\n ",
     "snippetStartLine": 1,
     "snippetEndLine": 15,
     "chunks": [
       {
-        "text": "// ITA RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass ITAGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,",
+        "text": "// UFABC RP Game Advanced Components\r\n// Character Creator, Skill Tree, and Advanced Game Systems\r\n\r\nclass UFABCGameComponents {\r\n    constructor() {\r\n        this.characterData = {\r\n            basic: {\r\n                name: '',\r\n                gender: '',\r\n                appearance: {},\r\n                backstory: ''\r\n            },\r\n            attributes: {\r\n                intelligence: 10,",
         "startLine": 1,
         "endLine": 15
       },
@@ -1126,12 +1126,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-integration.js",
     "symbols": [],
-    "snippet": "/**\r\n * ITA RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass ITAGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
+    "snippet": "/**\r\n * UFABC RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass UFABCGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
     "snippetStartLine": 1,
     "snippetEndLine": 16,
     "chunks": [
       {
-        "text": "/**\r\n * ITA RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass ITAGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
+        "text": "/**\r\n * UFABC RP Game - Complete System Integration\r\n *\r\n * Arquivo principal que integra todos os sistemas do jogo\r\n * e inicializa a aplicação completa\r\n */\r\n\r\nclass UFABCGameIntegration {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            theme: {\r\n                enable: true,\r\n                debugMode: false,\r\n                ...config.theme\r\n            },\r\n            api: {",
         "startLine": 1,
         "endLine": 16
       },
@@ -1160,12 +1160,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-game-theme.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Theme - Interactive Elements and Animations\r\n\r\nclass ITAGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
+    "snippet": "// UFABC RP Game Theme - Interactive Elements and Animations\r\n\r\nclass UFABCGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
     "snippetStartLine": 1,
     "snippetEndLine": 14,
     "chunks": [
       {
-        "text": "// ITA RP Game Theme - Interactive Elements and Animations\r\n\r\nclass ITAGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
+        "text": "// UFABC RP Game Theme - Interactive Elements and Animations\r\n\r\nclass UFABCGameTheme {\r\n    constructor() {\r\n        this.gameState = {\r\n            player: {\r\n                name: 'Jogador',\r\n                level: 1,\r\n                class: 'Engenheiro',\r\n                health: 100,\r\n                maxHealth: 100,\r\n                energy: 100,\r\n                maxEnergy: 100,\r\n                exp",
         "startLine": 1,
         "endLine": 14
       },
@@ -1194,12 +1194,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-localization.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass ITALocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
+    "snippet": "// UFABC RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass UFABCLocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
     "snippetStartLine": 1,
     "snippetEndLine": 10,
     "chunks": [
       {
-        "text": "// ITA RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass ITALocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
+        "text": "// UFABC RP Game Localization System\r\n// Multi-language support with dynamic loading and RTL support\r\n\r\nclass UFABCLocalization {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            defaultLanguage: config.defaultLanguage || 'pt-BR',\r\n            fallbackLanguage: config.fallbackLanguage || 'en-US',\r\n            supportedLanguages: config.supportedLanguages || [\r\n                'pt-",
         "startLine": 1,
         "endLine": 10
       },
@@ -1228,12 +1228,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-plugin-system.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass ITAPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,\r\n    ",
+    "snippet": "// UFABC RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass UFABCPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,\r\n    ",
     "snippetStartLine": 1,
     "snippetEndLine": 11,
     "chunks": [
       {
-        "text": "// ITA RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass ITAPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,",
+        "text": "// UFABC RP Game Plugin System\r\n// Extensible architecture for adding custom functionality\r\n\r\nclass UFABCPluginSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            pluginsDir: config.pluginsDir || '/plugins',\r\n            autoLoad: config.autoLoad !== false,\r\n            enableHotReload: config.enableHotReload !== false,\r\n            maxPlugins: config.maxPlugins || 50,",
         "startLine": 1,
         "endLine": 11
       },
@@ -1262,12 +1262,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-save-system.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass ITASaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,\r\n    ",
+    "snippet": "// UFABC RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass UFABCSaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,\r\n    ",
     "snippetStartLine": 1,
     "snippetEndLine": 10,
     "chunks": [
       {
-        "text": "// ITA RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass ITASaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,",
+        "text": "// UFABC RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass UFABCSaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,",
         "startLine": 1,
         "endLine": 10
       },
@@ -1296,12 +1296,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-test-suite.js",
     "symbols": [],
-    "snippet": "/**\r\n * ITA RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass ITATestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
+    "snippet": "/**\r\n * UFABC RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass UFABCTestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "/**\r\n * ITA RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass ITATestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
+        "text": "/**\r\n * UFABC RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass UFABCTestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
         "startLine": 1,
         "endLine": 12
       },
@@ -1330,12 +1330,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/sw.js",
     "symbols": [],
-    "snippet": "/**\r\n * Service Worker for ITA RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
+    "snippet": "/**\r\n * Service Worker for UFABC RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
     "snippetStartLine": 1,
     "snippetEndLine": 13,
     "chunks": [
       {
-        "text": "/**\r\n * Service Worker for ITA RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
+        "text": "/**\r\n * Service Worker for UFABC RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
         "startLine": 1,
         "endLine": 13
       },
@@ -1872,12 +1872,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-save-system.js",
     "symbols": [],
-    "snippet": "// ITA RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass ITASaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,\r\n    ",
+    "snippet": "// UFABC RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass UFABCSaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,\r\n    ",
     "snippetStartLine": 1,
     "snippetEndLine": 10,
     "chunks": [
       {
-        "text": "// ITA RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass ITASaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,",
+        "text": "// UFABC RP Game Save/Load System with Cloud Storage\r\n// Comprehensive game state management with automatic and manual saves\r\n\r\nclass UFABCSaveSystem {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            autoSaveInterval: config.autoSaveInterval || 300000, // 5 minutes\r\n            maxAutoSaves: config.maxAutoSaves || 5,\r\n            maxManualSaves: config.maxManualSaves || 10,",
         "startLine": 1,
         "endLine": 10
       },
@@ -1906,12 +1906,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/ita-test-suite.js",
     "symbols": [],
-    "snippet": "/**\r\n * ITA RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass ITATestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
+    "snippet": "/**\r\n * UFABC RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass UFABCTestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "/**\r\n * ITA RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass ITATestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
+        "text": "/**\r\n * UFABC RP Game - Comprehensive Testing Suite\r\n *\r\n * Sistema completo de testes automatizados para garantir\r\n * a qualidade e confiabilidade de todos os componentes do jogo\r\n */\r\n\r\nclass UFABCTestSuite {\r\n    constructor(config = {}) {\r\n        this.config = {\r\n            enableUnitTests: config.enableUnitTests !== false,\r\n            enableIntegrationTests: config.enableIntegrationTests !== f",
         "startLine": 1,
         "endLine": 12
       },
@@ -1940,12 +1940,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/apps/web-app/public/sw.js",
     "symbols": [],
-    "snippet": "/**\r\n * Service Worker for ITA RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
+    "snippet": "/**\r\n * Service Worker for UFABC RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
     "snippetStartLine": 1,
     "snippetEndLine": 13,
     "chunks": [
       {
-        "text": "/**\r\n * Service Worker for ITA RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
+        "text": "/**\r\n * Service Worker for UFABC RP Game\r\n * Enables offline functionality and caching\r\n */\r\n\r\nconst CACHE_NAME = 'ita-rp-game-v2';\r\nconst DYNAMIC_CACHE = 'ita-rp-dynamic-v2';\r\n\r\n// Get base path from service worker scope (handles GitHub Pages subdirectory)\r\nconst getBasePath = () => {\r\n  const scope = self.registration?.scope || self.location.href;\r\n  const url = new URL(scope);\r\n  // Return pathna",
         "startLine": 1,
         "endLine": 13
       },
@@ -2496,12 +2496,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/ARCHITECTURE.md",
     "symbols": [],
-    "snippet": "# Architecture\r\n\r\nThis document provides a deep-dive into the ITA RP Game system architecture.\r\n\r\n## Overview\r\n\r\nITA RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/        ",
+    "snippet": "# Architecture\r\n\r\nThis document provides a deep-dive into the UFABC RP Game system architecture.\r\n\r\n## Overview\r\n\r\nUFABC RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/        ",
     "snippetStartLine": 1,
     "snippetEndLine": 13,
     "chunks": [
       {
-        "text": "# Architecture\r\n\r\nThis document provides a deep-dive into the ITA RP Game system architecture.\r\n\r\n## Overview\r\n\r\nITA RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/",
+        "text": "# Architecture\r\n\r\nThis document provides a deep-dive into the UFABC RP Game system architecture.\r\n\r\n## Overview\r\n\r\nUFABC RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/",
         "startLine": 1,
         "endLine": 13
       },
@@ -2564,12 +2564,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/CONTRIBUTING.md",
     "symbols": [],
-    "snippet": "# Contributing Guide\r\n\r\nGuidelines for contributing to ITA RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix\r",
+    "snippet": "# Contributing Guide\r\n\r\nGuidelines for contributing to UFABC RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix\r",
     "snippetStartLine": 1,
     "snippetEndLine": 27,
     "chunks": [
       {
-        "text": "# Contributing Guide\r\n\r\nGuidelines for contributing to ITA RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix",
+        "text": "# Contributing Guide\r\n\r\nGuidelines for contributing to UFABC RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix",
         "startLine": 1,
         "endLine": 27
       },
@@ -2598,12 +2598,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/README.md",
     "symbols": [],
-    "snippet": "# Documentation\r\n\r\nWelcome to the ITA RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n\r\n# Run tests\r\nnpm run test\r\n\r\n# Build for production\r\nnpm run build\r\n```\r\n\r\n## Project Structure\r\n\r\n```\r\nita-rp-game/\r\n├── apps/web-app/          # Main React applic",
+    "snippet": "# Documentation\r\n\r\nWelcome to the UFABC RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n\r\n# Run tests\r\nnpm run test\r\n\r\n# Build for production\r\nnpm run build\r\n```\r\n\r\n## Project Structure\r\n\r\n```\r\nita-rp-game/\r\n├── apps/web-app/          # Main React applic",
     "snippetStartLine": 1,
     "snippetEndLine": 36,
     "chunks": [
       {
-        "text": "# Documentation\r\n\r\nWelcome to the ITA RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start",
+        "text": "# Documentation\r\n\r\nWelcome to the UFABC RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start",
         "startLine": 1,
         "endLine": 22
       },
@@ -2656,12 +2656,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/TESTING.md",
     "symbols": [],
-    "snippet": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the ITA RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
+    "snippet": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the UFABC RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
     "snippetStartLine": 1,
     "snippetEndLine": 24,
     "chunks": [
       {
-        "text": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the ITA RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
+        "text": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the UFABC RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
         "startLine": 1,
         "endLine": 24
       },
@@ -2758,12 +2758,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/process-catalog.ts\",\n    \"generate-icons\": \"tsx scripts/generate-icons.ts\"\n  },\n  \"devDependencies\": {\n    \"@types/jsdom\": \"^21.1.6\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/sharp\": \"^0.31.1\",\n    \"",
+    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/process-catalog.ts\",\n    \"generate-icons\": \"tsx scripts/generate-icons.ts\"\n  },\n  \"devDependencies\": {\n    \"@types/jsdom\": \"^21.1.6\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/sharp\": \"^0.31.1\",\n    \"",
     "snippetStartLine": 1,
     "snippetEndLine": 27,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/p",
+        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/p",
         "startLine": 1,
         "endLine": 20
       },
@@ -2782,12 +2782,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/core-engine/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 19,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
         "startLine": 1,
         "endLine": 19
       }
@@ -3101,12 +3101,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/ARCHITECTURE.md",
     "symbols": [],
-    "snippet": "# Architecture\r\n\r\nThis document provides a deep-dive into the ITA RP Game system architecture.\r\n\r\n## Overview\r\n\r\nITA RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/        ",
+    "snippet": "# Architecture\r\n\r\nThis document provides a deep-dive into the UFABC RP Game system architecture.\r\n\r\n## Overview\r\n\r\nUFABC RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/        ",
     "snippetStartLine": 1,
     "snippetEndLine": 13,
     "chunks": [
       {
-        "text": "# Architecture\r\n\r\nThis document provides a deep-dive into the ITA RP Game system architecture.\r\n\r\n## Overview\r\n\r\nITA RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/",
+        "text": "# Architecture\r\n\r\nThis document provides a deep-dive into the UFABC RP Game system architecture.\r\n\r\n## Overview\r\n\r\nUFABC RP Game is built as a monorepo using npm workspaces, with clear separation between shared packages and applications.\r\n\r\n```\r\nita-rp-game/\r\n├── packages/                    # Shared libraries\r\n│   ├── core-engine/            # Phaser 3 game engine wrapper\r\n│   ├── game-logic/",
         "startLine": 1,
         "endLine": 13
       },
@@ -3169,12 +3169,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/CONTRIBUTING.md",
     "symbols": [],
-    "snippet": "# Contributing Guide\r\n\r\nGuidelines for contributing to ITA RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix\r",
+    "snippet": "# Contributing Guide\r\n\r\nGuidelines for contributing to UFABC RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix\r",
     "snippetStartLine": 1,
     "snippetEndLine": 27,
     "chunks": [
       {
-        "text": "# Contributing Guide\r\n\r\nGuidelines for contributing to ITA RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix",
+        "text": "# Contributing Guide\r\n\r\nGuidelines for contributing to UFABC RP Game.\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Clone repository\r\ngit clone <repository-url>\r\ncd ita-rp-game\r\n\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n```\r\n\r\n## Development Workflow\r\n\r\n### 1. Create a Branch\r\n\r\n```bash\r\ngit checkout -b feature/your-feature-name\r\n# or\r\ngit checkout -b fix/your-bug-fix",
         "startLine": 1,
         "endLine": 27
       },
@@ -3203,12 +3203,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/README.md",
     "symbols": [],
-    "snippet": "# Documentation\r\n\r\nWelcome to the ITA RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n\r\n# Run tests\r\nnpm run test\r\n\r\n# Build for production\r\nnpm run build\r\n```\r\n\r\n## Project Structure\r\n\r\n```\r\nita-rp-game/\r\n├── apps/web-app/          # Main React applic",
+    "snippet": "# Documentation\r\n\r\nWelcome to the UFABC RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start development server\r\nnpm run dev\r\n\r\n# Run tests\r\nnpm run test\r\n\r\n# Build for production\r\nnpm run build\r\n```\r\n\r\n## Project Structure\r\n\r\n```\r\nita-rp-game/\r\n├── apps/web-app/          # Main React applic",
     "snippetStartLine": 1,
     "snippetEndLine": 36,
     "chunks": [
       {
-        "text": "# Documentation\r\n\r\nWelcome to the ITA RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start",
+        "text": "# Documentation\r\n\r\nWelcome to the UFABC RP Game documentation.\r\n\r\n## Quick Links\r\n\r\n| Document | Description |\r\n|----------|-------------|\r\n| [Architecture](./ARCHITECTURE.md) | System architecture and package structure |\r\n| [Components](./COMPONENTS.md) | UI component API reference |\r\n| [Store](./STORE.md) | Zustand state management guide |\r\n| [Types](./TYPES.md) | TypeScript type definitions |\r\n| [Testing](./TESTING.md) | Testing strategy and examples |\r\n| [Contributing](./CONTRIBUTING.md) | Development workflow |\r\n\r\n## Getting Started\r\n\r\n```bash\r\n# Install dependencies\r\nnpm install\r\n\r\n# Start",
         "startLine": 1,
         "endLine": 22
       },
@@ -3261,12 +3261,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/docs/TESTING.md",
     "symbols": [],
-    "snippet": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the ITA RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
+    "snippet": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the UFABC RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
     "snippetStartLine": 1,
     "snippetEndLine": 24,
     "chunks": [
       {
-        "text": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the ITA RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
+        "text": "# Testing Guide\r\n\r\nThis document covers testing strategy and examples for the UFABC RP Game.\r\n\r\n## Overview\r\n\r\n- **Framework**: Vitest\r\n- **React Testing**: React Testing Library\r\n- **Coverage**: Vitest built-in coverage\r\n\r\n## Running Tests\r\n\r\n```bash\r\n# Run all tests\r\nnpm run test\r\n\r\n# Watch mode\r\nnpm run test:watch\r\n\r\n# With coverage\r\nnpm run test:coverage\r\n\r\n# Specific package\r\nnpm run test -- pa",
         "startLine": 1,
         "endLine": 24
       },
@@ -3363,12 +3363,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/process-catalog.ts\",\n    \"generate-icons\": \"tsx scripts/generate-icons.ts\"\n  },\n  \"devDependencies\": {\n    \"@types/jsdom\": \"^21.1.6\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/sharp\": \"^0.31.1\",\n    \"",
+    "snippet": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/process-catalog.ts\",\n    \"generate-icons\": \"tsx scripts/generate-icons.ts\"\n  },\n  \"devDependencies\": {\n    \"@types/jsdom\": \"^21.1.6\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/sharp\": \"^0.31.1\",\n    \"",
     "snippetStartLine": 1,
     "snippetEndLine": 27,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"ITA RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/p",
+        "text": "{\n  \"name\": \"ita-rp-game\",\n  \"version\": \"2.0.0\",\n  \"description\": \"UFABC RP Game - Reimplementação moderna com Phaser 3 + React\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"workspaces\": [\n    \"packages/*\",\n    \"apps/*\"\n  ],\n  \"scripts\": {\n    \"dev\": \"cd apps/web-app && npm run dev\",\n    \"build\": \"npm run build --workspaces\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"lint\": \"eslint . --ext .ts,.tsx\",\n    \"lint:fix\": \"eslint . --ext .ts,.tsx --fix\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"clean\": \"npm run clean --workspaces && rm -rf node_modules\",\n    \"process-catalog\": \"tsx scripts/p",
         "startLine": 1,
         "endLine": 20
       },
@@ -3387,12 +3387,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/core-engine/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 19,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/core-engine\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Motor do jogo Phaser 3 para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"phaser\": \"^3.80.0\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
         "startLine": 1,
         "endLine": 19
       }
@@ -3692,12 +3692,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/curriculum/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 23,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
         "startLine": 1,
         "endLine": 23
       }
@@ -3822,12 +3822,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/game-logic/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 19,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
         "startLine": 1,
         "endLine": 19
       }
@@ -4297,12 +4297,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/curriculum/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 23,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/curriculum\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Carregamento e processamento de dados curriculares para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"vite\": \"7.2.6\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
         "startLine": 1,
         "endLine": 23
       }
@@ -4427,12 +4427,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/game-logic/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 19,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/game-logic\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Lógica de negócio e state management para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
         "startLine": 1,
         "endLine": 19
       }
@@ -5412,12 +5412,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/shared-types/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 16,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
         "startLine": 1,
         "endLine": 16
       }
@@ -5460,12 +5460,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/ui-components/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para ITA RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1\",\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para UFABC RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1\",\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 29,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para ITA RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1",
+        "text": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para UFABC RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1",
         "startLine": 1,
         "endLine": 24
       },
@@ -6057,12 +6057,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/shared-types/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 16,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para ITA RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
+        "text": "{\n  \"name\": \"@ita-rp/shared-types\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Tipos TypeScript compartilhados para UFABC RP Game\",\n  \"main\": \"src/index.ts\",\n  \"types\": \"src/index.ts\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {},\n  \"devDependencies\": {\n    \"typescript\": \"^5.3.0\"\n  }\n}",
         "startLine": 1,
         "endLine": 16
       }
@@ -6105,12 +6105,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/ui-components/package.json",
     "symbols": [],
-    "snippet": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para ITA RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1\",\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
+    "snippet": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para UFABC RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1\",\n    \"typescript\": \"^5.3.0\",\n    \"vitest\": \"^4.0.14\"\n  }\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 29,
     "chunks": [
       {
-        "text": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para ITA RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1",
+        "text": "{\n  \"name\": \"@ita-rp/ui-components\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Componentes React para UFABC RP Game\",\n  \"main\": \"src/index.tsx\",\n  \"types\": \"src/index.tsx\",\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"dev\": \"tsc --watch\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"clean\": \"rm -rf dist\"\n  },\n  \"dependencies\": {\n    \"@ita-rp/shared-types\": \"*\",\n    \"react\": \"^18.2.0\",\n    \"vite\": \"7.2.6\",\n    \"zustand\": \"^4.4.7\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^14.1.2\",\n    \"@types/react\": \"^18.2.0\",\n    \"jsdom\": \"^23.0.1",
         "startLine": 1,
         "endLine": 24
       },
@@ -6615,17 +6615,17 @@
         "endLine": 29
       },
       {
-        "text": "tring;\r\n  steps?: OnboardingStep[];\r\n  currentStep?: number;\r\n  onStepChange?: (step: number) => void;\r\n}\r\n\r\nconst defaultSteps: OnboardingStep[] = [\r\n  {\r\n    id: 'welcome',\r\n    title: 'Bem-vindo ao ITA RP Game!',\r\n    description: 'Prepare-se para uma jornada épica de aprendizado. Você está prestes a se tornar um cadete do ITA, dominando todas as disciplinas necessárias para a aprovação.',",
+        "text": "tring;\r\n  steps?: OnboardingStep[];\r\n  currentStep?: number;\r\n  onStepChange?: (step: number) => void;\r\n}\r\n\r\nconst defaultSteps: OnboardingStep[] = [\r\n  {\r\n    id: 'welcome',\r\n    title: 'Bem-vindo ao UFABC RP Game!',\r\n    description: 'Prepare-se para uma jornada épica de aprendizado. Você está prestes a se tornar um cadete do UFABC, dominando todas as disciplinas necessárias para a aprovação.',",
         "startLine": 26,
         "endLine": 37
       },
       {
-        "text": "es a se tornar um cadete do ITA, dominando todas as disciplinas necessárias para a aprovação.',\r\n    icon: '🚀',\r\n    position: 'center',\r\n  },\r\n  {\r\n    id: 'dashboard',\r\n    title: 'Seu Dashboard',\r\n    description: 'Aqui você verá seu progresso geral: XP, nível, streak de estudos e estatísticas. Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: '",
+        "text": "es a se tornar um cadete do UFABC, dominando todas as disciplinas necessárias para a aprovação.',\r\n    icon: '🚀',\r\n    position: 'center',\r\n  },\r\n  {\r\n    id: 'dashboard',\r\n    title: 'Seu Dashboard',\r\n    description: 'Aqui você verá seu progresso geral: XP, nível, streak de estudos e estatísticas. Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: '",
         "startLine": 36,
         "endLine": 46
       },
       {
-        "text": "Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: 'bottom',\r\n  },\r\n  {\r\n    id: 'disciplines',\r\n    title: 'Disciplinas',\r\n    description: 'Explore as 12 disciplinas do ITA: Cálculo, Física, Química, Álgebra Linear, Programação e muito mais. Cada uma tem dezenas de habilidades para dominar.',\r\n    icon: '📚',\r\n    highlight: 'disciplines',\r\n    pos",
+        "text": "Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: 'bottom',\r\n  },\r\n  {\r\n    id: 'disciplines',\r\n    title: 'Disciplinas',\r\n    description: 'Explore as 12 disciplinas do UFABC: Cálculo, Física, Química, Álgebra Linear, Programação e muito mais. Cada uma tem dezenas de habilidades para dominar.',\r\n    icon: '📚',\r\n    highlight: 'disciplines',\r\n    pos",
         "startLine": 43,
         "endLine": 54
       }
@@ -7295,17 +7295,17 @@
         "endLine": 29
       },
       {
-        "text": "tring;\r\n  steps?: OnboardingStep[];\r\n  currentStep?: number;\r\n  onStepChange?: (step: number) => void;\r\n}\r\n\r\nconst defaultSteps: OnboardingStep[] = [\r\n  {\r\n    id: 'welcome',\r\n    title: 'Bem-vindo ao ITA RP Game!',\r\n    description: 'Prepare-se para uma jornada épica de aprendizado. Você está prestes a se tornar um cadete do ITA, dominando todas as disciplinas necessárias para a aprovação.',",
+        "text": "tring;\r\n  steps?: OnboardingStep[];\r\n  currentStep?: number;\r\n  onStepChange?: (step: number) => void;\r\n}\r\n\r\nconst defaultSteps: OnboardingStep[] = [\r\n  {\r\n    id: 'welcome',\r\n    title: 'Bem-vindo ao UFABC RP Game!',\r\n    description: 'Prepare-se para uma jornada épica de aprendizado. Você está prestes a se tornar um cadete do UFABC, dominando todas as disciplinas necessárias para a aprovação.',",
         "startLine": 26,
         "endLine": 37
       },
       {
-        "text": "es a se tornar um cadete do ITA, dominando todas as disciplinas necessárias para a aprovação.',\r\n    icon: '🚀',\r\n    position: 'center',\r\n  },\r\n  {\r\n    id: 'dashboard',\r\n    title: 'Seu Dashboard',\r\n    description: 'Aqui você verá seu progresso geral: XP, nível, streak de estudos e estatísticas. Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: '",
+        "text": "es a se tornar um cadete do UFABC, dominando todas as disciplinas necessárias para a aprovação.',\r\n    icon: '🚀',\r\n    position: 'center',\r\n  },\r\n  {\r\n    id: 'dashboard',\r\n    title: 'Seu Dashboard',\r\n    description: 'Aqui você verá seu progresso geral: XP, nível, streak de estudos e estatísticas. Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: '",
         "startLine": 36,
         "endLine": 46
       },
       {
-        "text": "Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: 'bottom',\r\n  },\r\n  {\r\n    id: 'disciplines',\r\n    title: 'Disciplinas',\r\n    description: 'Explore as 12 disciplinas do ITA: Cálculo, Física, Química, Álgebra Linear, Programação e muito mais. Cada uma tem dezenas de habilidades para dominar.',\r\n    icon: '📚',\r\n    highlight: 'disciplines',\r\n    pos",
+        "text": "Acompanhe sua evolução diariamente!',\r\n    icon: '🏠',\r\n    highlight: 'dashboard',\r\n    position: 'bottom',\r\n  },\r\n  {\r\n    id: 'disciplines',\r\n    title: 'Disciplinas',\r\n    description: 'Explore as 12 disciplinas do UFABC: Cálculo, Física, Química, Álgebra Linear, Programação e muito mais. Cada uma tem dezenas de habilidades para dominar.',\r\n    icon: '📚',\r\n    highlight: 'disciplines',\r\n    pos",
         "startLine": 43,
         "endLine": 54
       }
@@ -7756,12 +7756,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/ui-components/src/ThemeProvider.tsx",
     "symbols": [],
-    "snippet": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o ITA RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning: ",
+    "snippet": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o UFABC RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning: ",
     "snippetStartLine": 1,
     "snippetEndLine": 16,
     "chunks": [
       {
-        "text": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o ITA RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning:",
+        "text": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o UFABC RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning:",
         "startLine": 1,
         "endLine": 16
       },
@@ -7790,12 +7790,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/ui-components/src/index.ts",
     "symbols": [],
-    "snippet": "// Core UI Components for ITA RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
+    "snippet": "// Core UI Components for UFABC RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
     "snippetStartLine": 1,
     "snippetEndLine": 14,
     "chunks": [
       {
-        "text": "// Core UI Components for ITA RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
+        "text": "// Core UI Components for UFABC RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
         "startLine": 1,
         "endLine": 14
       },
@@ -7944,12 +7944,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/scripts/process-catalog.ts",
     "symbols": [],
-    "snippet": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do ITA e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
+    "snippet": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do UFABC e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do ITA e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
+        "text": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do UFABC e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
         "startLine": 1,
         "endLine": 12
       },
@@ -8215,12 +8215,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/ui-components/src/ThemeProvider.tsx",
     "symbols": [],
-    "snippet": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o ITA RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning: ",
+    "snippet": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o UFABC RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning: ",
     "snippetStartLine": 1,
     "snippetEndLine": 16,
     "chunks": [
       {
-        "text": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o ITA RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning:",
+        "text": "import React, { createContext, useContext, ReactNode, useMemo, useCallback } from 'react';\r\n\r\n// Temas cyberpunk para o UFABC RP Game\r\nexport interface Theme {\r\n  id: string;\r\n  name: string;\r\n  colors: {\r\n    primary: string;\r\n    secondary: string;\r\n    background: string;\r\n    surface: string;\r\n    text: string;\r\n    textSecondary: string;\r\n    accent: string;\r\n    success: string;\r\n    warning:",
         "startLine": 1,
         "endLine": 16
       },
@@ -8249,12 +8249,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/packages/ui-components/src/index.ts",
     "symbols": [],
-    "snippet": "// Core UI Components for ITA RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
+    "snippet": "// Core UI Components for UFABC RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
     "snippetStartLine": 1,
     "snippetEndLine": 14,
     "chunks": [
       {
-        "text": "// Core UI Components for ITA RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
+        "text": "// Core UI Components for UFABC RP Game\r\nexport * from './Button';\r\nexport * from './ProgressBar';\r\nexport * from './RankBadge';\r\nexport * from './ThemeProvider';\r\nexport * from './Modal';\r\nexport * from './Notification';\r\nexport * from './Card';\r\nexport * from './Text';\r\nexport * from './Navbar';\r\nexport * from './AchievementCard';\r\nexport * from './DisciplineCard';\r\nexport * from './SkillCard';\r\ne",
         "startLine": 1,
         "endLine": 14
       },
@@ -8403,12 +8403,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/scripts/process-catalog.ts",
     "symbols": [],
-    "snippet": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do ITA e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
+    "snippet": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do UFABC e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
     "snippetStartLine": 1,
     "snippetEndLine": 12,
     "chunks": [
       {
-        "text": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do ITA e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
+        "text": "#!/usr/bin/env node\n/**\n * Script para processar PDF do Catálogo de Cursos do UFABC e gerar arquivos JSON\n * estruturados com expansão atômica usando IA.\n */\n\nimport * as fs from 'fs/promises';\nimport * as path from 'path';\n// @ts-ignore - pdf-parse não tem tipos oficiais\nimport pdf from 'pdf-parse';\n// eslint-disable-next-line @typescript-eslint/ban-ts-comment\n// @ts-ignore - tipos serão resolvidos",
         "startLine": 1,
         "endLine": 12
       },
@@ -8470,12 +8470,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/litellm-server/package.json",
     "symbols": [],
-    "snippet": "{\r\n  \"name\": \"ita-rp-litellm-server\",\r\n  \"version\": \"1.0.0\",\r\n  \"description\": \"LiteLLM server with g4f integration for ITA RP Game\",\r\n  \"type\": \"module\",\r\n  \"main\": \"dist/index.js\",\r\n  \"scripts\": {\r\n    \"dev\": \"tsx watch src/index.ts\",\r\n    \"build\": \"tsc\",\r\n    \"start\": \"node dist/index.js\",\r\n    \"test\": \"tsx tests/test-g4f-models.ts\",\r\n    \"update-models\": \"tsx scripts/update-working-models.ts\"\r\n  },\r\n  \"dependencies\": {\r\n    \"litellm\": \"^1.52.0\",\r\n    \"express\": \"^4.18.2\",\r\n    \"cors\": \"^2.8.5\",\r\n    \"helmet\": \"^7.1.0\",\r\n    \"dotenv\": \"^16.3.1\",\r\n    \"axios\": \"^1.6.2\",\r\n    \"g4f\": \"^0.2.7\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@types/express\": \"^4.17.21\",\r\n    \"@types/cors\": \"^2.8.17\",\r\n    \"@types/node\": \"^20.10.0\",\r\n    \"tsx\": \"^4.7.0\",\r\n    \"typescript\": \"^5.3.0\"\r\n  }\r\n}",
+    "snippet": "{\r\n  \"name\": \"ita-rp-litellm-server\",\r\n  \"version\": \"1.0.0\",\r\n  \"description\": \"LiteLLM server with g4f integration for UFABC RP Game\",\r\n  \"type\": \"module\",\r\n  \"main\": \"dist/index.js\",\r\n  \"scripts\": {\r\n    \"dev\": \"tsx watch src/index.ts\",\r\n    \"build\": \"tsc\",\r\n    \"start\": \"node dist/index.js\",\r\n    \"test\": \"tsx tests/test-g4f-models.ts\",\r\n    \"update-models\": \"tsx scripts/update-working-models.ts\"\r\n  },\r\n  \"dependencies\": {\r\n    \"litellm\": \"^1.52.0\",\r\n    \"express\": \"^4.18.2\",\r\n    \"cors\": \"^2.8.5\",\r\n    \"helmet\": \"^7.1.0\",\r\n    \"dotenv\": \"^16.3.1\",\r\n    \"axios\": \"^1.6.2\",\r\n    \"g4f\": \"^0.2.7\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@types/express\": \"^4.17.21\",\r\n    \"@types/cors\": \"^2.8.17\",\r\n    \"@types/node\": \"^20.10.0\",\r\n    \"tsx\": \"^4.7.0\",\r\n    \"typescript\": \"^5.3.0\"\r\n  }\r\n}",
     "snippetStartLine": 1,
     "snippetEndLine": 30,
     "chunks": [
       {
-        "text": "{\r\n  \"name\": \"ita-rp-litellm-server\",\r\n  \"version\": \"1.0.0\",\r\n  \"description\": \"LiteLLM server with g4f integration for ITA RP Game\",\r\n  \"type\": \"module\",\r\n  \"main\": \"dist/index.js\",\r\n  \"scripts\": {\r\n    \"dev\": \"tsx watch src/index.ts\",\r\n    \"build\": \"tsc\",\r\n    \"start\": \"node dist/index.js\",\r\n    \"test\": \"tsx tests/test-g4f-models.ts\",\r\n    \"update-models\": \"tsx scripts/update-working-models.ts\"\r\n  },\r\n  \"dependencies\": {\r\n    \"litellm\": \"^1.52.0\",\r\n    \"express\": \"^4.18.2\",\r\n    \"cors\": \"^2.8.5\",\r\n    \"helmet\": \"^7.1.0\",\r\n    \"dotenv\": \"^16.3.1\",\r\n    \"axios\": \"^1.6.2\",\r\n    \"g4f\": \"^0.2.7\"",
+        "text": "{\r\n  \"name\": \"ita-rp-litellm-server\",\r\n  \"version\": \"1.0.0\",\r\n  \"description\": \"LiteLLM server with g4f integration for UFABC RP Game\",\r\n  \"type\": \"module\",\r\n  \"main\": \"dist/index.js\",\r\n  \"scripts\": {\r\n    \"dev\": \"tsx watch src/index.ts\",\r\n    \"build\": \"tsc\",\r\n    \"start\": \"node dist/index.js\",\r\n    \"test\": \"tsx tests/test-g4f-models.ts\",\r\n    \"update-models\": \"tsx scripts/update-working-models.ts\"\r\n  },\r\n  \"dependencies\": {\r\n    \"litellm\": \"^1.52.0\",\r\n    \"express\": \"^4.18.2\",\r\n    \"cors\": \"^2.8.5\",\r\n    \"helmet\": \"^7.1.0\",\r\n    \"dotenv\": \"^16.3.1\",\r\n    \"axios\": \"^1.6.2\",\r\n    \"g4f\": \"^0.2.7\"",
         "startLine": 1,
         "endLine": 21
       },
@@ -8523,12 +8523,12 @@
   {
     "uri": "/media/kratos/USER_DATA/GITHUB/Role-Play-Instituto-Tecnologico-Aeronautica/litellm-server/README.md",
     "symbols": [],
-    "snippet": "# 🤖 ITA RP LiteLLM Server\r\n\r\nServidor LiteLLM com integração G4F para testar e disponibilizar múltiplos modelos de IA em uma API unificada.\r\n\r\n## 🌟 Funcionalidades\r\n\r\n- **Teste Automatizado**: Testa todos os modelos do g4f e identifica os funcionais\r\n- **Ordenação por Poder**: Models são ordenados por capacidade (GPT-4 > Claude 3 > Gemini > etc)\r\n- **API OpenAI Compatible**: Endpoints compatíveis com formato OpenAI\r\n- **Configuração Dinâmica**: Atualização automática da lista de modelos funcionais\r\n- **Monitoramento**: Status e estatísticas de performance dos modelos\r\n\r\n## 🚀 Quick Start\r\n\r\n### 1. Instalação\r\n\r\n```bash\r\ncd litellm-server\r\nnpm install\r\n```\r\n\r\n### 2. Configuração\r\n\r\n```bash\r\ncp .env.example .env\r\n# Edite .env com suas API keys (opcional - g4f funciona sem keys)\r\n```\r\n\r\n###",
+    "snippet": "# 🤖 UFABC RP LiteLLM Server\r\n\r\nServidor LiteLLM com integração G4F para testar e disponibilizar múltiplos modelos de IA em uma API unificada.\r\n\r\n## 🌟 Funcionalidades\r\n\r\n- **Teste Automatizado**: Testa todos os modelos do g4f e identifica os funcionais\r\n- **Ordenação por Poder**: Models são ordenados por capacidade (GPT-4 > Claude 3 > Gemini > etc)\r\n- **API OpenAI Compatible**: Endpoints compatíveis com formato OpenAI\r\n- **Configuração Dinâmica**: Atualização automática da lista de modelos funcionais\r\n- **Monitoramento**: Status e estatísticas de performance dos modelos\r\n\r\n## 🚀 Quick Start\r\n\r\n### 1. Instalação\r\n\r\n```bash\r\ncd litellm-server\r\nnpm install\r\n```\r\n\r\n### 2. Configuração\r\n\r\n```bash\r\ncp .env.example .env\r\n# Edite .env com suas API keys (opcional - g4f funciona sem keys)\r\n```\r\n\r\n###",
     "snippetStartLine": 1,
     "snippetEndLine": 29,
     "chunks": [
       {
-        "text": "# 🤖 ITA RP LiteLLM Server\r\n\r\nServidor LiteLLM com integração G4F para testar e disponibilizar múltiplos modelos de IA em uma API unificada.\r\n\r\n## 🌟 Funcionalidades\r\n\r\n- **Teste Automatizado**: Testa todos os modelos do g4f e identifica os funcionais\r\n- **Ordenação por Poder**: Models são ordenados por capacidade (GPT-4 > Claude 3 > Gemini > etc)\r\n- **API OpenAI Compatible**: Endpoints compatíveis com formato OpenAI\r\n- **Configuração Dinâmica**: Atualização automática da lista de modelos funcionais\r\n- **Monitoramento**: Status e estatísticas de performance dos modelos\r\n\r\n## 🚀 Quick Start",
+        "text": "# 🤖 UFABC RP LiteLLM Server\r\n\r\nServidor LiteLLM com integração G4F para testar e disponibilizar múltiplos modelos de IA em uma API unificada.\r\n\r\n## 🌟 Funcionalidades\r\n\r\n- **Teste Automatizado**: Testa todos os modelos do g4f e identifica os funcionais\r\n- **Ordenação por Poder**: Models são ordenados por capacidade (GPT-4 > Claude 3 > Gemini > etc)\r\n- **API OpenAI Compatible**: Endpoints compatíveis com formato OpenAI\r\n- **Configuração Dinâmica**: Atualização automática da lista de modelos funcionais\r\n- **Monitoramento**: Status e estatísticas de performance dos modelos\r\n\r\n## 🚀 Quick Start",
         "startLine": 1,
         "endLine": 15
       },

@@ -1,13 +1,11 @@
 import React, { useMemo, useState } from 'react';
+import { useTheme, Card, Text, Button, ProgressBar, RankBadge } from '@ita-rp/ui-components';
 import {
-  useTheme,
-  Card,
-  Text,
-  Button,
-  ProgressBar,
-  RankBadge,
-} from '@ita-rp/ui-components';
-import { RankSystem, XPSystem, useStreakNotifications, useWeeklyActivity } from '@ita-rp/game-logic';
+  RankSystem,
+  XPSystem,
+  useStreakNotifications,
+  useWeeklyActivity,
+} from '@ita-rp/game-logic';
 import type { Rank } from '@ita-rp/shared-types';
 
 interface ProfilePageProps {
@@ -96,7 +94,10 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
   const advancedStats = useMemo(() => {
     const avgStudyPerDay = daysSinceJoin > 0 ? Math.round(totalStudyTime / daysSinceJoin) : 0;
     const avgXPPerDay = daysSinceJoin > 0 ? Math.round(xp / daysSinceJoin) : 0;
-    const skillsPerWeek = daysSinceJoin > 7 ? Math.round((completedSkills / daysSinceJoin) * 7 * 10) / 10 : completedSkills;
+    const skillsPerWeek =
+      daysSinceJoin > 7
+        ? Math.round((completedSkills / daysSinceJoin) * 7 * 10) / 10
+        : completedSkills;
     const xpToNextLevel = XPSystem.calculateXPForLevel(level + 1) - xp;
     const levelProgress = XPSystem.calculateLevelProgress(xp);
 
@@ -114,7 +115,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
 
   // Format for display (keeping backward compatibility with existing UI)
   const weeklyActivity = useMemo(() => {
-    return weeklyActivityData.days.map((day) => ({
+    return weeklyActivityData.days.map(day => ({
       day: day.day,
       active: day.active,
       minutes: day.minutes,
@@ -148,7 +149,11 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
           {/* Avatar/Rank */}
           <div style={{ textAlign: 'center' }}>
             <RankBadge rank={currentRank} size="large" />
-            <Text variant="caption" color={currentTheme.colors.textSecondary} style={{ marginTop: '8px' }}>
+            <Text
+              variant="caption"
+              color={currentTheme.colors.textSecondary}
+              style={{ marginTop: '8px' }}
+            >
               {currentRank.name}
             </Text>
           </div>
@@ -159,9 +164,13 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               {playerName}
             </Text>
             <Text variant="body" color={currentTheme.colors.primary}>
-              Cadete do ITA
+              Aluno do ENEM
             </Text>
-            <Text variant="caption" color={currentTheme.colors.textSecondary} style={{ marginTop: '8px' }}>
+            <Text
+              variant="caption"
+              color={currentTheme.colors.textSecondary}
+              style={{ marginTop: '8px' }}
+            >
               Membro há {daysSinceJoin} dias • Desde {joinDate.toLocaleDateString('pt-BR')}
             </Text>
           </div>
@@ -171,12 +180,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
             <Text variant="caption" color={currentTheme.colors.textSecondary}>
               Nível {level}
             </Text>
-            <ProgressBar
-              value={xp % 1000}
-              maxValue={1000}
-              variant="primary"
-              size="medium"
-            />
+            <ProgressBar value={xp % 1000} maxValue={1000} variant="primary" size="medium" />
           </div>
         </div>
       </Card>
@@ -275,7 +279,11 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               <Text variant="body" color={currentTheme.colors.textSecondary}>
                 Nenhuma atividade registrada esta semana
               </Text>
-              <Text variant="caption" color={currentTheme.colors.textSecondary} style={{ marginTop: '8px' }}>
+              <Text
+                variant="caption"
+                color={currentTheme.colors.textSecondary}
+                style={{ marginTop: '8px' }}
+              >
                 Complete sessões de estudo para ver sua atividade aqui
               </Text>
             </div>
@@ -289,7 +297,11 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               <Text variant="body" color={currentTheme.colors.textSecondary}>
                 Média diária de estudo
               </Text>
-              <Text variant="body" color={currentTheme.colors.primary} style={{ fontWeight: 'bold' }}>
+              <Text
+                variant="body"
+                color={currentTheme.colors.primary}
+                style={{ fontWeight: 'bold' }}
+              >
                 {formatTime(advancedStats.avgStudyPerDay)}
               </Text>
             </div>
@@ -318,9 +330,11 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               </Text>
             </div>
             {nextRank && (
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div
+                style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
+              >
                 <Text variant="body" color={currentTheme.colors.textSecondary}>
-                  Próxima patente
+                  Próximo nível acadêmico
                 </Text>
                 <Text variant="body" color="#9c27b0" style={{ fontWeight: 'bold' }}>
                   {nextRank.name} (Nv. {nextRank.level})
@@ -358,17 +372,22 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
           </div>
         </div>
         <Text variant="caption" color={currentTheme.colors.textSecondary}>
-          Complete mais {Math.ceil(advancedStats.xpToNextLevel / 50)} habilidades para subir de nível
+          Complete mais {Math.ceil(advancedStats.xpToNextLevel / 50)} habilidades para subir de
+          nível
         </Text>
       </Card>
 
       {/* Theme Selection */}
       <Card title="Tema Visual" style={{ marginBottom: '24px' }}>
-        <Text variant="body" color={currentTheme.colors.textSecondary} style={{ marginBottom: '16px' }}>
+        <Text
+          variant="body"
+          color={currentTheme.colors.textSecondary}
+          style={{ marginBottom: '16px' }}
+        >
           Escolha o tema cyberpunk de sua preferência
         </Text>
         <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-          {themes.map((theme) => (
+          {themes.map(theme => (
             <button
               key={theme.id}
               onClick={() => onChangeTheme(theme.id)}
@@ -377,9 +396,8 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
                 alignItems: 'center',
                 gap: '12px',
                 padding: '16px 24px',
-                backgroundColor: currentThemeId === theme.id
-                  ? theme.color + '20'
-                  : currentTheme.colors.surface,
+                backgroundColor:
+                  currentThemeId === theme.id ? theme.color + '20' : currentTheme.colors.surface,
                 border: `2px solid ${currentThemeId === theme.id ? theme.color : currentTheme.colors.border}`,
                 borderRadius: '12px',
                 cursor: 'pointer',
@@ -405,63 +423,69 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               >
                 {theme.name}
               </span>
-              {currentThemeId === theme.id && (
-                <span style={{ marginLeft: '8px' }}>✓</span>
-              )}
+              {currentThemeId === theme.id && <span style={{ marginLeft: '8px' }}>✓</span>}
             </button>
           ))}
         </div>
       </Card>
 
       {/* Rank Progress */}
-      <Card title="Progressão de Patentes">
+      <Card title="Progressão Acadêmica">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          {RankSystem.getAllRanks().slice(0, 6).map((rank, index) => {
-            const isCurrentRank = rank.id === currentRank.id;
-            const isUnlocked = level >= rank.level;
+          {RankSystem.getAllRanks()
+            .slice(0, 6)
+            .map((rank, index) => {
+              const isCurrentRank = rank.id === currentRank.id;
+              const isUnlocked = level >= rank.level;
 
-            return (
-              <div
-                key={rank.id}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '16px',
-                  padding: '12px',
-                  backgroundColor: isCurrentRank
-                    ? currentTheme.colors.primary + '20'
-                    : 'transparent',
-                  borderRadius: '8px',
-                  opacity: isUnlocked ? 1 : 0.5,
-                }}
-              >
-                <span style={{ fontSize: '1.5rem', filter: isUnlocked ? 'none' : 'grayscale(100%)' }}>
-                  {rank.icon}
-                </span>
-                <div style={{ flex: 1 }}>
-                  <Text
-                    variant="body"
-                    color={isCurrentRank ? currentTheme.colors.primary : currentTheme.colors.text}
-                    style={{ fontWeight: isCurrentRank ? 'bold' : 'normal' }}
+              return (
+                <div
+                  key={rank.id}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '16px',
+                    padding: '12px',
+                    backgroundColor: isCurrentRank
+                      ? currentTheme.colors.primary + '20'
+                      : 'transparent',
+                    borderRadius: '8px',
+                    opacity: isUnlocked ? 1 : 0.5,
+                  }}
+                >
+                  <span
+                    style={{ fontSize: '1.5rem', filter: isUnlocked ? 'none' : 'grayscale(100%)' }}
                   >
-                    {rank.name}
-                  </Text>
-                  <Text variant="caption" color={currentTheme.colors.textSecondary}>
-                    Nível {rank.level}
-                  </Text>
+                    {rank.icon}
+                  </span>
+                  <div style={{ flex: 1 }}>
+                    <Text
+                      variant="body"
+                      color={isCurrentRank ? currentTheme.colors.primary : currentTheme.colors.text}
+                      style={{ fontWeight: isCurrentRank ? 'bold' : 'normal' }}
+                    >
+                      {rank.name}
+                    </Text>
+                    <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                      Nível {rank.level}
+                    </Text>
+                  </div>
+                  <div>
+                    {isUnlocked ? (
+                      <span style={{ color: currentTheme.colors.success }}>✅</span>
+                    ) : (
+                      <span style={{ color: currentTheme.colors.textSecondary }}>🔒</span>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  {isUnlocked ? (
-                    <span style={{ color: currentTheme.colors.success }}>✅</span>
-                  ) : (
-                    <span style={{ color: currentTheme.colors.textSecondary }}>🔒</span>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-          <Text variant="caption" color={currentTheme.colors.textSecondary} style={{ textAlign: 'center', marginTop: '8px' }}>
-            +{RankSystem.getAllRanks().length - 6} patentes disponíveis...
+              );
+            })}
+          <Text
+            variant="caption"
+            color={currentTheme.colors.textSecondary}
+            style={{ textAlign: 'center', marginTop: '8px' }}
+          >
+            +{RankSystem.getAllRanks().length - 6} níveis acadêmicos disponíveis...
           </Text>
         </div>
       </Card>
@@ -479,8 +503,8 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
                 {permissionStatus === 'denied'
                   ? 'Bloqueado pelo navegador'
                   : notificationSettings.enabled
-                  ? 'Receber lembretes de estudo'
-                  : 'Ative para receber lembretes'}
+                    ? 'Receber lembretes de estudo'
+                    : 'Ative para receber lembretes'}
               </Text>
             </div>
             <Button
@@ -492,8 +516,8 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               {permissionStatus === 'denied'
                 ? 'Bloqueado'
                 : notificationSettings.enabled && canNotify
-                ? 'Ativado'
-                : 'Desativado'}
+                  ? 'Ativado'
+                  : 'Desativado'}
             </Button>
           </div>
 
@@ -501,7 +525,14 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
           {notificationSettings.enabled && canNotify && (
             <>
               {/* Streak reminders */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '16px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  paddingLeft: '16px',
+                }}
+              >
                 <div>
                   <Text variant="body" color={currentTheme.colors.text}>
                     Lembrete de Streak
@@ -511,13 +542,17 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
                   </Text>
                 </div>
                 <button
-                  onClick={() => updateSettings({ streakReminder: !notificationSettings.streakReminder })}
+                  onClick={() =>
+                    updateSettings({ streakReminder: !notificationSettings.streakReminder })
+                  }
                   style={{
                     width: '48px',
                     height: '24px',
                     borderRadius: '12px',
                     border: 'none',
-                    backgroundColor: notificationSettings.streakReminder ? currentTheme.colors.primary : currentTheme.colors.surface,
+                    backgroundColor: notificationSettings.streakReminder
+                      ? currentTheme.colors.primary
+                      : currentTheme.colors.surface,
                     cursor: 'pointer',
                     position: 'relative',
                     transition: 'background-color 0.3s',
@@ -539,7 +574,14 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               </div>
 
               {/* Daily challenge reminders */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '16px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  paddingLeft: '16px',
+                }}
+              >
                 <div>
                   <Text variant="body" color={currentTheme.colors.text}>
                     Missões Diárias
@@ -549,13 +591,19 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
                   </Text>
                 </div>
                 <button
-                  onClick={() => updateSettings({ dailyChallengeReminder: !notificationSettings.dailyChallengeReminder })}
+                  onClick={() =>
+                    updateSettings({
+                      dailyChallengeReminder: !notificationSettings.dailyChallengeReminder,
+                    })
+                  }
                   style={{
                     width: '48px',
                     height: '24px',
                     borderRadius: '12px',
                     border: 'none',
-                    backgroundColor: notificationSettings.dailyChallengeReminder ? currentTheme.colors.primary : currentTheme.colors.surface,
+                    backgroundColor: notificationSettings.dailyChallengeReminder
+                      ? currentTheme.colors.primary
+                      : currentTheme.colors.surface,
                     cursor: 'pointer',
                     position: 'relative',
                     transition: 'background-color 0.3s',
@@ -577,7 +625,14 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               </div>
 
               {/* Achievement notifications */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '16px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  paddingLeft: '16px',
+                }}
+              >
                 <div>
                   <Text variant="body" color={currentTheme.colors.text}>
                     Conquistas
@@ -587,13 +642,19 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
                   </Text>
                 </div>
                 <button
-                  onClick={() => updateSettings({ achievementNotifications: !notificationSettings.achievementNotifications })}
+                  onClick={() =>
+                    updateSettings({
+                      achievementNotifications: !notificationSettings.achievementNotifications,
+                    })
+                  }
                   style={{
                     width: '48px',
                     height: '24px',
                     borderRadius: '12px',
                     border: 'none',
-                    backgroundColor: notificationSettings.achievementNotifications ? currentTheme.colors.primary : currentTheme.colors.surface,
+                    backgroundColor: notificationSettings.achievementNotifications
+                      ? currentTheme.colors.primary
+                      : currentTheme.colors.surface,
                     cursor: 'pointer',
                     position: 'relative',
                     transition: 'background-color 0.3s',
@@ -615,7 +676,14 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
               </div>
 
               {/* Reminder time */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '16px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  paddingLeft: '16px',
+                }}
+              >
                 <div>
                   <Text variant="body" color={currentTheme.colors.text}>
                     Horário do Lembrete
@@ -627,7 +695,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
                 <input
                   type="time"
                   value={notificationSettings.reminderTime}
-                  onChange={(e) => updateSettings({ reminderTime: e.target.value })}
+                  onChange={e => updateSettings({ reminderTime: e.target.value })}
                   style={{
                     padding: '8px 12px',
                     borderRadius: '8px',
@@ -642,11 +710,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({
 
               {/* Test notification button */}
               <div style={{ paddingLeft: '16px', paddingTop: '8px' }}>
-                <Button
-                  variant="secondary"
-                  size="small"
-                  onClick={sendTestNotification}
-                >
+                <Button variant="secondary" size="small" onClick={sendTestNotification}>
                   Testar Notificação
                 </Button>
               </div>

@@ -1,4 +1,4 @@
-// Core UI Components for ITA RP Game
+// Core UI Components for ENEM RP Game
 export * from './Button';
 export * from './ProgressBar';
 export * from './RankBadge';

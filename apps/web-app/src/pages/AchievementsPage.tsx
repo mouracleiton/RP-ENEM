@@ -169,7 +169,7 @@ const staticAchievements: AchievementData[] = [
   {
     id: 'mentor',
     name: 'Mentor',
-    description: 'Seja mentor de 3 novos cadetes',
+    description: 'Seja mentor de 3 novos alunos',
     icon: '🎖️',
     category: 'social',
     unlocked: false,
@@ -322,7 +322,7 @@ export const AchievementsPage: React.FC<AchievementsPageProps> = ({
         >
           Todas ({totalCount})
         </Button>
-        {categories.map((cat) => {
+        {categories.map(cat => {
           const stats = getCategoryStats(cat.id);
           return (
             <Button
@@ -345,7 +345,7 @@ export const AchievementsPage: React.FC<AchievementsPageProps> = ({
           gap: '16px',
         }}
       >
-        {filteredAchievements.map((achievement) => (
+        {filteredAchievements.map(achievement => (
           <AchievementCard key={achievement.id} achievement={achievement} />
         ))}
       </div>
@@ -363,16 +363,22 @@ export const AchievementsPage: React.FC<AchievementsPageProps> = ({
       {/* Category Breakdown */}
       <Card title="Progresso por Categoria" style={{ marginTop: '24px' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {categories.map((cat) => {
+          {categories.map(cat => {
             const stats = getCategoryStats(cat.id);
             return (
               <div key={cat.id}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <div
+                  style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}
+                >
                   <span style={{ fontSize: '1.25rem' }}>{cat.icon}</span>
                   <Text variant="body" color={currentTheme.colors.text}>
                     {cat.label}
                   </Text>
-                  <Text variant="caption" color={currentTheme.colors.textSecondary} style={{ marginLeft: 'auto' }}>
+                  <Text
+                    variant="caption"
+                    color={currentTheme.colors.textSecondary}
+                    style={{ marginLeft: 'auto' }}
+                  >
                     {stats.unlocked}/{stats.total}
                   </Text>
                 </div>

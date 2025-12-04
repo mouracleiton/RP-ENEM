@@ -437,7 +437,7 @@
                                     "Identificar as palavras-chave: 'produtos', 'procedimentos', 'novos' e 'aplicação industrial'.",
                                     "Anotar a distinção entre patente de invenção e patente de modelo de utilidade.",
                                     "Resumir em uma frase o que constitui o objeto da patente.",
-                                    "Comparar com definições de outras jurisdições, como EPO ou USPTO, para contexto."
+                                    "Comparar com definições de outras jurisdições, como EPO ou UFABCTO, para contexto."
                                   ],
                                   "verification": "Produzir um resumo escrito de 100 palavras explicando o objeto da patente conforme art. 10 LPI.",
                                   "estimatedTime": "45 minutos",
@@ -597,12 +597,12 @@
                                   "title": "Explorar o requisito de Atividade Inventiva",
                                   "subSteps": [
                                     "Definir atividade inventiva: não óbvia para técnico médio no assunto.",
-                                    "Entender o teste do 'homem médio habilidoso' (PHOSITA).",
+                                    "Entender o teste do 'homem médio habilidoso' (PHOSUFABC).",
                                     "Diferenciar de mera combinação conhecida sem efeito técnico novo.",
                                     "Analisar exemplos de patentes concedidas e recusadas por óbviedade.",
                                     "Mapear elementos da invenção que conferem inventividade."
                                   ],
-                                  "verification": "Avaliar se uma invenção hipotética tem atividade inventiva, descrevendo o raciocínio PHOSITA.",
+                                  "verification": "Avaliar se uma invenção hipotética tem atividade inventiva, descrevendo o raciocínio PHOSUFABC.",
                                   "estimatedTime": "45 minutos",
                                   "materials": "Doutrina de PI (ex: livros sobre LPI), acórdãos do INPI sobre inventividade.",
                                   "tips": "Pergunte: 'Um especialista veria isso como óbvio?' para testar.",
@@ -649,7 +649,7 @@
                                 "Lista corretamente os 3 requisitos do Art. 8º LPI sem omissões.",
                                 "Explica cumulatividade com exemplo.",
                                 "Identifica corretamente novidade absoluta e período de graça.",
-                                "Aplica teste PHOSITA para atividade inventiva.",
+                                "Aplica teste PHOSUFABC para atividade inventiva.",
                                 "Distingue aplicação industrial de usos não fabris.",
                                 "Cria checklist funcional para análise de patenteabilidade."
                               ],
@@ -658,7 +658,7 @@
                                 "Profundidade nos subcritérios de cada requisito (ex: state of the art, óbviedade).",
                                 "Capacidade de aplicação prática em exemplos reais.",
                                 "Clareza na explicação da cumulatividade.",
-                                "Uso correto de terminologia técnica (PHOSITA, anterioridade).",
+                                "Uso correto de terminologia técnica (PHOSUFABC, anterioridade).",
                                 "Completude do fluxograma ou lista sintetizada."
                               ],
                               "crossCurricularConnections": [
@@ -730,14 +730,14 @@
                                   "subSteps": [
                                     "Listar 5 exemplos de não patenteáveis (ex: ideias abstratas como 'método de pensamento criativo', violações éticas como armas biológicas).",
                                     "Explicar exclusões da LPI citadas por Silveira (2011): art. 10 (descobertas, teorias científicas, métodos matemáticos).",
-                                    "Analisar casos reais de rejeição de patentes (ex: algoritmos puros no USPTO).",
+                                    "Analisar casos reais de rejeição de patentes (ex: algoritmos puros no UFABCTO).",
                                     "Criar tabela comparativa: patenteável vs não patenteável.",
                                     "Discutir implicações éticas em inovações sustentáveis."
                                   ],
                                   "verification": "Tabela comparativa com 5 pares de exemplos, justificadas por lei e doutrina.",
                                   "estimatedTime": "50 minutos",
                                   "materials": [
-                                    "Silveira (2011), site INPI/USPT para casos rejeitados, planilha Excel ou Google Sheets."
+                                    "Silveira (2011), site INPI/UFABCT para casos rejeitados, planilha Excel ou Google Sheets."
                                   ],
                                   "tips": "Foquem em 'abstrações' vs 'concreto técnico' para diferenciar rapidamente.",
                                   "learningObjective": "Diferenciar com precisão objetos excluídos de patenteabilidade.",
@@ -1744,7 +1744,7 @@
                                   "verification": "Lista de prior art com resumos e tabela de mapeamento completa e organizada.",
                                   "estimatedTime": "4 horas",
                                   "materials": [
-                                    "Acesso a bases de patentes (Espacenet, INPI, USPTO)",
+                                    "Acesso a bases de patentes (Espacenet, INPI, UFABCTO)",
                                     "Texto da patente a analisar",
                                     "Ferramentas de busca e tabela (Excel ou Google Sheets)"
                                   ],
@@ -1810,7 +1810,7 @@
                                   "subSteps": [
                                     "Analisar diferenças identificadas: são meramente otimização ou inovadoras?",
                                     "Verificar efeitos secundários na descrição da patente (ex: melhoria inesperada de 50%).",
-                                    "Comparar com expectativas de PHOSITA (pessoa habilida no estado da técnica).",
+                                    "Comparar com expectativas de PHOSUFABC (pessoa habilida no estado da técnica).",
                                     "Buscar evidências experimentais ou dados comparativos na patente.",
                                     "Classificar: óbvio vs. não óbvio (surpresa técnica)."
                                   ],
@@ -1857,7 +1857,7 @@
                               "finalVerifications": [
                                 "Matriz comparativa cobre todos elementos das reivindicações.",
                                 "Identificados e justificados elementos de surpresa ou efeitos inesperados.",
-                                "Conclusão alinhada com análise PHOSITA.",
+                                "Conclusão alinhada com análise PHOSUFABC.",
                                 "Relatório documenta prior art relevante com citações.",
                                 "Nenhuma falha lógica na comparação.",
                                 "Recomendações práticas incluídas se aplicável."
@@ -2059,16 +2059,16 @@
                                   "title": "Comparar com jurisprudência internacional",
                                   "subSteps": [
                                     "Estudar abordagem EPO: problema-solução (PSOA) para óbviedade.",
-                                    "Analisar USPTO: teste Graham vs. fatores secundários.",
+                                    "Analisar UFABCTO: teste Graham vs. fatores secundários.",
                                     "Comparar casos: EPO T 939/92 (sinergia química) vs. combinações rotineiras.",
                                     "Mapear similaridades/diferenças com Brasil (ex: PHMT similar a POSA).",
                                     "Sintetizar tabela comparativa de critérios."
                                   ],
-                                  "verification": "Criar tabela com 3 critérios comuns e 2 diferenças entre BR, EPO e USPTO.",
+                                  "verification": "Criar tabela com 3 critérios comuns e 2 diferenças entre BR, EPO e UFABCTO.",
                                   "estimatedTime": "1 hora e 15 minutos",
                                   "materials": [
                                     "Guidelines EPO (epo.org)",
-                                    "Manual de Exame USPTO (uspto.gov)",
+                                    "Manual de Exame UFABCTO (uspto.gov)",
                                     "Casos em caselaw.4ipc.org"
                                   ],
                                   "tips": "Use tradutores para textos em inglês; foque em casos paradigmáticos.",
@@ -2306,7 +2306,7 @@
                                   "verification": "Preencher tabela com 3 exemplos por categoria, justificando aplicabilidade industrial.",
                                   "estimatedTime": "60 minutos",
                                   "materials": [
-                                    "Modelos de patentes aprovadas (ex: USPTO)",
+                                    "Modelos de patentes aprovadas (ex: UFABCTO)",
                                     "Planilha Excel ou Google Sheets",
                                     "Casos de estudo de produtos/processos"
                                   ],
@@ -5362,9 +5362,9 @@
                                   "verification": "Lista completa e atualizada do portfólio em planilha ou banco de dados, com pelo menos 95% de cobertura das patentes conhecidas",
                                   "estimatedTime": "2 horas",
                                   "materials": [
-                                    "Documentos de patentes (certidões, relatórios do INPI/USPTO/EPO)",
+                                    "Documentos de patentes (certidões, relatórios do INPI/UFABCTO/EPO)",
                                     "Planilha Excel ou Google Sheets",
-                                    "Acesso a bases de dados oficiais (INPI, Espacenet, USPTO)"
+                                    "Acesso a bases de dados oficiais (INPI, Espacenet, UFABCTO)"
                                   ],
                                   "tips": [
                                     "Comece pelas patentes mais recentes para evitar sobrecarga",
@@ -5456,7 +5456,7 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Para um portfólio de 5 patentes de uma startup de biotech (3 no Brasil via INPI, 1 nos EUA via USPTO, 1 na Europa via EPO), o checklist rastreia anuidades anuais no INPI (R$200-1000), relatórios de working no USPTO a cada 3 anos, e declarações de uso na EPO, com alertas 30 dias antes e comprovantes de pagamento anexados.",
+                              "practicalExample": "Para um portfólio de 5 patentes de uma startup de biotech (3 no Brasil via INPI, 1 nos EUA via UFABCTO, 1 na Europa via EPO), o checklist rastreia anuidades anuais no INPI (R$200-1000), relatórios de working no UFABCTO a cada 3 anos, e declarações de uso na EPO, com alertas 30 dias antes e comprovantes de pagamento anexados.",
                               "finalVerifications": [
                                 "Todas as patentes do portfólio estão listadas no inventário",
                                 "Obrigação mapeadas cobrem 100% dos prazos nacionais e internacionais",
@@ -7613,7 +7613,7 @@
                                   "title": "Identificar fontes de estado da técnica para desenhos industriais",
                                   "subSteps": [
                                     "Listar fontes: publicações escritas, usos públicos, exibições, vendas.",
-                                    "Pesquisar bancos de dados: INPI, EUIPO, USPTO para desenhos.",
+                                    "Pesquisar bancos de dados: INPI, EUIPO, UFABCTO para desenhos.",
                                     "Analisar tipos de divulgação: catálogos, feiras, sites, redes sociais.",
                                     "Diferenciar divulgação confidencial (não conta) de pública.",
                                     "Praticar busca em bases de dados com palavras-chave como 'design de cadeira'."
@@ -8183,7 +8183,7 @@
                                   "stepNumber": 2,
                                   "title": "Realizar Pesquisa de Estado da Técnica",
                                   "subSteps": [
-                                    "Acesse bases de dados de desenhos industriais (ex.: INPI, EUIPO, USPTO, WIPO).",
+                                    "Acesse bases de dados de desenhos industriais (ex.: INPI, EUIPO, UFABCTO, WIPO).",
                                     "Defina palavras-chave baseadas nas características do desenho candidato (ex.: 'cadeira ergonômica curva').",
                                     "Colete pelo menos 10-15 desenhos anteriores relevantes por similaridade visual.",
                                     "Filtre resultados por data (anteriores à criação do candidato) e jurisdição aplicável.",
@@ -13930,7 +13930,7 @@
                                     "Defina o que é uma marca segundo a legislação de propriedade intelectual.",
                                     "Identifique os elementos visuais, sonoros ou olfativos que compõem uma marca.",
                                     "Diferencie marca de outros sinais distintivos como nomes comerciais ou indicações geográficas.",
-                                    "Pesquise exemplos clássicos de marcas registradas no INPI ou USPTO.",
+                                    "Pesquise exemplos clássicos de marcas registradas no INPI ou UFABCTO.",
                                     "Anote as características essenciais de uma marca válida."
                                   ],
                                   "verification": "Resuma em 3 frases o conceito de marca e liste 2 exemplos reais.",
@@ -15112,7 +15112,7 @@
                                   ],
                                   "verification": "Selecionar 3 marcas e classificar corretamente como mistas, destacando os elementos verbais e figurativos.",
                                   "estimatedTime": "20 minutos",
-                                  "materials": "Site do INPI, banco de dados de marcas registradas (ex: USPTO para exemplos internacionais), caderno.",
+                                  "materials": "Site do INPI, banco de dados de marcas registradas (ex: UFABCTO para exemplos internacionais), caderno.",
                                   "tips": "Procure sempre por texto legível; se houver, é mista, independentemente da proporção.",
                                   "learningObjective": "Identificar precisamente os componentes que definem uma marca mista.",
                                   "commonMistakes": "Considerar marcas com texto estilizado como figurativas se o texto for ilegível."
@@ -16670,7 +16670,7 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Analise a colidência entre a marca 'AQUA VITA' (classe 32 - bebidas) e 'AQUA' (classe 32 - águas minerais registrada). Verifique semelhanças fonéticas ('AQUA' idêntico), classes afins e risco de confusão para consumidor médio, aplicando Cerqueira: alto risco devido à identidade parcial e mesma classe.",
+                              "practicalExample": "Analise a colidência entre a marca 'AQUA VUFABC' (classe 32 - bebidas) e 'AQUA' (classe 32 - águas minerais registrada). Verifique semelhanças fonéticas ('AQUA' idêntico), classes afins e risco de confusão para consumidor médio, aplicando Cerqueira: alto risco devido à identidade parcial e mesma classe.",
                               "finalVerifications": [
                                 "Explicar corretamente a doutrina de Cerqueira sobre risco de confusão.",
                                 "Identificar corretamente classes afins na NCL.",
@@ -16966,7 +16966,7 @@
                                   ],
                                   "verification": "Resuma em um parágrafo os conceitos e forneça 3 exemplos corretos de distinção.",
                                   "estimatedTime": "45 minutos",
-                                  "materials": "Leituras do INPI/USPTO sobre requisitos de marcas; casos judiciais como 'Two Pesos' vs. descriptividade.",
+                                  "materials": "Leituras do INPI/UFABCTO sobre requisitos de marcas; casos judiciais como 'Two Pesos' vs. descriptividade.",
                                   "tips": "Use diagramas para visualizar níveis de distintividade (genérico > descritivo > sugestivo > arbitrário).",
                                   "learningObjective": "Identificar e diferenciar descriptividade de outros impedimentos à registrabilidade.",
                                   "commonMistakes": "Confundir sugestividade (aceitável) com descriptividade direta."
@@ -17279,7 +17279,7 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Analise o pedido de marca 'AQUAVITA' (classe 32 - bebidas) publicado na RPI. Um terceiro com 'AQUA VIDA' registrada (classe 32) opõe-se alegando colidência fonética e anterioridade. Avalie se é vedação relativa válida, verificando similaridade, classes e provas.",
+                              "practicalExample": "Analise o pedido de marca 'AQUAVUFABC' (classe 32 - bebidas) publicado na RPI. Um terceiro com 'AQUA VIDA' registrada (classe 32) opõe-se alegando colidência fonética e anterioridade. Avalie se é vedação relativa válida, verificando similaridade, classes e provas.",
                               "finalVerifications": [
                                 "Explicar diferença entre arts. 124 e 125 da LPI sem erros.",
                                 "Calcular corretamente prazo de oposição para data de publicação dada.",
@@ -18500,7 +18500,7 @@
                                   ]
                                 }
                               ],
-                              "practicalExample": "Você representa a empresa 'HidraVita' que solicitou registro da marca 'AQUA VITA' para águas funcionais. Recebe oposição da 'PuraÁgua Ltda' alegando colidência fonética com sua marca 'AQUA PURA' (Classe 32). Analise a petição, pesquise precedentes (ex: INPI Processo 902365478, indeferido por distinção gráfica), refute por ausência de risco de confusão ao consumidor e impugne protocolizando em 45 dias.",
+                              "practicalExample": "Você representa a empresa 'HidraVita' que solicitou registro da marca 'AQUA VUFABC' para águas funcionais. Recebe oposição da 'PuraÁgua Ltda' alegando colidência fonética com sua marca 'AQUA PURA' (Classe 32). Analise a petição, pesquise precedentes (ex: INPI Processo 902365478, indeferido por distinção gráfica), refute por ausência de risco de confusão ao consumidor e impugne protocolizando em 45 dias.",
                               "finalVerifications": [
                                 "Pode listar e explicar 3 tipos de oposições com base legal?",
                                 "Consegue analisar uma petição real e classificar seu risco corretamente?",
@@ -20501,7 +20501,7 @@
                                   "stepNumber": 3,
                                   "title": "Realizar Pesquisa em Fontes Públicas e Especializadas",
                                   "subSteps": [
-                                    "Busque em bases públicas: Google, patentes (INPI, USPTO), sites governamentais, jornais.",
+                                    "Busque em bases públicas: Google, patentes (INPI, UFABCTO), sites governamentais, jornais.",
                                     "Pesquise em círculos especializados: revistas científicas (SciELO, PubMed), fóruns profissionais, relatórios setoriais.",
                                     "Use palavras-chave precisas: termos exatos da fórmula ou nomes de clientes.",
                                     "Verifique datas: informação deve ser anterior à criação do segredo.",
@@ -40479,7 +40479,7 @@
                                   "estimatedTime": "75 minutos",
                                   "materials": [
                                     "Tratado TRIPS (WTO)",
-                                    "Casos de patentes verdes (EPO ou USPTO)",
+                                    "Casos de patentes verdes (EPO ou UFABCTO)",
                                     "Artigos jurídicos sobre PI e sustentabilidade"
                                   ],
                                   "tips": "Busque exemplos reais de patentes para tornar a aplicação concreta.",
@@ -43227,7 +43227,7 @@
                                   "stepNumber": 1,
                                   "title": "Compreender o conceito de patentes verdes",
                                   "subSteps": [
-                                    "Pesquisar definições oficiais de patentes verdes em organizações como EPO e USPTO.",
+                                    "Pesquisar definições oficiais de patentes verdes em organizações como EPO e UFABCTO.",
                                     "Identificar critérios para classificação de uma patente como 'verde' (ex.: eficiência energética, redução de emissões).",
                                     "Analisar exemplos iniciais de patentes verdes registradas.",
                                     "Mapear benefícios e críticas às patentes verdes.",
@@ -43235,7 +43235,7 @@
                                   ],
                                   "verification": "Elaborar um resumo de 300 palavras explicando patentes verdes com exemplos.",
                                   "estimatedTime": "2 horas",
-                                  "materials": "Sites da EPO, USPTO, artigos acadêmicos sobre patentes verdes, acesso à internet.",
+                                  "materials": "Sites da EPO, UFABCTO, artigos acadêmicos sobre patentes verdes, acesso à internet.",
                                   "tips": "Use termos chave como 'green patents' em buscas para resultados globais.",
                                   "learningObjective": "Dominar os fundamentos e critérios das patentes verdes.",
                                   "commonMistakes": "Confundir patentes verdes com incentivos fiscais ou ignorar critérios específicos de sustentabilidade."
@@ -44628,7 +44628,7 @@
                                   ],
                                   "verification": "Crie um quadro comparativo resumindo diferenças entre os 5 mecanismos com exemplos de tech verdes.",
                                   "estimatedTime": "2 horas",
-                                  "materials": "Documentos oficiais INPI/USPTO/EPO sobre PI; artigos sobre PI em sustentabilidade.",
+                                  "materials": "Documentos oficiais INPI/UFABCTO/EPO sobre PI; artigos sobre PI em sustentabilidade.",
                                   "tips": "Use tabelas para visualizar diferenças; foque em critérios de novidade e aplicabilidade industrial.",
                                   "learningObjective": "Diferenciar os cinco mecanismos de PI aplicados a inovações sustentáveis.",
                                   "commonMistakes": "Confundir patentes com marcas (patentes protegem função, marcas protegem identidade)."
@@ -44654,7 +44654,7 @@
                                   "stepNumber": 3,
                                   "title": "Explorar institutos internacionais de PI para tecnologias verdes",
                                   "subSteps": [
-                                    "Estude USPTO (EUA) e seu Green Technology Pilot Program para patentes aceleradas.",
+                                    "Estude UFABCTO (EUA) e seu Green Technology Pilot Program para patentes aceleradas.",
                                     "Analise EPO (Europa) com diretrizes para climate change technologies.",
                                     "Identifique WIPO para tratados internacionais como PCT para filing global.",
                                     "Pesquise exemplos de patentes verdes registradas (ex: WO patents em renováveis).",
@@ -44662,7 +44662,7 @@
                                   ],
                                   "verification": "Compile um relatório com 4 institutos internacionais, exemplos de patentes e links.",
                                   "estimatedTime": "2 horas",
-                                  "materials": "Sites USPTO.gov, EPO.org, WIPO.int; bases de dados Espacenet/Patentscope.",
+                                  "materials": "Sites UFABCTO.gov, EPO.org, WIPO.int; bases de dados Espacenet/Patentscope.",
                                   "tips": "Use filtros 'green tech' nas bases de patentes para resultados rápidos.",
                                   "learningObjective": "Reconhecer institutos globais e suas iniciativas para PI sustentável.",
                                   "commonMistakes": "Confundir jurisdições (PCT não concede patentes, só facilita filing)."
@@ -44806,7 +44806,7 @@
                                   "estimatedTime": "3 horas",
                                   "materials": [
                                     "Diretrizes INPI para exame",
-                                    "Exemplos de pareceres USPTO",
+                                    "Exemplos de pareceres UFABCTO",
                                     "Template de relatório de PI"
                                   ],
                                   "tips": "Quantifique benefícios industriais com dados de custo/produção.",
@@ -44951,7 +44951,7 @@
                                   "estimatedTime": "4 horas",
                                   "materials": [
                                     "Ferramentas de tracking como Trello",
-                                    "Guias USPTO/EPO para patentes verdes"
+                                    "Guias UFABCTO/EPO para patentes verdes"
                                   ],
                                   "tips": "Automatize relatórios para eficiência contínua.",
                                   "learningObjective": "Garantir sustentabilidade das práticas de confidencialidade ao longo do ciclo do projeto.",

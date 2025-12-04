@@ -1,6 +1,6 @@
 # Documentation
 
-Welcome to the ITA RP Game documentation.
+Welcome to the ENEM RP Game documentation.
 
 ## Quick Links
 
