@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  base: process.env.GITHUB_ACTIONS ? '/Role-Play-Instituto-Tecnologico-Aeronautica/' : '/',
+  base: process.env.GITHUB_ACTIONS ? '/RP-ENEM/' : '/',
   plugins: [react()],
   resolve: {
     alias: {
