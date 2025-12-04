@@ -110,3 +110,23 @@ export {
 
 // Spaced repetition hook
 export { useSpacedRepetition } from './useSpacedRepetition';
+
+// Study analytics
+export {
+  studyAnalytics,
+  useStudyAnalytics,
+  type StudySession,
+  type DailyStats,
+  type WeeklyStats,
+  type MonthlyStats,
+  type SkillProgress,
+  type LearningInsights,
+} from './study-analytics';
+
+// Curriculum constants
+export {
+  CURRICULUM_CONSTANTS,
+  getTotalSkills,
+  getCompletionPercentage,
+  getAchievementProgress,
+} from './curriculum-constants';

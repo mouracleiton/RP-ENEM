@@ -75,7 +75,7 @@ export function useSpacedRepetition(
     loadData();
   }, []);
 
-  // Update schedule when reviewData or allSkillIds change
+  // Update schedule when allSkillIds or maxDailyItems change
   useEffect(() => {
     if (state.isLoading) return;
 
@@ -87,7 +87,8 @@ export function useSpacedRepetition(
       schedule,
       dailyStudyList,
     }));
-  }, [state.reviewData, state.isLoading, allSkillIds, maxDailyItems]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [allSkillIds, maxDailyItems]);
 
   // Save data to localStorage
   const saveData = useCallback(() => {

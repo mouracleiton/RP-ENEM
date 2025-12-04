@@ -57,6 +57,32 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
         'UM-04 - 04 - Filosofia e Ficção Científica.json',
         'UM-05 - 05 - Filosofia da história.json',
         'UM-06 - 06 - Filosofia  política  clássica.json',
+        'UM-07 - 07 - Filosofia política moderna.json',
+        'UM-08 - 08 - Bioética   Ambiental.json',
+        'UM-09 - 09 - Ética na inteligência artificial.json',
+        'UM-20 - 20 - Noções de Direito.json',
+        'UM-22 - 22 - Aspectos  Técnicos-Jurídicos  de  Propriedade  Intelectual.json',
+        'UM-23 - 23 - Inovação e Novos Marcos Regulatórios.json',
+        'UM-24 - 24 - Direito  e  Economia.json',
+        'UM-26 - 26 - Direito  Ambiental  para  a  Engenharia.json',
+        'UM-32 - 32 - Redação Acadêmica.json',
+        'UM-55 - 55 - Questões  do  Cotidiano  do Adulto  Jovem.json',
+        'UM-61 - 61 - Construção de Projetos de Tecnologia Engajada.json',
+        'UM-62 - 62 - Execução de Projeto de Tecnologia Engajada.json',
+        'UM-63 - 63 - Manufatura Avançada e Transformações no Mundo do Trabalho.json',
+        'UM-64 - 64 - História  do  Poder  Aeroespacial  brasileiro.json',
+        'UM-70 - 70 - Tecnologia e Sociedade.json',
+        'UM-74 - 74 - Tecnologia e Educação.json',
+        'UM-77 - 77 - História da Ciência e Tecnologia no Brasil.json',
+        'UM-78 - 78 - Cultura Brasileira.json',
+        'UM-79 - 79 - Teoria  Política.json',
+        'UM-83 - 83 - Análise e Opiniões da Imprensa Internacional (Nota 6).json',
+        'UM-84 - 84 - Política  Internacional  (Nota  6).json',
+        'UM-86 - 86 - Gestão de Processos de Inovação (Nota 6).json',
+        'UM-87 - 87 - Práticas   de   Empreendedorismo   (Nota   6).json',
+        'UM-88 - 88 - Modelos de Negócio (Nota 6).json',
+        'UM-89 - 89 - Formação de Equipes (Nota 6).json',
+        'UM-90 - 90 - História e Filosofia da Lógica (Nota 6).json',
       ];
 
       const areas: any[] = [];
@@ -262,18 +288,20 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
               specificSkills: concept.specificSkills?.map((skill: any) => ({
                 ...skill,
                 id: `${disciplineCode}.${skill.id}`,
-                prerequisites: skill.prerequisites?.map((prereq: string) =>
-                  prereq ? `${disciplineCode}.${prereq}` : prereq
-                ) || [],
+                prerequisites:
+                  skill.prerequisites?.map((prereq: string) =>
+                    prereq ? `${disciplineCode}.${prereq}` : prereq
+                  ) || [],
               })),
             })),
             // Handle specificSkills directly under atomicTopic (alternative structure)
             specificSkills: atomicTopic.specificSkills?.map((skill: any) => ({
               ...skill,
               id: `${disciplineCode}.${skill.id}`,
-              prerequisites: skill.prerequisites?.map((prereq: string) =>
-                prereq ? `${disciplineCode}.${prereq}` : prereq
-              ) || [],
+              prerequisites:
+                skill.prerequisites?.map((prereq: string) =>
+                  prereq ? `${disciplineCode}.${prereq}` : prereq
+                ) || [],
             })),
           })),
         })),
@@ -379,29 +407,29 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
     const disciplines = this.getAllDisciplines();
 
     const iconMap: Record<string, string> = {
-      'CSI': '💻',
-      'MAT': '📐',
-      'CMC': '🧮',
-      'CTC': '⚙️',
-      'ELE': '⚡',
-      'FIS': '🔬',
-      'QUI': '🧪',
-      'ED': '📊',
-      'IS': '🔭',
-      'UM': '📖',
+      CSI: '💻',
+      MAT: '📐',
+      CMC: '🧮',
+      CTC: '⚙️',
+      ELE: '⚡',
+      FIS: '🔬',
+      QUI: '🧪',
+      ED: '📊',
+      IS: '🔭',
+      UM: '📖',
     };
 
     const colorMap: Record<string, string> = {
-      'CSI': '#00d4ff',
-      'MAT': '#ff6b6b',
-      'CMC': '#4ecdc4',
-      'CTC': '#a855f7',
-      'ELE': '#fbbf24',
-      'FIS': '#22c55e',
-      'QUI': '#f472b6',
-      'ED': '#06b6d4',
-      'IS': '#8b5cf6',
-      'UM': '#ec4899',
+      CSI: '#00d4ff',
+      MAT: '#ff6b6b',
+      CMC: '#4ecdc4',
+      CTC: '#a855f7',
+      ELE: '#fbbf24',
+      FIS: '#22c55e',
+      QUI: '#f472b6',
+      ED: '#06b6d4',
+      IS: '#8b5cf6',
+      UM: '#ec4899',
     };
 
     return disciplines.map(disc => {

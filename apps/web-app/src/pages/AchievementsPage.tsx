@@ -142,7 +142,7 @@ const staticAchievements: AchievementData[] = [
     category: 'completion',
     unlocked: false,
     progress: 35,
-    maxProgress: 176,
+    maxProgress: 15507,
   },
 
   // Social achievements

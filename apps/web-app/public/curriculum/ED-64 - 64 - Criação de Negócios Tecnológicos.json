@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-64",
       "lastUpdated": "2025-12-02",
-      "totalAtomicSkills": 114
+      "totalAtomicSkills": 114,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "ED-64",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-64"
     },
     "areas": [
       {
@@ -14176,7 +14182,8 @@
             "totalSkills": 114
           }
         ],
-        "totalSkills": 114
+        "totalSkills": 114,
+        "percentage": 0
       }
     ]
   }

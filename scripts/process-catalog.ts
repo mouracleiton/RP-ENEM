@@ -13,25 +13,19 @@ import pdf from 'pdf-parse';
 import OpenAI from 'openai';
 
 // Resolve caminhos relativos ao diretório do script
-const getScriptDir = () => {
-  try {
-    if (typeof require !== 'undefined' && require.main) {
-      return path.dirname(require.main.filename);
-    }
-  } catch (e) {
-    // Ignora
-  }
-  return process.cwd();
-};
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const scriptDir = getScriptDir();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const scriptDir = __dirname;
 
 // Configuração
 const PDF_PATH = path.join(scriptDir, '..', 'Catálogo dos Cursos de Graduação 2025 - digital Rev.25.07.18-páginas (1).pdf');
 const OUTPUT_DIR = path.join(scriptDir, '..', 'packages', 'curriculum');
 const ATOMIC_EXPAND_PROMPT_PATH = path.join(scriptDir, '..', 'ATOMIC_EXPAND_PROMPT.md');
 const SCHEMA_EXAMPLE_PATH = path.join(scriptDir, '..', 'schema.json');
-const VALIDATION_SCHEMA_PATH = '/mnt/d/GITHUB/schema.json';
+const VALIDATION_SCHEMA_PATH = path.join(scriptDir, '..', 'schema.json');
 const CHECKPOINT_FILE = path.join(OUTPUT_DIR, '.process-catalog-checkpoint.json');
 const MAX_CONCURRENT_REQUESTS = parseInt(process.env.MAX_CONCURRENT_REQUESTS || '10', 10);
 
@@ -177,14 +171,14 @@ class CatalogProcessor {
     }
 
     const config: any = {};
-    
+
     if (apiKey) {
       config.apiKey = apiKey;
       if (this.debug) {
         console.log('🔍 [DEBUG] API Key configurada');
       }
     }
-    
+
     if (baseURL) {
       config.baseURL = baseURL;
       if (this.debug) {
@@ -193,7 +187,7 @@ class CatalogProcessor {
     }
 
     this.openai = new OpenAI(config);
-    
+
     console.log(`📡 Configurado para usar: ${baseURL || 'https://api.openai.com/v1'}`);
     console.log(`🤖 Modelo: ${this.model}`);
     console.log(`📄 JSON Mode: ${this.supportsJsonMode ? 'Suportado' : 'Não suportado'}`);
@@ -282,7 +276,7 @@ class CatalogProcessor {
         totalDisciplines: 0
       };
     }
-    
+
     if (!this.checkpoint.processedDisciplines.includes(disciplineCode)) {
       this.checkpoint.processedDisciplines.push(disciplineCode);
       this.checkpoint.lastUpdate = new Date().toISOString();
@@ -585,23 +579,23 @@ Cada atomicExpansion deve conter:
 
   async extractTextFromPDF(pdfPath: string): Promise<string> {
     console.log(`📄 Extraindo texto de ${pdfPath}...`);
-    
+
     if (this.debug) {
       console.log(`🔍 [DEBUG] Verificando se arquivo existe...`);
     }
-    
+
     try {
       const stats = await fs.stat(pdfPath);
       if (this.debug) {
         console.log(`🔍 [DEBUG] Arquivo encontrado: ${(stats.size / 1024 / 1024).toFixed(2)} MB`);
       }
-      
+
       const dataBuffer = await fs.readFile(pdfPath);
       if (this.debug) {
         console.log(`🔍 [DEBUG] Buffer lido: ${(dataBuffer.length / 1024 / 1024).toFixed(2)} MB`);
         console.log(`🔍 [DEBUG] Processando PDF...`);
       }
-      
+
       const data = await pdf(dataBuffer);
       console.log(`✅ Texto extraído: ${data.text.length.toLocaleString()} caracteres`);
       if (this.debug) {
@@ -617,37 +611,37 @@ Cada atomicExpansion deve conter:
     }
   }
 
-  async extractDisciplinesFromPDF(pdfText: string): Promise<Array<{code: string, name: string, content: string}>> {
+  async extractDisciplinesFromPDF(pdfText: string): Promise<Array<{ code: string, name: string, content: string }>> {
     console.log('🔍 Extraindo disciplinas do texto do PDF...');
-    
+
     if (this.debug) {
       console.log(`🔍 [DEBUG] Tamanho do texto: ${pdfText.length.toLocaleString()} caracteres`);
     }
-    
+
     const disciplinePattern = /([A-Z]{2,4}-\d{2,3})\s*-\s*([^\n]+)/g;
-    const disciplines: Array<{code: string, name: string, content: string}> = [];
-    
+    const disciplines: Array<{ code: string, name: string, content: string }> = [];
+
     const sections = pdfText.split(/(?=[A-Z]{2,4}-\d{2,3}\s*-)/);
     if (this.debug) {
       console.log(`🔍 [DEBUG] Seções encontradas: ${sections.length}`);
     }
-    
+
     for (const section of sections) {
       const match = section.match(/^([A-Z]{2,4}-\d{2,3})\s*-\s*([^\n]+)/);
       if (match) {
         const code = match[1];
         const restOfLine = match[2].trim();
-        
+
         const lines = section.split('\n');
         const firstLine = lines[0] || '';
         const nameMatch = firstLine.match(/-\s*(.+?)(?:\.|$)/);
         const name = nameMatch ? nameMatch[1].trim() : restOfLine.split('.')[0].trim();
-        
+
         const contentStart = section.indexOf('\n');
-        const content = contentStart > 0 
+        const content = contentStart > 0
           ? section.substring(contentStart + 1).trim()
           : '';
-        
+
         const cleanContent = content
           .split('\n')
           .filter(line => {
@@ -661,7 +655,7 @@ Cada atomicExpansion deve conter:
           })
           .join('\n')
           .trim();
-        
+
         if (name && cleanContent.length > 10) {
           disciplines.push({
             code,
@@ -688,15 +682,15 @@ Cada atomicExpansion deve conter:
     return disciplines;
   }
 
-  async extractDisciplinesWithAI(pdfText: string): Promise<Array<{code: string, name: string, content: string}>> {
+  async extractDisciplinesWithAI(pdfText: string): Promise<Array<{ code: string, name: string, content: string }>> {
     console.log('🤖 Usando IA para extrair disciplinas...');
-    
+
     if (this.debug) {
       console.log(`🔍 [DEBUG] Tamanho do texto a processar: ${pdfText.length.toLocaleString()} caracteres`);
       const truncatedText = pdfText.substring(0, 50000);
       console.log(`🔍 [DEBUG] Usando primeiros ${truncatedText.length.toLocaleString()} caracteres para IA`);
     }
-    
+
     const prompt = `Extraia todas as disciplinas do catálogo de cursos do ITA do texto abaixo.
 
 Para cada disciplina, identifique:
@@ -728,7 +722,7 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
           console.log(`🔍 [DEBUG] Modelo: ${this.model}`);
           console.log(`🔍 [DEBUG] JSON Mode: ${this.supportsJsonMode}`);
         }
-        
+
         const requestConfig: any = {
           model: this.model,
           messages: [
@@ -751,7 +745,7 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
         const startTime = Date.now();
         const response = await this.openai.chat.completions.create(requestConfig);
         const duration = Date.now() - startTime;
-        
+
         if (this.debug) {
           console.log(`🔍 [DEBUG] Resposta recebida em ${duration}ms`);
           console.log(`🔍 [DEBUG] Tokens usados: ${response.usage?.total_tokens || 'N/A'}`);
@@ -785,14 +779,14 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
         if (this.debug) {
           console.log(`🔍 [DEBUG] Tentando fazer parse do JSON...`);
         }
-        
-        const result = JSON.parse(jsonContent) as { disciplines: Array<{code: string, name: string, content: string}> };
+
+        const result = JSON.parse(jsonContent) as { disciplines: Array<{ code: string, name: string, content: string }> };
         console.log(`✅ Encontradas ${result.disciplines.length} disciplinas via IA`);
-        
+
         if (this.debug) {
           console.log(`🔍 [DEBUG] Primeiras 5 disciplinas:`, result.disciplines.slice(0, 5).map(d => `${d.code} - ${d.name}`));
         }
-        
+
         return result.disciplines;
       } catch (error: any) {
         attempts++;
@@ -803,7 +797,7 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
             console.error(`🔍 [DEBUG] Data:`, error.response.data);
           }
         }
-        
+
         if (attempts >= this.maxRetries) {
           console.error(`❌ Erro ao extrair disciplinas com IA após ${this.maxRetries} tentativas:`, error.message);
           throw error;
@@ -816,7 +810,7 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
     throw new Error('Número máximo de tentativas excedido');
   }
 
-  async generateCurriculumJSON(discipline: {code: string, name: string, content: string}): Promise<CurriculumJSON> {
+  async generateCurriculumJSON(discipline: { code: string, name: string, content: string }): Promise<CurriculumJSON> {
     console.log(`📝 Gerando JSON para ${discipline.code} - ${discipline.name}...`);
 
     if (this.debug) {
@@ -824,47 +818,47 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
     }
 
     const schemaExample = await this.loadSchemaExample();
-    
+
     // Passo 1: Criar estrutura básica (metadata, área, disciplina)
     const basicStructure = await this.generateBasicStructure(discipline, schemaExample);
-    
+
     // Passo 2: Identificar tópicos principais
     const mainTopics = await this.identifyMainTopics(discipline, basicStructure);
-    
+
     // Passo 3: Para cada tópico principal, gerar estrutura detalhada (em paralelo)
     const detailedTopics = await Promise.all(
       mainTopics.map(async (mainTopic, i) => {
         console.log(`  📑 [${i + 1}/${mainTopics.length}] Processando tópico: ${mainTopic.name}`);
-        
+
         const detailedTopic = await this.generateDetailedMainTopic(
-          discipline, 
-          mainTopic, 
+          discipline,
+          mainTopic,
           basicStructure,
           i + 1
         );
-        
+
         if (this.debug) {
           console.log(`🔍 [DEBUG] Tópico ${mainTopic.name} processado com ${detailedTopic.atomicTopics.length} tópicos atômicos`);
         }
-        
+
         return detailedTopic;
       })
     );
-    
+
     basicStructure.curriculumData.areas[0].disciplines[0].mainTopics.push(...detailedTopics);
-    
+
     // Recalcula totalSkills
     this.recalculateTotalSkills(basicStructure);
-    
+
     return basicStructure;
   }
 
   async generateBasicStructure(
-    discipline: {code: string, name: string, content: string},
+    discipline: { code: string, name: string, content: string },
     schemaExample: CurriculumJSON
   ): Promise<CurriculumJSON> {
     console.log(`  🏗️  Criando estrutura básica...`);
-    
+
     const prompt = `Você é um especialista em currículos educacionais do ITA.
 
 Tarefa: Criar APENAS a estrutura básica (metadata, área e disciplina) para a disciplina abaixo.
@@ -890,20 +884,20 @@ IMPORTANTE:
 - Retorne APENAS o JSON, sem markdown`;
 
     const response = await this.makeAPIRequest(prompt, 'Você é um especialista em criar estruturas de currículo educacional.');
-    
+
     const structure = JSON.parse(response) as CurriculumJSON;
     structure.exportDate = new Date().toISOString();
     structure.curriculumData.metadata.lastUpdated = new Date().toISOString().split('T')[0];
-    
+
     return structure;
   }
 
   async identifyMainTopics(
-    discipline: {code: string, name: string, content: string},
+    discipline: { code: string, name: string, content: string },
     structure: CurriculumJSON
-  ): Promise<Array<{name: string, description: string}>> {
+  ): Promise<Array<{ name: string, description: string }>> {
     console.log(`  🔍 Identificando tópicos principais...`);
-    
+
     const prompt = `Analise o conteúdo da disciplina abaixo e identifique os TÓPICOS PRINCIPAIS (MainTopics).
 
 Disciplina: ${discipline.code} - ${discipline.name}
@@ -936,33 +930,33 @@ IMPORTANTE:
 - Retorne APENAS o JSON, sem markdown`;
 
     const response = await this.makeAPIRequest(prompt, 'Você é um especialista em análise de currículos educacionais.');
-    const result = JSON.parse(response) as { mainTopics: Array<{name: string, description: string}> };
-    
+    const result = JSON.parse(response) as { mainTopics: Array<{ name: string, description: string }> };
+
     console.log(`  ✅ Identificados ${result.mainTopics.length} tópicos principais`);
-    
+
     return result.mainTopics;
   }
 
   async generateDetailedMainTopic(
-    discipline: {code: string, name: string, content: string},
-    mainTopic: {name: string, description: string},
+    discipline: { code: string, name: string, content: string },
+    mainTopic: { name: string, description: string },
     structure: CurriculumJSON,
     topicIndex: number
   ): Promise<MainTopic> {
     const topicId = `${structure.curriculumData.areas[0].disciplines[0].id}.${topicIndex}`;
-    
+
     // Primeiro, identifica tópicos atômicos
     const atomicTopics = await this.identifyAtomicTopics(discipline, mainTopic, topicId);
-    
+
     // Para cada tópico atômico, gera estrutura detalhada (em paralelo)
     const detailedAtomicTopics = await Promise.all(
       atomicTopics.map(async (atomicTopic, i) => {
         const atomicId = `${topicId}.${i + 1}`;
-        
+
         if (this.debug) {
           console.log(`    🔬 [${i + 1}/${atomicTopics.length}] Processando tópico atômico: ${atomicTopic.name}`);
         }
-        
+
         return await this.generateDetailedAtomicTopic(
           discipline,
           mainTopic,
@@ -971,14 +965,14 @@ IMPORTANTE:
         );
       })
     );
-    
+
     // Calcula totalSkills do mainTopic
     const totalSkills = detailedAtomicTopics.reduce((sum, at) => {
       const conceptSkills = at.individualConcepts?.reduce((s, ic) => s + ic.specificSkills.length, 0) || 0;
       const directSkills = at.specificSkills?.length || 0;
       return sum + conceptSkills + directSkills;
     }, 0);
-    
+
     return {
       id: topicId,
       name: mainTopic.name,
@@ -989,10 +983,10 @@ IMPORTANTE:
   }
 
   async identifyAtomicTopics(
-    discipline: {code: string, name: string, content: string},
-    mainTopic: {name: string, description: string},
+    discipline: { code: string, name: string, content: string },
+    mainTopic: { name: string, description: string },
     topicId: string
-  ): Promise<Array<{name: string, description: string}>> {
+  ): Promise<Array<{ name: string, description: string }>> {
     const prompt = `Analise o tópico principal abaixo e identifique os TÓPICOS ATÔMICOS (subtópicos específicos).
 
 Disciplina: ${discipline.code} - ${discipline.name}
@@ -1023,15 +1017,15 @@ IMPORTANTE:
 - Retorne APENAS JSON, sem markdown`;
 
     const response = await this.makeAPIRequest(prompt, 'Você é um especialista em decomposição de tópicos educacionais.');
-    const result = JSON.parse(response) as { atomicTopics: Array<{name: string, description: string}> };
-    
+    const result = JSON.parse(response) as { atomicTopics: Array<{ name: string, description: string }> };
+
     return result.atomicTopics;
   }
 
   async generateDetailedAtomicTopic(
-    discipline: {code: string, name: string, content: string},
-    mainTopic: {name: string, description: string},
-    atomicTopic: {name: string, description: string},
+    discipline: { code: string, name: string, content: string },
+    mainTopic: { name: string, description: string },
+    atomicTopic: { name: string, description: string },
     atomicId: string
   ): Promise<AtomicTopic> {
     const prompt = `Crie a estrutura detalhada para um tópico atômico específico.
@@ -1100,7 +1094,7 @@ IMPORTANTE:
 
     const response = await this.makeAPIRequest(prompt, 'Você é um especialista em estruturar conteúdo educacional em níveis atômicos.');
     const result = JSON.parse(response) as { individualConcepts?: IndividualConcept[], specificSkills?: SpecificSkill[] };
-    
+
     return {
       id: atomicId,
       name: atomicTopic.name,
@@ -1117,7 +1111,7 @@ IMPORTANTE:
         if (this.debug && attempts === 0) {
           console.log(`🔍 [DEBUG] Fazendo requisição (prompt: ${prompt.length} chars)`);
         }
-        
+
         const requestConfig: any = {
           model: this.model,
           messages: [
@@ -1136,7 +1130,7 @@ IMPORTANTE:
         const startTime = Date.now();
         const response = await this.openai.chat.completions.create(requestConfig);
         const duration = Date.now() - startTime;
-        
+
         if (this.debug) {
           console.log(`🔍 [DEBUG] Resposta em ${duration}ms, tokens: ${response.usage?.total_tokens || 'N/A'}`);
         }
@@ -1177,13 +1171,13 @@ IMPORTANTE:
   recalculateTotalSkills(curriculum: CurriculumJSON): void {
     curriculum.curriculumData.areas.forEach(area => {
       let areaTotal = 0;
-      
+
       area.disciplines.forEach(discipline => {
         let disciplineTotal = 0;
-        
+
         discipline.mainTopics.forEach(topic => {
           let topicTotal = 0;
-          
+
           topic.atomicTopics.forEach(atomicTopic => {
             const conceptSkills = atomicTopic.individualConcepts?.reduce(
               (sum, concept) => sum + concept.specificSkills.length, 0
@@ -1191,18 +1185,18 @@ IMPORTANTE:
             const directSkills = atomicTopic.specificSkills?.length || 0;
             topicTotal += conceptSkills + directSkills;
           });
-          
+
           topic.totalSkills = topicTotal;
           disciplineTotal += topicTotal;
         });
-        
+
         discipline.totalSkills = disciplineTotal;
         areaTotal += disciplineTotal;
       });
-      
+
       area.totalSkills = areaTotal;
     });
-    
+
     const grandTotal = curriculum.curriculumData.areas.reduce(
       (sum, area) => sum + area.totalSkills, 0
     );
@@ -1212,7 +1206,7 @@ IMPORTANTE:
   async expandAtomicSkills(curriculum: CurriculumJSON): Promise<CurriculumJSON> {
     console.log('🔧 Expandindo habilidades atômicas...');
 
-    const skillsToExpand: Array<{path: string[], skill: SpecificSkill}> = [];
+    const skillsToExpand: Array<{ path: string[], skill: SpecificSkill }> = [];
 
     const collectSkills = (
       area: Area,
@@ -1291,9 +1285,9 @@ IMPORTANTE:
           const startTime = Date.now();
           const expanded = await this.expandSingleSkill(skill, path);
           const duration = Date.now() - startTime;
-          
+
           skill.atomicExpansion = expanded;
-          
+
           if (this.debug) {
             const stepsCount = 'steps' in expanded && Array.isArray(expanded.steps) ? expanded.steps.length : 0;
             console.log(`✅ ${progress} Concluído em ${duration}ms (${stepsCount} steps)`);
@@ -1317,19 +1311,19 @@ IMPORTANTE:
     concurrency: number
   ): Promise<void> {
     if (items.length === 0) return;
-    
+
     const executing = new Set<Promise<void>>();
-    
+
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
-      
+
       // Se atingiu o limite de concorrência, espera uma promise terminar
       while (executing.size >= concurrency) {
         await Promise.race(executing);
         // Remove promises já resolvidas do Set
         // Isso é feito automaticamente quando a promise resolve no .finally abaixo
       }
-      
+
       const promise = processor(item, i + 1, items.length)
         .catch(() => {
           // Erro já foi logado no processor
@@ -1337,10 +1331,10 @@ IMPORTANTE:
         .finally(() => {
           executing.delete(promise);
         });
-      
+
       executing.add(promise);
     }
-    
+
     // Espera todas as promises restantes terminarem
     await Promise.all(Array.from(executing));
   }
@@ -1426,7 +1420,7 @@ Formato esperado:
         await new Promise(resolve => setTimeout(resolve, 1000 * attempts));
       }
     }
-    
+
     return {
       steps: [],
       practicalExample: '',
@@ -1440,10 +1434,10 @@ Formato esperado:
   async saveCurriculumJSON(curriculum: CurriculumJSON, disciplineCode: string, disciplineName: string): Promise<string> {
     const filename = `${disciplineCode} - ${disciplineName}.json`;
     const filepath = path.join(OUTPUT_DIR, filename);
-    
+
     await fs.writeFile(filepath, JSON.stringify(curriculum, null, 2), 'utf-8');
     console.log(`✓ Arquivo salvo: ${filename}`);
-    
+
     return filepath;
   }
 
@@ -1466,7 +1460,7 @@ Formato esperado:
     if (this.debug) {
       console.log(`🔍 [DEBUG] Carregando recursos...`);
     }
-    
+
     await this.loadPrompt();
     await this.loadSchemaExample();
     await this.loadValidationSchema();
@@ -1485,7 +1479,7 @@ Formato esperado:
     }
 
     // Filtra disciplinas já processadas
-    const disciplinesToProcess: Array<{code: string, name: string, content: string, index: number}> = [];
+    const disciplinesToProcess: Array<{ code: string, name: string, content: string, index: number }> = [];
     for (let i = 0; i < disciplines.length; i++) {
       const discipline = disciplines[i];
       const isProcessed = await this.isDisciplineProcessed(discipline.code);
@@ -1516,7 +1510,7 @@ Formato esperado:
     await this.saveCheckpoint(this.checkpoint);
 
     const outputFiles: string[] = [];
-    const errors: Array<{code: string, error: string}> = [];
+    const errors: Array<{ code: string, error: string }> = [];
 
     // Processa disciplinas em paralelo com controle de concorrência
     await this.processInParallel(
@@ -1544,7 +1538,7 @@ Formato esperado:
           const errorMsg = error.message || String(error);
           console.error(`❌ Erro ao processar ${discipline.code}:`, errorMsg);
           errors.push({ code: discipline.code, error: errorMsg });
-          
+
           if (this.debug) {
             console.error(`🔍 [DEBUG] Stack trace:`, error.stack);
           }
@@ -1590,9 +1584,9 @@ async function main() {
   }
 }
 
-const isDirectExecution = process.argv[1]?.includes('process-catalog') || 
-                          process.argv[1]?.endsWith('process-catalog.ts') ||
-                          process.argv[1]?.endsWith('process-catalog.js');
+const isDirectExecution = process.argv[1]?.includes('process-catalog') ||
+  process.argv[1]?.endsWith('process-catalog.ts') ||
+  process.argv[1]?.endsWith('process-catalog.js');
 
 if (isDirectExecution) {
   main();

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-04",
       "lastUpdated": "2025-12-02",
-      "totalAtomicSkills": 174
+      "totalAtomicSkills": 174,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-04"
     },
     "areas": [
       {
@@ -17511,7 +17517,8 @@
             "totalSkills": 174
           }
         ],
-        "totalSkills": 174
+        "totalSkills": 174,
+        "percentage": 0
       }
     ]
   }

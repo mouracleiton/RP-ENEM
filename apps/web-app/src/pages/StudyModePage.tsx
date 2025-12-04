@@ -56,7 +56,8 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
   // Start tracking this skill
   useEffect(() => {
     startSkill(skillId);
-  }, [skillId, startSkill]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [skillId]);
 
   // Get current retention and mastery info
   const retention = getRetention(skillId);
@@ -227,6 +228,54 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const openGeminiWithStudyData = () => {
+    // Format study data for AI Assistant
+    const studyContent = `CONTEXT: Estudando "${skillName}" (${difficulty === 'beginner' ? 'Iniciante' : difficulty === 'intermediate' ? 'Intermediário' : 'Avançado'})
+
+CURRENT TOPIC: Passo ${currentStep.stepNumber} - ${currentStep.title}
+Learning Objective: ${currentStep.learningObjective}
+
+Activities:
+${currentStep.subSteps.map((subStep, index) => `${index + 1}. ${subStep}`).join('\n')}
+
+Tips: ${currentStep.tips}
+
+Study Materials: ${(Array.isArray(currentStep.materials) ? currentStep.materials : currentStep.materials ? [currentStep.materials] : []).join(', ')}
+
+Common Mistakes to Avoid:
+${(Array.isArray(currentStep.commonMistakes) ? currentStep.commonMistakes : currentStep.commonMistakes ? [currentStep.commonMistakes] : []).join('\n- ')}
+
+Self-check Question: ${currentStep.verification}
+
+${practicalExample ? `Practical Example: ${practicalExample}` : ''}
+
+Progress: ${completedSteps.length}/${totalSteps} steps completed, Study time: ${formatTime(elapsedTime)}
+
+Please help me understand this topic better and answer any questions I might have about it.`;
+
+    // Copy to clipboard as fallback
+    navigator.clipboard.writeText(studyContent).then(() => {
+      console.log('Conteúdo de estudo copiado para a área de transferência');
+    }).catch(err => {
+      console.error('Erro ao copiar para área de transferência:', err);
+    });
+
+    // Open Z AI Assistant with pre-populated content and enhanced features
+    const searchQuery = `Ajuda com estudo: ${skillName} - ${currentStep.title}. Objetivo: ${currentStep.learningObjective}`;
+    const encodedSearch = encodeURIComponent(searchQuery);
+
+    // Configure Z AI URL with Deep Think and Web Search enabled
+    const aiUrl = `https://chat.z.ai/?q=${encodedSearch}&deepThink=true&webSearch=true`;
+
+    // Open in new tab
+    window.open(aiUrl, '_blank', 'noopener,noreferrer');
+
+    // Also show a small notification that content was copied
+    setTimeout(() => {
+      alert('Assistente IA aberto em nova aba com Deep Think e Web Search ativados! O conteúdo completo foi copiado para sua área de transferência caso você precise colar manualmente.');
+    }, 500);
+  };
+
   const getDifficultyConfig = () => {
     switch (difficulty) {
       case 'beginner':
@@ -355,18 +404,18 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
             <div style={{ textAlign: 'center' }}>
               <Text variant="heading" size="xl" color={
                 masteryLevel === 'mastered' ? currentTheme.colors.success :
-                masteryLevel === 'reviewing' ? currentTheme.colors.primary :
-                masteryLevel === 'learning' ? currentTheme.colors.warning :
-                currentTheme.colors.textSecondary
+                  masteryLevel === 'reviewing' ? currentTheme.colors.primary :
+                    masteryLevel === 'learning' ? currentTheme.colors.warning :
+                      currentTheme.colors.textSecondary
               }>
                 {masteryLevel === 'mastered' ? '🏆' :
-                 masteryLevel === 'reviewing' ? '⭐' :
-                 masteryLevel === 'learning' ? '📚' : '🆕'}
+                  masteryLevel === 'reviewing' ? '⭐' :
+                    masteryLevel === 'learning' ? '📚' : '🆕'}
               </Text>
               <Text variant="caption" color={currentTheme.colors.textSecondary}>
                 {masteryLevel === 'mastered' ? 'Dominado' :
-                 masteryLevel === 'reviewing' ? 'Revisando' :
-                 masteryLevel === 'learning' ? 'Aprendendo' : 'Novo'}
+                  masteryLevel === 'reviewing' ? 'Revisando' :
+                    masteryLevel === 'learning' ? 'Aprendendo' : 'Novo'}
               </Text>
             </div>
           )}
@@ -376,8 +425,8 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
             <div style={{ textAlign: 'center' }}>
               <Text variant="heading" size="xl" color={
                 retention >= 80 ? currentTheme.colors.success :
-                retention >= 50 ? currentTheme.colors.warning :
-                currentTheme.colors.error
+                  retention >= 50 ? currentTheme.colors.warning :
+                    currentTheme.colors.error
               }>
                 {Math.round(retention)}%
               </Text>
@@ -442,262 +491,277 @@ export const StudyModePage: React.FC<StudyModePageProps> = ({
       {/* Learning Phase - Step Navigation */}
       {studyPhase === 'learning' && (
         <>
-      <div
-        style={{
-          display: 'flex',
-          gap: '8px',
-          marginBottom: '24px',
-          overflowX: 'auto',
-          padding: '8px 0',
-        }}
-      >
-        {studySteps.map((step, index) => {
-          const isCompleted = completedSteps.includes(index);
-          const isCurrent = index === currentStepIndex;
+          <div
+            style={{
+              display: 'flex',
+              gap: '8px',
+              marginBottom: '24px',
+              overflowX: 'auto',
+              padding: '8px 0',
+            }}
+          >
+            {studySteps.map((step, index) => {
+              const isCompleted = completedSteps.includes(index);
+              const isCurrent = index === currentStepIndex;
 
-          return (
-            <button
-              key={index}
-              onClick={() => setCurrentStepIndex(index)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '12px 16px',
-                backgroundColor: isCurrent
-                  ? currentTheme.colors.primary
-                  : isCompleted
-                    ? currentTheme.colors.success + '20'
-                    : currentTheme.colors.surface,
-                border: `2px solid ${isCurrent
-                  ? currentTheme.colors.primary
-                  : isCompleted
-                    ? currentTheme.colors.success
-                    : currentTheme.colors.border}`,
-                borderRadius: '8px',
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              <span
-                style={{
-                  width: '24px',
-                  height: '24px',
-                  borderRadius: '50%',
-                  backgroundColor: isCompleted
-                    ? currentTheme.colors.success
-                    : currentTheme.colors.border,
-                  color: currentTheme.colors.background,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '0.75rem',
-                  fontWeight: 'bold',
-                }}
-              >
-                {isCompleted ? '✓' : index + 1}
-              </span>
-              <span
-                style={{
-                  fontFamily: currentTheme.fonts.secondary,
-                  fontSize: '0.875rem',
-                  color: isCurrent
-                    ? currentTheme.colors.background
-                    : currentTheme.colors.text,
-                }}
-              >
-                {step.title}
-              </span>
-            </button>
-          );
-        })}
-      </div>
-
-      {/* Current Step Content */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
-        {/* Main Content */}
-        <div>
-          <Card>
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-                <div
+              return (
+                <button
+                  key={index}
+                  onClick={() => setCurrentStepIndex(index)}
                   style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '50%',
-                    backgroundColor: currentTheme.colors.primary,
-                    color: currentTheme.colors.background,
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    fontWeight: 'bold',
-                    fontSize: '1.25rem',
+                    gap: '8px',
+                    padding: '12px 16px',
+                    backgroundColor: isCurrent
+                      ? currentTheme.colors.primary
+                      : isCompleted
+                        ? currentTheme.colors.success + '20'
+                        : currentTheme.colors.surface,
+                    border: `2px solid ${isCurrent
+                      ? currentTheme.colors.primary
+                      : isCompleted
+                        ? currentTheme.colors.success
+                        : currentTheme.colors.border}`,
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    whiteSpace: 'nowrap',
                   }}
                 >
-                  {currentStep.stepNumber}
-                </div>
-                <div>
-                  <Text variant="heading" size="xl" color={currentTheme.colors.text}>
-                    {currentStep.title}
-                  </Text>
-                  <Text variant="caption" color={currentTheme.colors.textSecondary}>
-                    Tempo estimado: {currentStep.estimatedTime}
-                  </Text>
-                </div>
-              </div>
-
-              {/* Learning Objective */}
-              <div
-                style={{
-                  padding: '16px',
-                  backgroundColor: currentTheme.colors.primary + '10',
-                  borderLeft: `4px solid ${currentTheme.colors.primary}`,
-                  borderRadius: '0 8px 8px 0',
-                  marginBottom: '24px',
-                }}
-              >
-                <Text variant="caption" color={currentTheme.colors.primary} style={{ fontWeight: 'bold' }}>
-                  Objetivo de Aprendizagem
-                </Text>
-                <Text variant="body" color={currentTheme.colors.text}>
-                  {currentStep.learningObjective}
-                </Text>
-              </div>
-
-              {/* Sub-steps */}
-              <Text variant="heading" size="md" color={currentTheme.colors.text} style={{ marginBottom: '12px' }}>
-                Atividades:
-              </Text>
-              <ul style={{ margin: 0, paddingLeft: '24px' }}>
-                {currentStep.subSteps.map((subStep, index) => (
-                  <li
-                    key={index}
+                  <span
                     style={{
-                      fontFamily: currentTheme.fonts.secondary,
-                      color: currentTheme.colors.text,
-                      marginBottom: '8px',
-                      lineHeight: 1.6,
+                      width: '24px',
+                      height: '24px',
+                      borderRadius: '50%',
+                      backgroundColor: isCompleted
+                        ? currentTheme.colors.success
+                        : currentTheme.colors.border,
+                      color: currentTheme.colors.background,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '0.75rem',
+                      fontWeight: 'bold',
                     }}
                   >
-                    {subStep}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                    {isCompleted ? '✓' : index + 1}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: currentTheme.fonts.secondary,
+                      fontSize: '0.875rem',
+                      color: isCurrent
+                        ? currentTheme.colors.background
+                        : currentTheme.colors.text,
+                    }}
+                  >
+                    {step.title}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-            {/* Verification Question */}
-            <div
-              style={{
-                padding: '16px',
-                backgroundColor: currentTheme.colors.warning + '10',
-                border: `1px solid ${currentTheme.colors.warning}`,
-                borderRadius: '8px',
-                marginBottom: '24px',
-              }}
-            >
-              <Text variant="caption" color={currentTheme.colors.warning} style={{ fontWeight: 'bold' }}>
-                Auto-verificação
-              </Text>
-              <Text variant="body" color={currentTheme.colors.text}>
-                {currentStep.verification}
-              </Text>
-            </div>
+          {/* Current Step Content */}
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '24px' }}>
+            {/* Main Content */}
+            <div>
+              <Card>
+                <div style={{ marginBottom: '24px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                    <div
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '50%',
+                        backgroundColor: currentTheme.colors.primary,
+                        color: currentTheme.colors.background,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontWeight: 'bold',
+                        fontSize: '1.25rem',
+                      }}
+                    >
+                      {currentStep.stepNumber}
+                    </div>
+                    <div>
+                      <Text variant="heading" size="xl" color={currentTheme.colors.text}>
+                        {currentStep.title}
+                      </Text>
+                      <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                        Tempo estimado: {currentStep.estimatedTime}
+                      </Text>
+                    </div>
+                  </div>
 
-            {/* Action Buttons */}
-            <div style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
-              {currentStepIndex > 0 && (
-                <Button
-                  variant="secondary"
-                  onClick={() => setCurrentStepIndex(currentStepIndex - 1)}
-                >
-                  ← Anterior
-                </Button>
-              )}
-              <Button variant="primary" onClick={handleStepComplete}>
-                {completedSteps.includes(currentStepIndex) ? 'Revisado' : 'Marcar como Concluído'} →
-              </Button>
-            </div>
-          </Card>
-        </div>
+                  {/* Learning Objective */}
+                  <div
+                    style={{
+                      padding: '16px',
+                      backgroundColor: currentTheme.colors.primary + '10',
+                      borderLeft: `4px solid ${currentTheme.colors.primary}`,
+                      borderRadius: '0 8px 8px 0',
+                      marginBottom: '24px',
+                    }}
+                  >
+                    <Text variant="caption" color={currentTheme.colors.primary} style={{ fontWeight: 'bold' }}>
+                      Objetivo de Aprendizagem
+                    </Text>
+                    <Text variant="body" color={currentTheme.colors.text}>
+                      {currentStep.learningObjective}
+                    </Text>
+                  </div>
 
-        {/* Sidebar */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {/* Tips */}
-          <Card title="💡 Dicas">
-            <Text variant="body" color={currentTheme.colors.text}>
-              {currentStep.tips}
-            </Text>
-          </Card>
+                  {/* Sub-steps */}
+                  <Text variant="heading" size="md" color={currentTheme.colors.text} style={{ marginBottom: '12px' }}>
+                    Atividades:
+                  </Text>
+                  <ul style={{ margin: 0, paddingLeft: '24px' }}>
+                    {currentStep.subSteps.map((subStep, index) => (
+                      <li
+                        key={index}
+                        style={{
+                          fontFamily: currentTheme.fonts.secondary,
+                          color: currentTheme.colors.text,
+                          marginBottom: '8px',
+                          lineHeight: 1.6,
+                        }}
+                      >
+                        {subStep}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-          {/* Materials */}
-          <Card title="📚 Materiais">
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              {currentStep.materials.map((material, index) => (
-                <li
-                  key={index}
-                  style={{
-                    fontFamily: currentTheme.fonts.secondary,
-                    fontSize: '0.875rem',
-                    color: currentTheme.colors.textSecondary,
-                    marginBottom: '4px',
-                  }}
-                >
-                  {material}
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-          {/* Common Mistakes */}
-          <Card title="⚠️ Erros Comuns">
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              {currentStep.commonMistakes.map((mistake, index) => (
-                <li
-                  key={index}
-                  style={{
-                    fontFamily: currentTheme.fonts.secondary,
-                    fontSize: '0.875rem',
-                    color: currentTheme.colors.error,
-                    marginBottom: '4px',
-                  }}
-                >
-                  {mistake}
-                </li>
-              ))}
-            </ul>
-          </Card>
-
-          {/* Practical Example Toggle */}
-          {practicalExample && (
-            <Card title="🔬 Exemplo Prático">
-              <Button
-                variant={showPracticalExample ? 'secondary' : 'primary'}
-                size="small"
-                onClick={() => setShowPracticalExample(!showPracticalExample)}
-                style={{ width: '100%', marginBottom: showPracticalExample ? '12px' : 0 }}
-              >
-                {showPracticalExample ? 'Ocultar Exemplo' : 'Ver Exemplo Prático'}
-              </Button>
-              {showPracticalExample && (
+                {/* Verification Question */}
                 <div
                   style={{
-                    padding: '12px',
-                    backgroundColor: currentTheme.colors.background,
+                    padding: '16px',
+                    backgroundColor: currentTheme.colors.warning + '10',
+                    border: `1px solid ${currentTheme.colors.warning}`,
                     borderRadius: '8px',
-                    marginTop: '8px',
+                    marginBottom: '24px',
                   }}
                 >
-                  <Text variant="body" color={currentTheme.colors.text} style={{ whiteSpace: 'pre-wrap' }}>
-                    {practicalExample}
+                  <Text variant="caption" color={currentTheme.colors.warning} style={{ fontWeight: 'bold' }}>
+                    Auto-verificação
+                  </Text>
+                  <Text variant="body" color={currentTheme.colors.text}>
+                    {currentStep.verification}
                   </Text>
                 </div>
+
+                {/* Action Buttons */}
+                <div style={{ display: 'flex', gap: '12px', justifyContent: 'flex-end' }}>
+                  {currentStepIndex > 0 && (
+                    <Button
+                      variant="secondary"
+                      onClick={() => setCurrentStepIndex(currentStepIndex - 1)}
+                    >
+                      ← Anterior
+                    </Button>
+                  )}
+                  <Button variant="primary" onClick={handleStepComplete}>
+                    {completedSteps.includes(currentStepIndex) ? 'Revisado' : 'Marcar como Concluído'} →
+                  </Button>
+                </div>
+              </Card>
+            </div>
+
+            {/* Sidebar */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {/* Tips */}
+              <Card title="💡 Dicas">
+                <Text variant="body" color={currentTheme.colors.text}>
+                  {currentStep.tips}
+                </Text>
+              </Card>
+
+              {/* Materials */}
+              <Card title="📚 Materiais">
+                <ul style={{ margin: 0, paddingLeft: '20px' }}>
+                  {(Array.isArray(currentStep.materials) ? currentStep.materials : currentStep.materials ? [currentStep.materials] : []).map((material, index) => (
+                    <li
+                      key={index}
+                      style={{
+                        fontFamily: currentTheme.fonts.secondary,
+                        fontSize: '0.875rem',
+                        color: currentTheme.colors.textSecondary,
+                        marginBottom: '4px',
+                      }}
+                    >
+                      {material}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+
+              {/* Common Mistakes */}
+              <Card title="⚠️ Erros Comuns">
+                <ul style={{ margin: 0, paddingLeft: '20px' }}>
+                  {(Array.isArray(currentStep.commonMistakes) ? currentStep.commonMistakes : currentStep.commonMistakes ? [currentStep.commonMistakes] : []).map((mistake, index) => (
+                    <li
+                      key={index}
+                      style={{
+                        fontFamily: currentTheme.fonts.secondary,
+                        fontSize: '0.875rem',
+                        color: currentTheme.colors.error,
+                        marginBottom: '4px',
+                      }}
+                    >
+                      {mistake}
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+
+              {/* Practical Example Toggle */}
+              {practicalExample && (
+                <Card title="🔬 Exemplo Prático">
+                  <Button
+                    variant={showPracticalExample ? 'secondary' : 'primary'}
+                    size="small"
+                    onClick={() => setShowPracticalExample(!showPracticalExample)}
+                    style={{ width: '100%', marginBottom: showPracticalExample ? '12px' : 0 }}
+                  >
+                    {showPracticalExample ? 'Ocultar Exemplo' : 'Ver Exemplo Prático'}
+                  </Button>
+                  {showPracticalExample && (
+                    <div
+                      style={{
+                        padding: '12px',
+                        backgroundColor: currentTheme.colors.background,
+                        borderRadius: '8px',
+                        marginTop: '8px',
+                      }}
+                    >
+                      <Text variant="body" color={currentTheme.colors.text} style={{ whiteSpace: 'pre-wrap' }}>
+                        {practicalExample}
+                      </Text>
+                    </div>
+                  )}
+                </Card>
               )}
-            </Card>
-          )}
-        </div>
-      </div>
-      </>
+
+              {/* Z AI Assistant */}
+              <Card title="🤖 Assistente IA">
+                <Text variant="body" color={currentTheme.colors.text} style={{ marginBottom: '12px' }}>
+                  Obtenha ajuda personalizada com o conteúdo de estudo. O assistente Z AI abrirá com Deep Think e Web Search ativados para fornecer respostas mais detalhadas e atualizadas.
+                </Text>
+                <Button
+                  variant="primary"
+                  size="small"
+                  onClick={() => openGeminiWithStudyData()}
+                  style={{ width: '100%' }}
+                >
+                  Abrir Assistente IA →
+                </Button>
+              </Card>
+            </div>
+          </div>
+        </>
       )}
 
       {/* Exit Modal */}

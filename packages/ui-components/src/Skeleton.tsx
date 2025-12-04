@@ -190,26 +190,6 @@ export const SkeletonSkillCard: React.FC = () => (
   </div>
 );
 
-export const SkeletonLeaderboardRow: React.FC = () => (
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '16px',
-      padding: '16px',
-      background: 'rgba(255, 255, 255, 0.02)',
-      borderRadius: '12px',
-    }}
-  >
-    <Skeleton variant="text" width="30px" height="24px" />
-    <Skeleton variant="circular" width="48px" height="48px" />
-    <div style={{ flex: 1 }}>
-      <Skeleton variant="text" width="60%" height="16px" style={{ marginBottom: '6px' }} />
-      <Skeleton variant="text" width="30%" height="12px" />
-    </div>
-    <Skeleton variant="text" width="80px" height="20px" />
-  </div>
-);
 
 export const SkeletonStats: React.FC = () => (
   <div

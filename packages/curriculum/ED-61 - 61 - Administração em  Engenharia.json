@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-61",
       "lastUpdated": "2025-12-02",
-      "totalAtomicSkills": 180
+      "totalAtomicSkills": 180,
+      "startDate": "2025-02-17",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "ED-61/2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-61"
     },
     "areas": [
       {
@@ -21927,7 +21933,8 @@
             "totalSkills": 180
           }
         ],
-        "totalSkills": 180
+        "totalSkills": 180,
+        "percentage": 0
       }
     ]
   }

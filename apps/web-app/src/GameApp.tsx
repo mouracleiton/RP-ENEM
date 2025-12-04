@@ -12,7 +12,7 @@ import {
   type NavItem,
   type CelebrationType,
 } from '@ita-rp/ui-components';
-import { useGameStore, useGamePersistence, dailyChallengeSystem, useSoundEffects } from '@ita-rp/game-logic';
+import { useGameStore, useGamePersistence, dailyChallengeSystem, useSoundEffects, getTotalSkills } from '@ita-rp/game-logic';
 import { useCurriculum } from '@ita-rp/curriculum';
 import type { LearningStep } from '@ita-rp/shared-types';
 
@@ -21,13 +21,12 @@ import DisciplinesPage from './pages/DisciplinesPage';
 import AchievementsPage from './pages/AchievementsPage';
 import ProfilePage from './pages/ProfilePage';
 import StudyModePage from './pages/StudyModePage';
-import LeaderboardPage from './pages/LeaderboardPage';
 import SyncSettingsPage from './pages/SyncSettingsPage';
 import DailyChallengesPage from './pages/DailyChallengesPage';
 import SkillTreePage from './pages/SkillTreePage';
 import StatsPage from './pages/StatsPage';
 
-type PageType = 'dashboard' | 'disciplines' | 'achievements' | 'profile' | 'study' | 'leaderboard' | 'sync' | 'challenges' | 'skilltree' | 'stats';
+type PageType = 'dashboard' | 'disciplines' | 'achievements' | 'profile' | 'study' | 'sync' | 'challenges' | 'skilltree' | 'stats';
 
 interface StudySession {
   skillId: string;
@@ -45,7 +44,6 @@ const navItems: NavItem[] = [
   { id: 'disciplines', label: 'Disciplinas', icon: '📚' },
   { id: 'skilltree', label: 'Árvore', icon: '🌳' },
   { id: 'stats', label: 'Estatísticas', icon: '📊' },
-  { id: 'leaderboard', label: 'Ranking', icon: '🏅' },
   { id: 'achievements', label: 'Conquistas', icon: '🏆' },
   { id: 'profile', label: 'Perfil', icon: '👤' },
 ];
@@ -127,6 +125,7 @@ const GameAppContent: React.FC = () => {
   const longestStreak = store.player.longestStreak || streak;
   const completedSkillIds = store.player.completedSkills;
   const totalStudyTime = store.player.totalStudyTime;
+  const totalSkills = getTotalSkills();
 
   // Track previous values for detecting changes using refs to avoid re-renders
   const prevLevelRef = React.useRef(level);
@@ -364,7 +363,7 @@ const GameAppContent: React.FC = () => {
               level={level}
               streak={streak}
               completedSkills={completedSkillIds.length}
-              totalSkills={176}
+              totalSkills={totalSkills}
               studyTimeToday={45}
               onNavigate={handleNavigate}
               onAddXP={(amount) => store.addXP(amount)}
@@ -396,15 +395,7 @@ const GameAppContent: React.FC = () => {
             />
           )}
 
-          {currentPage === 'leaderboard' && (
-            <LeaderboardPage
-              playerXP={xp}
-              playerLevel={level}
-              playerStreak={streak}
-              playerSkills={completedSkillIds.length}
-            />
-          )}
-
+          
           {currentPage === 'achievements' && (
             <AchievementsPage
               unlockedAchievementIds={[

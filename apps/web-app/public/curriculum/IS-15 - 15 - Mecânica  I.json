@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - IS-15",
       "lastUpdated": "2025-12-01",
-      "totalAtomicSkills": 160
+      "totalAtomicSkills": 160,
+      "startDate": "2025-03-01",
+      "duration": 60,
+      "dailyStudyHours": 6,
+      "version": "2025-1.0",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - IS-15"
     },
     "areas": [
       {
@@ -2153,6 +2159,23 @@
                           "10.1.1.3.1"
                         ]
                       }
+                    ],
+                    "individualConcepts": [
+                      "Movimento circular uniforme",
+                      "Velocidade angular (ω)",
+                      "Deslocamento angular (Δθ)",
+                      "Período (T)",
+                      "Frequência (f)",
+                      "Relação T = 1/f",
+                      "Aceleração centrípeta (ac)",
+                      "Fórmulas ac = v²/r e ac = ω²r",
+                      "Velocidade linear (v)",
+                      "Relação v = ωr",
+                      "Posição angular (θ)",
+                      "Equação θ = θ0 + ωt",
+                      "Interpretação vetorial da velocidade linear",
+                      "Conversão de unidades (graus, radianos, rpm, Hz)",
+                      "Aplicações práticas do movimento circular"
                     ]
                   },
                   {
@@ -8800,7 +8823,10 @@
                             "prerequisites": [
                               "Leis de Newton",
                               "Derivação da transformação de velocidades"
-                            ]
+                            ],
+                            "estimatedTime": "2 horas",
+                            "difficulty": "Alta",
+                            "status": "Em desenvolvimento"
                           }
                         ]
                       },
@@ -18053,6 +18079,109 @@
                         "status": "not_started",
                         "prerequisites": []
                       }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.5.2.IC1",
+                        "name": "Momento Angular de Partícula",
+                        "description": "Conceito de momento angular para uma partícula individual, definido matematicamente como o produto vetorial entre o vetor posição e o momento linear.",
+                        "specificSkills": [
+                          "Definir matematicamente o momento angular de uma partícula como o produto vetorial $\\vec{L} = \\vec{r} \\times \\vec{p}$",
+                          "Calcular o momento angular de uma partícula em movimento retilíneo ou curvilíneo, determinando seu módulo, direção e sentido",
+                          "Interpretar o significado físico do momento angular como medida da rotação em torno de um ponto de referência"
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC2",
+                        "name": "Soma Vetorial de Momentos Angulares",
+                        "description": "Processo de obtenção do momento angular total de um sistema por meio da soma vetorial dos momentos angulares individuais das partículas.",
+                        "specificSkills": [
+                          "Realizar a soma vetorial dos momentos angulares individuais de partículas para obter o momento angular total do sistema.",
+                          "Representar graficamente a adição vetorial de momentos angulares em diagramas 3D.",
+                          "Calcular componentes cartesianas do momento angular total a partir dos momentos individuais.",
+                          "Aplicar a soma vetorial em problemas de sistemas isolados ou interagentes."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC3",
+                        "name": "Referência Inercial",
+                        "description": "Importância da escolha de um ponto de referência inercial para o cálculo correto do momento angular total e sua relação com as leis de Newton.",
+                        "specificSkills": [
+                          "Identificar e selecionar referenciais inerciais adequados para o cálculo do momento angular total.",
+                          "Calcular corretamente o momento angular total em referenciais inerciais.",
+                          "Relacionar a conservação do momento angular com as leis de Newton em referenciais inerciais.",
+                          "Diferenciar análises de momento angular em referenciais inerciais e não inerciais."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC4",
+                        "name": "Conservação do Momento Angular",
+                        "description": "Princípio físico que estabelece a constância do momento angular total em sistemas isolados sem torque externo resultante.",
+                        "specificSkills": [
+                          "Calcular o momento angular de partículas puntiformes e corpos rígidos.",
+                          "Aplicar o princípio de conservação do momento angular em sistemas isolados sem torque externo.",
+                          "Resolver problemas envolvendo rotações, colisões oblíquas e sistemas planetários.",
+                          "Analisar demonstrações experimentais como o patinador girando ou o giroscópio.",
+                          "Relacionar a conservação do momento angular com simetrias rotacionais via teorema de Noether."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC5",
+                        "name": "Torque Externo e Variação do Momento Angular",
+                        "description": "Relação entre torque externo aplicado ao sistema e a variação temporal do momento angular total, expressa por dL/dt = τ_ext.",
+                        "specificSkills": [
+                          "Compreender a relação entre torque externo e a variação temporal do momento angular total de um sistema, dada por dL/dt = τ_ext.",
+                          "Aplicar a equação dL/dt = τ_ext para analisar a dinâmica rotacional de sistemas rígidos e de partículas.",
+                          "Calcular o torque externo necessário para produzir uma dada variação no momento angular.",
+                          "Identificar e quantificar torques externos em problemas de mecânica clássica envolvendo rotação.",
+                          "Resolver exercícios que envolvam a integração temporal da equação do torque para determinar o momento angular em função do tempo."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC6",
+                        "name": "Aplicação em Colisões",
+                        "description": "Utilização da conservação do momento angular para análise de colisões elásticas e inelásticas em sistemas de partículas ou corpos rígidos.",
+                        "specificSkills": [
+                          "Calcular o momento angular de sistemas de partículas ou corpos rígidos antes e após colisões.",
+                          "Aplicar a conservação do momento angular em colisões elásticas para determinar velocidades angulares ou lineares pós-colisão.",
+                          "Analisar colisões inelásticas utilizando conservação do momento angular, considerando perdas de energia.",
+                          "Resolver problemas numéricos de colisões em duas dimensões envolvendo rotação e translação."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC7",
+                        "name": "Sistemas Discretos e Coordenadas",
+                        "description": "Técnicas de cálculo do momento angular total em sistemas discretos de partículas, incluindo o uso de coordenadas cartesianas e polares.",
+                        "specificSkills": [
+                          "Calcular o momento angular de partículas puntiformes utilizando coordenadas cartesianas.",
+                          "Aplicar coordenadas polares no cálculo do momento angular de sistemas discretos.",
+                          "Determinar o momento angular total de um sistema discreto de partículas.",
+                          "Resolver problemas envolvendo conservação do momento angular em coordenadas adequadas."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC8",
+                        "name": "Momento Angular em Corpos Rígidos",
+                        "description": "Definição e cálculo do momento angular para corpos rígidos, incluindo o uso do momento de inércia e velocidade angular.",
+                        "specificSkills": [
+                          "Definir o momento angular de um corpo rígido como \\(\\vec{L} = \\mathbf{I} \\vec{\\omega}\\).",
+                          "Calcular o momento angular para rotação em torno de eixos principais e arbitrários.",
+                          "Determinar o tensor de inércia e utilizá-lo no cálculo do momento angular.",
+                          "Aplicar a relação entre momento angular, torque e aceleração angular (\\(\\vec{\\tau} = \\frac{d\\vec{L}}{dt}\\)).",
+                          "Resolver problemas de conservação do momento angular em sistemas isolados de corpos rígidos."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.2.IC9",
+                        "name": "Implicações Práticas e Engenharia",
+                        "description": "Relevância do momento angular total e sua conservação em aplicações reais, como satélites, giroscópios, esportes e sistemas rotativos.",
+                        "specificSkills": [
+                          "Aplicar a conservação do momento angular total em análises de satélites e estabilização orbital.",
+                          "Compreender e projetar sistemas baseados em giroscópios para controle de atitude.",
+                          "Analisar fenômenos esportivos envolvendo conservação de momento angular, como rotações em patinação ou mergulho.",
+                          "Modelar e otimizar sistemas rotativos em engenharia mecânica e aeroespacial utilizando princípios de momento angular total."
+                        ]
+                      }
                     ]
                   },
                   {
@@ -19661,7 +19790,8 @@
             "totalSkills": 160
           }
         ],
-        "totalSkills": 160
+        "totalSkills": 160,
+        "percentage": 0
       }
     ]
   }

@@ -133,7 +133,15 @@ export interface Achievement {
   description: string;
   icon: string;
   unlockedAt: Date;
-  category: 'study' | 'streak' | 'completion' | 'social';
+  category:
+    | 'study'
+    | 'streak'
+    | 'completion'
+    | 'social'
+    | 'subject'
+    | 'difficulty'
+    | 'time'
+    | 'special';
 }
 
 export interface PlayerSettings {

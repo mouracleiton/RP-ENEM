@@ -1,8 +1,17 @@
-import React, { useMemo } from 'react';
-import { useGameStore } from '@ita-rp/game-logic';
-import { StatsCard } from '@ita-rp/ui-components';
-import { ProgressChart } from '@ita-rp/ui-components';
-import { HeatmapCalendar } from '@ita-rp/ui-components';
+import React, { useMemo, useState, useEffect } from 'react';
+import { useGameStore, useStudyAnalytics } from '@ita-rp/game-logic';
+import {
+  StatsCard,
+  ProgressChart,
+  HeatmapCalendar,
+  LineChart,
+  RadarChart,
+  ReportExport,
+  Button,
+  Text,
+  Card,
+} from '@ita-rp/ui-components';
+import { useTheme } from '@ita-rp/ui-components';
 
 interface StatsPageProps {
   theme: {
@@ -26,14 +35,37 @@ interface StatsPageProps {
 }
 
 export const StatsPage: React.FC<StatsPageProps> = ({ theme }) => {
+  const { currentTheme } = useTheme();
   const player = useGameStore((state) => state.player);
+  const analytics = useStudyAnalytics();
+
+  // State for filters and controls
+  const [timeRange, setTimeRange] = useState<'week' | 'month' | 'year'>('month');
+  const [selectedView, setSelectedView] = useState<'overview' | 'progress' | 'insights'>('overview');
+
+  // Load analytics data
+  const [dailyStats, setDailyStats] = useState<any[]>([]);
+  const [weeklyStats, setWeeklyStats] = useState<any[]>([]);
+  const [skillProgress, setSkillProgress] = useState<any[]>([]);
+  const [insights, setInsights] = useState<any>(null);
+
+  useEffect(() => {
+    // Load analytics data
+    const days = timeRange === 'week' ? 7 : timeRange === 'month' ? 30 : 365;
+    const weeks = timeRange === 'week' ? 1 : timeRange === 'month' ? 4 : 52;
+
+    setDailyStats(analytics.getDailyStats(days));
+    setWeeklyStats(analytics.getWeeklyStats(weeks));
+    setSkillProgress(analytics.getSkillProgress());
+    setInsights(analytics.getLearningInsights());
+  }, [timeRange, analytics]);
 
   // Calculate derived statistics
   const stats = useMemo(() => {
     const achievements = player?.achievements || [];
     const completedSkills = player?.completedSkills || [];
 
-    // Study time breakdown (mock data for now - could be enhanced with real tracking)
+    // Study time breakdown
     const avgDailyStudyTime = player?.totalStudyTime
       ? Math.round(player.totalStudyTime / Math.max(player.currentStreak, 1))
       : 0;
@@ -51,7 +83,7 @@ export const StatsPage: React.FC<StatsPageProps> = ({ theme }) => {
       : 0;
 
     // Achievement completion rate
-    const totalPossibleAchievements = 30; // Based on achievement-system.ts
+    const totalPossibleAchievements = 30;
     const achievementRate = Math.round((achievements.length / totalPossibleAchievements) * 100);
 
     return {
@@ -64,159 +96,182 @@ export const StatsPage: React.FC<StatsPageProps> = ({ theme }) => {
     };
   }, [player]);
 
-  // Generate activity heatmap data
-  const activityData = useMemo(() => {
-    const data: { date: string; value: number; label?: string }[] = [];
-    const today = new Date();
+  // Generate progress chart data
+  const progressData = useMemo(() => {
+    return dailyStats.map((day, index) => ({
+      x: index,
+      y: day.totalStudyTime || 0,
+      label: new Date(day.date).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }),
+    })).slice(-30); // Last 30 days
+  }, [dailyStats]);
 
-    // Generate mock activity data based on streak
-    // In a real app, this would come from study session history
-    for (let i = 0; i < 84; i++) { // 12 weeks
-      const date = new Date(today);
-      date.setDate(date.getDate() - i);
-      const dateStr = date.toISOString().split('T')[0];
+  // Generate XP trend data
+  const xpTrendData = useMemo(() => {
+    return dailyStats.map((day, index) => ({
+      x: index,
+      y: day.totalXPEarned || 0,
+      label: new Date(day.date).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }),
+    })).slice(-30);
+  }, [dailyStats]);
 
-      // Generate value based on whether it's within streak
-      let value = 0;
-      if (i < (player?.currentStreak || 0)) {
-        // Active streak days - higher values
-        value = 50 + Math.random() * 50;
-      } else if (i < 30 && Math.random() > 0.5) {
-        // Random past activity
-        value = Math.random() * 60;
-      }
+  // Generate skill radar data
+  const skillRadarData = useMemo(() => {
+    // Map disciplines to radar data
+    const disciplineData = new Map<string, { total: number; count: number; time: number }>();
 
-      data.push({
-        date: dateStr,
-        value: Math.round(value),
-        label: value > 0 ? `${Math.round(value / 10)} habilidades` : 'Sem estudo',
+    dailyStats.forEach(day => {
+      Object.entries(day.disciplineBreakdown || {}).forEach(([disciplineId, data]: [string, any]) => {
+        if (!disciplineData.has(disciplineId)) {
+          disciplineData.set(disciplineId, { total: 0, count: 0, time: 0 });
+        }
+        const current = disciplineData.get(disciplineId)!;
+        current.total += data.xp || 0;
+        current.time += data.time || 0;
+        current.count += data.skills || 0;
       });
-    }
+    });
 
-    return data;
-  }, [player?.currentStreak]);
+    return Array.from(disciplineData.entries())
+      .map(([disciplineId, data]) => ({
+        label: `Disciplina ${disciplineId}`,
+        value: Math.min(100, (data.time / 60)), // Convert to hours, cap at 100
+        color: theme.colors.primary,
+      }))
+      .slice(0, 6); // Top 6 disciplines
+  }, [dailyStats, theme.colors.primary]);
 
-  // Skill distribution by difficulty
-  const skillDistribution = useMemo(() => {
-    const completed = player?.completedSkills || [];
-    // In a real implementation, we'd count actual difficulty distribution
-    // For now, estimate based on total
-    const total = completed.length;
-    return [
-      {
-        label: 'Iniciante',
-        value: Math.round(total * 0.4),
-        color: theme.colors.success,
+  
+  // Generate report data
+  const reportData = useMemo(() => {
+    const endDate = new Date();
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() - (timeRange === 'week' ? 7 : timeRange === 'month' ? 30 : 365));
+
+    return {
+      title: `Relatório de Aprendizagem - ${timeRange === 'week' ? 'Semana' : timeRange === 'month' ? 'Mês' : 'Ano'}`,
+      generatedAt: new Date().toISOString(),
+      dateRange: {
+        start: startDate.toISOString().split('T')[0],
+        end: endDate.toISOString().split('T')[0],
       },
-      {
-        label: 'Intermediário',
-        value: Math.round(total * 0.35),
-        color: theme.colors.warning,
+      summary: {
+        totalStudyTime: dailyStats.reduce((sum, day) => sum + day.totalStudyTime, 0),
+        sessionsCount: dailyStats.reduce((sum, day) => sum + day.sessionsCount, 0),
+        skillsStudied: new Set(dailyStats.flatMap(day => day.skillsStudied)).size,
+        totalXPEarned: dailyStats.reduce((sum, day) => sum + day.totalXPEarned, 0),
+        averagePerformance: dailyStats.length > 0
+          ? dailyStats.reduce((sum, day) => sum + day.averagePerformance, 0) / dailyStats.filter(day => day.averagePerformance > 0).length
+          : 0,
+        streakDays: dailyStats.filter(day => day.streakDay).length,
       },
-      {
-        label: 'Avançado',
-        value: Math.round(total * 0.25),
-        color: theme.colors.error,
-      },
-    ];
-  }, [player?.completedSkills, theme.colors]);
-
-  // Weekly XP progress (mock data)
-  const weeklyXP = useMemo(() => {
-    const days = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-    const today = new Date().getDay();
-
-    return days.map((day, idx) => ({
-      label: day,
-      value: idx <= today ? Math.round(50 + Math.random() * 150) : 0,
-      color: idx === today ? theme.colors.primary : `${theme.colors.primary}80`,
-    }));
-  }, [theme.colors.primary]);
+      charts: [],
+      insights: insights ? [
+        `Seu melhor horário para estudar é entre ${insights.peakProductivityHours[0]}h e ${insights.peakProductivityHours[0] + 2}h`,
+        `Seu comprimento ideal de sessão é de ${Math.round(insights.optimalSessionLength)} minutos`,
+        `Você está aprendendo em uma velocidade de ${insights.learningVelocity.toFixed(1)} habilidades por semana`,
+        `Sua consistência de estudo é de ${insights.studyConsistency.toFixed(0)}%`,
+      ] : [],
+    };
+  }, [timeRange, dailyStats, insights]);
 
   if (!player) {
     return (
-      <div
-        style={{
-          padding: '24px',
-          color: theme.colors.text,
-          fontFamily: theme.fonts.secondary,
-        }}
-      >
+      <div style={{ padding: '24px', color: theme.colors.text }}>
         Carregando estatísticas...
       </div>
     );
   }
 
   return (
-    <div
-      style={{
-        padding: '24px',
-        maxWidth: '1200px',
-        margin: '0 auto',
-      }}
-    >
+    <div style={{ padding: '24px', maxWidth: '1400px', margin: '0 auto' }}>
       {/* Header */}
       <div style={{ marginBottom: '32px' }}>
-        <h1
-          style={{
-            fontFamily: theme.fonts.primary,
-            fontSize: '1.75rem',
-            color: theme.colors.text,
-            margin: 0,
-            marginBottom: '8px',
-          }}
-        >
-          📊 Estatísticas
-        </h1>
-        <p
-          style={{
-            fontFamily: theme.fonts.secondary,
-            fontSize: '0.95rem',
-            color: theme.colors.textSecondary,
-            margin: 0,
-          }}
-        >
-          Acompanhe seu progresso de aprendizado
-        </p>
+        <Text variant="heading" size="2xl" color={currentTheme.colors.text}>
+          📊 Estatísticas Detalhadas
+        </Text>
+        <Text variant="body" color={currentTheme.colors.textSecondary}>
+          Acompanhe seu progresso e descubra insights sobre seu aprendizado
+        </Text>
       </div>
 
-      {/* Main Stats Grid */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+      {/* Controls */}
+      <Card style={{ marginBottom: '24px' }}>
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
           gap: '16px',
-          marginBottom: '24px',
-        }}
-      >
+        }}>
+          {/* View Selector */}
+          <div style={{ display: 'flex', gap: '8px' }}>
+            {[
+              { value: 'overview', label: 'Visão Geral' },
+              { value: 'progress', label: 'Progresso' },
+              { value: 'insights', label: 'Insights' },
+            ].map((view) => (
+              <Button
+                key={view.value}
+                onClick={() => setSelectedView(view.value as any)}
+                variant={selectedView === view.value ? 'primary' : 'secondary'}
+                size="small"
+              >
+                {view.label}
+              </Button>
+            ))}
+          </div>
+
+          {/* Time Range Selector */}
+          <div style={{ display: 'flex', gap: '8px' }}>
+            {[
+              { value: 'week', label: 'Semana' },
+              { value: 'month', label: 'Mês' },
+              { value: 'year', label: 'Ano' },
+            ].map((range) => (
+              <Button
+                key={range.value}
+                onClick={() => setTimeRange(range.value as any)}
+                variant={timeRange === range.value ? 'primary' : 'secondary'}
+                size="small"
+              >
+                {range.label}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </Card>
+
+      {/* Main Stats Grid */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+        gap: '16px',
+        marginBottom: '24px',
+      }}>
         <StatsCard
           title="XP Total"
           value={player.xp.toLocaleString()}
           subtitle={`${stats.xpPerSkill} XP por habilidade`}
           icon="⚡"
-          color={theme.colors.primary}
-          theme={theme}
+          color={currentTheme.colors.primary}
+          theme={currentTheme}
         />
         <StatsCard
           title="Nível"
           value={player.level}
           subtitle={`${Math.round(stats.levelProgress)}% para o próximo`}
           icon="🎯"
-          color={theme.colors.secondary}
-          theme={theme}
+          color={currentTheme.colors.secondary}
+          theme={currentTheme}
         />
         <StatsCard
           title="Streak Atual"
           value={`${player.currentStreak} dias`}
           subtitle={`Recorde: ${player.longestStreak} dias`}
           icon="🔥"
-          trend={
-            player.currentStreak > 0
-              ? { value: player.currentStreak, isPositive: true }
-              : undefined
-          }
-          color="#ff6b6b"
-          theme={theme}
+          trend={player.currentStreak > 0 ? { value: player.currentStreak, isPositive: true } : undefined}
+          color={currentTheme.colors.warning}
+          theme={currentTheme}
         />
         <StatsCard
           title="Tempo de Estudo"
@@ -224,15 +279,15 @@ export const StatsPage: React.FC<StatsPageProps> = ({ theme }) => {
           subtitle={`~${stats.avgDailyStudyTime} min/dia`}
           icon="⏱️"
           color="#4ecdc4"
-          theme={theme}
+          theme={currentTheme}
         />
         <StatsCard
           title="Habilidades"
           value={player.completedSkills.length}
           subtitle="Concluídas"
           icon="✅"
-          color={theme.colors.success}
-          theme={theme}
+          color={currentTheme.colors.success}
+          theme={currentTheme}
         />
         <StatsCard
           title="Conquistas"
@@ -240,260 +295,226 @@ export const StatsPage: React.FC<StatsPageProps> = ({ theme }) => {
           subtitle={`${stats.achievementRate}% desbloqueadas`}
           icon="🏆"
           color="#fbbf24"
-          theme={theme}
+          theme={currentTheme}
         />
       </div>
 
-      {/* Charts Grid */}
-      <div
-        style={{
+      {/* Content based on selected view */}
+      {selectedView === 'overview' && (
+        <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
           gap: '20px',
           marginBottom: '24px',
-        }}
-      >
-        {/* Activity Heatmap */}
-        <div style={{ gridColumn: 'span 2' }}>
-          <HeatmapCalendar
-            title="📅 Atividade de Estudo (últimas 12 semanas)"
-            data={activityData}
-            weeks={12}
-            theme={theme}
+        }}>
+          {/* Activity Heatmap */}
+          <div style={{ gridColumn: 'span 2' }}>
+            <HeatmapCalendar
+              title="📅 Atividade de Estudo"
+              data={dailyStats.map(day => ({
+                date: day.date,
+                value: Math.min(100, (day.totalStudyTime / 60) * 10), // Convert to 0-100 scale
+                label: day.totalStudyTime > 0 ? `${Math.floor(day.totalStudyTime / 60)}h ${day.totalStudyTime % 60}m` : 'Sem estudo',
+              }))}
+              weeks={12}
+              theme={currentTheme}
+            />
+          </div>
+
+          {/* XP Trend */}
+          <LineChart
+            title="📈 Tendência de XP"
+            data={xpTrendData}
+            color={currentTheme.colors.primary}
+            height={200}
+            theme={currentTheme}
+          />
+
+          {/* Study Time Trend */}
+          <LineChart
+            title="⏱️ Tempo de Estudo Diário"
+            data={progressData}
+            color={currentTheme.colors.accent}
+            height={200}
+            theme={currentTheme}
           />
         </div>
+      )}
 
-        {/* Weekly XP */}
-        <ProgressChart
-          title="📈 XP Esta Semana"
-          data={weeklyXP}
-          showLabels={true}
-          showValues={true}
-          barHeight={20}
-          theme={theme}
-        />
+      {selectedView === 'progress' && (
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+          gap: '20px',
+          marginBottom: '24px',
+        }}>
+          {/* Skill Radar */}
+          <RadarChart
+            title="🎯 Foco por Disciplina"
+            data={skillRadarData}
+            size={350}
+            theme={currentTheme}
+          />
 
-        {/* Skill Distribution */}
-        <ProgressChart
-          title="📊 Habilidades por Dificuldade"
-          data={skillDistribution}
-          showLabels={true}
-          showValues={true}
-          barHeight={28}
-          theme={theme}
-        />
-      </div>
+          {/* Weekly Progress */}
+          <ProgressChart
+            title="📊 Progresso Semanal"
+            data={weeklyStats.slice(-8).map((week, index) => ({
+              label: `Semana ${index + 1}`,
+              value: week.totalStudyTime || 0,
+              color: currentTheme.colors.primary,
+            }))}
+            showLabels={true}
+            showValues={true}
+            barHeight={24}
+            theme={currentTheme}
+          />
 
-      {/* Detailed Stats */}
-      <div
-        style={{
-          backgroundColor: theme.colors.surface,
-          borderRadius: '16px',
-          padding: '20px',
-          border: `1px solid ${theme.colors.border}`,
-        }}
-      >
-        <h3
-          style={{
-            fontFamily: theme.fonts.primary,
-            fontSize: '1rem',
-            color: theme.colors.text,
-            margin: 0,
-            marginBottom: '16px',
-          }}
-        >
-          📋 Detalhes do Progresso
-        </h3>
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '16px',
-          }}
-        >
-          {/* Rank Info */}
-          <div
-            style={{
-              padding: '16px',
-              backgroundColor: theme.colors.background,
-              borderRadius: '12px',
-            }}
-          >
-            <div
-              style={{
-                fontFamily: theme.fonts.secondary,
-                fontSize: '0.875rem',
-                color: theme.colors.textSecondary,
-                marginBottom: '8px',
-              }}
-            >
-              Patente Atual
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-              }}
-            >
-              <span style={{ fontSize: '1.5rem' }}>{player.currentRank.icon}</span>
-              <div>
-                <div
-                  style={{
-                    fontFamily: theme.fonts.primary,
-                    fontSize: '1.125rem',
-                    color: theme.colors.text,
-                    fontWeight: 'bold',
-                  }}
-                >
-                  {player.currentRank.name}
-                </div>
-                <div
-                  style={{
-                    fontFamily: theme.fonts.secondary,
-                    fontSize: '0.8rem',
-                    color: theme.colors.textSecondary,
-                  }}
-                >
-                  Nível {player.currentRank.level}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Study Stats */}
-          <div
-            style={{
-              padding: '16px',
-              backgroundColor: theme.colors.background,
-              borderRadius: '12px',
-            }}
-          >
-            <div
-              style={{
-                fontFamily: theme.fonts.secondary,
-                fontSize: '0.875rem',
-                color: theme.colors.textSecondary,
-                marginBottom: '8px',
-              }}
-            >
-              Estatísticas de Estudo
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '4px',
-              }}
-            >
-              <div
-                style={{
+          {/* Skill Progress Details */}
+          <Card title="📈 Detalhes das Habilidades" style={{ gridColumn: 'span 2' }}>
+            <div style={{
+              maxHeight: '300px',
+              overflowY: 'auto',
+            }}>
+              {skillProgress.slice(0, 10).map((skill, index) => (
+                <div key={index} style={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  fontFamily: theme.fonts.secondary,
-                  fontSize: '0.9rem',
-                }}
-              >
-                <span style={{ color: theme.colors.textSecondary }}>
-                  Tempo Total:
-                </span>
-                <span style={{ color: theme.colors.text, fontWeight: 'bold' }}>
-                  {Math.floor(player.totalStudyTime / 60)}h {player.totalStudyTime % 60}m
-                </span>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  fontFamily: theme.fonts.secondary,
-                  fontSize: '0.9rem',
-                }}
-              >
-                <span style={{ color: theme.colors.textSecondary }}>
-                  Média Diária:
-                </span>
-                <span style={{ color: theme.colors.text, fontWeight: 'bold' }}>
-                  {stats.avgDailyStudyTime} min
-                </span>
-              </div>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  fontFamily: theme.fonts.secondary,
-                  fontSize: '0.9rem',
-                }}
-              >
-                <span style={{ color: theme.colors.textSecondary }}>
-                  Último Estudo:
-                </span>
-                <span style={{ color: theme.colors.text, fontWeight: 'bold' }}>
-                  {player.lastStudyDate
-                    ? new Date(player.lastStudyDate).toLocaleDateString('pt-BR')
-                    : 'Nunca'}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Achievements Progress */}
-          <div
-            style={{
-              padding: '16px',
-              backgroundColor: theme.colors.background,
-              borderRadius: '12px',
-            }}
-          >
-            <div
-              style={{
-                fontFamily: theme.fonts.secondary,
-                fontSize: '0.875rem',
-                color: theme.colors.textSecondary,
-                marginBottom: '8px',
-              }}
-            >
-              Conquistas Recentes
-            </div>
-            {player.achievements.slice(-3).length > 0 ? (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {player.achievements.slice(-3).reverse().map((ach, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                    }}
-                  >
-                    <span>{ach.icon}</span>
-                    <span
-                      style={{
-                        fontFamily: theme.fonts.secondary,
-                        fontSize: '0.875rem',
-                        color: theme.colors.text,
-                      }}
-                    >
-                      {ach.name}
-                    </span>
+                  alignItems: 'center',
+                  padding: '12px',
+                  borderBottom: `1px solid ${currentTheme.colors.border}20`,
+                }}>
+                  <div>
+                    <Text variant="body" color={currentTheme.colors.text}>
+                      {skill.skillName}
+                    </Text>
+                    <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                      {skill.disciplineName} • {skill.sessionCount} sessões
+                    </Text>
                   </div>
-                ))}
-              </div>
-            ) : (
-              <div
-                style={{
-                  fontFamily: theme.fonts.secondary,
-                  fontSize: '0.875rem',
-                  color: theme.colors.textSecondary,
-                  fontStyle: 'italic',
-                }}
-              >
-                Nenhuma conquista ainda
-              </div>
-            )}
-          </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <Text variant="body" color={currentTheme.colors.primary}>
+                      {Math.round(skill.currentMastery)}%
+                    </Text>
+                    <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                      {Math.floor(skill.totalStudyTime / 60)}h
+                    </Text>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Card>
         </div>
-      </div>
+      )}
+
+      {selectedView === 'insights' && (
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
+          gap: '20px',
+          marginBottom: '24px',
+        }}>
+          {/* Learning Insights */}
+          <Card title="🧠 Insights de Aprendizado" style={{ gridColumn: 'span 2' }}>
+            <div style={{ padding: '20px' }}>
+              {insights && (
+                <div style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                  gap: '20px',
+                }}>
+                  <div>
+                    <Text variant="subheading" color={currentTheme.colors.text}>
+                      Picos de Produtividade
+                    </Text>
+                    <Text variant="body" color={currentTheme.colors.textSecondary}>
+                      {insights.peakProductivityHours.join('h, ')}h
+                    </Text>
+                  </div>
+                  <div>
+                    <Text variant="subheading" color={currentTheme.colors.text}>
+                      Sessão Ideal
+                    </Text>
+                    <Text variant="body" color={currentTheme.colors.textSecondary}>
+                      {Math.round(insights.optimalSessionLength)} minutos
+                    </Text>
+                  </div>
+                  <div>
+                    <Text variant="subheading" color={currentTheme.colors.text}>
+                      Velocidade de Aprendizado
+                    </Text>
+                    <Text variant="body" color={currentTheme.colors.textSecondary}>
+                      {insights.learningVelocity.toFixed(1)} habilidades/semana
+                    </Text>
+                  </div>
+                  <div>
+                    <Text variant="subheading" color={currentTheme.colors.text}>
+                      Consistência
+                    </Text>
+                    <Text variant="body" color={currentTheme.colors.textSecondary}>
+                      {insights.studyConsistency.toFixed(0)}%
+                    </Text>
+                  </div>
+                </div>
+              )}
+
+              {/* Next Milestones */}
+              {insights && (
+                <div style={{ marginTop: '24px' }}>
+                  <Text variant="subheading" color={currentTheme.colors.text}>
+                    🎯 Próximos Marcos
+                  </Text>
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                    marginTop: '12px',
+                  }}>
+                    {insights.nextMilestones.map((milestone: any, index: number) => (
+                      <div key={index} style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: '12px',
+                        backgroundColor: currentTheme.colors.background,
+                        borderRadius: '8px',
+                      }}>
+                        <div>
+                          <Text variant="body" color={currentTheme.colors.text}>
+                            {milestone.description}
+                          </Text>
+                          <Text variant="caption" color={currentTheme.colors.textSecondary}>
+                            Estimado: {milestone.estimatedDays} dias
+                          </Text>
+                        </div>
+                        <div style={{
+                          width: '60px',
+                          height: '6px',
+                          backgroundColor: currentTheme.colors.border,
+                          borderRadius: '3px',
+                          overflow: 'hidden',
+                        }}>
+                          <div style={{
+                            width: `${Math.max(10, 100 - (milestone.estimatedDays * 3))}%`,
+                            height: '100%',
+                            backgroundColor: currentTheme.colors.primary,
+                          }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </Card>
+
+          {/* Report Export */}
+          <ReportExport
+            data={reportData}
+            theme={currentTheme}
+          />
+        </div>
+      )}
     </div>
   );
 };
