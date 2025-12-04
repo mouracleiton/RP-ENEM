@@ -39,6 +39,23 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
         'CL3 - Competência CL3 - Linguagens.json',
         'CL4 - Competência CL4 - Linguagens.json',
         'CL5 - Competência CL5 - Linguagens.json',
+        // Competências Específicas de Matemática (CM1-CM3)
+        'CM1 - Competência CM1 - Matemática.json',
+        'CM2 - Competência CM2 - Matemática.json',
+        'CM3 - Competência CM3 - Matemática.json',
+        // Competências Específicas de Ciências Humanas (CH1-CH3)
+        'CH1 - Competência CH1 - Ciências_Humanas.json',
+        'CH2 - Competência CH2 - Ciências_Humanas.json',
+        'CH3 - Competência CH3 - Ciências_Humanas.json',
+        // Competências Específicas de Ciências da Natureza - Física (CF1-CF2)
+        'CF1 - Competência CF1 - Ciências_da_Natureza_Física.json',
+        'CF2 - Competência CF2 - Ciências_da_Natureza_Física.json',
+        // Competências Específicas de Ciências da Natureza - Química (CQ1-CQ2)
+        'CQ1 - Competência CQ1 - Ciências_da_Natureza_Química.json',
+        'CQ2 - Competência CQ2 - Ciências_da_Natureza_Química.json',
+        // Competências Específicas de Ciências da Natureza - Biologia (CB1-CB2)
+        'CB1 - Competência CB1 - Ciências_da_Natureza_Biologia.json',
+        'CB2 - Competência CB2 - Ciências_da_Natureza_Biologia.json',
       ];
 
       const areas: any[] = [];
@@ -378,6 +395,18 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       CL3: '📝',   // Competências Específicas de Linguagens
       CL4: '📝',   // Competências Específicas de Linguagens
       CL5: '📝',   // Competências Específicas de Linguagens
+      CM1: '🔢',   // Competências Específicas de Matemática
+      CM2: '🔢',   // Competências Específicas de Matemática
+      CM3: '🔢',   // Competências Específicas de Matemática
+      CH1: '👥',   // Competências Específicas de Ciências Humanas
+      CH2: '👥',   // Competências Específicas de Ciências Humanas
+      CH3: '👥',   // Competências Específicas de Ciências Humanas
+      CF1: '⚛️',   // Competências Específicas de Ciências da Natureza - Física
+      CF2: '⚛️',   // Competências Específicas de Ciências da Natureza - Física
+      CQ1: '🧪',   // Competências Específicas de Ciências da Natureza - Química
+      CQ2: '🧪',   // Competências Específicas de Ciências da Natureza - Química
+      CB1: '🧬',   // Competências Específicas de Ciências da Natureza - Biologia
+      CB2: '🧬',   // Competências Específicas de Ciências da Natureza - Biologia
       default: '📚',
     };
 
@@ -396,6 +425,18 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
       CL3: '#ec4899',  // Rosa para linguagens específicas
       CL4: '#ec4899',  // Rosa para linguagens específicas
       CL5: '#ec4899',  // Rosa para linguagens específicas
+      CM1: '#14b8a6',  // Teal para matemática
+      CM2: '#14b8a6',  // Teal para matemática
+      CM3: '#14b8a6',  // Teal para matemática
+      CH1: '#f97316',  // Laranja escuro para ciências humanas
+      CH2: '#f97316',  // Laranja escuro para ciências humanas
+      CH3: '#f97316',  // Laranja escuro para ciências humanas
+      CF1: '#0ea5e9',  // Azul claro para física
+      CF2: '#0ea5e9',  // Azul claro para física
+      CQ1: '#22c55e',  // Verde esmeralda para química
+      CQ2: '#22c55e',  // Verde esmeralda para química
+      CB1: '#a855f7',  // Púrpura para biologia
+      CB2: '#a855f7',  // Púrpura para biologia
       default: '#6366f1',
     };
 
